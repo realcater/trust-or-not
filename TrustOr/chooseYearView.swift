@@ -8,14 +8,13 @@
 
 import UIKit
 
-class chooseYearView: UIViewController {
+class ChooseYearView: UIViewController {
 
     @IBOutlet weak var chooseYearLabel: UILabel!
     let AnimalsNums: CountableClosedRange = 0...11
     
-    let mainColor = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
-    //let mainColor = UIColor(red: 32/256, green: 86/256, blue: 166/256, alpha: 1)
-    //let mainColor = UIColor(red: 44/256, green: 114/256, blue: 216/256, alpha: 1)
+    let foregroundColor = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
+    let backgroundColor = UIColor.white
     
     @objc func buttonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "BeginGame", sender: sender)
@@ -25,7 +24,7 @@ class chooseYearView: UIViewController {
         let columnsQty = 3
         let rowsQty = 4
         let marginX: CGFloat = 0
-        let marginTop: CGFloat = 72
+        let marginTop: CGFloat = 88
         let marginBottom: CGFloat = 40
         var distX: CGFloat = 0
         var distY: CGFloat = 0
@@ -55,15 +54,18 @@ class chooseYearView: UIViewController {
                                   width: itemWidth, height: itemHeight)
             button.setImage(UIImage(named: String(i+1)),
                                       for: .normal)
-            button.tintColor = mainColor
+            button.tintColor = foregroundColor
             view.addSubview(button)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chooseYearLabel.textColor = mainColor
+        chooseYearLabel.textColor = backgroundColor
+        chooseYearLabel.backgroundColor = foregroundColor
+        view.backgroundColor = backgroundColor
         tileButtons()
+        
     }
 
     override func didReceiveMemoryWarning() {
