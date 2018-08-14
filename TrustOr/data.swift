@@ -5,14 +5,21 @@
 //  Created by Dmitry Dementyev on 13.08.2018.
 //  Copyright © 2018 Dmitry Dementyev. All rights reserved.
 //
-
+/*
 import UIKit
 
 class chooseYearView: UIViewController {
-
-    let AnimalsNums: CountableClosedRange = 0...11
     
+    struct animal_type {
+        var name_gen : String
+        var picname : String
+        var num : Int
+    }
     let mainColor = UIColor.red
+    
+    let a = [ animal_type(name_gen: "крысы", picname:"1",num:1) ]
+    let AnimalsNums: CountableClosedRange = 0...11
+    let pics = ["01-rat","02-ox","03-tiger","04-rabbit","05-dragon","06-snake","07-horse","08-ram","09-monkey","10-rooster","11-dog","12-pig"]
     
     func tileButtons() {
         let columnsQty = 3
@@ -40,7 +47,6 @@ class chooseYearView: UIViewController {
             let row = i / columnsQty
             print(i,col,row)
             let button = UIButton(type: .system)
-            //button.adjustsImageWhenHighlighted = false
             button.tag = 2000 + i
             //button.addTarget(self, action: #selector(buttonPressed),
             //                 for: .touchUpInside)
@@ -48,21 +54,21 @@ class chooseYearView: UIViewController {
                                   y: marginTop + CGFloat(row)*(itemHeight+distY),
                                   width: itemWidth, height: itemHeight)
             button.setImage(UIImage(named: String(i+1)),
-                                      for: .normal)
-            button.tintColor = mainColor
+                            for: .normal)
+            //button.tintColor = mainColor
             view.addSubview(button)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tileButtons()
+        //title1.tintColor = mainColor
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 }
-
+*/
