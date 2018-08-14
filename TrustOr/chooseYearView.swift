@@ -19,6 +19,7 @@ class ChooseYearView: UIViewController {
     @objc func buttonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "BeginGame", sender: sender)
     }
+    var animals = ChineseAnimals()
     
     func tileButtons() {
         let columnsQty = 3
@@ -65,12 +66,17 @@ class ChooseYearView: UIViewController {
         chooseYearLabel.backgroundColor = foregroundColor
         view.backgroundColor = backgroundColor
         tileButtons()
+        print(animals.items[0].name_gen)
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "BeginGame" {
+            let questionsView = segue.destination as! QuestionsView
+            //questionsView.animal = Animals.animals[(sender as! UIButton).tag - 2000]
+            }
     }
     
 }
