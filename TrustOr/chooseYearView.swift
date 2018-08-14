@@ -10,9 +10,16 @@ import UIKit
 
 class chooseYearView: UIViewController {
 
+    @IBOutlet weak var chooseYearLabel: UILabel!
     let AnimalsNums: CountableClosedRange = 0...11
     
-    let mainColor = UIColor.red
+    let mainColor = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
+    //let mainColor = UIColor(red: 32/256, green: 86/256, blue: 166/256, alpha: 1)
+    //let mainColor = UIColor(red: 44/256, green: 114/256, blue: 216/256, alpha: 1)
+    
+    @objc func buttonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "BeginGame", sender: sender)
+    }
     
     func tileButtons() {
         let columnsQty = 3
@@ -40,10 +47,9 @@ class chooseYearView: UIViewController {
             let row = i / columnsQty
             print(i,col,row)
             let button = UIButton(type: .system)
-            //button.adjustsImageWhenHighlighted = false
             button.tag = 2000 + i
-            //button.addTarget(self, action: #selector(buttonPressed),
-            //                 for: .touchUpInside)
+            button.addTarget(self, action: #selector(buttonPressed),
+                             for: .touchUpInside)
             button.frame = CGRect(x: marginX + CGFloat(col)*(itemWidth+distX),
                                   y: marginTop + CGFloat(row)*(itemHeight+distY),
                                   width: itemWidth, height: itemHeight)
@@ -56,6 +62,7 @@ class chooseYearView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chooseYearLabel.textColor = mainColor
         tileButtons()
     }
 
