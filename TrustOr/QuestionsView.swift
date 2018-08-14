@@ -10,12 +10,14 @@ import UIKit
 
 class QuestionsView: UIViewController {
     
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
     var animal : Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        questionLabel.text = K.confirmAnimalChoiceText + animal.name_gen
+        startButton.tintColor = K.foregroundColor
     }
 
     override func didReceiveMemoryWarning() {

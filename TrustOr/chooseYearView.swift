@@ -13,9 +13,6 @@ class ChooseYearView: UIViewController {
     @IBOutlet weak var chooseYearLabel: UILabel!
     let AnimalsNums: CountableClosedRange = 0...11
     
-    let foregroundColor = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
-    let backgroundColor = UIColor.white
-    
     @objc func buttonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "BeginGame", sender: sender)
     }
@@ -55,19 +52,18 @@ class ChooseYearView: UIViewController {
                                   width: itemWidth, height: itemHeight)
             button.setImage(UIImage(named: String(i+1)),
                                       for: .normal)
-            button.tintColor = foregroundColor
+            button.tintColor = K.foregroundColor
             view.addSubview(button)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chooseYearLabel.textColor = backgroundColor
-        chooseYearLabel.backgroundColor = foregroundColor
-        view.backgroundColor = backgroundColor
+        chooseYearLabel.textColor = K.backgroundColor
+        chooseYearLabel.backgroundColor = K.foregroundColor
+        view.backgroundColor = K.backgroundColor
         tileButtons()
         print(animals.items[0].name_gen)
-        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,8 +71,9 @@ class ChooseYearView: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "BeginGame" {
             let questionsView = segue.destination as! QuestionsView
-            //questionsView.animal = Animals.animals[(sender as! UIButton).tag - 2000]
-            }
+            let animalNumber = (sender as! UIButton).tag - 2000
+            questionsView.animal = animals.items[animalNumber]
+        }
     }
     
 }

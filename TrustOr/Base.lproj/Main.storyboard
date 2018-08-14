@@ -31,7 +31,7 @@
                     </view>
                     <connections>
                         <outlet property="chooseYearLabel" destination="ROH-kd-ufU" id="7wo-dT-0Wn"/>
-                        <segue destination="S0w-Z2-ro9" kind="show" identifier="BeginGame" id="yH4-pV-FHr"/>
+                        <segue destination="S0w-Z2-ro9" kind="presentation" identifier="BeginGame" id="bx8-Nz-EpT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -46,19 +46,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-KD-fyM">
-                                <rect key="frame" x="164" y="257" width="46" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Итак, год Мыши!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-3x-Y6T">
+                                <rect key="frame" x="0.0" y="110" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <color key="textColor" red="0.1721484553" green="0.44599413040000002" blue="0.84829076780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="9pS-Qz-znL">
+                                <rect key="frame" x="32" y="177" width="311" height="311"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ">
+                                <rect key="frame" x="90" y="528" width="194" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17254901960784313" green="0.44705882352941173" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Играем">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="9tl-vi-6uL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9v8-UJ-YSp"/>
+                    <connections>
+                        <outlet property="questionLabel" destination="hhT-3x-Y6T" id="Wk4-1i-FRC"/>
+                        <outlet property="startButton" destination="19t-Ww-CaQ" id="ar4-8g-9CK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KM3-ds-kNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="43"/>
+            <point key="canvasLocation" x="792.79999999999995" y="42.728635682158924"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1" width="157" height="157"/>
+    </resources>
 </document>

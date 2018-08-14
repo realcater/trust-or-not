@@ -10,7 +10,7 @@ struct Animal {
     var questionTasks: [QuestionTask]
 }
 
-class ChineseAnimals {
+struct ChineseAnimals {
     var items: [Animal]
     init() {
         var mouse = Animal(name_gen : "Мыши", picname : "0", num : 0, questionTasks : [])
