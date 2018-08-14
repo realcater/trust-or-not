@@ -14,7 +14,7 @@
 		C15647252121FC6100F1602E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647232121FC6100F1602E /* Main.storyboard */; };
 		C15647272121FC6100F1602E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15647262121FC6100F1602E /* Assets.xcassets */; };
 		C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647282121FC6200F1602E /* LaunchScreen.storyboard */; };
-		C15647322122E5E700F1602E /* AnimalsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* AnimalsArray.swift */; };
+		C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* ChineseAnimals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		C15647262121FC6100F1602E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C15647292121FC6200F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C156472B2121FC6200F1602E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C15647312122E5E700F1602E /* AnimalsArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsArray.swift; sourceTree = "<group>"; };
+		C15647312122E5E700F1602E /* ChineseAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseAnimals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +63,7 @@
 				C156471F2121FC6100F1602E /* AppDelegate.swift */,
 				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
-				C15647312122E5E700F1602E /* AnimalsArray.swift */,
+				C15647312122E5E700F1602E /* ChineseAnimals.swift */,
 				C156472B2121FC6200F1602E /* Info.plist */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
@@ -146,7 +146,7 @@
 			files = (
 				C1480A912123649500137C37 /* QuestionsView.swift in Sources */,
 				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,
-				C15647322122E5E700F1602E /* AnimalsArray.swift in Sources */,
+				C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
 				C1480A93212380A300137C37 /* Animal.swift in Sources */,
 			);
