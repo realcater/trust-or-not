@@ -9,7 +9,9 @@
 import UIKit
 
 class QuestionsView: UIViewController {
-
+    
+    var animal : Animal!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
