@@ -12,12 +12,29 @@ class QuestionsView: UIViewController {
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var animalButton: UIButton!
+    @IBAction func pressAnimalButton(_ sender: Any) {
+        print(animalButton.tintColor)
+        
+    }
+    
     var animal : Animal!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = K.confirmAnimalChoiceText + animal.name_gen
-        startButton.tintColor = K.foregroundColor
+        view.backgroundColor = K.backgroundColor
+        
+        questionLabel.text = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
+        questionLabel.textColor = K.foregroundColor
+        
+        startButton.backgroundColor = K.foregroundColor
+        startButton.setTitleColor(K.backgroundColor, for: .normal)
+        
+        animalButton.tintColor = K.foregroundColor
+        animalButton.backgroundColor = K.backgroundColor
+        animalButton.setImage(UIImage(named: animal.picname), for: .normal)
+        animalButton.contentHorizontalAlignment = .fill
+        animalButton.contentVerticalAlignment = .fill
     }
 
     override func didReceiveMemoryWarning() {

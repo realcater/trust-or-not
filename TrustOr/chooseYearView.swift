@@ -22,7 +22,7 @@ class ChooseYearView: UIViewController {
         let columnsQty = 3
         let rowsQty = 4
         let marginX: CGFloat = 0
-        let marginTop: CGFloat = 88
+        let marginTop: CGFloat = 75
         let marginBottom: CGFloat = 40
         var distX: CGFloat = 0
         var distY: CGFloat = 0
@@ -50,7 +50,7 @@ class ChooseYearView: UIViewController {
             button.frame = CGRect(x: marginX + CGFloat(col)*(itemWidth+distX),
                                   y: marginTop + CGFloat(row)*(itemHeight+distY),
                                   width: itemWidth, height: itemHeight)
-            button.setImage(UIImage(named: String(i+1)),
+            button.setImage(UIImage(named: String(i)),
                                       for: .normal)
             button.tintColor = K.foregroundColor
             view.addSubview(button)
@@ -73,6 +73,7 @@ class ChooseYearView: UIViewController {
             let questionsView = segue.destination as! QuestionsView
             let animalNumber = (sender as! UIButton).tag - 2000
             questionsView.animal = animals.items[animalNumber]
+            
         }
     }
     

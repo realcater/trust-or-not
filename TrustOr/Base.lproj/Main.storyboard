@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bbo-37-oOS">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="chooseYearView" customClass="ChooseYearView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Какой год играем?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROH-kd-ufU">
-                                <rect key="frame" x="0.0" y="25" width="375" height="56"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Какой год играем?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROH-kd-ufU">
+                                <rect key="frame" x="0.0" y="25" width="320" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
                                 <color key="textColor" red="0.17214845530831288" green="0.44599413039657426" blue="0.84829076776649748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -28,7 +29,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ROH-kd-ufU"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Какой год играем?" id="afe-Xv-3eo"/>
                     <connections>
                         <outlet property="chooseYearLabel" destination="ROH-kd-ufU" id="7wo-dT-0Wn"/>
                         <segue destination="S0w-Z2-ro9" kind="presentation" identifier="BeginGame" id="bx8-Nz-EpT"/>
@@ -36,31 +43,43 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1029.375" y="42.25352112676056"/>
         </scene>
         <!--QuestionsView-->
         <scene sceneID="JPv-SI-VU0">
             <objects>
                 <viewController id="S0w-Z2-ro9" userLabel="QuestionsView" customClass="QuestionsView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7Y-BT-YTz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Итак, год Мыши!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-3x-Y6T">
-                                <rect key="frame" x="0.0" y="110" width="375" height="72"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итак..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-3x-Y6T">
+                                <rect key="frame" x="16" y="60" width="288" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="rkL-HQ-Tpu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
                                 <color key="textColor" red="0.1721484553" green="0.44599413040000002" blue="0.84829076780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="9pS-Qz-znL">
-                                <rect key="frame" x="32" y="177" width="311" height="311"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ">
-                                <rect key="frame" x="90" y="528" width="194" height="47"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKA-ik-6N8">
+                                <rect key="frame" x="16" y="132" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QKA-ik-6N8" secondAttribute="height" multiplier="1:1" id="yQ3-Ug-mjB"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0" green="0.46274509803921571" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="1"/>
+                                <connections>
+                                    <action selector="pressAnimalButton:" destination="S0w-Z2-ro9" eventType="touchUpInside" id="LNE-Xw-I2k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ">
+                                <rect key="frame" x="40" y="455" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.17254901960784313" green="0.44705882352941173" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0H9-cT-YFx"/>
+                                    <constraint firstAttribute="width" constant="240" id="gWZ-fm-46B"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Играем">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -68,17 +87,46 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hhT-3x-Y6T" firstAttribute="top" secondItem="9tl-vi-6uL" secondAttribute="top" constant="40" id="Jn5-XH-5jl"/>
+                            <constraint firstItem="9tl-vi-6uL" firstAttribute="trailing" secondItem="hhT-3x-Y6T" secondAttribute="trailing" constant="16" id="NHW-Xr-N7G"/>
+                            <constraint firstItem="19t-Ww-CaQ" firstAttribute="centerX" secondItem="D7Y-BT-YTz" secondAttribute="centerX" id="Z8A-n1-A1A"/>
+                            <constraint firstItem="9tl-vi-6uL" firstAttribute="trailing" secondItem="QKA-ik-6N8" secondAttribute="trailing" constant="16" id="nAZ-q2-eCB"/>
+                            <constraint firstItem="9tl-vi-6uL" firstAttribute="bottom" secondItem="19t-Ww-CaQ" secondAttribute="bottom" constant="63" id="nZH-84-IO1"/>
+                            <constraint firstItem="QKA-ik-6N8" firstAttribute="leading" secondItem="9tl-vi-6uL" secondAttribute="leading" constant="16" id="nb4-Xv-XRD"/>
+                            <constraint firstItem="hhT-3x-Y6T" firstAttribute="leading" secondItem="9tl-vi-6uL" secondAttribute="leading" constant="16" id="pSy-R0-Gv4"/>
+                            <constraint firstItem="QKA-ik-6N8" firstAttribute="top" secondItem="hhT-3x-Y6T" secondAttribute="bottom" id="xD9-Kx-OWj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="9tl-vi-6uL"/>
                     </view>
                     <navigationItem key="navigationItem" id="9v8-UJ-YSp"/>
                     <connections>
+                        <outlet property="animalButton" destination="QKA-ik-6N8" id="iO5-AM-GEj"/>
                         <outlet property="questionLabel" destination="hhT-3x-Y6T" id="Wk4-1i-FRC"/>
                         <outlet property="startButton" destination="19t-Ww-CaQ" id="ar4-8g-9CK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KM3-ds-kNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.79999999999995" y="42.728635682158924"/>
+            <point key="canvasLocation" x="1786.875" y="41.197183098591552"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="csH-JO-myu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bbo-37-oOS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rMs-x0-PzM">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PR8-Rt-L19"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWb-Og-LOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="31.875" y="42.25352112676056"/>
         </scene>
     </scenes>
     <resources>
