@@ -23,12 +23,7 @@ class StartGameView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
         
-        //questionLabel.text = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
-        //questionLabel.textColor = K.foregroundColor
-        
-        startButton.backgroundColor = K.foregroundColor
-        startButton.setTitleColor(K.backgroundColor, for: .normal)
-        startButton.layer.cornerRadius = 0.5 * startButton.bounds.size.height
+        makeRoundedColorButton(for: startButton)
         
         animalButton.tintColor = K.foregroundColor
         animalButton.backgroundColor = K.backgroundColor
@@ -41,18 +36,13 @@ class StartGameView: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "startGameViaAnimalButton" || segue.identifier == "startGameViaPlayButton" {
+            let questionsView = segue.destination as! QuestionsView
+            questionsView.animal = animal
+        }
     }
-    */
-
 }

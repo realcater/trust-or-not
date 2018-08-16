@@ -179,7 +179,6 @@ struct ChineseAnimals {
                 comment: "Изначально “говно“ – это были именно коровьи лепёшки.")
             ])
         items=[mouse,ox]
-        print("init chinese animals")
     }
 }
 
