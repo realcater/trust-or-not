@@ -72,7 +72,7 @@ class ChooseYearView: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if segue.identifier == "BeginGame" || segue.identifier == "Nav" {
-            let questionsView = segue.destination as! QuestionsView
+            let questionsView = segue.destination as! StartGameView
             let animalNumber = (sender as! UIButton).tag - 2000
             questionsView.animal = animals.items[animalNumber]
         }

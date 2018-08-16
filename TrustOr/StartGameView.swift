@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuestionsView: UIViewController {
+class StartGameView: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var animalButton: UIButton!

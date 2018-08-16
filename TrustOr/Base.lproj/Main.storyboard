@@ -34,10 +34,10 @@
             </objects>
             <point key="canvasLocation" x="1029.375" y="42.25352112676056"/>
         </scene>
-        <!--QuestionsView-->
+        <!--StartGameView-->
         <scene sceneID="JPv-SI-VU0">
             <objects>
-                <viewController storyboardIdentifier="QuestionsView" id="S0w-Z2-ro9" userLabel="QuestionsView" customClass="QuestionsView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsView" id="S0w-Z2-ro9" userLabel="StartGameView" customClass="I" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7Y-BT-YTz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
