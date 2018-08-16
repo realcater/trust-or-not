@@ -10,7 +10,6 @@ import UIKit
 
 class ChooseYearView: UIViewController {
 
-    @IBOutlet weak var chooseYearLabel: UILabel!
     let AnimalsNums: CountableClosedRange = 0...11
     
     @objc func buttonPressed(_ sender: UIButton) {
@@ -59,21 +58,23 @@ class ChooseYearView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chooseYearLabel.textColor = K.backgroundColor
-        chooseYearLabel.backgroundColor = K.foregroundColor
+        //chooseYearLabel.textColor = K.backgroundColor
+        //chooseYearLabel.backgroundColor = K.foregroundColor
         view.backgroundColor = K.backgroundColor
+        navigationController?.navigationBar.barTintColor = K.foregroundColor
+        navigationController?.navigationBar.tintColor = K.backgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 24, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
+        navigationController?.navigationBar.topItem?.title = "Какой год играем?"
         tileButtons()
-        print(animals.items[0].name_gen)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "BeginGame" {
+        if segue.identifier == "BeginGame" || segue.identifier == "Nav" {
             let questionsView = segue.destination as! QuestionsView
             let animalNumber = (sender as! UIButton).tag - 2000
             questionsView.animal = animals.items[animalNumber]
-            
         }
     }
     

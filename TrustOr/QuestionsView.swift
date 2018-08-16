@@ -10,7 +10,6 @@ import UIKit
 
 class QuestionsView: UIViewController {
     
-    @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var animalButton: UIButton!
     @IBAction func pressAnimalButton(_ sender: Any) {
@@ -24,8 +23,8 @@ class QuestionsView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
         
-        questionLabel.text = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
-        questionLabel.textColor = K.foregroundColor
+        //questionLabel.text = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
+        //questionLabel.textColor = K.foregroundColor
         
         startButton.backgroundColor = K.foregroundColor
         startButton.setTitleColor(K.backgroundColor, for: .normal)
@@ -36,6 +35,8 @@ class QuestionsView: UIViewController {
         animalButton.setImage(UIImage(named: animal.picname), for: .normal)
         animalButton.contentHorizontalAlignment = .fill
         animalButton.contentVerticalAlignment = .fill
+        
+        title = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
     }
 
     override func didReceiveMemoryWarning() {

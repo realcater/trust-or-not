@@ -13,10 +13,8 @@ class MyNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBar.barTintColor = K.foregroundColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): K.backgroundColor]
-
-
-        // Do any additional setup after loading the view.
+        navigationBar.titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): K.backgroundColor]
+        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): K.backgroundColor]
     }
 
     override func didReceiveMemoryWarning() {
