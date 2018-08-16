@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C130986421239082001D894D /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986321239082001D894D /* K.swift */; };
+		C1309866212565C8001D894D /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1309865212565C8001D894D /* MyNavigationController.swift */; };
 		C1480A912123649500137C37 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1480A902123649500137C37 /* QuestionsView.swift */; };
 		C15647202121FC6100F1602E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156471F2121FC6100F1602E /* AppDelegate.swift */; };
 		C15647222121FC6100F1602E /* chooseYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647212121FC6100F1602E /* chooseYearView.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		C130986321239082001D894D /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		C1309865212565C8001D894D /* MyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		C1480A902123649500137C37 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		C156471C2121FC6100F1602E /* TrustOr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustOr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156471F2121FC6100F1602E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* QuestionsView.swift */,
+				C1309865212565C8001D894D /* MyNavigationController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				C1480A912123649500137C37 /* QuestionsView.swift in Sources */,
 				C130986421239082001D894D /* K.swift in Sources */,
 				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,
+				C1309866212565C8001D894D /* MyNavigationController.swift in Sources */,
 				C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
 			);

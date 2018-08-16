@@ -29,6 +29,7 @@ class QuestionsView: UIViewController {
         
         startButton.backgroundColor = K.foregroundColor
         startButton.setTitleColor(K.backgroundColor, for: .normal)
+        startButton.layer.cornerRadius = 0.5 * startButton.bounds.size.height
         
         animalButton.tintColor = K.foregroundColor
         animalButton.backgroundColor = K.backgroundColor

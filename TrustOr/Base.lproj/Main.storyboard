@@ -54,16 +54,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Итак..." textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hhT-3x-Y6T">
-                                <rect key="frame" x="16" y="60" width="288" height="72"/>
+                                <rect key="frame" x="16" y="60" width="288" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="72" id="rkL-HQ-Tpu"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="rkL-HQ-Tpu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
                                 <color key="textColor" red="0.1721484553" green="0.44599413040000002" blue="0.84829076780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKA-ik-6N8">
-                                <rect key="frame" x="16" y="132" width="288" height="288"/>
+                                <rect key="frame" x="16" y="96" width="288" height="288"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="QKA-ik-6N8" secondAttribute="height" multiplier="1:1" id="yQ3-Ug-mjB"/>
                                 </constraints>
@@ -110,10 +110,10 @@
             </objects>
             <point key="canvasLocation" x="1786.875" y="41.197183098591552"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="csH-JO-myu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bbo-37-oOS" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bbo-37-oOS" customClass="MyNavigationController" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rMs-x0-PzM">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
