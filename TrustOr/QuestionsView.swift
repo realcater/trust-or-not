@@ -9,6 +9,8 @@
 import UIKit
 
 class QuestionsView: UIViewController {
+    
+    //MARK:- UIVars
     @IBOutlet weak var showAnswerButton: UIButton!
     @IBOutlet weak var nextQuestionButton: UIButton!
     @IBOutlet weak var laterButton: UIButton!
@@ -20,10 +22,12 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var commentText: UITextView!
     
+    //MARK:- vars
     var animal : Animal!
     var currentQuestionNumber : Int = 0
-    lazy var questionsQty = animal.questionTasks.count
+    var leftQuestions : [Int] = []
     
+    //MARK:- Private func
     private func showAnswer() {
         commentText.isHidden = false
         if animal.questionTasks[currentQuestionNumber].answer == true {
@@ -32,43 +36,74 @@ class QuestionsView: UIViewController {
             falseView.isHidden = false
         }
     }
-    
     private func hideAnswer() {
         commentText.isHidden = true
         trueView.isHidden = true
         falseView.isHidden = true
     }
-
     private func reloadTexts() {
         questionText.text = animal.questionTasks[currentQuestionNumber].question
         commentText.text = animal.questionTasks[currentQuestionNumber].comment
-        title = K.questionLabel + String(currentQuestionNumber+1)+"/"+String(questionsQty)
+        title = K.questionLabel + String(currentQuestionNumber+1)+"/"+String(animal.questionTasks.count)
+        if leftQuestions.count > 0 {
+            title = title! + "(+" + String(leftQuestions.count) + ")"
+        }
     }
-    //private func
-    @IBAction func showAnswerButtonPressed(_ sender: Any) {
+    private func showUIAnswerMode() {
+        hideAnswer()
+        showAnswerButton.isHidden = false
+        laterButton.isHidden = false
+        nextQuestionButton.isHidden = true
+        reloadTexts()
+    }
+    private func showUIWaitMode() {
         showAnswer()
-        print(currentQuestionNumber,questionsQty)
-        if currentQuestionNumber+1 < questionsQty {
-            showAnswerButton.isHidden = true
-            nextQuestionButton.isHidden = false
+        showAnswerButton.isHidden = true
+        laterButton.isHidden = true
+        nextQuestionButton.isHidden = false
+    }
+    private func showUIFinishGame() {
+        showAnswer()
+        showAnswerButton.isHidden = true
+        laterButton.isHidden = true
+        finishGameButton.isHidden = false
+    }
+    private func oneMoreQueer() {
+        var newQuestionTasks: [QuestionTask] = []
+        for i in leftQuestions {
+            newQuestionTasks.append(animal.questionTasks[i])
+        }
+        animal.questionTasks = newQuestionTasks
+        leftQuestions = []
+        currentQuestionNumber = 0
+    }
+    //MARK:- Buttons Actions
+    @IBAction func showAnswerButtonPressed(_ sender: Any) {
+        if (currentQuestionNumber+1 < animal.questionTasks.count) || (leftQuestions.count > 0) {
+            showUIWaitMode()
         } else {
-            showAnswerButton.isHidden = true
-            laterButton.isHidden = true
-            finishGameButton.isHidden = false
+            showUIFinishGame()
         }
     }
     
-    @IBAction func nextQuestionButtonPressed(_ sender: Any) {
-        hideAnswer()
-        nextQuestionButton.isHidden = true
-        showAnswerButton.isHidden = false
+    @IBAction func laterButtonPressed(_ sender: Any) {
+        leftQuestions.append(currentQuestionNumber)
         currentQuestionNumber+=1
+        if currentQuestionNumber == animal.questionTasks.count {
+            oneMoreQueer()
+        }
         reloadTexts()
     }
     
-    @IBAction func laterButtonPressed(_ sender: Any) {
+    @IBAction func nextQuestionButtonPressed(_ sender: Any) {
+        currentQuestionNumber+=1
+        if (currentQuestionNumber == animal.questionTasks.count) && (leftQuestions.count > 0) {
+            oneMoreQueer()
+        }
+        showUIAnswerMode()
     }
-    
+
+    // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
@@ -80,21 +115,4 @@ class QuestionsView: UIViewController {
         
         reloadTexts()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

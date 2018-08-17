@@ -13,7 +13,9 @@ class ChooseYearView: UIViewController {
     let AnimalsNums: CountableClosedRange = 0...11
     
     @objc func buttonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "BeginGame", sender: sender)
+        if Int((sender as! UIButton).tag) < 2002 {
+            performSegue(withIdentifier: "yearChosen", sender: sender)
+        }
     }
     var animals = ChineseAnimals()
     
@@ -41,7 +43,6 @@ class ChooseYearView: UIViewController {
         for i in AnimalsNums {
             let col = i % columnsQty
             let row = i / columnsQty
-            print(i,col,row)
             let button = UIButton(type: .system)
             button.tag = 2000 + i
             button.addTarget(self, action: #selector(buttonPressed),
@@ -63,18 +64,16 @@ class ChooseYearView: UIViewController {
         view.backgroundColor = K.backgroundColor
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 24, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
         tileButtons()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "BeginGame" || segue.identifier == "Nav" {
-            let questionsView = segue.destination as! StartGameView
+        if segue.identifier == "yearChosen" {
+            let startGameView = segue.destination as! StartGameView
             let animalNumber = (sender as! UIButton).tag - 2000
-            questionsView.animal = animals.items[animalNumber]
+            startGameView.animal = animals.items[animalNumber]
         }
     }
     
