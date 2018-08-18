@@ -8,4 +8,6 @@ struct K {
     static let confirmAnimalChoiceText2 = "!"
     static let questionLabel = "Вопрос "
     static let finishGameText = "Это все вопросы! Спасибо за игру!"
+    static let fontSizeTextViewZoomed : CGFloat = 18
+    static let fontSizeTextViewNormal : CGFloat = 21
 }

@@ -10,10 +10,9 @@ import UIKit
 
 class ChooseYearView: UIViewController {
 
-    let AnimalsNums: CountableClosedRange = 0...11
-    
     @objc func buttonPressed(_ sender: UIButton) {
-        if Int((sender as! UIButton).tag) < 2002 {
+        let chosenAnimal = animals.items[Int(sender.tag)-2000]
+        if chosenAnimal.questionTasks.count > 0 {
             performSegue(withIdentifier: "yearChosen", sender: sender)
         }
     }
@@ -40,7 +39,7 @@ class ChooseYearView: UIViewController {
             distX = (viewWidth - 2*marginX-CGFloat(columnsQty)*itemWidth)/(CGFloat(columnsQty)-1)
         }
         
-        for i in AnimalsNums {
+        for (i,animal) in animals.items.enumerated() {
             let col = i % columnsQty
             let row = i / columnsQty
             let button = UIButton(type: .system)
@@ -53,20 +52,22 @@ class ChooseYearView: UIViewController {
             button.setImage(UIImage(named: String(i)),
                                       for: .normal)
             button.tintColor = K.foregroundColor
+            if animal.questionTasks.count == 0 {
+                button.isEnabled = false
+            }
             view.addSubview(button)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //chooseYearLabel.textColor = K.backgroundColor
-        //chooseYearLabel.backgroundColor = K.foregroundColor
         view.backgroundColor = K.backgroundColor
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
         tileButtons()
+        print(UIScreen.main.currentMode!.size.width)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -30,6 +30,9 @@ class QuestionsView: UIViewController {
     //MARK:- Private func
     private func showAnswer() {
         commentText.isHidden = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.commentText.flashScrollIndicators()
+        })
         if animal.questionTasks[currentQuestionNumber].answer == true {
             trueView.isHidden = false
         } else {
@@ -44,6 +47,9 @@ class QuestionsView: UIViewController {
     private func reloadTexts() {
         questionText.text = animal.questionTasks[currentQuestionNumber].question
         commentText.text = animal.questionTasks[currentQuestionNumber].comment
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.questionText.flashScrollIndicators()
+        })
         title = K.questionLabel + String(currentQuestionNumber+1)+"/"+String(animal.questionTasks.count)
         if leftQuestions.count > 0 {
             title = title! + "(+" + String(leftQuestions.count) + ")"
@@ -106,13 +112,17 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = K.backgroundColor
-        
         makeRoundedColorButton(for: showAnswerButton)
         makeRoundedColorButton(for: nextQuestionButton)
         makeRoundedGrayButton(for: laterButton)
         makeRoundedColorButton(for: finishGameButton)
-        
+        if UIScreen.main.currentMode!.size.width >= 750 {
+            questionText.font = .systemFont(ofSize: K.fontSizeTextViewNormal)
+            commentText.font = .italicSystemFont(ofSize: K.fontSizeTextViewNormal)
+        } else {
+            questionText.font = .systemFont(ofSize: K.fontSizeTextViewZoomed)
+            commentText.font = .italicSystemFont(ofSize: K.fontSizeTextViewZoomed)
+        }
         reloadTexts()
     }
 }
