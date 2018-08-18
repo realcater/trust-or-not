@@ -22,10 +22,11 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var commentText: UITextView!
     
+    
+    
     //MARK:- vars
-    var animal : Animal!
-    var currentQuestionNumber : Int = 0
-    var leftQuestions : [Int] = []
+    var questionsPack : QuestionsPack!
+    var state: QuestionsPackState!
     
     //MARK:- Private func
     private func showAnswer() {
@@ -33,7 +34,8 @@ class QuestionsView: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
         })
-        if animal.questionTasks[currentQuestionNumber].answer == true {
+        //print("check"+String(state.currentNumber))
+        if questionsPack.questionTasks[state.currentNumber].answer == true {
             trueView.isHidden = false
         } else {
             falseView.isHidden = false
@@ -45,14 +47,14 @@ class QuestionsView: UIViewController {
         falseView.isHidden = true
     }
     private func reloadTexts() {
-        questionText.text = animal.questionTasks[currentQuestionNumber].question
-        commentText.text = animal.questionTasks[currentQuestionNumber].comment
+        questionText.text = questionsPack.questionTasks[state.currentNumber].question
+        commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        title = K.questionLabel + String(currentQuestionNumber+1)+"/"+String(animal.questionTasks.count)
-        if leftQuestions.count > 0 {
-            title = title! + "(+" + String(leftQuestions.count) + ")"
+        title = K.questionLabel + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
+        if state.leftQuestions.count > 0 {
+            title = title! + "(+" + String(state.leftQuestions.count) + ")"
         }
     }
     private func showUIAnswerMode() {
@@ -76,37 +78,54 @@ class QuestionsView: UIViewController {
     }
     private func oneMoreQueer() {
         var newQuestionTasks: [QuestionTask] = []
-        for i in leftQuestions {
-            newQuestionTasks.append(animal.questionTasks[i])
+        for i in state.leftQuestions {
+            newQuestionTasks.append(questionsPack.questionTasks[i])
         }
-        animal.questionTasks = newQuestionTasks
-        leftQuestions = []
-        currentQuestionNumber = 0
+        questionsPack.questionTasks = newQuestionTasks
+        state.leftQuestions = []
+        state.currentNumber = 0
+        print(state.currentNumber)
     }
+    private func restoreQuestionAsnweredUI () {
+        if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
+            showUIWaitMode()
+            //state.currentNumber+=1
+            print(state.currentNumber)
+        } else {
+            showUIFinishGame()
+        }
+    }
+    
     //MARK:- Buttons Actions
     @IBAction func showAnswerButtonPressed(_ sender: Any) {
-        if (currentQuestionNumber+1 < animal.questionTasks.count) || (leftQuestions.count > 0) {
+        print(String(state.currentNumber)+"<"+String(questionsPack.questionTasks.count))
+        state.getAnswerForCurrent = true
+        if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
             showUIWaitMode()
+            
         } else {
             showUIFinishGame()
         }
     }
     
     @IBAction func laterButtonPressed(_ sender: Any) {
-        leftQuestions.append(currentQuestionNumber)
-        currentQuestionNumber+=1
-        if currentQuestionNumber == animal.questionTasks.count {
+        state.leftQuestions.append(state.currentNumber)
+        state.currentNumber+=1
+        print(state.currentNumber)
+        if state.currentNumber == questionsPack.questionTasks.count {
             oneMoreQueer()
         }
         reloadTexts()
     }
     
     @IBAction func nextQuestionButtonPressed(_ sender: Any) {
-        currentQuestionNumber+=1
-        if (currentQuestionNumber == animal.questionTasks.count) && (leftQuestions.count > 0) {
+        state.currentNumber+=1
+        print(state.currentNumber)
+        if (state.currentNumber == questionsPack.questionTasks.count) && (state.leftQuestions.count > 0) {
             oneMoreQueer()
         }
         showUIAnswerMode()
+        state.getAnswerForCurrent = false
     }
 
     // MARK:- Override class func
@@ -123,6 +142,21 @@ class QuestionsView: UIViewController {
             questionText.font = .systemFont(ofSize: K.fontSizeTextViewZoomed)
             commentText.font = .italicSystemFont(ofSize: K.fontSizeTextViewZoomed)
         }
+        if state.getAnswerForCurrent {
+            //state.currentNumber-=1
+            restoreQuestionAsnweredUI()
+        }
         reloadTexts()
+    }
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        if isMovingFromParentViewController {
+            if let ViewControllersCount = navigationController?.viewControllers.count {
+                let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
+                prevViewController.questionsPack = questionsPack
+                prevViewController.state = state
+                prevViewController.startButton.setTitle(K.textContinueButton, for: .normal)
+            }
+        }
     }
 }

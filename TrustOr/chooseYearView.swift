@@ -11,12 +11,12 @@ import UIKit
 class ChooseYearView: UIViewController {
 
     @objc func buttonPressed(_ sender: UIButton) {
-        let chosenAnimal = animals.items[Int(sender.tag)-2000]
+        let chosenAnimal = questionsPacks.items[Int(sender.tag)-2000]
         if chosenAnimal.questionTasks.count > 0 {
             performSegue(withIdentifier: "yearChosen", sender: sender)
         }
     }
-    var animals = ChineseAnimals()
+    var questionsPacks = ChineseAnimals()
     
     func tileButtons() {
         let columnsQty = 3
@@ -39,7 +39,7 @@ class ChooseYearView: UIViewController {
             distX = (viewWidth - 2*marginX-CGFloat(columnsQty)*itemWidth)/(CGFloat(columnsQty)-1)
         }
         
-        for (i,animal) in animals.items.enumerated() {
+        for (i,animal) in questionsPacks.items.enumerated() {
             let col = i % columnsQty
             let row = i / columnsQty
             let button = UIButton(type: .system)
@@ -52,7 +52,7 @@ class ChooseYearView: UIViewController {
             button.setImage(UIImage(named: String(i)),
                                       for: .normal)
             button.tintColor = K.foregroundColor
-            if animal.questionTasks.count == 0 {
+            if animal.questionTasks.count == 1 {
                 button.isEnabled = false
             }
             view.addSubview(button)
@@ -74,7 +74,7 @@ class ChooseYearView: UIViewController {
         if segue.identifier == "yearChosen" {
             let startGameView = segue.destination as! StartGameView
             let animalNumber = (sender as! UIButton).tag - 2000
-            startGameView.animal = animals.items[animalNumber]
+            startGameView.questionsPack = questionsPacks.items[animalNumber]
         }
     }
     

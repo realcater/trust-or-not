@@ -13,11 +13,10 @@ class StartGameView: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var animalButton: UIButton!
     @IBAction func pressAnimalButton(_ sender: Any) {
-        print(animalButton.tintColor)
-        
     }
     
-    var animal : Animal!
+    var questionsPack: QuestionsPack!
+    var state = QuestionsPackState()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +26,14 @@ class StartGameView: UIViewController {
         
         animalButton.tintColor = K.foregroundColor
         animalButton.backgroundColor = K.backgroundColor
-        animalButton.setImage(UIImage(named: animal.picname), for: .normal)
+        animalButton.setImage(UIImage(named: questionsPack.picname), for: .normal)
         animalButton.contentHorizontalAlignment = .fill
         animalButton.contentVerticalAlignment = .fill
         
-        title = K.confirmAnimalChoiceText1 + animal.name_gen + K.confirmAnimalChoiceText2
+        title = K.confirmAnimalChoiceText1 + questionsPack.name_gen + K.confirmAnimalChoiceText2
+        //print("viewDidLoad")
+        //print(currentQuestionNumber)
+        startButton.setTitle(K.textStartGameButton, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +44,8 @@ class StartGameView: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "startGameViaAnimalButton" || segue.identifier == "startGameViaPlayButton" {
             let questionsView = segue.destination as! QuestionsView
-            questionsView.animal = animal
+            questionsView.questionsPack = questionsPack
+            questionsView.state = state
         }
     }
 }

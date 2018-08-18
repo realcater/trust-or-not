@@ -1,20 +1,42 @@
-struct QuestionTask {
+class QuestionsPackState {
+    var currentNumber: Int
+    var leftQuestions: [Int]
+    var getAnswerForCurrent: Bool
+    init() {
+        currentNumber = 0
+        leftQuestions = []
+        getAnswerForCurrent = false
+    }
+}
+
+class QuestionTask {
     var question: String
     var answer: Bool
     var comment: String
+    init(question: String, answer: Bool, comment: String) {
+        self.question = question
+        self.answer = answer
+        self.comment = comment
+    }
 }
 
-struct Animal {
+class QuestionsPack {
     var name_gen : String
     var picname : String
     var num : Int
     var questionTasks: [QuestionTask]
+    init(name_gen : String, picname : String, num : Int, questionTasks: [QuestionTask]) {
+        self.name_gen = name_gen
+        self.picname = picname
+        self.num = num
+        self.questionTasks = questionTasks
+    }
 }
 
-struct ChineseAnimals {
-    var items: [Animal] = []
+class ChineseAnimals {
+    var items: [QuestionsPack] = []
     init() {
-        var animal = Animal(name_gen : "Мыши или Крысы", picname : "0", num : 0, questionTasks : [
+        var questionsPack = QuestionsPack(name_gen : "Мыши или Крысы", picname : "0", num : 0, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что летучие мыши – вампиры - на самом деле существуют?",
                 answer: true,
@@ -92,8 +114,8 @@ struct ChineseAnimals {
                 answer: false,
                 comment: "Хотя рейс Боинга-767 отменили, чтобы поймать мышь, которая забралась в кабину пилота. Мало ли какой важный проводок перегрызет…")
         ])
-        items.append(animal)
-        animal = Animal(name_gen : "Быка или Коровы", picname : "1", num : 1, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Быка или Коровы", picname : "1", num : 1, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что игру “Быки и коровы“, где надо угадывать число, загаданное соперником, придумал ещё Ломоносов?",
                 answer: false,
@@ -179,8 +201,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "Изначально “говно“ – это были именно коровьи лепёшки.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Тигра", picname : "2", num : 2, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Тигра", picname : "2", num : 2, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что все тигры – это на самом деле пантеры?",
                 answer: true,
@@ -262,8 +284,8 @@ struct ChineseAnimals {
                 answer: false,
                 comment: "Эту легенду рассказывают про Конфуция.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Кролика или Зайца", picname : "3", num : 3, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Кролика или Зайца", picname : "3", num : 3, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что кролики могут видеть то, что происходит у них за спиной, не поворачивая головы, но при этом могут не заметить того, что происходит прямо перед носом?",
                 answer: true,
@@ -345,8 +367,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "Как будто он чувствует, что ему легче бежать против ветра, чем хищнику лететь.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Дракона", picname : "4", num : 4, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Дракона", picname : "4", num : 4, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что в городе Омск существует Российский Институт Драконологии, который изучает в том числе феномен драконности?",
                 answer: true,
@@ -428,8 +450,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "Ещё он есть на флаге Уэльса, но Уэльс – не независимое государство. А на гербах он очень много где есть.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Змеи", picname : "5", num : 5, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Змеи", picname : "5", num : 5, questionTasks : [
             QuestionTask(
                 question: "У человека бывает 33-34 позвонка. В шее жирафа – всего семь. Верите ли вы, что у змеи число позвонков может доходить до 450?",
                 answer: true,
@@ -511,8 +533,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "Это правда. Эфир от 26 ноября 2005 года. Играла команда Смирнова. Готовила команда Козлова.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Лошади", picname : "6", num : 6, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Лошади", picname : "6", num : 6, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что помимо морской коровы, натуралист Стеллер описал и морскую лошадь? Оба водных млекопитающих были истреблены человеком.",
                 answer: false,
@@ -594,8 +616,8 @@ struct ChineseAnimals {
                 answer: false,
                 comment: "Есть две известных картины художника с лошадьми – «Ночное» и «Швейцарский пейзаж с лошадьми». Лошади там все разные.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Козы или Овцы", picname : "7", num : 7, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Козы или Овцы", picname : "7", num : 7, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что зодиакальное созвездие Овен названо так в честь барана, из шкуры которого получили золотое руно?",
                 answer: true,
@@ -677,8 +699,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "У разных народов баранья косточка была символом удачи. Не удивительно, что первыми игральными костями были именно бараньи косточки.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Обезьяны", picname : "8", num : 8, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Обезьяны", picname : "8", num : 8, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что у большинства обезьян белки глаз, как и зрачки, чёрные?",
                 answer: true,
@@ -760,8 +782,8 @@ struct ChineseAnimals {
                 answer: false,
                 comment: "Это выдумка автора вопроса.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Петуха", picname : "9", num : 9, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Петуха", picname : "9", num : 9, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что петух - единственное животное из восточного календаря, у которого есть крылья?",
                 answer: false,
@@ -843,8 +865,8 @@ struct ChineseAnimals {
                 answer: true,
                 comment: "Алектриомантия. Греки раскладывали на полу несколько написанных слов или целые заклинания, возле каждого клали зерна, потом пускали петуха. Результат гадания зависел от того, в какой последовательности петух склёвывал зёрна. ")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Собаки", picname : "10", num : 10, questionTasks : [
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Собаки", picname : "10", num : 10, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что существуют не только лысые кошки породы сфинкс, но и лысые собаки-сфинксы, причём такие кошки и собаки могут скрещиваться? ",
                 answer: false,
@@ -926,9 +948,13 @@ struct ChineseAnimals {
                 answer: false,
                 comment: "Это больная фантазия автора вопроса.")
             ])
-        items.append(animal)
-        animal = Animal(name_gen : "Свиньи", picname : "11", num : 11, questionTasks : []
-            )
-        items.append(animal)
+        items.append(questionsPack)
+        questionsPack = QuestionsPack(name_gen : "Свиньи", picname : "11", num : 11, questionTasks : [
+            QuestionTask(
+                question: "Поросёнок?",
+                answer: true,
+                comment: "Да!")
+            ])
+        items.append(questionsPack)
     }
 }
