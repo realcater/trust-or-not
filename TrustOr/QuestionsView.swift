@@ -34,7 +34,6 @@ class QuestionsView: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
         })
-        //print("check"+String(state.currentNumber))
         if questionsPack.questionTasks[state.currentNumber].answer == true {
             trueView.isHidden = false
         } else {
@@ -84,13 +83,11 @@ class QuestionsView: UIViewController {
         questionsPack.questionTasks = newQuestionTasks
         state.leftQuestions = []
         state.currentNumber = 0
-        print(state.currentNumber)
     }
     private func restoreQuestionAsnweredUI () {
         if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
             showUIWaitMode()
             //state.currentNumber+=1
-            print(state.currentNumber)
         } else {
             showUIFinishGame()
         }
@@ -98,7 +95,6 @@ class QuestionsView: UIViewController {
     
     //MARK:- Buttons Actions
     @IBAction func showAnswerButtonPressed(_ sender: Any) {
-        print(String(state.currentNumber)+"<"+String(questionsPack.questionTasks.count))
         state.getAnswerForCurrent = true
         if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
             showUIWaitMode()
@@ -111,7 +107,6 @@ class QuestionsView: UIViewController {
     @IBAction func laterButtonPressed(_ sender: Any) {
         state.leftQuestions.append(state.currentNumber)
         state.currentNumber+=1
-        print(state.currentNumber)
         if state.currentNumber == questionsPack.questionTasks.count {
             oneMoreQueer()
         }
@@ -120,7 +115,6 @@ class QuestionsView: UIViewController {
     
     @IBAction func nextQuestionButtonPressed(_ sender: Any) {
         state.currentNumber+=1
-        print(state.currentNumber)
         if (state.currentNumber == questionsPack.questionTasks.count) && (state.leftQuestions.count > 0) {
             oneMoreQueer()
         }

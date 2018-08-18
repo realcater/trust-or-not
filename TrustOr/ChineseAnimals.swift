@@ -1,26 +1,17 @@
-class QuestionsPackState {
-    var currentNumber: Int
-    var leftQuestions: [Int]
-    var getAnswerForCurrent: Bool
-    init() {
-        currentNumber = 0
-        leftQuestions = []
-        getAnswerForCurrent = false
-    }
+struct QuestionsPackState {
+    var currentNumber = 0
+    var leftQuestions: [Int] = []
+    var getAnswerForCurrent = false
 }
 
-class QuestionTask {
+struct QuestionTask {
     var question: String
     var answer: Bool
     var comment: String
-    init(question: String, answer: Bool, comment: String) {
-        self.question = question
-        self.answer = answer
-        self.comment = comment
-    }
+    
 }
 
-class QuestionsPack {
+struct QuestionsPack {
     var name_gen : String
     var picname : String
     var num : Int
@@ -33,7 +24,7 @@ class QuestionsPack {
     }
 }
 
-class ChineseAnimals {
+struct ChineseAnimals {
     var items: [QuestionsPack] = []
     init() {
         var questionsPack = QuestionsPack(name_gen : "Мыши или Крысы", picname : "0", num : 0, questionTasks : [
