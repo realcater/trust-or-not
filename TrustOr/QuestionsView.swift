@@ -22,7 +22,10 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var commentText: UITextView!
     
-    
+    @IBOutlet weak var falsePicLabel: UILabel!
+    @IBOutlet weak var falseTextLabel: UILabel!
+    @IBOutlet weak var trueTextLabel: UILabel!
+    @IBOutlet weak var truePicLabel: UILabel!
     
     //MARK:- vars
     var questionsPack : QuestionsPack!
@@ -53,7 +56,7 @@ class QuestionsView: UIViewController {
         })
         title = K.questionLabel + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
         if state.leftQuestions.count > 0 {
-            title = title! + "(+" + String(state.leftQuestions.count) + ")"
+            title = title! + " (+" + String(state.leftQuestions.count) + ")"
         }
     }
     private func showUIAnswerMode() {
@@ -122,6 +125,14 @@ class QuestionsView: UIViewController {
         state.getAnswerForCurrent = false
     }
 
+    private func setFonts(ofSize size: CGFloat) {
+        questionText.font = .systemFont(ofSize: size)
+        commentText.font = .italicSystemFont(ofSize: size)
+        truePicLabel.font = .systemFont(ofSize: size+12, weight: .black)
+        falsePicLabel.font = .systemFont(ofSize: size-3)
+        trueTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
+        falseTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
+    }
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,11 +141,9 @@ class QuestionsView: UIViewController {
         makeRoundedGrayButton(for: laterButton)
         makeRoundedColorButton(for: finishGameButton)
         if UIScreen.main.currentMode!.size.width >= 750 {
-            questionText.font = .systemFont(ofSize: K.fontSizeTextViewNormal)
-            commentText.font = .italicSystemFont(ofSize: K.fontSizeTextViewNormal)
+            setFonts(ofSize: K.fontSizeTextViewNormal)
         } else {
-            questionText.font = .systemFont(ofSize: K.fontSizeTextViewZoomed)
-            commentText.font = .italicSystemFont(ofSize: K.fontSizeTextViewZoomed)
+            setFonts(ofSize: K.fontSizeTextViewZoomed)
         }
         if state.getAnswerForCurrent {
             //state.currentNumber-=1
