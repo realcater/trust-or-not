@@ -139,7 +139,7 @@ class QuestionsView: UIViewController {
         super.viewDidLoad()
         backgroundImageView.image = (UIImage(named: questionsPack.picname))
         backgroundImageView.isHidden = false
-        backgroundImageView.alpha = 0.02
+        backgroundImageView.alpha = 0.03
         makeRoundedColorButton(for: showAnswerButton)
         makeRoundedColorButton(for: nextQuestionButton)
         makeRoundedGrayButton(for: laterButton)

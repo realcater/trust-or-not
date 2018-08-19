@@ -138,6 +138,8 @@ class IntroView: UIViewController {
         super.viewDidLoad()
         logoImage.tintColor = K.foregroundColor
         centerImage.tintColor = K.foregroundColor
+        topTitle.textColor = K.foregroundColor
+        bottomTitle.textColor = K.foregroundColor
         addTaps()
         
     }
@@ -149,7 +151,7 @@ class IntroView: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>?, with: UIEvent?)
     {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             self.performSegue(withIdentifier: "introSkip", sender: self)
         })
         

@@ -52,7 +52,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ">
                                 <rect key="frame" x="40" y="370" width="240" height="50"/>
-                                <color key="backgroundColor" red="0.17254901960784313" green="0.44705882352941173" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ThG-yW-eHs"/>
                                 </constraints>
@@ -72,8 +72,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="QKA-ik-6N8" secondAttribute="height" multiplier="1:1" id="I4r-sV-Kc0"/>
                                         </constraints>
-                                        <color key="tintColor" red="0.0" green="0.46274509803921571" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="1"/>
+                                        <color key="tintColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="1">
+                                            <color key="titleColor" red="0.011951360052111837" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="pressAnimalButton:" destination="S0w-Z2-ro9" eventType="touchUpInside" id="LNE-Xw-I2k"/>
                                             <segue destination="Euw-n7-dx4" kind="show" identifier="startGameViaPlayButton" id="fu0-wu-79a"/>
@@ -402,7 +404,7 @@
                         <outlet property="centerImage" destination="2hc-bc-ArJ" id="Mov-hx-9Md"/>
                         <outlet property="logoImage" destination="LjF-xS-eGy" id="Vly-AA-2EA"/>
                         <outlet property="topTitle" destination="aD9-hu-2Cw" id="SXq-lS-yX5"/>
-                        <segue destination="Bbo-37-oOS" kind="show" identifier="introSkip" id="MPu-rh-pcs"/>
+                        <segue destination="Bbo-37-oOS" kind="presentation" identifier="introSkip" modalTransitionStyle="flipHorizontal" id="MPu-rh-pcs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0j-qE-1VW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -434,7 +436,6 @@
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bx8-Nz-EpT"/>
         <segue reference="fu0-wu-79a"/>
         <segue reference="edz-xl-br7"/>
     </inferredMetricsTieBreakers>

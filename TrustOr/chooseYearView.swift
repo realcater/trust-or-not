@@ -70,16 +70,19 @@ class ChooseYearView: UIViewController {
         view.addGestureRecognizer(tripleTap)
         view.isUserInteractionEnabled = true
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = K.backgroundColor
+    private func prepareNavigationBar() {
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
+        //navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Brushie Brushie", size: 30) ?? UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = K.backgroundColor
+        prepareNavigationBar()
         tileButtons()
         addTaps()
-        print(UIScreen.main.currentMode!.size.width)
     }
 
     override func viewDidAppear(_ animated: Bool) {
