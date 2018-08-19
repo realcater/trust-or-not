@@ -151,14 +151,14 @@
                                         <rect key="frame" x="59" y="156" width="170" height="64"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Не верно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kua-qy-4sV">
-                                                <rect key="frame" x="71" y="8" width="119" height="48"/>
+                                                <rect key="frame" x="61" y="8" width="119" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="❌" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTJ-3E-O3P">
-                                                <rect key="frame" x="20" y="8" width="46" height="48"/>
+                                                <rect key="frame" x="10" y="8" width="46" height="48"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
@@ -205,14 +205,14 @@
                                         </constraints>
                                     </view>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Zi-r8H" userLabel="questionText">
-                                        <rect key="frame" x="10" y="10" width="268" height="136"/>
+                                        <rect key="frame" x="10" y="10" width="268" height="156"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-sM-xM2" userLabel="commentText">
-                                        <rect key="frame" x="10" y="230" width="268" height="136"/>
+                                        <rect key="frame" x="10" y="210" width="268" height="156"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -226,13 +226,13 @@
                                     <constraint firstItem="UVv-sM-xM2" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="KAY-fO-03X"/>
                                     <constraint firstItem="57r-Zi-r8H" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="NL5-na-2SW"/>
                                     <constraint firstAttribute="bottom" secondItem="UVv-sM-xM2" secondAttribute="bottom" constant="10" id="PkF-c5-neF"/>
-                                    <constraint firstItem="UVv-sM-xM2" firstAttribute="top" secondItem="L3a-pO-zGB" secondAttribute="bottom" constant="10" id="PoO-XT-bmB"/>
+                                    <constraint firstItem="UVv-sM-xM2" firstAttribute="top" secondItem="L3a-pO-zGB" secondAttribute="bottom" constant="-10" id="PoO-XT-bmB"/>
                                     <constraint firstAttribute="trailing" secondItem="UVv-sM-xM2" secondAttribute="trailing" constant="10" id="YCG-Bm-1l0"/>
                                     <constraint firstItem="L3a-pO-zGB" firstAttribute="centerY" secondItem="1ke-60-f02" secondAttribute="centerY" id="btK-Ih-d72"/>
                                     <constraint firstAttribute="trailing" secondItem="57r-Zi-r8H" secondAttribute="trailing" constant="10" id="cqX-Dh-1Kt"/>
                                     <constraint firstItem="L3a-pO-zGB" firstAttribute="centerX" secondItem="1ke-60-f02" secondAttribute="centerX" id="kcH-kS-9XT"/>
                                     <constraint firstItem="57r-Zi-r8H" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="top" constant="10" id="psY-ag-Nm0"/>
-                                    <constraint firstItem="L3a-pO-zGB" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="10" id="zHc-hb-dfm"/>
+                                    <constraint firstItem="L3a-pO-zGB" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="-10" id="zHc-hb-dfm"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="nextQuestion">
