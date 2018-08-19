@@ -27,6 +27,7 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var trueTextLabel: UILabel!
     @IBOutlet weak var truePicLabel: UILabel!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     //MARK:- vars
     var questionsPack : QuestionsPack!
     var state: QuestionsPackState!
@@ -136,6 +137,9 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
+        backgroundImageView.image = (UIImage(named: questionsPack.picname))
+        backgroundImageView.isHidden = false
+        backgroundImageView.alpha = 0.02
         makeRoundedColorButton(for: showAnswerButton)
         makeRoundedColorButton(for: nextQuestionButton)
         makeRoundedGrayButton(for: laterButton)

@@ -18,7 +18,7 @@ class ChooseYearView: UIViewController {
     }
     var questionsPacks = ChineseAnimals()
     
-    func tileButtons() {
+    private func tileButtons() {
         let columnsQty = 3
         let rowsQty = 4
         let marginX: CGFloat = 0
@@ -52,13 +52,24 @@ class ChooseYearView: UIViewController {
             button.setImage(UIImage(named: animal.picname),
                                       for: .normal)
             button.tintColor = K.foregroundColor
-            if animal.questionTasks.count == 1 {
+            if animal.questionTasks.count == 0 {
                 button.isEnabled = false
             }
             view.addSubview(button)
         }
     }
+    @objc private func introViewTripleTap(recognizer: UITapGestureRecognizer) {
+        if(recognizer.state == UIGestureRecognizerState.ended) {
+            performSegue(withIdentifier: "backToIntro", sender: self)
+        }
+    }
     
+    private func addTaps() {
+        let tripleTap = UITapGestureRecognizer(target: self, action: #selector(introViewTripleTap))
+        tripleTap.numberOfTapsRequired = 3
+        view.addGestureRecognizer(tripleTap)
+        view.isUserInteractionEnabled = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
@@ -67,6 +78,7 @@ class ChooseYearView: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
         tileButtons()
+        addTaps()
         print(UIScreen.main.currentMode!.size.width)
     }
 

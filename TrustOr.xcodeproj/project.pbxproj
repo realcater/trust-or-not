@@ -89,7 +89,6 @@
 		C156471E2121FC6100F1602E /* TrustOr */ = {
 			isa = PBXGroup;
 			children = (
-				C14B02A3212983E200B2E96C /* 12009.ttf */,
 				C156471F2121FC6100F1602E /* AppDelegate.swift */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
 				C1480A952123828800137C37 /* Controllers */,
@@ -97,6 +96,7 @@
 				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C156472B2121FC6200F1602E /* Info.plist */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
+				C14B02A3212983E200B2E96C /* 12009.ttf */,
 			);
 			path = TrustOr;
 			sourceTree = "<group>";
