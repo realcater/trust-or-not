@@ -35,8 +35,12 @@ class QuestionsPack {
 
 class ChineseAnimals {
     var items: [QuestionsPack] = []
+    private func getPicName(for num: Int) -> String {
+        return String(num)+"s"
+    }
     init() {
-        var questionsPack = QuestionsPack(name_gen : "Мыши или Крысы", picname : "0", num : 0, questionTasks : [
+        var num = 0
+        var questionsPack = QuestionsPack(name_gen: "Мыши или Крысы", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что летучие мыши – вампиры - на самом деле существуют?",
                 answer: true,
@@ -115,7 +119,8 @@ class ChineseAnimals {
                 comment: "Хотя рейс Боинга-767 отменили, чтобы поймать мышь, которая забралась в кабину пилота. Мало ли какой важный проводок перегрызет…")
         ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Быка или Коровы", picname : "1", num : 1, questionTasks : [
+        num = 1
+        questionsPack = QuestionsPack(name_gen : "Быка или Коровы", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что игру “Быки и коровы“, где надо угадывать число, загаданное соперником, придумал ещё Ломоносов?",
                 answer: false,
@@ -202,7 +207,8 @@ class ChineseAnimals {
                 comment: "Изначально “говно“ – это были именно коровьи лепёшки.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Тигра", picname : "2", num : 2, questionTasks : [
+        num = 2
+        questionsPack = QuestionsPack(name_gen : "Тигра", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что все тигры – это на самом деле пантеры?",
                 answer: true,
@@ -285,7 +291,8 @@ class ChineseAnimals {
                 comment: "Эту легенду рассказывают про Конфуция.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Кролика или Зайца", picname : "3", num : 3, questionTasks : [
+        num = 3
+        questionsPack = QuestionsPack(name_gen : "Кролика или Зайца", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что кролики могут видеть то, что происходит у них за спиной, не поворачивая головы, но при этом могут не заметить того, что происходит прямо перед носом?",
                 answer: true,
@@ -368,7 +375,8 @@ class ChineseAnimals {
                 comment: "Как будто он чувствует, что ему легче бежать против ветра, чем хищнику лететь.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Дракона", picname : "4", num : 4, questionTasks : [
+        num = 4
+        questionsPack = QuestionsPack(name_gen : "Дракона", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что в городе Омск существует Российский Институт Драконологии, который изучает в том числе феномен драконности?",
                 answer: true,
@@ -451,7 +459,8 @@ class ChineseAnimals {
                 comment: "Ещё он есть на флаге Уэльса, но Уэльс – не независимое государство. А на гербах он очень много где есть.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Змеи", picname : "5", num : 5, questionTasks : [
+        num = 5
+        questionsPack = QuestionsPack(name_gen : "Змеи", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "У человека бывает 33-34 позвонка. В шее жирафа – всего семь. Верите ли вы, что у змеи число позвонков может доходить до 450?",
                 answer: true,
@@ -534,7 +543,8 @@ class ChineseAnimals {
                 comment: "Это правда. Эфир от 26 ноября 2005 года. Играла команда Смирнова. Готовила команда Козлова.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Лошади", picname : "6", num : 6, questionTasks : [
+        num = 6
+        questionsPack = QuestionsPack(name_gen : "Лошади", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что помимо морской коровы, натуралист Стеллер описал и морскую лошадь? Оба водных млекопитающих были истреблены человеком.",
                 answer: false,
@@ -617,7 +627,8 @@ class ChineseAnimals {
                 comment: "Есть две известных картины художника с лошадьми – «Ночное» и «Швейцарский пейзаж с лошадьми». Лошади там все разные.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Козы или Овцы", picname : "7", num : 7, questionTasks : [
+        num = 7
+        questionsPack = QuestionsPack(name_gen : "Козы или Овцы", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что зодиакальное созвездие Овен названо так в честь барана, из шкуры которого получили золотое руно?",
                 answer: true,
@@ -700,7 +711,8 @@ class ChineseAnimals {
                 comment: "У разных народов баранья косточка была символом удачи. Не удивительно, что первыми игральными костями были именно бараньи косточки.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Обезьяны", picname : "8", num : 8, questionTasks : [
+        num = 8
+        questionsPack = QuestionsPack(name_gen : "Обезьяны", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что у большинства обезьян белки глаз, как и зрачки, чёрные?",
                 answer: true,
@@ -783,7 +795,8 @@ class ChineseAnimals {
                 comment: "Это выдумка автора вопроса.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Петуха", picname : "9", num : 9, questionTasks : [
+        num = 9
+        questionsPack = QuestionsPack(name_gen : "Петуха", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что петух - единственное животное из восточного календаря, у которого есть крылья?",
                 answer: false,
@@ -866,7 +879,8 @@ class ChineseAnimals {
                 comment: "Алектриомантия. Греки раскладывали на полу несколько написанных слов или целые заклинания, возле каждого клали зерна, потом пускали петуха. Результат гадания зависел от того, в какой последовательности петух склёвывал зёрна. ")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Собаки", picname : "10", num : 10, questionTasks : [
+        num = 10
+        questionsPack = QuestionsPack(name_gen : "Собаки", picname: getPicName(for: num), num: num, questionTasks : [
             QuestionTask(
                 question: "Верите ли вы, что существуют не только лысые кошки породы сфинкс, но и лысые собаки-сфинксы, причём такие кошки и собаки могут скрещиваться? ",
                 answer: false,
@@ -949,12 +963,9 @@ class ChineseAnimals {
                 comment: "Это больная фантазия автора вопроса.")
             ])
         items.append(questionsPack)
-        questionsPack = QuestionsPack(name_gen : "Свиньи", picname : "11", num : 11, questionTasks : [
-            QuestionTask(
-                question: "Поросёнок?",
-                answer: true,
-                comment: "Да!")
-            ])
+        num = 11
+        questionsPack = QuestionsPack(name_gen : "Свиньи", picname: getPicName(for: num), num: num, questionTasks : []
+        )
         items.append(questionsPack)
     }
 }

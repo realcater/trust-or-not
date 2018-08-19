@@ -55,8 +55,7 @@ class IntroView: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>?, with: UIEvent?)
     {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-            //self.performSegue(withIdentifier: "introSkip", sender: self)
-            self.logoRotation()
+            self.performSegue(withIdentifier: "introSkip", sender: self)
         })
         
     }

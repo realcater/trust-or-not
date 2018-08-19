@@ -49,7 +49,7 @@ class ChooseYearView: UIViewController {
             button.frame = CGRect(x: marginX + CGFloat(col)*(itemWidth+distX),
                                   y: marginTop + CGFloat(row)*(itemHeight+distY),
                                   width: itemWidth, height: itemHeight)
-            button.setImage(UIImage(named: String(i)),
+            button.setImage(UIImage(named: animal.picname),
                                       for: .normal)
             button.tintColor = K.foregroundColor
             if animal.questionTasks.count == 1 {
