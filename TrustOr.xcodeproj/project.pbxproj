@@ -11,6 +11,7 @@
 		C130986A2125D0B0001D894D /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13098692125D0B0001D894D /* QuestionsView.swift */; };
 		C130986C2125FAAC001D894D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986B2125FAAC001D894D /* Common.swift */; };
 		C1480A912123649500137C37 /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1480A902123649500137C37 /* StartGameView.swift */; };
+		C14A3FAE2129592400804955 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14A3FAD2129592400804955 /* IntroView.swift */; };
 		C15647202121FC6100F1602E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156471F2121FC6100F1602E /* AppDelegate.swift */; };
 		C15647222121FC6100F1602E /* chooseYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647212121FC6100F1602E /* chooseYearView.swift */; };
 		C15647252121FC6100F1602E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647232121FC6100F1602E /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		C13098692125D0B0001D894D /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		C130986B2125FAAC001D894D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		C1480A902123649500137C37 /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
+		C14A3FAD2129592400804955 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		C156471C2121FC6100F1602E /* TrustOr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustOr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156471F2121FC6100F1602E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C15647212121FC6100F1602E /* chooseYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseYearView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		C1480A952123828800137C37 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C14A3FAD2129592400804955 /* IntroView.swift */,
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* StartGameView.swift */,
 				C13098692125D0B0001D894D /* QuestionsView.swift */,
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1480A912123649500137C37 /* StartGameView.swift in Sources */,
+				C14A3FAE2129592400804955 /* IntroView.swift in Sources */,
 				C130986A2125D0B0001D894D /* QuestionsView.swift in Sources */,
 				C130986421239082001D894D /* K.swift in Sources */,
 				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,

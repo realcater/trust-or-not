@@ -70,6 +70,11 @@ class ChooseYearView: UIViewController {
         print(UIScreen.main.currentMode!.size.width)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        questionsPacks = ChineseAnimals() //reinitiaiate all questions
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "yearChosen" {
             let startGameView = segue.destination as! StartGameView

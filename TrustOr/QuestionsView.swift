@@ -156,8 +156,8 @@ class QuestionsView: UIViewController {
         if isMovingFromParentViewController {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
-                prevViewController.questionsPack = questionsPack
-                prevViewController.state = state
+                //prevViewController.questionsPack = questionsPack
+                //prevViewController.state = state
                 prevViewController.startButton.setTitle(K.textContinueButton, for: .normal)
             }
         }
