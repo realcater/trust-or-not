@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.3702331"
+            timestampString = "556474343.5068851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "introViewQuadripleTap(recognizer:)"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "funnyGame(winner:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.370326"
+            timestampString = "556474343.50696"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "addTaps()"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "introViewDoubleTap(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.370414"
+            timestampString = "556474343.507026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "introViewTripleTap(recognizer:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.3705029"
+            timestampString = "556474343.5070879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "logoRotation(for:onCompletion:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "hideResultsOfFunnyGame()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.37058"
+            timestampString = "556474343.5071501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "logoRotation(for:onCompletion:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "hideResultsOfFunnyGame()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,12 +154,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/IntroView.swift"
-            timestampString = "556402656.370658"
+            timestampString = "556474343.507211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "introViewQuadripleTap(recognizer:)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "funnyGame(winner:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

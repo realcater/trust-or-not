@@ -124,8 +124,6 @@ class IntroView: UIViewController {
     
     override func touchesEnded(_ touches: Set<UITouch>?, with: UIEvent?)
     {
-        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
-            self.performSegue(withIdentifier: "introSkip", sender: self)
-        })
+        self.performSegue(withIdentifier: "introSkip", sender: self)
     }
 }

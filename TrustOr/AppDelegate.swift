@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  TrustOr
+//  TrustOr123
 //
 //  Created by Dmitry Dementyev on 13.08.2018.
 //  Copyright © 2018 Dmitry Dementyev. All rights reserved.
