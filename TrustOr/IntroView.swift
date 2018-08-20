@@ -14,26 +14,16 @@ class IntroView: UIViewController {
     @IBOutlet weak var centerImage: UIImageView!
     var questionsPacks = ChineseAnimals()
     var topAnimal = 0
-    var game = 0
 
     @IBOutlet weak var bottomTitle: UILabel!
     @IBOutlet weak var topTitle: UILabel!
-    private func setAcceleration() {
-        let timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (timer) in
-            self.view.layer.timeOffset = self.view.layer.convertTime(CACurrentMediaTime(), from: nil)
-            self.view.layer.beginTime = CACurrentMediaTime()
-            self.view.layer.speed = self.view.layer.speed * 0.55
-        }
-        timer.fire()
-    }
+    
     private func prepareMole() {
         let mole = QuestionsPack(name_gen: "", picname: "mole", num: -1, englishName: "Mole", questionTasks: [])
         questionsPacks.items.append(mole)
     }
     
     private func showResultsOfFunnyGame() {
-        let date=Date()
-        print("===ShowResults=====\(date)")
         if topAnimal == -1 { topAnimal=12 }
         centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
         centerImage.tintColor = UIColor.red
@@ -48,29 +38,23 @@ class IntroView: UIViewController {
     }
     
     private func hideResultsOfFunnyGame() {
-        let date=Date()
-        print("===HideResults=====\(date)")
         centerImage.isHidden = true
         topTitle.isHidden = true
         bottomTitle.isHidden = true
     }
     private func logoRotation(for circlesQty:Double, onCompletion action: @escaping () -> Void) {
-        print("Rotation start")
         let sectorsQty = 12.0
         let acceleration = 1.05
         var duration : Double = 5
-        let rollsQty = Int(circlesQty*sectorsQty)-1
+        let rollsQty = Int(circlesQty*sectorsQty)
         var rollsFinished = 0
-        //print("rollsQty=\(rollsQty)")
-        for i in 0...rollsQty {
-            //print("start: i=\(i)")
+        for i in 0...rollsQty-1 {
             let angle = -CGFloat(i % Int(sectorsQty)+1)*CGFloat.pi*2.0/CGFloat(sectorsQty)
             UIView.animate(withDuration: duration, delay: 0.0, animations: {
                 self.logoImage.transform = CGAffineTransform(rotationAngle: angle)
                 }, completion: { finished in
                     rollsFinished+=1
-                    //print("rollsFinished=\(rollsFinished)")
-                    if finished, rollsFinished == rollsQty+1 { //block with i==0 finishes last of all i=..
+                    if finished, rollsFinished == rollsQty { //block with i==0 finishes last of all i=..
                         action()
                     }
             })
@@ -79,41 +63,30 @@ class IntroView: UIViewController {
     }
     
     private func funnyGame(winner: Int?) {
-        let date=Date()
-        print("=====---GAME#\(game) Starts!!!  \(date)=====")
-        game+=1
         if let winner=winner {
-            print("topAnimal=\(topAnimal)")
             topAnimal = winner
         } else {
-            print("topAnimal=\(topAnimal)")
             topAnimal = Int(drand48()*12)
         }
-        print("New TopAnimal=\(topAnimal)")
         var circlesQty = Double(topAnimal)/12+1.0
         if topAnimal == -1 { circlesQty = 20 }
-        print(Int(circlesQty*12))
         topAnimal = topAnimal % 12
-        print("topAnimal=\(topAnimal)")
         hideResultsOfFunnyGame()
         logoRotation(for: circlesQty, onCompletion: showResultsOfFunnyGame)
         
     }
     @objc private func introViewDoubleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
-            print("went through 2taps")
             funnyGame(winner: nil)
         }
     }
     @objc private func introViewTripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
-            print("went through 3taps")
             funnyGame(winner: 11)
         }
     }
     @objc private func introViewQuadripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
-            print("went through 4taps")
             prepareMole()
             funnyGame(winner: -1)
         }
@@ -154,7 +127,5 @@ class IntroView: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             self.performSegue(withIdentifier: "introSkip", sender: self)
         })
-        
     }
-    
 }
