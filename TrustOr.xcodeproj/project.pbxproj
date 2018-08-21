@@ -19,6 +19,7 @@
 		C15647272121FC6100F1602E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15647262121FC6100F1602E /* Assets.xcassets */; };
 		C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647282121FC6200F1602E /* LaunchScreen.storyboard */; };
 		C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* ChineseAnimals.swift */; };
+		C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16448E4212C853D00BA34D2 /* FunnyGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C15647292121FC6200F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C156472B2121FC6200F1602E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C15647312122E5E700F1602E /* ChineseAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseAnimals.swift; sourceTree = "<group>"; };
+		C16448E4212C853D00BA34D2 /* FunnyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		C1480A942123826300137C37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
 				C130986B2125FAAC001D894D /* Common.swift */,
 				C130986321239082001D894D /* K.swift */,
 				C15647312122E5E700F1602E /* ChineseAnimals.swift */,
@@ -177,6 +180,7 @@
 				C14A3FAE2129592400804955 /* IntroView.swift in Sources */,
 				C130986A2125D0B0001D894D /* QuestionsView.swift in Sources */,
 				C130986421239082001D894D /* K.swift in Sources */,
+				C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */,
 				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,
 				C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
