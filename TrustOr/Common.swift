@@ -108,3 +108,10 @@ func addTaps(for viewController: UIViewController, forSingle singleTapAction: Se
     viewController.view.isUserInteractionEnabled = true
 }
 
+func addTaps(for viewController: UIViewController, forTriple tripleTapAction: Selector) {
+    let tripleTap = UITapGestureRecognizer(target: viewController, action: tripleTapAction)
+    tripleTap.numberOfTapsRequired = 3
+    viewController.view.addGestureRecognizer(tripleTap)
+    viewController.view.isUserInteractionEnabled = true
+}
+

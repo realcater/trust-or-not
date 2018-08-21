@@ -76,7 +76,8 @@ class ChooseYearView: UIViewController {
         view.backgroundColor = K.backgroundColor
         prepareNavigationBar()
         tileButtons()
-        addTaps(for: self, forSingle: nil, forDouble: nil, forTriple: #selector(tripleTap), forQuadriple: nil)
+        addTaps(for: self, forSingle: nil, forDouble: #selector(tripleTap), forTriple: nil, forQuadriple: nil)
+        //addTaps(for: self, forTriple: #selector(tripleTap))
     }
 
     override func viewDidAppear(_ animated: Bool) {
