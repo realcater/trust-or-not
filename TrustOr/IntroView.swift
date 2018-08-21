@@ -61,7 +61,7 @@ class IntroView: UIViewController {
         centerImage.tintColor = K.foregroundColor
         topTitle.textColor = K.foregroundColor
         bottomTitle.textColor = K.foregroundColor
-        funnyGame = FunnyGame(view: view, imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
+        funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
         addTaps()
     }
 
