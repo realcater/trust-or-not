@@ -10,7 +10,6 @@ import UIKit
 
 typealias noArgsFuncOpt = (() -> Void)?
 typealias noArgsFunc = () -> Void
-typealias tapFunc = (UITapGestureRecognizer) -> Void
 
 func makeRoundedColorButton(for button: UIButton) {
     button.backgroundColor = K.activeButtonColor
@@ -38,7 +37,6 @@ func imageRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompl
             imageView.transform = CGAffineTransform(rotationAngle: angle)
         }, completion: { finished in
             rollsFinished+=1
-            print("i=\(i)")
             if finished, rollsFinished == rollsQty { //block with i==0 finishes last of all i=..
                 action()
             }
@@ -59,24 +57,53 @@ func multiTransition(with view: UIView, duration : Double, options: UIViewAnimat
     })
 }
 
-func addTaps(for viewController: UIViewController, forDouble doubleTapAction: Selector, forTriple tripleTapAction: Selector, forQuadriple quadripleTapAction: Selector) {
+func addTaps(for viewController: UIViewController, forSingle singleTapAction: Selector?, forDouble doubleTapAction: Selector?, forTriple tripleTapAction: Selector?, forQuadriple quadripleTapAction: Selector?) {
     
-    let doubleTap = UITapGestureRecognizer(target: viewController, action: doubleTapAction)
-    doubleTap.numberOfTapsRequired = 2
+    var singleTap: UITapGestureRecognizer!
+    var doubleTap: UITapGestureRecognizer!
+    var tripleTap: UITapGestureRecognizer!
+    var quadripleTap: UITapGestureRecognizer!
     
-    let tripleTap = UITapGestureRecognizer(target: viewController, action: tripleTapAction)
-    tripleTap.numberOfTapsRequired = 3
+    if let singleTapAction = singleTapAction {
+        singleTap = UITapGestureRecognizer(target: viewController, action: singleTapAction)
+        singleTap.numberOfTapsRequired = 1
+    }
+    if let doubleTapAction = doubleTapAction {
+        doubleTap = UITapGestureRecognizer(target: viewController, action: doubleTapAction)
+        doubleTap.numberOfTapsRequired = 2
+    }
+    if let tripleTapAction = tripleTapAction {
+        tripleTap = UITapGestureRecognizer(target: viewController, action: tripleTapAction)
+        tripleTap.numberOfTapsRequired = 3
+    }
+    if let quadripleTapAction = quadripleTapAction {
+        quadripleTap = UITapGestureRecognizer(target: viewController, action: quadripleTapAction)
+        quadripleTap.numberOfTapsRequired = 4
+    }
+    if let singleTap = singleTap, let doubleTap = doubleTap  {
+        singleTap.require(toFail: doubleTap)
+    }
+    if let singleTap = singleTap, let tripleTap = tripleTap {
+        singleTap.require(toFail: tripleTap)
+    }
+    if let singleTap = singleTap, let quadripleTap = quadripleTap {
+        singleTap.require(toFail: quadripleTap)
+    }
     
-    let quadripleTap = UITapGestureRecognizer(target: viewController, action: quadripleTapAction)
-    quadripleTap.numberOfTapsRequired = 4
+    if let doubleTap = doubleTap, let tripleTap = tripleTap  {
+        doubleTap.require(toFail: tripleTap)
+    }
+    if let doubleTap = doubleTap, let quadripleTap = quadripleTap  {
+        doubleTap.require(toFail: quadripleTap)
+    }
+    if let tripleTap = tripleTap , let quadripleTap = quadripleTap  {
+        tripleTap.require(toFail: quadripleTap)
+    }
     
-    doubleTap.require(toFail: tripleTap)
-    doubleTap.require(toFail: quadripleTap)
-    tripleTap.require(toFail: quadripleTap)
-    
-    viewController.view.addGestureRecognizer(doubleTap)
-    viewController.view.addGestureRecognizer(tripleTap)
-    viewController.view.addGestureRecognizer(quadripleTap)
+    if let singleTap = singleTap { viewController.view.addGestureRecognizer(singleTap) }
+    if let doubleTap = doubleTap { viewController.view.addGestureRecognizer(doubleTap) }
+    if let tripleTap = tripleTap { viewController.view.addGestureRecognizer(tripleTap) }
+    if let quadripleTap = quadripleTap { viewController.view.addGestureRecognizer(quadripleTap) }
     
     viewController.view.isUserInteractionEnabled = true
 }

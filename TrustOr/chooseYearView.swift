@@ -58,18 +58,12 @@ class ChooseYearView: UIViewController {
             view.addSubview(button)
         }
     }
-    @objc private func introViewTripleTap(recognizer: UITapGestureRecognizer) {
+    @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
             performSegue(withIdentifier: "backToIntro", sender: self)
         }
     }
     
-    private func addTaps() {
-        let tripleTap = UITapGestureRecognizer(target: self, action: #selector(introViewTripleTap))
-        tripleTap.numberOfTapsRequired = 3
-        view.addGestureRecognizer(tripleTap)
-        view.isUserInteractionEnabled = true
-    }
     private func prepareNavigationBar() {
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
@@ -82,7 +76,7 @@ class ChooseYearView: UIViewController {
         view.backgroundColor = K.backgroundColor
         prepareNavigationBar()
         tileButtons()
-        addTaps()
+        addTaps(for: self, forSingle: nil, forDouble: nil, forTriple: #selector(tripleTap), forQuadriple: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {

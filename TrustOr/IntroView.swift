@@ -16,17 +16,22 @@ class IntroView: UIViewController {
     @IBOutlet weak var topTitle: UILabel!
     var funnyGame : FunnyGame!
     
-    @objc private func introViewDoubleTap(recognizer: UITapGestureRecognizer) {
+    @objc private func singleTap(recognizer: UITapGestureRecognizer) {
+        if(recognizer.state == UIGestureRecognizerState.ended) {
+            performSegue(withIdentifier: "introSkip", sender: self)
+        }
+    }
+    @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
             funnyGame.run(winner: nil)
         }
     }
-    @objc private func introViewTripleTap(recognizer: UITapGestureRecognizer) {
+    @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
             funnyGame.run(winner: 11)
         }
     }
-    @objc private func introViewQuadripleTap(recognizer: UITapGestureRecognizer) {
+    @objc private func quadripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
             funnyGame.run(winner: -1)
         }
@@ -42,12 +47,12 @@ class IntroView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
-        addTaps(for: self, forDouble: #selector(introViewDoubleTap), forTriple: #selector(introViewTripleTap), forQuadriple: #selector(introViewQuadripleTap))
+        addTaps(for: self, forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
         funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>?, with: UIEvent?)
     {
-        performSegue(withIdentifier: "introSkip", sender: self)
+        
     }
 }
