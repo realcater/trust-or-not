@@ -18,30 +18,48 @@ class IntroView: UIViewController {
     @IBOutlet weak var bottomTitle: UILabel!
     @IBOutlet weak var topTitle: UILabel!
     
-    private func prepareMole() {
-        let mole = QuestionsPack(name_gen: "", picname: "mole", num: -1, englishName: "Mole", questionTasks: [])
-        questionsPacks.items.append(mole)
-    }
-    
     private func showResultsOfFunnyGame() {
-        if topAnimal == -1 { topAnimal=12 }
-        centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
-        centerImage.tintColor = UIColor.red
-        topTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
-        topTitle.textColor = UIColor.red
-        bottomTitle.text = "Fatality!!!"//"Be a "+questionsPacks.items[topAnimal].englishName+"!"
-        if topAnimal == 12 { bottomTitle.text = "Always wins!!!"}
-        bottomTitle.textColor = UIColor.red
-        centerImage.isHidden = false
-        topTitle.isHidden = false
-        bottomTitle.isHidden = false
+        centerImage.tintColor = .red
+        bottomTitle.textColor = .red
+        bottomTitle.textColor = .red
+        
+        if topAnimal == -1 {
+            centerImage.image = UIImage(named: "mole")
+            bottomTitle.text = "Mole always wins!!!"
+        } else {
+            centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
+            bottomTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
+        }
+        
+        UIView.transition(with: view,
+                          duration: K.intro.hideAnimationDuration,
+                          options: .transitionCrossDissolve,
+                          animations: { [weak self] in
+                            self?.centerImage.isHidden = false
+                            self?.bottomTitle.isHidden = false
+            }, completion: nil)
     }
     
     private func hideResultsOfFunnyGame() {
-        centerImage.isHidden = true
-        topTitle.isHidden = true
-        bottomTitle.isHidden = true
+        topTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
+        bottomTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
+        if self.topTitle.text != K.intro.rouletteText {
+            UIView.transition(with: self.topTitle,
+                          duration: K.intro.showAnimationDuration,
+                          options: .transitionFlipFromBottom,
+                          animations: { [weak self] in
+                                self?.topTitle.text = K.intro.rouletteText
+            }, completion: nil)
+        }
+        UIView.transition(with: self.centerImage,
+                      duration: K.intro.hideAnimationDuration,
+                      options: .transitionCrossDissolve,
+                      animations: { [weak self] in
+                            self?.bottomTitle.isHidden = true
+                        self?.centerImage.isHidden = true
+                }, completion: nil)
     }
+
     private func logoRotation(for circlesQty:Double, onCompletion action: @escaping () -> Void) {
         let sectorsQty = 12.0
         let acceleration = 1.05
@@ -87,7 +105,6 @@ class IntroView: UIViewController {
     }
     @objc private func introViewQuadripleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizerState.ended) {
-            prepareMole()
             funnyGame(winner: -1)
         }
     }

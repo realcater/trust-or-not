@@ -419,6 +419,7 @@
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bx8-Nz-EpT"/>
         <segue reference="fu0-wu-79a"/>
         <segue reference="edz-xl-br7"/>
     </inferredMetricsTieBreakers>

@@ -13,4 +13,10 @@ struct K {
     static let fontSizeTextViewNormal : CGFloat = 21
     static let textStartGameButton = "Начать игру"
     static let textContinueButton = "Продолжить игру"
+    struct intro {
+        static let showAnimationDuration = 2.0
+        static let hideAnimationDuration = 0.3
+        static let rouletteText = "Animals Roulette"
+        static let titleFontSize : CGFloat = 36
+    }
 }
