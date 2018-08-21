@@ -330,7 +330,7 @@
         <!--IntroView-->
         <scene sceneID="8dM-a4-4CZ">
             <objects>
-                <viewController id="3Ss-Xm-0yA" userLabel="IntroView" customClass="IntroView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introView" id="3Ss-Xm-0yA" userLabel="IntroView" customClass="IntroView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfH-o1-Bgs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,7 +388,7 @@
                         <outlet property="centerImage" destination="2hc-bc-ArJ" id="Mov-hx-9Md"/>
                         <outlet property="logoImage" destination="LjF-xS-eGy" id="Vly-AA-2EA"/>
                         <outlet property="topTitle" destination="aD9-hu-2Cw" id="SXq-lS-yX5"/>
-                        <segue destination="Bbo-37-oOS" kind="show" identifier="introSkip" id="MPu-rh-pcs"/>
+                        <segue destination="Bbo-37-oOS" kind="presentation" identifier="introSkip" modalTransitionStyle="crossDissolve" id="MPu-rh-pcs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0j-qE-1VW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +398,7 @@
         <!--Navigation Controller-->
         <scene sceneID="csH-JO-myu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bbo-37-oOS" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="Bbo-37-oOS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rMs-x0-PzM">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -419,8 +419,7 @@
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bx8-Nz-EpT"/>
         <segue reference="fu0-wu-79a"/>
-        <segue reference="edz-xl-br7"/>
+        <segue reference="PR8-Rt-L19"/>
     </inferredMetricsTieBreakers>
 </document>
