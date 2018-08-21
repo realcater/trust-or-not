@@ -24,7 +24,7 @@ class FunnyGame {
         self.bottomTitle = bottomTitle
     }
     
-    func showResultsOfFunnyGame() {
+    func showResults() {
         centerImage.tintColor = .red
         bottomTitle.textColor = .red
         bottomTitle.textColor = .red
@@ -46,7 +46,7 @@ class FunnyGame {
             }, completion: nil)
     }
     
-    func hideResultsOfFunnyGame() {
+    func hideResults() {
         topTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
         bottomTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
         if self.topTitle.text != K.intro.rouletteText {
@@ -67,7 +67,7 @@ class FunnyGame {
             }, completion: nil)
     }
     
-    func runFunnyGame(winner: Int?) {
+    func run(winner: Int?) {
         if let winner=winner {
             topAnimal = winner
         } else {
@@ -76,7 +76,7 @@ class FunnyGame {
         var circlesQty = Double(topAnimal)/12+1.0
         if topAnimal == -1 { circlesQty = 20 }
         topAnimal = topAnimal % 12
-        hideResultsOfFunnyGame()
-        logoRotation(rotate: imageForRotate, for: circlesQty, onCompletion: showResultsOfFunnyGame)
+        hideResults()
+        imageRotation(rotate: imageForRotate, for: circlesQty, onCompletion: showResults)
     }
 }

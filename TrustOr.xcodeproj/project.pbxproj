@@ -55,22 +55,22 @@
 			isa = PBXGroup;
 			children = (
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
-				C130986B2125FAAC001D894D /* Common.swift */,
-				C130986321239082001D894D /* K.swift */,
 				C15647312122E5E700F1602E /* ChineseAnimals.swift */,
+				C130986321239082001D894D /* K.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
 		};
-		C1480A952123828800137C37 /* Controllers */ = {
+		C1480A952123828800137C37 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C14A3FAD2129592400804955 /* IntroView.swift */,
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* StartGameView.swift */,
 				C13098692125D0B0001D894D /* QuestionsView.swift */,
+				C130986B2125FAAC001D894D /* Common.swift */,
 			);
-			name = Controllers;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		C15647132121FC6100F1602E = {
@@ -94,10 +94,10 @@
 			children = (
 				C156471F2121FC6100F1602E /* AppDelegate.swift */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
-				C1480A952123828800137C37 /* Controllers */,
+				C1480A952123828800137C37 /* ViewControllers */,
 				C1480A942123826300137C37 /* Data */,
-				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C156472B2121FC6200F1602E /* Info.plist */,
+				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
 				C14B02A3212983E200B2E96C /* 12009.ttf */,
 			);

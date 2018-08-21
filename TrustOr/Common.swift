@@ -8,7 +8,9 @@
 
 import UIKit
 
-typealias noArgsFunc = (() -> Void)?
+typealias noArgsFuncOpt = (() -> Void)?
+typealias noArgsFunc = () -> Void
+typealias tapFunc = (UITapGestureRecognizer) -> Void
 
 func makeRoundedColorButton(for button: UIButton) {
     button.backgroundColor = K.activeButtonColor
@@ -24,7 +26,7 @@ func makeRoundedGrayButton(for button: UIButton) {
     //button.titleLabel?.font = UIFont(name: "Brushie Brushie", size: 25)
 }
 
-func logoRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompletion action: @escaping () -> Void) {
+func imageRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompletion action: @escaping noArgsFunc) {
     let sectorsQty = 12.0
     let acceleration = 1.05
     var duration : Double = 5
@@ -45,7 +47,7 @@ func logoRotation(rotate imageView: UIImageView, for circlesQty:Double, onComple
     }
 }
 
-func multiTransition(with view: UIView, duration : Double, options: UIViewAnimationOptions, animations: noArgsFunc, times: Int) {
+func multiTransition(with view: UIView, duration : Double, options: UIViewAnimationOptions, animations: noArgsFuncOpt, times: Int) {
     UIView.transition(with: view,
                       duration: duration,
                       options: options,
@@ -56,3 +58,26 @@ func multiTransition(with view: UIView, duration : Double, options: UIViewAnimat
                         }
     })
 }
+
+func addTaps(for viewController: UIViewController, forDouble doubleTapAction: Selector, forTriple tripleTapAction: Selector, forQuadriple quadripleTapAction: Selector) {
+    
+    let doubleTap = UITapGestureRecognizer(target: viewController, action: doubleTapAction)
+    doubleTap.numberOfTapsRequired = 2
+    
+    let tripleTap = UITapGestureRecognizer(target: viewController, action: tripleTapAction)
+    tripleTap.numberOfTapsRequired = 3
+    
+    let quadripleTap = UITapGestureRecognizer(target: viewController, action: quadripleTapAction)
+    quadripleTap.numberOfTapsRequired = 4
+    
+    doubleTap.require(toFail: tripleTap)
+    doubleTap.require(toFail: quadripleTap)
+    tripleTap.require(toFail: quadripleTap)
+    
+    viewController.view.addGestureRecognizer(doubleTap)
+    viewController.view.addGestureRecognizer(tripleTap)
+    viewController.view.addGestureRecognizer(quadripleTap)
+    
+    viewController.view.isUserInteractionEnabled = true
+}
+
