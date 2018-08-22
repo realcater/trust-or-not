@@ -20,6 +20,9 @@
 		C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647282121FC6200F1602E /* LaunchScreen.storyboard */; };
 		C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* ChineseAnimals.swift */; };
 		C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16448E4212C853D00BA34D2 /* FunnyGame.swift */; };
+		C18E7F90212DA89A00FE1BFF /* ratchel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */; };
+		C18E7F92212DA8E500FE1BFF /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F91212DA8E500FE1BFF /* ding.mp3 */; };
+		C18E7F94212DA91B00FE1BFF /* page.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F93212DA91B00FE1BFF /* page.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		C156472B2121FC6200F1602E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C15647312122E5E700F1602E /* ChineseAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseAnimals.swift; sourceTree = "<group>"; };
 		C16448E4212C853D00BA34D2 /* FunnyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyGame.swift; sourceTree = "<group>"; };
+		C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ratchel.mp3; sourceTree = "<group>"; };
+		C18E7F91212DA8E500FE1BFF /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
+		C18E7F93212DA91B00FE1BFF /* page.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = page.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +102,23 @@
 				C15647232121FC6100F1602E /* Main.storyboard */,
 				C1480A952123828800137C37 /* ViewControllers */,
 				C1480A942123826300137C37 /* Data */,
+				C18E7F95212DA92700FE1BFF /* mp3 */,
 				C156472B2121FC6200F1602E /* Info.plist */,
 				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
 				C14B02A3212983E200B2E96C /* 12009.ttf */,
 			);
 			path = TrustOr;
+			sourceTree = "<group>";
+		};
+		C18E7F95212DA92700FE1BFF /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */,
+				C18E7F91212DA8E500FE1BFF /* ding.mp3 */,
+				C18E7F93212DA91B00FE1BFF /* page.mp3 */,
+			);
+			path = mp3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,8 +179,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18E7F90212DA89A00FE1BFF /* ratchel.mp3 in Resources */,
+				C18E7F92212DA8E500FE1BFF /* ding.mp3 in Resources */,
 				C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */,
 				C14B02A4212983E300B2E96C /* 12009.ttf in Resources */,
+				C18E7F94212DA91B00FE1BFF /* page.mp3 in Resources */,
 				C15647272121FC6100F1602E /* Assets.xcassets in Resources */,
 				C15647252121FC6100F1602E /* Main.storyboard in Resources */,
 			);
