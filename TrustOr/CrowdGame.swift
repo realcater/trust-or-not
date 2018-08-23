@@ -8,8 +8,6 @@
 
 import UIKit
 
-<<<<<<< HEAD
-=======
 class QuestionsPackState {
     enum AnswerState {
         case notAnswered
@@ -26,7 +24,6 @@ class QuestionsPackState {
     }
 }
 
->>>>>>> temp2
 class CrowdGame {
     var questionText: UITextView
     var commentText: UITextView
@@ -53,13 +50,6 @@ class CrowdGame {
         self.finishGameButton = finishGameButton
         self.trueView = trueView
         self.falseView = falseView
-<<<<<<< HEAD
-        showUIAnswerMode()
-    }
-    
-    func showAnswerButtonPressed() {
-        state.getAnswerForCurrent = true
-=======
         restoreState()
     }
     func restoreState() {
@@ -72,20 +62,13 @@ class CrowdGame {
     }
     func showAnswerButtonPressed() {
         state.answerState = .answered
->>>>>>> temp2
         if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
             showUIWaitMode()
         } else {
             showUIFinishGame()
-<<<<<<< HEAD
-        }
-    }
-    
-=======
             state.answerState = .finishGame
         }
     }
->>>>>>> temp2
     func laterButtonPressed() {
         state.leftQuestions.append(state.currentNumber)
         state.currentNumber+=1
@@ -94,27 +77,17 @@ class CrowdGame {
         }
         reloadTexts()
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> temp2
     func nextQuestionButtonPressed() {
         state.currentNumber+=1
         if (state.currentNumber == questionsPack.questionTasks.count) && (state.leftQuestions.count > 0) {
             oneMoreQueer()
         }
         showUIAnswerMode()
-<<<<<<< HEAD
-        state.getAnswerForCurrent = false
-    }
-    
-=======
         state.answerState = .notAnswered
     }
     func finishGameButtonPressed() {
         vc.performSegue(withIdentifier: "backToStart", sender: vc)
     }
->>>>>>> temp2
     private func showAnswer() {
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -158,10 +131,7 @@ class CrowdGame {
         showAnswer()
         laterButton.isHidden = true
         finishGameButton.setTitle(K.finishGameButtonText, for: .normal)
-<<<<<<< HEAD
-=======
         
->>>>>>> temp2
     }
     private func oneMoreQueer() {
         var newQuestionTasks: [QuestionTask] = []
@@ -173,22 +143,4 @@ class CrowdGame {
         state.currentNumber = 0
     }
     
-<<<<<<< HEAD
-    func checkAfterRestore() {
-        if state.getAnswerForCurrent {
-            restoreQuestionAsnweredUI()
-        }
-        reloadTexts()
-    }
-    
-    private func restoreQuestionAsnweredUI () {
-        if (state.currentNumber+1 < questionsPack.questionTasks.count) || (state.leftQuestions.count > 0) {
-            showUIWaitMode()
-            //state.currentNumber+=1
-        } else {
-            showUIFinishGame()
-        }
-    }
-=======
->>>>>>> temp2
 }
