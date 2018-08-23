@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556644111.2084481"
+            timestampString = "556729850.7166131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "showAnswerButtonPressed(_:)"
-            landmarkType = "7">
+            startingLineNumber = "37"
+            endingLineNumber = "37">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556644111.208521"
+            timestampString = "556729850.716702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "nextQuestionButtonPressed(_:)"
-            landmarkType = "7">
+            startingLineNumber = "45"
+            endingLineNumber = "45">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,28 +38,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/StartGameView.swift"
-            timestampString = "556368110.385904"
+            timestampString = "556729850.716777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556644111.208609"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "restoreQuestionAsnweredUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

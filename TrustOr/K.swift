@@ -8,11 +8,15 @@ struct K {
     static let confirmAnimalChoiceText1 = "Год "
     static let confirmAnimalChoiceText2 = "!"
     static let questionLabel = "Вопрос "
-    static let finishGameText = "Это все вопросы! Спасибо за игру!"
     static let fontSizeTextViewZoomed : CGFloat = 18
     static let fontSizeTextViewNormal : CGFloat = 21
-    static let textStartGameButton = "Начать игру"
-    static let textContinueButton = "Продолжить игру"
+    static let startGameButtonText = "Начать игру"
+    static let continueGameButtonText = "Продолжить игру"
+    
+    static let showAnswerButtonText = "Показать ответ"
+    static let laterButtonText = "Позже"
+    static let nextQuestionButtonText = "Следующий вопрос"
+    static let finishGameButtonText = "Спасибо за игру!"
     struct intro {
         static let showAnimationDuration = 1.0
         static let hideAnimationDuration = 0.3

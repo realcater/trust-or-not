@@ -249,7 +249,7 @@
                                     <constraint firstItem="L3a-pO-zGB" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="-10" id="zHc-hb-dfm"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="nextQuestion">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="bottomButton">
                                 <rect key="frame" x="40" y="440" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.44705882349999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -260,10 +260,10 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="nextQuestionButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="XNt-Ee-ZLN"/>
+                                    <action selector="bottomButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="XNt-Ee-ZLN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="topButton">
                                 <rect key="frame" x="40" y="370" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -274,7 +274,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="laterButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
+                                    <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -286,9 +286,9 @@
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="hnn-EZ-CME" secondAttribute="trailing" constant="40" id="JsL-uw-3bU"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
-                            <constraint firstItem="hnn-EZ-CME" firstAttribute="top" secondItem="lMj-mL-u3Q" secondAttribute="bottom" constant="20" id="T3G-lX-39I"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
                             <constraint firstItem="8cj-TE-ykC" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="Vik-4a-Foa"/>
+                            <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="lMj-mL-u3Q" secondAttribute="bottom" constant="20" id="XM5-wb-1PF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="1ke-60-f02" secondAttribute="trailing" constant="16" id="Z7J-5D-Omx"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="16" id="a6l-kD-eHA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="b3N-ca-9WL"/>
@@ -303,21 +303,27 @@
                             <constraint firstItem="enM-P6-HzI" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="yk0-2M-f8v"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8cj-TE-ykC"/>
+                                <exclude reference="hnn-EZ-CME"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Вопрос 1/20" id="rep-oL-Chz" userLabel="questionsView">
                         <barButtonItem key="backBarButtonItem" title=" " id="KzZ-FY-f7p"/>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
+                        <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="commentText" destination="UVv-sM-xM2" id="B0E-3v-vmD"/>
                         <outlet property="falsePicLabel" destination="BTJ-3E-O3P" id="L8G-AE-jiG"/>
                         <outlet property="falseTextLabel" destination="Kua-qy-4sV" id="9J9-iw-gfR"/>
                         <outlet property="falseView" destination="L3a-pO-zGB" id="evo-iM-CIh"/>
                         <outlet property="finishGameButton" destination="hnn-EZ-CME" id="7Pq-lf-4W4"/>
-                        <outlet property="laterButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
-                        <outlet property="nextQuestionButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="showAnswerButton" destination="8cj-TE-ykC" id="JNf-Wr-9Md"/>
+                        <outlet property="topButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <outlet property="truePicLabel" destination="f3L-de-prK" id="9Fg-7A-z9A"/>
                         <outlet property="trueTextLabel" destination="08T-sG-rkl" id="Qus-5e-QBt"/>
                         <outlet property="trueView" destination="8n6-gn-fK6" id="UjL-4d-Dsb"/>
@@ -420,6 +426,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fu0-wu-79a"/>
-        <segue reference="PR8-Rt-L19"/>
+        <segue reference="edz-xl-br7"/>
     </inferredMetricsTieBreakers>
 </document>

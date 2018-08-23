@@ -23,6 +23,7 @@
 		C18E7F90212DA89A00FE1BFF /* ratchel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */; };
 		C18E7F92212DA8E500FE1BFF /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F91212DA8E500FE1BFF /* ding.mp3 */; };
 		C18E7F94212DA91B00FE1BFF /* page.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F93212DA91B00FE1BFF /* page.mp3 */; };
+		C18E7F97212EEEE100FE1BFF /* CrowdGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ratchel.mp3; sourceTree = "<group>"; };
 		C18E7F91212DA8E500FE1BFF /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		C18E7F93212DA91B00FE1BFF /* page.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = page.mp3; sourceTree = "<group>"; };
+		C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* StartGameView.swift */,
 				C13098692125D0B0001D894D /* QuestionsView.swift */,
+				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C130986B2125FAAC001D894D /* Common.swift */,
 			);
 			name = ViewControllers;
@@ -205,6 +208,7 @@
 				C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
 				C130986C2125FAAC001D894D /* Common.swift in Sources */,
+				C18E7F97212EEEE100FE1BFF /* CrowdGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
