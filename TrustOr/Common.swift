@@ -44,7 +44,7 @@ func imageRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompl
     }
 }
 
-func multiTransition(with view: UIView, duration : Double, options: UIViewAnimationOptions, animations: noArgsFuncOpt, times: Int) {
+func multiTransition(with view: UIView, duration : Double, options: UIView.AnimationOptions, animations: noArgsFuncOpt, times: Int) {
     UIView.transition(with: view,
                       duration: duration,
                       options: options,

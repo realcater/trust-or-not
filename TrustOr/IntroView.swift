@@ -18,22 +18,22 @@ class IntroView: UIViewController {
     var funnyGame : FunnyGame!
     
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizerState.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             performSegue(withIdentifier: "introSkip", sender: self)
         }
     }
     @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizerState.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             funnyGame.run(winner: nil)
         }
     }
     @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizerState.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             funnyGame.run(winner: 11)
         }
     }
     @objc private func quadripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizerState.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             funnyGame.run(winner: -1)
         }
     }

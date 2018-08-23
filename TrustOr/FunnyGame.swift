@@ -75,10 +75,10 @@ class FunnyGame {
         if let winner=winner {
             topAnimal = winner
         } else {
-            topAnimal = Int(drand48()*12)
+            topAnimal = Int.random(in: 0...11)
         }
         var circlesQty = Double(topAnimal)/12+1.0
-        if topAnimal == -1 { circlesQty = 20 }
+        if topAnimal == -1 { circlesQty = Double.random(in: 5.0...10.0) }
         topAnimal = topAnimal % 12
         hideResults()
         /*ratchelSound?.play()

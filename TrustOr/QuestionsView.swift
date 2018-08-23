@@ -77,7 +77,7 @@ class QuestionsView: UIViewController {
     }
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
-        if isMovingFromParentViewController {
+        if isMovingFromParent {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
                 prevViewController.startButton.setTitle(K.continueGameButtonText, for: .normal)

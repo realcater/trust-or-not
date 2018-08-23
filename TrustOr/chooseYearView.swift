@@ -59,7 +59,7 @@ class ChooseYearView: UIViewController {
         }
     }
     @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizerState.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             performSegue(withIdentifier: "backToIntro", sender: self)
         }
     }
@@ -67,7 +67,7 @@ class ChooseYearView: UIViewController {
     private func prepareNavigationBar() {
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedString.Key.foregroundColor :K.backgroundColor]
         //navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Brushie Brushie", size: 30) ?? UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
     }

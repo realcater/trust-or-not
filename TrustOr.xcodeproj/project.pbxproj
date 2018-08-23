@@ -62,6 +62,7 @@
 		C1480A942123826300137C37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
 				C15647312122E5E700F1602E /* ChineseAnimals.swift */,
 				C130986321239082001D894D /* K.swift */,
@@ -76,7 +77,6 @@
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* StartGameView.swift */,
 				C13098692125D0B0001D894D /* QuestionsView.swift */,
-				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C130986B2125FAAC001D894D /* Common.swift */,
 			);
 			name = ViewControllers;
@@ -156,6 +156,7 @@
 				TargetAttributes = {
 					C156471B2121FC6100F1602E = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -361,7 +362,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = realcater.TrustOr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -379,7 +380,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = realcater.TrustOr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
