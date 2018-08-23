@@ -88,3 +88,4 @@ class FunnyGame {
         imageRotation(rotate: imageForRotate, for: circlesQty, onCompletion: showResults)
     }
 }
+

@@ -24,6 +24,11 @@ class QuestionsPackState {
     }
 }
 
+protocol CrowdGameDelegate: class {
+    func returnToStartView()
+    func setTitle(title: String)
+}
+
 class CrowdGame {
     var questionText: UITextView
     var commentText: UITextView
@@ -33,15 +38,15 @@ class CrowdGame {
     var finishGameButton: UIButton
     var trueView: UIView
     var falseView: UIView
-    var vc: UIViewController
     
     var questionsPack : QuestionsPack!
     var state: QuestionsPackState!
+    weak var delegate: CrowdGameDelegate?
     
-    init(questionsPack: QuestionsPack, state: QuestionsPackState, vc: UIViewController, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, trueView: UIView, falseView: UIView) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, trueView: UIView, falseView: UIView) {
+        self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
-        self.vc = vc
         self.questionText = questionText
         self.commentText = commentText
         self.showAnswerButton = showAnswerButton
@@ -52,6 +57,7 @@ class CrowdGame {
         self.falseView = falseView
         restoreState()
     }
+    
     func restoreState() {
         switch state.answerState {
         case .answered: showUIWaitMode()
@@ -86,7 +92,7 @@ class CrowdGame {
         state.answerState = .notAnswered
     }
     func finishGameButtonPressed() {
-        vc.performSegue(withIdentifier: "backToStart", sender: vc)
+        delegate?.returnToStartView()
     }
     private func showAnswer() {
         commentText.isHidden = false
@@ -110,10 +116,11 @@ class CrowdGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        vc.title = K.questionLabel + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
+        var title = K.questionLabel + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
         if state.leftQuestions.count > 0 {
-            vc.title = vc.title! + " (+" + String(state.leftQuestions.count) + ")"
+            title = title + " (+" + String(state.leftQuestions.count) + ")"
         }
+        delegate?.setTitle(title: title)
     }
     private func showUIAnswerMode() {
         hideAnswer()

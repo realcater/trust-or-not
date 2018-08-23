@@ -41,8 +41,7 @@ class QuestionsView: UIViewController {
         switch crowdGame.state.answerState {
         case .answered: crowdGame.nextQuestionButtonPressed()
         case .notAnswered: crowdGame.showAnswerButtonPressed()
-        case .finishGame:
-            crowdGame.finishGameButtonPressed()
+        case .finishGame: crowdGame.finishGameButtonPressed()
         }
     }
     private func setFonts(ofSize size: CGFloat) {
@@ -66,7 +65,7 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        crowdGame = CrowdGame(questionsPack: questionsPack, state: state, vc: self, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView)
+        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView)
         prepareBackgroundImage()
         prepareButtons()
         if UIScreen.main.currentMode!.size.width >= 750 {
@@ -83,5 +82,14 @@ class QuestionsView: UIViewController {
                 prevViewController.startButton.setTitle(K.continueGameButtonText, for: .normal)
             }
         }
+    }
+}
+
+extension QuestionsView: CrowdGameDelegate {
+    func returnToStartView() {
+        performSegue(withIdentifier: "backToStart", sender: self)
+    }
+    func setTitle(title: String) {
+        self.title = title
     }
 }
