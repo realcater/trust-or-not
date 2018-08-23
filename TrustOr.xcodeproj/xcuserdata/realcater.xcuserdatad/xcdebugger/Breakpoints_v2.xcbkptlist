@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/CrowdGame.swift"
-            timestampString = "556750110.457227"
+            timestampString = "556752215.5471129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "reloadTexts()"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "showAnswer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/CrowdGame.swift"
-            timestampString = "556750110.457987"
+            timestampString = "556752215.5474631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "reloadTexts()"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "showAnswer()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556750110.4583679"
+            timestampString = "556752215.547539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "QuestionsView"
-            landmarkType = "21">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "setTitle(title:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556750110.4586281"
+            timestampString = "556752215.547749"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>

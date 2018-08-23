@@ -44,6 +44,7 @@ class QuestionsView: UIViewController {
         case .finishGame: crowdGame.finishGameButtonPressed()
         }
     }
+    //MARK:- Prepare screen functions
     private func setFonts(ofSize size: CGFloat) {
         questionText.font = .systemFont(ofSize: size)
         commentText.font = .italicSystemFont(ofSize: size)
