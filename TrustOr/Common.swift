@@ -16,14 +16,12 @@ func makeRoundedColorButton(for button: UIButton) {
     button.backgroundColor = K.activeButtonColor
     button.setTitleColor(K.backgroundColor, for: .normal)
     button.layer.cornerRadius = 0.5 * button.bounds.size.height
-    //button.titleLabel?.font = UIFont(name: "Brushie Brushie", size: 25)
 }
 
 func makeRoundedGrayButton(for button: UIButton) {
     button.backgroundColor = K.grayColor
     button.setTitleColor(K.backgroundColor, for: .normal)
     button.layer.cornerRadius = 0.5 * button.bounds.size.height
-    //button.titleLabel?.font = UIFont(name: "Brushie Brushie", size: 25)
 }
 
 func imageRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompletion action: @escaping noArgsFunc) {

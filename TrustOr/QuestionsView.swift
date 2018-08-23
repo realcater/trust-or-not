@@ -38,10 +38,11 @@ class QuestionsView: UIViewController {
         crowdGame.laterButtonPressed()
     }
     @IBAction func bottomButtonPressed(_ sender: Any) {
-        if crowdGame.state.getAnswerForCurrent {
-            crowdGame.nextQuestionButtonPressed()
-        } else {
-            crowdGame.showAnswerButtonPressed()
+        switch crowdGame.state.answerState {
+        case .answered: crowdGame.nextQuestionButtonPressed()
+        case .notAnswered: crowdGame.showAnswerButtonPressed()
+        case .finishGame:
+            crowdGame.finishGameButtonPressed()
         }
     }
     private func setFonts(ofSize size: CGFloat) {
@@ -52,7 +53,7 @@ class QuestionsView: UIViewController {
         trueTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
         falseTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
     }
-    private func prepareBackGroundImage() {
+    private func prepareBackgroundImage() {
         backgroundImageView.image = (UIImage(named: questionsPack.picname))
         backgroundImageView.isHidden = false
         backgroundImageView.alpha = 0.03
@@ -66,7 +67,7 @@ class QuestionsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         crowdGame = CrowdGame(questionsPack: questionsPack, state: state, vc: self, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView)
-        prepareBackGroundImage()
+        prepareBackgroundImage()
         prepareButtons()
         if UIScreen.main.currentMode!.size.width >= 750 {
             setFonts(ofSize: K.fontSizeTextViewNormal)
