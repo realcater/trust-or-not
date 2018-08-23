@@ -39,12 +39,13 @@ class CrowdGame {
     var finishGameButton: UIButton
     var trueView: UIView
     var falseView: UIView
+    var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: QuestionsPackState!
     weak var delegate: CrowdGameDelegate?
     
-    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, trueView: UIView, falseView: UIView) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, trueView: UIView, falseView: UIView, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -56,6 +57,7 @@ class CrowdGame {
         self.finishGameButton = finishGameButton
         self.trueView = trueView
         self.falseView = falseView
+        self.resultLabel = resultLabel
         restoreState()
     }
     
@@ -98,6 +100,14 @@ class CrowdGame {
         state.currentNumber = 0
     }
     //MARK:- UI Change functions
+    func restoreState() {
+        switch state.answerState {
+        case .answered: showUIWaitMode()
+        case .finishGame: showUIFinishGame()
+        case .notAnswered: showUIAnswerMode()
+        }
+        reloadTexts()
+    }
     private func reloadTexts() {
         questionText.text = questionsPack.questionTasks[state.currentNumber].question
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
@@ -116,15 +126,21 @@ class CrowdGame {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            trueView.isHidden = false
+            //trueView.isHidden = false
+            resultLabel.backgroundColor = K.trueAnswerColor
+            resultLabel.text = K.trueText
         } else {
-            falseView.isHidden = false
+            resultLabel.backgroundColor = K.falseAnswerColor
+            resultLabel.text = K.falseText
+            //falseView.isHidden = false
         }
+        resultLabel.isHidden = false
     }
     private func hideAnswer() {
         commentText.isHidden = true
-        trueView.isHidden = true
-        falseView.isHidden = true
+        //trueView.isHidden = true
+        //falseView.isHidden = true
+        resultLabel.isHidden = true
     }
     private func showUIAnswerMode() {
         hideAnswer()
@@ -143,12 +159,5 @@ class CrowdGame {
         laterButton.isHidden = true
         finishGameButton.setTitle(K.finishGameButtonText, for: .normal)
     }
-    func restoreState() {
-        switch state.answerState {
-        case .answered: showUIWaitMode()
-        case .finishGame: showUIFinishGame()
-        case .notAnswered: showUIAnswerMode()
-        }
-        reloadTexts()
-    }
+    
 }

@@ -28,6 +28,7 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var truePicLabel: UILabel!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var resultLabel: UILabel!
     
     var questionsPack: QuestionsPack!
     var crowdGame: CrowdGame!
@@ -66,7 +67,7 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView)
+        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView, resultLabel: resultLabel)
         prepareBackgroundImage()
         prepareButtons()
         if UIScreen.main.currentMode!.size.width >= 750 {

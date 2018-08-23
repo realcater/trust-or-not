@@ -17,6 +17,11 @@ struct K {
     static let laterButtonText = "Позже"
     static let nextQuestionButtonText = "Следующий вопрос"
     static let finishGameButtonText = "Спасибо за игру!"
+    static let trueAnswerColor = UIColor(red: 0, green: 143/256, blue: 0, alpha: 1)
+    static let falseAnswerColor = UIColor(red: 220/256, green: 0, blue: 0, alpha: 1)
+    static let trueText = "Верно"
+    static let falseText = "Не верно"
+    
     struct intro {
         static let showAnimationDuration = 1.0
         static let hideAnimationDuration = 0.3
