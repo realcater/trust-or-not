@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class IntroView: UIViewController {
     
     @IBOutlet weak var logoImage: UIImageView!
@@ -49,10 +50,5 @@ class IntroView: UIViewController {
         setColors()
         addTaps(for: self, forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
         funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
-    }
-
-    override func touchesEnded(_ touches: Set<UITouch>?, with: UIEvent?)
-    {
-        
     }
 }

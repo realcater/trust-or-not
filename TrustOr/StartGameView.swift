@@ -33,7 +33,7 @@ class StartGameView: UIViewController {
         title = K.confirmAnimalChoiceText1 + questionsPack.name_gen + K.confirmAnimalChoiceText2
         //print("viewDidLoad")
         //print(currentQuestionNumber)
-        startButton.setTitle(K.textStartGameButton, for: .normal)
+        startButton.setTitle(K.startGameButtonText, for: .normal)
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,28 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556568267.854364"
+            timestampString = "556741745.0123841"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "showAnswerButtonPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556568267.854435"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "nextQuestionButtonPressed(_:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "topButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/StartGameView.swift"
-            timestampString = "556368110.385904"
+            timestampString = "556729850.716777"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -58,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrustOr/QuestionsView.swift"
-            timestampString = "556568267.85452"
+            timestampString = "556741745.012776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "restoreQuestionAsnweredUI()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "bottomButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,12 +57,19 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "TrustOr/IntroView.swift"
             timestampString = "556573779.656924"
+=======
+            filePath = "TrustOr/CrowdGame.swift"
+            timestampString = "556741745.012866"
+>>>>>>> temp2
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59">
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "restoreState()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -87,12 +78,19 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
             filePath = "TrustOr/IntroView.swift"
             timestampString = "556573779.657024"
+=======
+            filePath = "TrustOr/CrowdGame.swift"
+            timestampString = "556741745.0135109"
+>>>>>>> temp2
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59">
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "showUIWaitMode()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

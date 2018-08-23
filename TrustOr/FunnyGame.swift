@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AVFoundation
 
 class FunnyGame {
     var questionsPacks = ChineseAnimals()
@@ -16,6 +17,8 @@ class FunnyGame {
     var centerImage : UIImageView
     var topTitle : UILabel
     var bottomTitle: UILabel
+    var ratchelSound = initSound(mp3filename: "ratchel.mp3")
+    var dingSound = initSound2(mp3filename: "ding.mp3")
     
     init(imageForRotate: UIImageView, centerImage : UIImageView, topTitle : UILabel, bottomTitle: UILabel) {
         self.imageForRotate = imageForRotate
@@ -37,6 +40,7 @@ class FunnyGame {
             bottomTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
         }
         
+        //dingSound?.play()
         UIView.transition(with: centerImage,
                           duration: K.intro.hideAnimationDuration,
                           options: .transitionCrossDissolve,
@@ -77,6 +81,10 @@ class FunnyGame {
         if topAnimal == -1 { circlesQty = 20 }
         topAnimal = topAnimal % 12
         hideResults()
+        /*ratchelSound?.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+            self.ratchelSound?.stop()
+        })*/
         imageRotation(rotate: imageForRotate, for: circlesQty, onCompletion: showResults)
     }
 }

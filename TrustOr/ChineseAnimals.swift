@@ -1,13 +1,4 @@
-class QuestionsPackState {
-    var currentNumber: Int
-    var leftQuestions: [Int]
-    var getAnswerForCurrent: Bool
-    init() {
-        currentNumber = 0
-        leftQuestions = []
-        getAnswerForCurrent = false
-    }
-}
+
 
 class QuestionTask {
     var question: String
