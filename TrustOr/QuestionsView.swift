@@ -16,16 +16,8 @@ class QuestionsView: UIViewController {
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var finishGameButton: UIButton!
     
-    @IBOutlet weak var trueView: UIView!
-    @IBOutlet weak var falseView: UIView!
-    
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var commentText: UITextView!
-    
-    @IBOutlet weak var falsePicLabel: UILabel!
-    @IBOutlet weak var falseTextLabel: UILabel!
-    @IBOutlet weak var trueTextLabel: UILabel!
-    @IBOutlet weak var truePicLabel: UILabel!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var resultLabel: UILabel!
@@ -49,10 +41,7 @@ class QuestionsView: UIViewController {
     private func setFonts(ofSize size: CGFloat) {
         questionText.font = .systemFont(ofSize: size)
         commentText.font = .italicSystemFont(ofSize: size)
-        truePicLabel.font = .systemFont(ofSize: size+12, weight: .black)
-        falsePicLabel.font = .systemFont(ofSize: size-3)
-        trueTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
-        falseTextLabel.font = .systemFont(ofSize: size+3, weight: .bold)
+        resultLabel.font = .systemFont(ofSize: size+3, weight: .bold)
     }
     private func prepareBackgroundImage() {
         backgroundImageView.image = (UIImage(named: questionsPack.picname))
@@ -67,7 +56,7 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, trueView: trueView, falseView: falseView, resultLabel: resultLabel)
+        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, resultLabel: resultLabel)
         prepareBackgroundImage()
         prepareButtons()
         if UIScreen.main.currentMode!.size.width >= 750 {

@@ -37,15 +37,13 @@ class CrowdGame {
     var nextQuestionButton: UIButton
     var laterButton: UIButton
     var finishGameButton: UIButton
-    var trueView: UIView
-    var falseView: UIView
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: QuestionsPackState!
     weak var delegate: CrowdGameDelegate?
     
-    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, trueView: UIView, falseView: UIView, resultLabel: UILabel) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -55,8 +53,6 @@ class CrowdGame {
         self.nextQuestionButton = nextQuestionButton
         self.laterButton = laterButton
         self.finishGameButton = finishGameButton
-        self.trueView = trueView
-        self.falseView = falseView
         self.resultLabel = resultLabel
         restoreState()
     }
