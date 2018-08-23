@@ -107,13 +107,6 @@ func addTaps(for viewController: UIViewController, forSingle singleTapAction: Se
     viewController.view.isUserInteractionEnabled = true
 }
 
-<<<<<<< HEAD
-func addTaps(for viewController: UIViewController, forTriple tripleTapAction: Selector) {
-    let tripleTap = UITapGestureRecognizer(target: viewController, action: tripleTapAction)
-    tripleTap.numberOfTapsRequired = 3
-    viewController.view.addGestureRecognizer(tripleTap)
-    viewController.view.isUserInteractionEnabled = true
-=======
 func initSound(mp3filename: String) -> AVAudioPlayer? {
     let path = Bundle.main.path(forResource: "ratchel.mp3", ofType:nil)!
     let url = URL(fileURLWithPath: path)
@@ -135,6 +128,4 @@ func initSound2(mp3filename: String) -> AVAudioPlayer? {
         print("couldn't load file \(mp3filename)")
         return nil
     }
->>>>>>> temp2
 }
-
