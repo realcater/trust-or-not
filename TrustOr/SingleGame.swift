@@ -154,15 +154,15 @@ class SingleGame {
         nextQuestionButton.isHidden = true
             
         trueAnswerButton.setTitle(K.trustText, for: .normal)
-        trueAnswerButton.backgroundColor = K.trueAnswerColor
+        trueAnswerButton.backgroundColor = K.trueAnswerButtonColor
         trueAnswerButton.isHidden = false
         
         doubtAsnwerButton.setTitle(K.doubtText, for: .normal)
-        doubtAsnwerButton.backgroundColor = K.grayColor
+        doubtAsnwerButton.backgroundColor = K.doubtAnswerButtonColor
         doubtAsnwerButton.isHidden = false
         
         falseAsnwerButton.setTitle(K.notTrustText, for: .normal)
-        falseAsnwerButton.backgroundColor = K.falseAnswerColor
+        falseAsnwerButton.backgroundColor = K.falseAnswerButtonColor
         falseAsnwerButton.isHidden = false
         
         reloadTexts()
