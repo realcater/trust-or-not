@@ -36,12 +36,13 @@ class SingleGame {
     var nextQuestionButton: UIButton
     var finishGameButton: UIButton
     var resultLabel: UILabel
+    var scoreButton: UIBarButtonItem
     
     var questionsPack : QuestionsPack!
     var state: SingleGameState!
     weak var delegate: GameDelegate?
     
-    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
+    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel, scoreButton: UIBarButtonItem) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -53,6 +54,7 @@ class SingleGame {
         self.nextQuestionButton = nextQuestionButton
         self.finishGameButton = finishGameButton
         self.resultLabel = resultLabel
+        self.scoreButton = scoreButton
         
         restoreState()
     }
@@ -109,8 +111,10 @@ class SingleGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)    Очки: \(state.points)"
+        //let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)    Очки: \(state.points)"
+        let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
         delegate?.setTitle(title: title)
+        scoreButton.title = "Очки: \(state.points)"
     }
     private func showAnswer() {
         commentText.isHidden = false
@@ -119,11 +123,26 @@ class SingleGame {
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
             resultLabel.backgroundColor = K.trueAnswerColor
-            resultLabel.text = K.trueText + state.answerResultString
+            switch state.answerResultString {
+            case K.winResultString:
+                resultLabel.text = K.trueTextWin
+            case K.looseResultString:
+                resultLabel.text = K.trueTextLoose
+            default:
+                resultLabel.text = K.trueTextLoose
+            }
         } else {
             resultLabel.backgroundColor = K.falseAnswerColor
-            resultLabel.text = K.falseText + state.answerResultString
+            switch state.answerResultString {
+            case K.winResultString:
+                resultLabel.text = K.falseTextWin
+            case K.looseResultString:
+                resultLabel.text = K.falseTextLoose
+            default:
+                resultLabel.text = K.falseTextLoose
+            }
         }
+        resultLabel.text = resultLabel.text! + state.answerResultString
         resultLabel.isHidden = false
         reloadTexts()
     }
@@ -135,7 +154,7 @@ class SingleGame {
         hideAnswer()
         nextQuestionButton.isHidden = true
             
-        trueAnswerButton.setTitle(K.trueText, for: .normal)
+        trueAnswerButton.setTitle(K.trustText, for: .normal)
         trueAnswerButton.backgroundColor = K.trueAnswerColor
         trueAnswerButton.isHidden = false
         
@@ -143,7 +162,7 @@ class SingleGame {
         doubtAsnwerButton.backgroundColor = K.grayColor
         doubtAsnwerButton.isHidden = false
         
-        falseAsnwerButton.setTitle(K.falseText, for: .normal)
+        falseAsnwerButton.setTitle(K.notTrustText, for: .normal)
         falseAsnwerButton.backgroundColor = K.falseAnswerColor
         falseAsnwerButton.isHidden = false
         

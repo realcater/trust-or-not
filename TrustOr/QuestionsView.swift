@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionsView: UIViewController {
     
+    @IBOutlet weak var scoreButton: UIBarButtonItem!
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
@@ -59,6 +60,13 @@ class QuestionsView: UIViewController {
         questionText.font = .systemFont(ofSize: size)
         commentText.font = .italicSystemFont(ofSize: size)
         resultLabel.font = .systemFont(ofSize: size+3, weight: .bold)
+        switch gameState.gameType! {
+        case .singleGame:
+            scoreButton.setTitleTextAttributes(
+                    [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium)], for: .normal)
+        case .crowdGame:
+            scoreButton.title = ""
+        }
     }
     private func prepareBackgroundImage() {
         backgroundImageView.image = (UIImage(named: questionsPack.picname))
@@ -91,7 +99,7 @@ class QuestionsView: UIViewController {
         super.viewWillAppear(animated)
         switch gameState.gameType! {
         case .singleGame:
-            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, resultLabel: resultLabel, scoreButton: scoreButton)
         case .crowdGame:
             crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, resultLabel: resultLabel)
         }

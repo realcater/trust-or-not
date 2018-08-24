@@ -20,13 +20,19 @@ struct K {
     static let finishGameButtonText = "Спасибо за игру!"
     static let trueAnswerColor = UIColor(red: 0, green: 143/256, blue: 0, alpha: 1)
     static let falseAnswerColor = UIColor(red: 200/256, green: 0, blue: 0, alpha: 1)
-    static let trueText = "Верю"
-    static let falseText = "Не верю"
+    static let trueText = "Верно"
+    static let falseText = "Не верно"
+    static let trueTextWin = "И это верно"
+    static let trueTextLoose = "А это верно"
+    static let falseTextWin = "И это не верно"
+    static let falseTextLoose = "А это не верно"
     static let doubtText = "Не знаю"
+    static let trustText = "Верю"
+    static let notTrustText = "Не Верю"
     
-    static let winResultString = ": +1"
-    static let looseResultString = ": -1"
-    static let doubtResultString = ": 0"
+    static let winResultString = "! +1 очко"
+    static let looseResultString = "... -1 очко"
+    static let doubtResultString = ": 0 очков"
     
     struct intro {
         static let showAnimationDuration = 1.0
