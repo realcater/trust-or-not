@@ -8,6 +8,7 @@ struct K {
     static let confirmAnimalChoiceText1 = "Год "
     static let confirmAnimalChoiceText2 = "!"
     static let questionLabel = "Вопрос "
+    static let scoreLabel = "      🏆"
     static let fontSizeTextViewZoomed : CGFloat = 18
     static let fontSizeTextViewNormal : CGFloat = 21
     static let startSingleGameButtonText = "Играем соло"
@@ -30,9 +31,12 @@ struct K {
     static let trustText = "Верю"
     static let notTrustText = "Не Верю"
     
-    static let winResultString = "! +1 очко"
-    static let looseResultString = "... -1 очко"
-    static let doubtResultString = ": 0 очков"
+    static let winResultString = "! 🏆+1"
+    static let looseResultString = "... 🏆-1"
+    static let doubtResultString = ": 🏆0"
+    
+    static let hintCrowdGameText = "1. Играем компанией, от 4 человек, телефон нужен только ведущему!2. Все игроки, включая вас:\n     Согласен = Рука Поднята\n     Не согласен = Ничего\n3. Нажимаем “\(showAnswerButtonText)“.\n4. Кто не угадал - выбывает и больше не играет.\n5. Если все ответили одинаково - “\(laterButtonText)“ и вопрос остаётся на следующий раз.\n6. Если определился победитель, а вопросы остались - играем заново все вместе на оставшихся вопросах!"
+    static let hintFontSizeDecrease : CGFloat = 6
     
     struct intro {
         static let showAnimationDuration = 1.0

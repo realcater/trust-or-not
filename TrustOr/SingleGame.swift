@@ -15,13 +15,13 @@ class SingleGameState {
     
     var currentNumber: Int
     var answerState: AnswerState
-    var points: Int
+    var score: Int
     var lastAnswer: AnswerChoice
     var answerResultString: String
     init() {
         currentNumber = 0
         answerState = .notAnswered
-        points = 0
+        score = 0
         lastAnswer = .trueAnswer
         answerResultString = ""
     }
@@ -36,13 +36,12 @@ class SingleGame {
     var nextQuestionButton: UIButton
     var finishGameButton: UIButton
     var resultLabel: UILabel
-    var scoreButton: UIBarButtonItem
     
     var questionsPack : QuestionsPack!
     var state: SingleGameState!
     weak var delegate: GameDelegate?
     
-    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel, scoreButton: UIBarButtonItem) {
+    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -54,19 +53,17 @@ class SingleGame {
         self.nextQuestionButton = nextQuestionButton
         self.finishGameButton = finishGameButton
         self.resultLabel = resultLabel
-        self.scoreButton = scoreButton
-        
         restoreState()
     }
     
     //MARK:- Game logic = Data change functions
     func answerIsTrue() {
         state.answerResultString = K.winResultString
-        state.points += 1
+        state.score += 1
     }
     func answerIsFalse() {
         state.answerResultString = K.looseResultString
-        state.points -= 1
+        state.score -= 1
     }
     func answerIsDoubt() {
         state.answerResultString = K.doubtResultString
@@ -111,10 +108,12 @@ class SingleGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        //let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)    Очки: \(state.points)"
-        let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
+        var score = String(state.score)
+        if state.score > 0 { score = "+"+score }
+        if state.score == 0 { score = " "+score }
+        let title =
+            "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)\(K.scoreLabel)\(score)"
         delegate?.setTitle(title: title)
-        scoreButton.title = "Очки: \(state.points)"
     }
     private func showAnswer() {
         commentText.isHidden = false

@@ -123,3 +123,15 @@ func initSound2(mp3filename: String) -> AVAudioPlayer? {
         return nil
     }
 }
+
+func setConstraint(for view: UIView, identifier: String, size: CGFloat) {
+    print(view)
+    print(view.constraints)
+    print(view.constraints.count)
+    for constraint in view.constraints {
+        if constraint.identifier == identifier {
+            constraint.constant = size
+            print(size)
+        }
+    }
+}

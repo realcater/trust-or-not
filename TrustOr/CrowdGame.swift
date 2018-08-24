@@ -107,7 +107,6 @@ class CrowdGame {
     }
     private func reloadTexts() {
         questionText.text = questionsPack.questionTasks[state.currentNumber].question
-        commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
@@ -118,29 +117,40 @@ class CrowdGame {
         delegate?.setTitle(title: title)
     }
     private func showAnswer() {
+        commentText.text = questionsPack.questionTasks[state.currentNumber].comment
+        setConstraint(for: commentText.superview!, identifier: "commentTextBottom", size: 10)
+        commentText.font = UIFont.italicSystemFont(ofSize: commentText.font!.pointSize + K.hintFontSizeDecrease)
+        commentText.textColor = .black
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            //trueView.isHidden = false
             resultLabel.backgroundColor = K.trueAnswerColor
             resultLabel.text = K.trueText
         } else {
             resultLabel.backgroundColor = K.falseAnswerColor
             resultLabel.text = K.falseText
-            //falseView.isHidden = false
         }
         resultLabel.isHidden = false
     }
     private func hideAnswer() {
         commentText.isHidden = true
-        //trueView.isHidden = true
-        //falseView.isHidden = true
         resultLabel.isHidden = true
+    }
+    private func showHint() {
+        commentText.text = K.hintCrowdGameText
+        commentText.font = UIFont.systemFont(ofSize: commentText.font!.pointSize-K.hintFontSizeDecrease)
+        commentText.textColor = K.grayColor
+        setConstraint(for: commentText.superview!, identifier: "commentTextBottom", size: 70)
+        commentText.isHidden = false
+    }
+    private func hideHint() {
+        commentText.isHidden = true
     }
     private func showUIAnswerMode() {
         hideAnswer()
+        showHint()
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
         showAnswerButton.isHidden = false
         laterButton.setTitle(K.laterButtonText, for: .normal)
@@ -148,6 +158,7 @@ class CrowdGame {
         reloadTexts()
     }
     private func showUIWaitMode() {
+        hideHint()
         showAnswer()
         laterButton.isHidden = true
         nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
