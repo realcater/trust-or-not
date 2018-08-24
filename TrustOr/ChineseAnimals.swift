@@ -1,9 +1,3 @@
-enum AnswerState {
-    case notAnswered
-    case answered
-    case finishGame
-}
-
 enum GameType {
     case singleGame
     case crowdGame

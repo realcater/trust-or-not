@@ -163,8 +163,8 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Zi-r8H" userLabel="questionText">
                                         <rect key="frame" x="10" y="10" width="268" height="153"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <string key="text">Поздравляем! Вы вошли в число 7% людей, которые справились лучше всего справились с данным заданием! Вы чертовски умны и сообразительны или просто на короткой ноге с Тюхе!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-sM-xM2" userLabel="commentText">
@@ -258,7 +258,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос 1/20      🏆+3" id="rep-oL-Chz" userLabel="questionsView"/>
+                    <navigationItem key="navigationItem" title="Вопрос 1/20      🏅+1" id="rep-oL-Chz" userLabel="questionsView"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
@@ -267,6 +267,7 @@
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
                         <outlet property="topButton" destination="wvS-wA-ytt" id="cb0-We-Dna"/>
+                        <segue destination="Bbo-37-oOS" kind="show" identifier="backToStart" id="Zji-jL-Kst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgq-2p-zdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -334,7 +335,7 @@
                         <outlet property="centerImage" destination="2hc-bc-ArJ" id="Mov-hx-9Md"/>
                         <outlet property="logoImage" destination="LjF-xS-eGy" id="Vly-AA-2EA"/>
                         <outlet property="topTitle" destination="aD9-hu-2Cw" id="SXq-lS-yX5"/>
-                        <segue destination="Bbo-37-oOS" kind="presentation" identifier="introSkip" modalTransitionStyle="crossDissolve" id="MPu-rh-pcs"/>
+                        <segue destination="Bbo-37-oOS" kind="presentation" identifier="introSkip" animates="NO" modalTransitionStyle="crossDissolve" id="MPu-rh-pcs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0j-qE-1VW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,6 +366,7 @@
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Zji-jL-Kst"/>
         <segue reference="C6f-uW-vOv"/>
     </inferredMetricsTieBreakers>
 </document>

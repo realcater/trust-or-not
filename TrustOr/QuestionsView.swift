@@ -44,7 +44,8 @@ class QuestionsView: UIViewController {
             switch singleGame.state.answerState {
             case .answered: singleGame.nextQuestionButtonPressed()
             case .notAnswered: singleGame.answerButtonPressed(button: .falseAnswer)
-            case .finishGame: singleGame.finishGameButtonPressed()
+            case .finishGame: singleGame.getResultsButtonPressed()
+            case .gotResults: singleGame.finishGameButtonPressed()
             }
         case GameType.crowdGame:
             switch crowdGame.state.answerState {
@@ -102,8 +103,8 @@ class QuestionsView: UIViewController {
         if isMovingFromParent {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
-                prevViewController.topButton.setTitle(K.continueGameButtonText, for: .normal)
-                prevViewController.bottomButton.isHidden = true
+                prevViewController.bottomButton.setTitle(K.continueGameButtonText, for: .normal)
+                prevViewController.topButton.isHidden = true
             }
         }
     }

@@ -119,7 +119,7 @@ class CrowdGame {
     private func showAnswer() {
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         setConstraint(for: commentText.superview!, identifier: "commentTextBottom", size: 10)
-        commentText.font = UIFont.italicSystemFont(ofSize: commentText.font!.pointSize + K.hintFontSizeDecrease)
+        //commentText.font = UIFont.italicSystemFont(ofSize: commentText.font!.pointSize + K.hintFontSizeDecrease)
         commentText.textColor = .black
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -138,7 +138,7 @@ class CrowdGame {
         commentText.isHidden = true
         resultLabel.isHidden = true
     }
-    private func showHint() {
+    /*private func showHint() {
         commentText.text = K.hintCrowdGameText
         commentText.font = UIFont.systemFont(ofSize: commentText.font!.pointSize-K.hintFontSizeDecrease)
         commentText.textColor = K.grayColor
@@ -147,10 +147,10 @@ class CrowdGame {
     }
     private func hideHint() {
         commentText.isHidden = true
-    }
+    }*/
     private func showUIAnswerMode() {
         hideAnswer()
-        showHint()
+        //showHint()
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
         showAnswerButton.isHidden = false
         laterButton.setTitle(K.laterButtonText, for: .normal)
@@ -158,7 +158,7 @@ class CrowdGame {
         reloadTexts()
     }
     private func showUIWaitMode() {
-        hideHint()
+        //hideHint()
         showAnswer()
         laterButton.isHidden = true
         nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
