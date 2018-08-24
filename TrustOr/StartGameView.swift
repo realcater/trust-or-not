@@ -18,7 +18,7 @@ class StartGameView: UIViewController {
     @IBAction func pressBottomButton(_ sender: Any) {
     }
     var questionsPack: QuestionsPack!
-    var gameState = GameState()
+    var gameState : GameState!
     
     private func prepareButtons() {
         makeRoundedButton(for: topButton, with: K.foregroundColor)
@@ -37,6 +37,7 @@ class StartGameView: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
         prepareButtons()
+        gameState = GameState()
         title = K.confirmAnimalChoiceText1 + questionsPack.name_gen + K.confirmAnimalChoiceText2
     }
 
@@ -50,6 +51,8 @@ class StartGameView: UIViewController {
                 gameState.gameType = .crowdGame
                 gameState.crowdGameState = CrowdGameState()
             }
+        } else {
+            print(gameState.gameType)
         }
         let questionsView = segue.destination as! QuestionsView
         questionsView.questionsPack = questionsPack

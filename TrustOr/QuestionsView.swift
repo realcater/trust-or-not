@@ -89,6 +89,7 @@ class QuestionsView: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        gameState.started = true
         switch gameState.gameType! {
         case .singleGame:
             singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, resultLabel: resultLabel)
@@ -102,6 +103,7 @@ class QuestionsView: UIViewController {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
                 prevViewController.topButton.setTitle(K.continueGameButtonText, for: .normal)
+                prevViewController.bottomButton.isHidden = true
             }
         }
     }
