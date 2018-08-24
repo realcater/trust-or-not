@@ -8,13 +8,14 @@
 
 import UIKit
 
-enum AnswerState {
-    case notAnswered
-    case answered
-    case finishGame
-}
 
-class QuestionsPackState {
+class CrowdGameState {
+    enum AnswerState {
+        case notAnswered
+        case answered
+        case finishGame
+    }
+    
     var currentNumber: Int
     var leftQuestions: [Int]
     var answerState: AnswerState
@@ -25,7 +26,7 @@ class QuestionsPackState {
     }
 }
 
-protocol CrowdGameDelegate: class {
+protocol GameDelegate: class {
     func returnToStartView()
     func setTitle(title: String)
 }
@@ -40,10 +41,10 @@ class CrowdGame {
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
-    var state: QuestionsPackState!
-    weak var delegate: CrowdGameDelegate?
+    var state: CrowdGameState!
+    weak var delegate: GameDelegate?
     
-    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: QuestionsPackState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
+    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -141,6 +142,7 @@ class CrowdGame {
     private func showUIAnswerMode() {
         hideAnswer()
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
+        showAnswerButton.isHidden = false
         laterButton.setTitle(K.laterButtonText, for: .normal)
         laterButton.isHidden = false
         reloadTexts()

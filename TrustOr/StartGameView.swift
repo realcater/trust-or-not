@@ -10,42 +10,49 @@ import UIKit
 
 class StartGameView: UIViewController {
     
-    @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var animalButton: UIButton!
+    @IBOutlet weak var topButton: UIButton!
+    @IBOutlet weak var bottomButton: UIButton!
     @IBAction func pressAnimalButton(_ sender: Any) {
     }
-    
+    @IBAction func pressBottomButton(_ sender: Any) {
+    }
     var questionsPack: QuestionsPack!
-    var state = QuestionsPackState()
+    var gameState = GameState()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = K.backgroundColor
+    private func prepareButtons() {
+        makeRoundedButton(for: topButton, with: K.foregroundColor)
+        topButton.setTitle(K.startSingleGameButtonText, for: .normal)
         
-        makeRoundedColorButton(for: startButton)
+        makeRoundedButton(for: bottomButton, with: K.foregroundColor)
+        bottomButton.setTitle(K.startCrowdGameButtonText, for: .normal)
         
         animalButton.tintColor = K.foregroundColor
         animalButton.backgroundColor = K.backgroundColor
         animalButton.setImage(UIImage(named: questionsPack.picname), for: .normal)
         animalButton.contentHorizontalAlignment = .fill
         animalButton.contentVerticalAlignment = .fill
-        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = K.backgroundColor
+        prepareButtons()
         title = K.confirmAnimalChoiceText1 + questionsPack.name_gen + K.confirmAnimalChoiceText2
-        //print("viewDidLoad")
-        //print(currentQuestionNumber)
-        startButton.setTitle(K.startGameButtonText, for: .normal)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "startGameViaAnimalButton" || segue.identifier == "startGameViaPlayButton" {
-            let questionsView = segue.destination as! QuestionsView
-            questionsView.questionsPack = questionsPack
-            questionsView.state = state
+        if !gameState.started {
+            if segue.identifier == "topButtonSegue" {
+                gameState.gameType = .singleGame
+                gameState.singleGameState = SingleGameState()
+            } else if segue.identifier == "bottomButtonSegue" {
+                gameState.gameType = .crowdGame
+                gameState.crowdGameState = CrowdGameState()
+            }
         }
+        let questionsView = segue.destination as! QuestionsView
+        questionsView.questionsPack = questionsPack
+        questionsView.gameState = gameState
     }
 }

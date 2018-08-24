@@ -10,31 +10,48 @@ import UIKit
 
 class QuestionsView: UIViewController {
     
-    //MARK:- UIVars
-    @IBOutlet weak var showAnswerButton: UIButton!
-    @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var finishGameButton: UIButton!
+    @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var middleButton: UIButton!
     
     @IBOutlet weak var questionText: UITextView!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var commentText: UITextView!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var resultLabel: UILabel!
     
     var questionsPack: QuestionsPack!
     var crowdGame: CrowdGame!
-    var state: QuestionsPackState!
+    var singleGame: SingleGame!
+    var gameState: GameState!
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
-        crowdGame.laterButtonPressed()
+        singleGame.answerButtonPressed(button: .trueAnswer)
+    }
+    
+    @IBAction func middleButtonPressed(_ sender: Any) {
+        switch gameState.gameType! {
+        case GameType.singleGame:
+            singleGame.answerButtonPressed(button: .doubtAnswer)
+        case GameType.crowdGame:
+            crowdGame.laterButtonPressed()
+        }
     }
     @IBAction func bottomButtonPressed(_ sender: Any) {
-        switch crowdGame.state.answerState {
-        case .answered: crowdGame.nextQuestionButtonPressed()
-        case .notAnswered: crowdGame.showAnswerButtonPressed()
-        case .finishGame: crowdGame.finishGameButtonPressed()
+        switch gameState.gameType! {
+        case GameType.singleGame:
+            switch singleGame.state.answerState {
+            case .answered: singleGame.nextQuestionButtonPressed()
+            case .notAnswered: singleGame.answerButtonPressed(button: .falseAnswer)
+            case .finishGame: singleGame.finishGameButtonPressed()
+            }
+        case GameType.crowdGame:
+            switch crowdGame.state.answerState {
+            case .answered: crowdGame.nextQuestionButtonPressed()
+            case .notAnswered: crowdGame.showAnswerButtonPressed()
+            case .finishGame: crowdGame.finishGameButtonPressed()
+            }
         }
     }
     //MARK:- Prepare screen functions
@@ -49,14 +66,18 @@ class QuestionsView: UIViewController {
         backgroundImageView.alpha = 0.03
     }
     private func prepareButtons() {
-        makeRoundedColorButton(for: bottomButton)
-        makeRoundedGrayButton(for: topButton)
+        makeRoundedButton(for: bottomButton, with: K.foregroundColor)
+        makeRoundedButton(for: middleButton, with: K.grayColor)
+        makeRoundedButton(for: topButton, with: K.trueAnswerColor)
+        bottomButton.isHidden = true
+        middleButton.isHidden = true
+        topButton.isHidden = true
     }
     
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: state, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: topButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+        
         prepareBackgroundImage()
         prepareButtons()
         if UIScreen.main.currentMode!.size.width >= 750 {
@@ -65,18 +86,28 @@ class QuestionsView: UIViewController {
             setFonts(ofSize: K.fontSizeTextViewZoomed)
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        switch gameState.gameType! {
+        case .singleGame:
+            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+        case .crowdGame:
+            crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+        }
+    }
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParent {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
-                prevViewController.startButton.setTitle(K.continueGameButtonText, for: .normal)
+                prevViewController.topButton.setTitle(K.continueGameButtonText, for: .normal)
             }
         }
     }
 }
 
-extension QuestionsView: CrowdGameDelegate {
+extension QuestionsView: GameDelegate {
     func returnToStartView() {
         performSegue(withIdentifier: "backToStart", sender: self)
     }

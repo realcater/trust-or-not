@@ -12,14 +12,8 @@ import AVFoundation
 typealias noArgsFuncOpt = (() -> Void)?
 typealias noArgsFunc = () -> Void
 
-func makeRoundedColorButton(for button: UIButton) {
-    button.backgroundColor = K.activeButtonColor
-    button.setTitleColor(K.backgroundColor, for: .normal)
-    button.layer.cornerRadius = 0.5 * button.bounds.size.height
-}
-
-func makeRoundedGrayButton(for button: UIButton) {
-    button.backgroundColor = K.grayColor
+func makeRoundedButton(for button: UIButton, with color: UIColor) {
+    button.backgroundColor = color
     button.setTitleColor(K.backgroundColor, for: .normal)
     button.layer.cornerRadius = 0.5 * button.bounds.size.height
 }

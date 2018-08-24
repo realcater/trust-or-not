@@ -1,4 +1,20 @@
+enum AnswerState {
+    case notAnswered
+    case answered
+    case finishGame
+}
 
+enum GameType {
+    case singleGame
+    case crowdGame
+}
+
+class GameState {
+    var started  = false
+    var gameType : GameType!
+    var crowdGameState: CrowdGameState!
+    var singleGameState: SingleGameState!
+}
 
 class QuestionTask {
     var question: String

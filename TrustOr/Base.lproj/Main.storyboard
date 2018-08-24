@@ -48,18 +48,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ" userLabel="topButton">
                                 <rect key="frame" x="40" y="370" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ThG-yW-eHs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Играем">
+                                <state key="normal" title="Играем соло">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Euw-n7-dx4" kind="show" identifier="startGameViaAnimalButton" id="yCX-2c-80B"/>
+                                    <segue destination="Euw-n7-dx4" kind="show" identifier="topButtonSegue" id="C6f-uW-vOv"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRh-i2-LmR">
@@ -71,12 +71,11 @@
                                             <constraint firstAttribute="width" secondItem="QKA-ik-6N8" secondAttribute="height" multiplier="1:1" id="I4r-sV-Kc0"/>
                                         </constraints>
                                         <color key="tintColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" image="1">
+                                        <state key="normal" image="2">
                                             <color key="titleColor" red="0.011951360052111837" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="pressAnimalButton:" destination="S0w-Z2-ro9" eventType="touchUpInside" id="LNE-Xw-I2k"/>
-                                            <segue destination="Euw-n7-dx4" kind="show" identifier="startGameViaPlayButton" id="fu0-wu-79a"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -87,13 +86,32 @@
                                     <constraint firstItem="QKA-ik-6N8" firstAttribute="centerY" secondItem="nRh-i2-LmR" secondAttribute="centerY" id="ZfW-Gy-hjh"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-Ta-mCv" userLabel="bottomButton">
+                                <rect key="frame" x="40" y="440" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="n22-b5-0uK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Играем компанией">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressBottomButton:" destination="S0w-Z2-ro9" eventType="touchUpInside" id="DaK-lw-P4p"/>
+                                    <segue destination="Euw-n7-dx4" kind="show" identifier="bottomButtonSegue" id="crg-0d-ubg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9tl-vi-6uL" firstAttribute="bottom" secondItem="19t-Ww-CaQ" secondAttribute="bottom" constant="104" id="EXT-lh-trt"/>
+                            <constraint firstItem="Km0-Ta-mCv" firstAttribute="top" secondItem="19t-Ww-CaQ" secondAttribute="bottom" constant="20" id="5d6-8r-v3W"/>
+                            <constraint firstItem="9tl-vi-6uL" firstAttribute="bottom" secondItem="Km0-Ta-mCv" secondAttribute="bottom" constant="34" id="61f-U6-q2R"/>
+                            <constraint firstItem="9tl-vi-6uL" firstAttribute="trailing" secondItem="Km0-Ta-mCv" secondAttribute="trailing" constant="40" id="Fd2-9O-UBI"/>
                             <constraint firstItem="9tl-vi-6uL" firstAttribute="trailing" secondItem="nRh-i2-LmR" secondAttribute="trailing" constant="40" id="QuZ-d6-6Vv"/>
                             <constraint firstItem="19t-Ww-CaQ" firstAttribute="leading" secondItem="9tl-vi-6uL" secondAttribute="leading" constant="40" id="UIU-kW-MiV"/>
                             <constraint firstItem="nRh-i2-LmR" firstAttribute="leading" secondItem="9tl-vi-6uL" secondAttribute="leading" constant="40" id="Ui2-2a-maZ"/>
+                            <constraint firstItem="Km0-Ta-mCv" firstAttribute="leading" secondItem="9tl-vi-6uL" secondAttribute="leading" constant="40" id="WQ3-SI-9aA"/>
+                            <constraint firstItem="Km0-Ta-mCv" firstAttribute="centerX" secondItem="D7Y-BT-YTz" secondAttribute="centerX" id="YDd-NX-Ubw"/>
                             <constraint firstItem="nRh-i2-LmR" firstAttribute="top" secondItem="9tl-vi-6uL" secondAttribute="top" id="ZTN-w4-tEW"/>
                             <constraint firstItem="9tl-vi-6uL" firstAttribute="trailing" secondItem="19t-Ww-CaQ" secondAttribute="trailing" constant="40" id="bHh-Mo-MXv"/>
                             <constraint firstItem="nRh-i2-LmR" firstAttribute="centerX" secondItem="D7Y-BT-YTz" secondAttribute="centerX" id="dxr-z2-79R"/>
@@ -107,7 +125,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="animalButton" destination="QKA-ik-6N8" id="iO5-AM-GEj"/>
-                        <outlet property="startButton" destination="19t-Ww-CaQ" id="ar4-8g-9CK"/>
+                        <outlet property="bottomButton" destination="Km0-Ta-mCv" id="woK-Bt-mKh"/>
+                        <outlet property="topButton" destination="19t-Ww-CaQ" id="ar4-8g-9CK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KM3-ds-kNL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -214,7 +233,22 @@
                                     <action selector="bottomButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="XNt-Ee-ZLN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-wA-ytt" userLabel="topButton">
+                                <rect key="frame" x="40" y="300" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.01195136005" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1vk-iC-jIM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Верно">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="middleButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="8wf-gV-cRK"/>
+                                    <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="657-Fm-22h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="middleButton">
                                 <rect key="frame" x="40" y="370" width="240" height="50"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -225,13 +259,14 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
+                                    <action selector="middleButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="bottom" id="311-sj-gwP"/>
+                            <constraint firstItem="lMj-mL-u3Q" firstAttribute="top" secondItem="wvS-wA-ytt" secondAttribute="bottom" constant="20" id="6zn-XN-1EM"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
@@ -239,12 +274,15 @@
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="1ke-60-f02" secondAttribute="trailing" constant="16" id="Z7J-5D-Omx"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="16" id="a6l-kD-eHA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="b3N-ca-9WL"/>
+                            <constraint firstItem="wvS-wA-ytt" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="f0y-OY-XIG"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="gg5-Zf-TUb"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="h6H-du-Hrf"/>
+                            <constraint firstItem="wvS-wA-ytt" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="iel-vZ-UDT"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="enM-P6-HzI" secondAttribute="trailing" constant="40" id="jL9-mV-zvu"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="enM-P6-HzI" secondAttribute="bottom" constant="34" id="kji-e3-bPA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="mup-Ot-XWD"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="yk0-2M-f8v"/>
+                            <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="wvS-wA-ytt" secondAttribute="trailing" constant="40" id="zDc-Wc-Uc0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                         <variation key="default">
@@ -261,16 +299,15 @@
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="commentText" destination="UVv-sM-xM2" id="B0E-3v-vmD"/>
-                        <outlet property="finishGameButton" destination="hnn-EZ-CME" id="7Pq-lf-4W4"/>
+                        <outlet property="middleButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
-                        <outlet property="showAnswerButton" destination="8cj-TE-ykC" id="JNf-Wr-9Md"/>
-                        <outlet property="topButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
+                        <outlet property="topButton" destination="wvS-wA-ytt" id="cb0-We-Dna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgq-2p-zdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471.25" y="35.91549295774648"/>
+            <point key="canvasLocation" x="2471" y="40"/>
         </scene>
         <!--IntroView-->
         <scene sceneID="8dM-a4-4CZ">
@@ -360,11 +397,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="157" height="157"/>
+        <image name="2" width="157" height="157"/>
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fu0-wu-79a"/>
+        <segue reference="C6f-uW-vOv"/>
         <segue reference="edz-xl-br7"/>
     </inferredMetricsTieBreakers>
 </document>
