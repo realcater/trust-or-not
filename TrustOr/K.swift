@@ -8,7 +8,7 @@ struct K {
     static let confirmAnimalChoiceText1 = "Год "
     static let confirmAnimalChoiceText2 = "!"
     static let questionLabel = "Вопрос "
-    static let scoreLabel = "      🏅"
+    static let scoreLabel = "                🏅"
     static let fontSizeTextViewZoomed : CGFloat = 18
     static let fontSizeTextViewNormal : CGFloat = 21
     static let startSingleGameButtonText = "Играем соло"

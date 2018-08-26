@@ -13,12 +13,13 @@
 		C1480A912123649500137C37 /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1480A902123649500137C37 /* StartGameView.swift */; };
 		C14A3FAE2129592400804955 /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14A3FAD2129592400804955 /* IntroView.swift */; };
 		C14B02A4212983E300B2E96C /* 12009.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14B02A3212983E200B2E96C /* 12009.ttf */; };
+		C14B88B82131B312002AB422 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B88B72131B312002AB422 /* HelpViewController.swift */; };
 		C15647202121FC6100F1602E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156471F2121FC6100F1602E /* AppDelegate.swift */; };
 		C15647222121FC6100F1602E /* chooseYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647212121FC6100F1602E /* chooseYearView.swift */; };
 		C15647252121FC6100F1602E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647232121FC6100F1602E /* Main.storyboard */; };
 		C15647272121FC6100F1602E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15647262121FC6100F1602E /* Assets.xcassets */; };
 		C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647282121FC6200F1602E /* LaunchScreen.storyboard */; };
-		C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* ChineseAnimals.swift */; };
+		C15647322122E5E700F1602E /* QuestionsPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647312122E5E700F1602E /* QuestionsPack.swift */; };
 		C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16448E4212C853D00BA34D2 /* FunnyGame.swift */; };
 		C18E7F90212DA89A00FE1BFF /* ratchel.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */; };
 		C18E7F92212DA8E500FE1BFF /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C18E7F91212DA8E500FE1BFF /* ding.mp3 */; };
@@ -34,14 +35,15 @@
 		C1480A902123649500137C37 /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
 		C14A3FAD2129592400804955 /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		C14B02A3212983E200B2E96C /* 12009.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12009.ttf; sourceTree = "<group>"; };
-		C156471C2121FC6100F1602E /* TrustOr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrustOr.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C14B88B72131B312002AB422 /* HelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
+		C156471C2121FC6100F1602E /* Верю-Не-верю.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Верю-Не-верю.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156471F2121FC6100F1602E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C15647212121FC6100F1602E /* chooseYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseYearView.swift; sourceTree = "<group>"; };
 		C15647242121FC6100F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C15647262121FC6100F1602E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C15647292121FC6200F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C156472B2121FC6200F1602E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C15647312122E5E700F1602E /* ChineseAnimals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChineseAnimals.swift; sourceTree = "<group>"; };
+		C15647312122E5E700F1602E /* QuestionsPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPack.swift; sourceTree = "<group>"; };
 		C16448E4212C853D00BA34D2 /* FunnyGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyGame.swift; sourceTree = "<group>"; };
 		C18E7F8F212DA89A00FE1BFF /* ratchel.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ratchel.mp3; sourceTree = "<group>"; };
 		C18E7F91212DA8E500FE1BFF /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 				C1AF3825212F6C9400055EBD /* SingleGame.swift */,
 				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
-				C15647312122E5E700F1602E /* ChineseAnimals.swift */,
+				C15647312122E5E700F1602E /* QuestionsPack.swift */,
 				C130986321239082001D894D /* K.swift */,
 			);
 			name = Data;
@@ -80,9 +82,17 @@
 				C15647212121FC6100F1602E /* chooseYearView.swift */,
 				C1480A902123649500137C37 /* StartGameView.swift */,
 				C13098692125D0B0001D894D /* QuestionsView.swift */,
-				C130986B2125FAAC001D894D /* Common.swift */,
+				C14B88B72131B312002AB422 /* HelpViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C14B88B92132C9FE002AB422 /* UI utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C130986B2125FAAC001D894D /* Common.swift */,
+			);
+			name = "UI utilities";
 			sourceTree = "<group>";
 		};
 		C15647132121FC6100F1602E = {
@@ -96,7 +106,7 @@
 		C156471D2121FC6100F1602E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C156471C2121FC6100F1602E /* TrustOr.app */,
+				C156471C2121FC6100F1602E /* Верю-Не-верю.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +117,7 @@
 				C156471F2121FC6100F1602E /* AppDelegate.swift */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
 				C1480A952123828800137C37 /* ViewControllers */,
+				C14B88B92132C9FE002AB422 /* UI utilities */,
 				C1480A942123826300137C37 /* Data */,
 				C18E7F95212DA92700FE1BFF /* mp3 */,
 				C156472B2121FC6200F1602E /* Info.plist */,
@@ -130,9 +141,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C156471B2121FC6100F1602E /* TrustOr */ = {
+		C156471B2121FC6100F1602E /* Верю-Не-верю */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "TrustOr" */;
+			buildConfigurationList = C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Верю-Не-верю" */;
 			buildPhases = (
 				C15647182121FC6100F1602E /* Sources */,
 				C15647192121FC6100F1602E /* Frameworks */,
@@ -142,9 +153,9 @@
 			);
 			dependencies = (
 			);
-			name = TrustOr;
+			name = "Верю-Не-верю";
 			productName = TrustOr;
-			productReference = C156471C2121FC6100F1602E /* TrustOr.app */;
+			productReference = C156471C2121FC6100F1602E /* Верю-Не-верю.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -163,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C15647172121FC6100F1602E /* Build configuration list for PBXProject "TrustOr" */;
+			buildConfigurationList = C15647172121FC6100F1602E /* Build configuration list for PBXProject "Верю-Не-верю" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -176,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C156471B2121FC6100F1602E /* TrustOr */,
+				C156471B2121FC6100F1602E /* Верю-Не-верю */,
 			);
 		};
 /* End PBXProject section */
@@ -209,7 +220,8 @@
 				C130986421239082001D894D /* K.swift in Sources */,
 				C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */,
 				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,
-				C15647322122E5E700F1602E /* ChineseAnimals.swift in Sources */,
+				C15647322122E5E700F1602E /* QuestionsPack.swift in Sources */,
+				C14B88B82131B312002AB422 /* HelpViewController.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
 				C130986C2125FAAC001D894D /* Common.swift in Sources */,
 				C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */,
@@ -392,7 +404,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C15647172121FC6100F1602E /* Build configuration list for PBXProject "TrustOr" */ = {
+		C15647172121FC6100F1602E /* Build configuration list for PBXProject "Верю-Не-верю" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C156472C2121FC6200F1602E /* Debug */,
@@ -401,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "TrustOr" */ = {
+		C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Верю-Не-верю" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C156472F2121FC6200F1602E /* Debug */,

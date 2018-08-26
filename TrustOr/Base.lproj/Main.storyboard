@@ -258,7 +258,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос 1/20      🏅+1" id="rep-oL-Chz" userLabel="questionsView"/>
+                    <navigationItem key="navigationItem" title="Вопрос 1/20             🏅+1" id="rep-oL-Chz" userLabel="questionsView"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
@@ -273,6 +273,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgq-2p-zdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="40"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="hZG-jV-OH7">
+            <objects>
+                <viewController id="zpg-Pb-uCI" userLabel="Help" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="72T-xx-cGa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-xj-ymn" userLabel="Pop-up view">
+                                <rect key="frame" x="40" y="100" width="240" height="388"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-YQ-M3S">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="388"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">1. Играем компанией, от 4 человек, телефон нужен только ведущему. 2. Ведущий озвучивает вопрос, после чего все игроки, включая вас, голосуют:\n     Согласен = Рука Поднята\n     Не согласен = Ничего\n3. Нажимаем “\(showAnswerButtonText)“: кто не угадал - выбывает и больше не играет.\n4. Если все ответили одинаково - нажимаем “\(laterButtonText)“ и вопрос задастся ещё раз на втором круге.\n5. Если определился победитель, а вопросы остались - играем заново все вместе на оставшихся вопросах!"</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="0.91344713184931503" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KMR-YQ-M3S" secondAttribute="bottom" id="VwY-5s-jl4"/>
+                                    <constraint firstItem="KMR-YQ-M3S" firstAttribute="top" secondItem="BHp-xj-ymn" secondAttribute="top" id="Wm7-pC-2xG"/>
+                                    <constraint firstItem="KMR-YQ-M3S" firstAttribute="leading" secondItem="BHp-xj-ymn" secondAttribute="leading" id="jGf-qs-r7f"/>
+                                    <constraint firstAttribute="trailing" secondItem="KMR-YQ-M3S" secondAttribute="trailing" id="wa7-eL-sal"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="trailing" secondItem="BHp-xj-ymn" secondAttribute="trailing" id="4nl-PX-qZg"/>
+                            <constraint firstItem="BHp-xj-ymn" firstAttribute="leading" secondItem="V9d-Cb-rFQ" secondAttribute="leading" constant="40" id="9wa-gd-eQ0"/>
+                            <constraint firstItem="BHp-xj-ymn" firstAttribute="top" secondItem="V9d-Cb-rFQ" secondAttribute="top" constant="80" id="Mk2-gt-EEI"/>
+                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="trailing" secondItem="BHp-xj-ymn" secondAttribute="trailing" constant="40" id="XKj-Ey-mv8"/>
+                            <constraint firstItem="BHp-xj-ymn" firstAttribute="top" secondItem="V9d-Cb-rFQ" secondAttribute="top" id="hct-hC-FDV"/>
+                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="bottom" secondItem="BHp-xj-ymn" secondAttribute="bottom" id="hzx-d8-uK7"/>
+                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="bottom" secondItem="BHp-xj-ymn" secondAttribute="bottom" constant="80" id="jsr-Xw-xhz"/>
+                            <constraint firstItem="BHp-xj-ymn" firstAttribute="leading" secondItem="V9d-Cb-rFQ" secondAttribute="leading" id="mEo-xr-gql"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="V9d-Cb-rFQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BtG-Yd-GWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3221" y="40"/>
         </scene>
         <!--IntroView-->
         <scene sceneID="8dM-a4-4CZ">
@@ -359,6 +405,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zWb-Og-LOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379" y="38"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PaP-E3-xcT">
+            <objects>
+                <viewController id="0VI-G4-6go" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zhR-Zb-Sfz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zUE-zW-s77"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovV-bs-K06" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
