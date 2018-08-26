@@ -101,6 +101,14 @@ func addTaps(for viewController: UIViewController, forSingle singleTapAction: Se
     viewController.view.isUserInteractionEnabled = true
 }
 
+func addTaps(for viewController: UIViewController, forSingle singleTapAction: Selector) {
+    var singleTap: UITapGestureRecognizer!
+    singleTap = UITapGestureRecognizer(target: viewController, action: singleTapAction)
+    singleTap.numberOfTapsRequired = 1
+    viewController.view.addGestureRecognizer(singleTap)
+    viewController.view.isUserInteractionEnabled = true
+}
+
 func initSound(mp3filename: String) -> AVAudioPlayer? {
     let path = Bundle.main.path(forResource: "ratchel.mp3", ofType:nil)!
     let url = URL(fileURLWithPath: path)

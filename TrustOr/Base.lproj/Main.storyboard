@@ -18,7 +18,7 @@
         <!--chooseYearView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ChooseYearView" id="BYZ-38-t0r" userLabel="chooseYearView" customClass="ChooseYearView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseYearView" id="BYZ-38-t0r" userLabel="chooseYearView" customClass="ChooseYearView" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
         <!--StartGameView-->
         <scene sceneID="JPv-SI-VU0">
             <objects>
-                <viewController storyboardIdentifier="QuestionsView" id="S0w-Z2-ro9" userLabel="StartGameView" customClass="StartGameView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsView" id="S0w-Z2-ro9" userLabel="StartGameView" customClass="StartGameView" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D7Y-BT-YTz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
         <!--questionsView-->
         <scene sceneID="kNA-3H-4s0">
             <objects>
-                <viewController id="Euw-n7-dx4" userLabel="questionsView" customClass="QuestionsView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Euw-n7-dx4" userLabel="questionsView" customClass="QuestionsView" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Kf-du-BZb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,6 +174,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz">
+                                        <rect key="frame" x="102" y="208" width="85" height="30"/>
+                                        <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Как играть?"/>
+                                        <connections>
+                                            <segue destination="FLO-3C-U4q" kind="presentation" identifier="showHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k8N-DA-ZMu"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -187,6 +195,8 @@
                                     <constraint firstItem="UVv-sM-xM2" firstAttribute="top" secondItem="IdB-cb-l7E" secondAttribute="bottom" id="X8y-NX-acN"/>
                                     <constraint firstAttribute="trailing" secondItem="UVv-sM-xM2" secondAttribute="trailing" constant="10" id="YCG-Bm-1l0"/>
                                     <constraint firstAttribute="trailing" secondItem="57r-Zi-r8H" secondAttribute="trailing" constant="10" id="cqX-Dh-1Kt"/>
+                                    <constraint firstItem="Bgr-0n-Pzz" firstAttribute="top" secondItem="IdB-cb-l7E" secondAttribute="bottom" id="dYS-cf-a7E"/>
+                                    <constraint firstItem="Bgr-0n-Pzz" firstAttribute="centerX" secondItem="1ke-60-f02" secondAttribute="centerX" id="fSI-3H-xCn"/>
                                     <constraint firstItem="57r-Zi-r8H" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="top" constant="10" id="psY-ag-Nm0"/>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerY" secondItem="1ke-60-f02" secondAttribute="centerY" id="vSV-s5-fUe"/>
                                 </constraints>
@@ -240,6 +250,7 @@
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="bottom" id="311-sj-gwP"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="top" secondItem="wvS-wA-ytt" secondAttribute="bottom" constant="20" id="6zn-XN-1EM"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
+                            <constraint firstItem="wvS-wA-ytt" firstAttribute="top" secondItem="Bgr-0n-Pzz" secondAttribute="bottom" id="RZ9-v0-Qan"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="lMj-mL-u3Q" secondAttribute="bottom" constant="20" id="XM5-wb-1PF"/>
@@ -267,63 +278,63 @@
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
                         <outlet property="topButton" destination="wvS-wA-ytt" id="cb0-We-Dna"/>
-                        <segue destination="Bbo-37-oOS" kind="show" identifier="backToStart" id="Zji-jL-Kst"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" id="g5A-2b-kqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgq-2p-zdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2471" y="40"/>
         </scene>
-        <!--Help-->
-        <scene sceneID="hZG-jV-OH7">
+        <!--Help View Controller-->
+        <scene sceneID="qcb-D4-OKf">
             <objects>
-                <viewController id="zpg-Pb-uCI" userLabel="Help" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="72T-xx-cGa">
+                <viewController id="FLO-3C-U4q" customClass="HelpViewController" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m9M-sO-gkG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BHp-xj-ymn" userLabel="Pop-up view">
-                                <rect key="frame" x="40" y="100" width="240" height="388"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pm9-Im-1lb" userLabel="Pop-up view">
+                                <rect key="frame" x="40" y="80" width="240" height="408"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KMR-YQ-M3S">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="388"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">1. Играем компанией, от 4 человек, телефон нужен только ведущему. 2. Ведущий озвучивает вопрос, после чего все игроки, включая вас, голосуют:\n     Согласен = Рука Поднята\n     Не согласен = Ничего\n3. Нажимаем “\(showAnswerButtonText)“: кто не угадал - выбывает и больше не играет.\n4. Если все ответили одинаково - нажимаем “\(laterButtonText)“ и вопрос задастся ещё раз на втором круге.\n5. Если определился победитель, а вопросы остались - играем заново все вместе на оставшихся вопросах!"</string>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAH-t2-Vop">
+                                        <rect key="frame" x="10" y="10" width="220" height="388"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.91344713184931503" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="0.94999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="KMR-YQ-M3S" secondAttribute="bottom" id="VwY-5s-jl4"/>
-                                    <constraint firstItem="KMR-YQ-M3S" firstAttribute="top" secondItem="BHp-xj-ymn" secondAttribute="top" id="Wm7-pC-2xG"/>
-                                    <constraint firstItem="KMR-YQ-M3S" firstAttribute="leading" secondItem="BHp-xj-ymn" secondAttribute="leading" id="jGf-qs-r7f"/>
-                                    <constraint firstAttribute="trailing" secondItem="KMR-YQ-M3S" secondAttribute="trailing" id="wa7-eL-sal"/>
+                                    <constraint firstItem="fAH-t2-Vop" firstAttribute="top" secondItem="pm9-Im-1lb" secondAttribute="top" constant="10" id="7Bn-Pe-E9I"/>
+                                    <constraint firstItem="fAH-t2-Vop" firstAttribute="leading" secondItem="pm9-Im-1lb" secondAttribute="leading" constant="10" id="Gy9-mq-hTN"/>
+                                    <constraint firstAttribute="trailing" secondItem="fAH-t2-Vop" secondAttribute="trailing" constant="10" id="mcG-d1-Dzh"/>
+                                    <constraint firstAttribute="bottom" secondItem="fAH-t2-Vop" secondAttribute="bottom" constant="10" id="uuK-vM-07r"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="trailing" secondItem="BHp-xj-ymn" secondAttribute="trailing" id="4nl-PX-qZg"/>
-                            <constraint firstItem="BHp-xj-ymn" firstAttribute="leading" secondItem="V9d-Cb-rFQ" secondAttribute="leading" constant="40" id="9wa-gd-eQ0"/>
-                            <constraint firstItem="BHp-xj-ymn" firstAttribute="top" secondItem="V9d-Cb-rFQ" secondAttribute="top" constant="80" id="Mk2-gt-EEI"/>
-                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="trailing" secondItem="BHp-xj-ymn" secondAttribute="trailing" constant="40" id="XKj-Ey-mv8"/>
-                            <constraint firstItem="BHp-xj-ymn" firstAttribute="top" secondItem="V9d-Cb-rFQ" secondAttribute="top" id="hct-hC-FDV"/>
-                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="bottom" secondItem="BHp-xj-ymn" secondAttribute="bottom" id="hzx-d8-uK7"/>
-                            <constraint firstItem="V9d-Cb-rFQ" firstAttribute="bottom" secondItem="BHp-xj-ymn" secondAttribute="bottom" constant="80" id="jsr-Xw-xhz"/>
-                            <constraint firstItem="BHp-xj-ymn" firstAttribute="leading" secondItem="V9d-Cb-rFQ" secondAttribute="leading" id="mEo-xr-gql"/>
+                            <constraint firstItem="pm9-Im-1lb" firstAttribute="top" secondItem="OBJ-pA-OR7" secondAttribute="top" constant="60" id="20c-i2-wIj"/>
+                            <constraint firstItem="OBJ-pA-OR7" firstAttribute="bottom" secondItem="pm9-Im-1lb" secondAttribute="bottom" constant="80" id="5QI-Wd-DbM"/>
+                            <constraint firstItem="OBJ-pA-OR7" firstAttribute="trailing" secondItem="pm9-Im-1lb" secondAttribute="trailing" constant="40" id="GQ8-86-xrp"/>
+                            <constraint firstItem="pm9-Im-1lb" firstAttribute="leading" secondItem="OBJ-pA-OR7" secondAttribute="leading" constant="40" id="bcu-1u-6GU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="V9d-Cb-rFQ"/>
+                        <viewLayoutGuide key="safeArea" id="OBJ-pA-OR7"/>
                     </view>
+                    <connections>
+                        <outlet property="helpTextView" destination="fAH-t2-Vop" id="WMd-lv-64z"/>
+                        <outlet property="popupView" destination="pm9-Im-1lb" id="gXo-Ao-QLi"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BtG-Yd-GWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAe-r9-OMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3221" y="40"/>
+            <point key="canvasLocation" x="3257" y="40"/>
         </scene>
         <!--IntroView-->
         <scene sceneID="8dM-a4-4CZ">
             <objects>
-                <viewController storyboardIdentifier="introView" id="3Ss-Xm-0yA" userLabel="IntroView" customClass="IntroView" customModule="TrustOr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="introView" id="3Ss-Xm-0yA" userLabel="IntroView" customClass="IntroView" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dfH-o1-Bgs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,27 +417,13 @@
             </objects>
             <point key="canvasLocation" x="379" y="38"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="PaP-E3-xcT">
-            <objects>
-                <viewController id="0VI-G4-6go" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zhR-Zb-Sfz">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zUE-zW-s77"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ovV-bs-K06" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="2" width="157" height="157"/>
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zji-jL-Kst"/>
         <segue reference="C6f-uW-vOv"/>
+        <segue reference="PR8-Rt-L19"/>
     </inferredMetricsTieBreakers>
 </document>

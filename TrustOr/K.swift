@@ -42,6 +42,8 @@ struct K {
     static let hintCrowdGameText = "1. Играем компанией, от 4 человек, телефон нужен только ведущему.\n2. Ведущий озвучивает вопрос, после чего все игроки, включая вас, голосуют:\n     Согласен = Рука Поднята\n     Не согласен = Ничего\n3. Нажимаем “\(showAnswerButtonText)“: кто не угадал - выбывает и больше не играет.\n4. Если все ответили одинаково - нажимаем “\(laterButtonText)“ и вопрос задастся ещё раз на втором круге.\n5. Если определился победитель, а вопросы остались - играем заново все вместе на оставшихся вопросах!"
     static let hintFontSizeDecrease : CGFloat = 6
     
+    static let cornerRadius : CGFloat  = 25
+    
     struct intro {
         static let showAnimationDuration = 1.0
         static let hideAnimationDuration = 0.3
