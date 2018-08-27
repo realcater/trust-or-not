@@ -153,7 +153,7 @@ class SingleGame {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            resultLabel.backgroundColor = K.trueAnswerColor
+            resultLabel.backgroundColor = K.trueAnswerBarColor
             switch state.answerResultString {
             case K.winResultString:
                 resultLabel.text = K.trueTextWin
@@ -163,7 +163,7 @@ class SingleGame {
                 resultLabel.text = K.trueTextLoose
             }
         } else {
-            resultLabel.backgroundColor = K.falseAnswerColor
+            resultLabel.backgroundColor = K.falseAnswerBarColor
             switch state.answerResultString {
             case K.winResultString:
                 resultLabel.text = K.falseTextWin
@@ -225,7 +225,7 @@ class SingleGame {
         questionText.text = getFullResultsText()
         questionText.isHidden = false
         resultLabel.text = getShortResultsText()
-        resultLabel.backgroundColor = K.trueAnswerColor
+        resultLabel.backgroundColor = K.trueAnswerBarColor
         resultLabel.isHidden = false
     }
 }

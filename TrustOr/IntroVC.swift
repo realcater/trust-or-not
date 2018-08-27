@@ -9,7 +9,7 @@
 import UIKit
 
 
-class IntroView: UIViewController {
+class IntroVC: UIViewController {
     
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var centerImage: UIImageView!

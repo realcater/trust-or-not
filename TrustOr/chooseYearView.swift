@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChooseYearView: UIViewController {
+class ChooseYearVC: UIViewController {
 
     @objc func buttonPressed(_ sender: UIButton) {
         let chosenAnimal = questionsPacks.items[Int(sender.tag)-2000]
@@ -87,7 +87,7 @@ class ChooseYearView: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "yearChosen" {
-            let startGameView = segue.destination as! StartGameView
+            let startGameView = segue.destination as! ChooseGameVC
             let animalNumber = (sender as! UIButton).tag - 2000
             startGameView.questionsPack = questionsPacks.items[animalNumber]
         }

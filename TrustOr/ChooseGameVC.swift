@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartGameView: UIViewController {
+class ChooseGameVC: UIViewController {
     
     @IBOutlet weak var animalButton: UIButton!
     @IBOutlet weak var topButton: UIButton!
@@ -54,7 +54,7 @@ class StartGameView: UIViewController {
         } else {
             print(gameState.gameType)
         }
-        let questionsView = segue.destination as! QuestionsView
+        let questionsView = segue.destination as! QuestionsVC
         questionsView.questionsPack = questionsPack
         questionsView.gameState = gameState
     }

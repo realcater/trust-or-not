@@ -126,10 +126,10 @@ class CrowdGame {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            resultLabel.backgroundColor = K.trueAnswerColor
+            resultLabel.backgroundColor = K.trueAnswerBarColor
             resultLabel.text = K.trueText
         } else {
-            resultLabel.backgroundColor = K.falseAnswerColor
+            resultLabel.backgroundColor = K.falseAnswerBarColor
             resultLabel.text = K.falseText
         }
         resultLabel.isHidden = false
@@ -152,8 +152,10 @@ class CrowdGame {
         hideAnswer()
         //showHint()
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
+        showAnswerButton.backgroundColor = K.foregroundColor
         showAnswerButton.isHidden = false
         laterButton.setTitle(K.laterButtonText, for: .normal)
+        laterButton.backgroundColor = K.grayColor
         laterButton.isHidden = false
         reloadTexts()
     }

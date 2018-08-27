@@ -8,8 +8,10 @@
 
 import UIKit
 
-class QuestionsView: UIViewController {
+class QuestionsVC: UIViewController {
     
+    let fontSize = (UIScreen.main.currentMode!.size.width >= 750) ? K.fontSizeTextViewNormal : K.fontSizeTextViewZoomed
+
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
@@ -56,10 +58,10 @@ class QuestionsView: UIViewController {
         }
     }
     //MARK:- Prepare screen functions
-    private func setFonts(ofSize size: CGFloat) {
-        questionText.font = .systemFont(ofSize: size)
-        commentText.font = .italicSystemFont(ofSize: size)
-        resultLabel.font = .systemFont(ofSize: size+3, weight: .bold)
+    private func setFonts() {
+        questionText.font = .systemFont(ofSize: fontSize)
+        commentText.font = .italicSystemFont(ofSize: fontSize)
+        resultLabel.font = .systemFont(ofSize: fontSize+3, weight: .bold)
     }
     private func prepareBackgroundImage() {
         backgroundImageView.image = (UIImage(named: questionsPack.picname))
@@ -67,9 +69,9 @@ class QuestionsView: UIViewController {
         backgroundImageView.alpha = 0.03
     }
     private func prepareButtons() {
-        makeRoundedButton(for: bottomButton, with: K.foregroundColor)
-        makeRoundedButton(for: middleButton, with: K.grayColor)
-        makeRoundedButton(for: topButton, with: K.trueAnswerColor)
+        makeRoundedButton(for: bottomButton, with: K.trueAnswerButtonColor)
+        makeRoundedButton(for: middleButton, with: K.doubtAnswerButtonColor)
+        makeRoundedButton(for: topButton, with: K.falseAnswerButtonColor)
         bottomButton.isHidden = true
         middleButton.isHidden = true
         topButton.isHidden = true
@@ -78,14 +80,9 @@ class QuestionsView: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         prepareBackgroundImage()
         prepareButtons()
-        if UIScreen.main.currentMode!.size.width >= 750 {
-            setFonts(ofSize: K.fontSizeTextViewNormal)
-        } else {
-            setFonts(ofSize: K.fontSizeTextViewZoomed)
-        }
+        setFonts()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -102,7 +99,7 @@ class QuestionsView: UIViewController {
         super.viewWillDisappear(animated)
         if isMovingFromParent {
             if let ViewControllersCount = navigationController?.viewControllers.count {
-                let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! StartGameView
+                let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! ChooseGameVC
                 prevViewController.bottomButton.setTitle(K.continueGameButtonText, for: .normal)
                 prevViewController.topButton.isHidden = true
             }
@@ -110,7 +107,7 @@ class QuestionsView: UIViewController {
     }
 }
 
-extension QuestionsView: GameDelegate {
+extension QuestionsVC: GameDelegate {
     func returnToStartView() {
         performSegue(withIdentifier: "backToStart", sender: self)
     }
