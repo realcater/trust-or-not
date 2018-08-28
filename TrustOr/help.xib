@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,291 +13,534 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82m-Y1-LqB">
-                    <rect key="frame" x="16" y="50" width="343" height="513"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">В классической игре "Верю-не-верю" ведущий зачитывает утверждения на заданную тему, часть из которых является верными, а часть - выдумкой!    Каждый игрок оценивает утверждение, вынося свой вердикт: "Верно" или "Не верно".    Все игроки, ответившие правильно, переходят в следующий тур и могут оценивать следующее утверждение, остальные - выбывают.    Игра заканчивается, когда остаётся один игрок - он и объявляется победителем!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Что такое &quot;Верю-не-верю&quot;?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-HV-uDG">
-                    <rect key="frame" x="63" y="20" width="248" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что такое &quot;Верю-не-верю&quot;?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-HV-uDG">
+                    <rect key="frame" x="16" y="8" width="303" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🧐🤥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-M9-nNh">
-                    <rect key="frame" x="137" y="147" width="100" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOQ-HD-okB">
+                    <rect key="frame" x="16" y="43" width="303" height="113.5"/>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">В классической игре "Верю-не-верю" ведущий зачитывает утверждения на заданную тему, часть из которых является верными, а часть - выдумкой!</string>
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="19" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" hyphenationFactor="0.20000000298023224" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🧐🤥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahb-M9-nNh">
+                    <rect key="frame" x="16" y="156.5" width="303" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" ✅ 🤔 ❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-Sg-DoM">
-                    <rect key="frame" x="98" y="279" width="179" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgO-Sg-DoM">
+                    <rect key="frame" x="16" y="314" width="303" height="54"/>
+                    <attributedString key="attributedText">
+                        <fragment content=" ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="45"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="✅">
+                            <attributes>
+                                <font key="NSFont" size="45" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="45"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="🤔">
+                            <attributes>
+                                <font key="NSFont" size="45" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="45"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="❌">
+                            <attributes>
+                                <font key="NSFont" size="42" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😃😢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbJ-N5-7O5">
-                    <rect key="frame" x="137" y="424" width="100" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🏆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ota-xs-Sbc">
-                    <rect key="frame" x="162" y="552" width="50" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                    <nil key="textColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-lv-cXp">
+                    <rect key="frame" x="16" y="218.5" width="303" height="95.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Каждый игрок оценивает утверждение, вынося свой вердикт: &quot;Верно&quot; или &quot;Не верно&quot;.">
+                            <attributes>
+                                <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="GOQ-HD-okB" firstAttribute="top" secondItem="CuY-HV-uDG" secondAttribute="bottom" constant="8.5" id="52h-7M-9RQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="CuY-HV-uDG" secondAttribute="trailing" constant="16" id="5nD-vy-P5o"/>
+                <constraint firstItem="GOQ-HD-okB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9O2-i6-Qrn"/>
+                <constraint firstItem="Ahb-M9-nNh" firstAttribute="top" secondItem="GOQ-HD-okB" secondAttribute="bottom" id="DZM-sQ-ohw"/>
+                <constraint firstItem="hgO-Sg-DoM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ggp-vf-UTo"/>
+                <constraint firstItem="qFA-lv-cXp" firstAttribute="top" secondItem="Ahb-M9-nNh" secondAttribute="bottom" constant="8" id="ImX-tp-QA1"/>
+                <constraint firstItem="CuY-HV-uDG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="MpO-JO-6zB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ahb-M9-nNh" secondAttribute="trailing" constant="16" id="UVA-SL-ODu"/>
+                <constraint firstItem="Ahb-M9-nNh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="XGL-Mw-e1t"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hgO-Sg-DoM" secondAttribute="trailing" constant="16" id="eaF-SR-zXx"/>
+                <constraint firstAttribute="trailing" secondItem="GOQ-HD-okB" secondAttribute="trailing" constant="16" id="hbA-8O-gFF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="qFA-lv-cXp" secondAttribute="trailing" constant="16" id="smC-RZ-oqM"/>
+                <constraint firstItem="hgO-Sg-DoM" firstAttribute="top" secondItem="qFA-lv-cXp" secondAttribute="bottom" id="u12-Pw-rPh"/>
+                <constraint firstItem="CuY-HV-uDG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="vAq-C8-o9Z"/>
+                <constraint firstItem="qFA-lv-cXp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="wBP-Wr-Quu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
-        <view contentMode="scaleToFill" id="vd4-1Z-2gN">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="TPJ-1k-6Kj">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49r-E3-LWf">
-                    <rect key="frame" x="16" y="50" width="343" height="532"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Мы предлагаем вам сыграть в тематическое "Верю-не-верю", посвященное животным китайского календаря.        В игре 12 пакетов по 20 вопросов в каждом. Каждый пакет посвящён одному из 12 животных китайского календаря: от Мышки до Поросёнка.     Игра отлично подходит для новогоднего развлечения в канун наступления года соответствующего животного, но вы легко можете сыграть и в любое другое время года!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Верите ли вы в Китайский календарь?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-ND-VbN">
-                    <rect key="frame" x="18" y="20" width="338" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что такое &quot;Верю-не-верю&quot;?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kha-8W-Pzc">
+                    <rect key="frame" x="16" y="8" width="303" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OAa-kh-fLI">
-                    <rect key="frame" x="112" y="129" width="150" height="150"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="tintColor" red="0.0" green="0.43137254899999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🎄" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-j5-3Sr">
-                    <rect key="frame" x="151" y="379" width="65" height="72"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😃😢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2u-bL-aqJ">
+                    <rect key="frame" x="16" y="186" width="303" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-99-5HY">
+                    <rect key="frame" x="16" y="42.5" width="303" height="143.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Все игроки, ответившие правильно, переходят в следующий тур и могут оценивать следующее утверждение, остальные - выбывают.">
+                            <attributes>
+                                <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjx-Cd-pGr">
+                    <rect key="frame" x="16" y="248" width="303" height="72"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Игра заканчивается, когда остаётся один игрок - он и объявляется победителем!">
+                            <attributes>
+                                <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vjk-yI-Y8a">
+                    <rect key="frame" x="16" y="328" width="303" height="54"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="llt-4T-AKC"/>
+            <constraints>
+                <constraint firstItem="z2u-bL-aqJ" firstAttribute="top" secondItem="Fg1-99-5HY" secondAttribute="bottom" id="3FY-sg-jPS"/>
+                <constraint firstItem="Vjk-yI-Y8a" firstAttribute="leading" secondItem="Unj-ge-ZT6" secondAttribute="leading" constant="16" id="6Gr-tq-Cqn"/>
+                <constraint firstItem="kha-8W-Pzc" firstAttribute="leading" secondItem="Unj-ge-ZT6" secondAttribute="leading" constant="16" id="Ebe-zC-xa9"/>
+                <constraint firstItem="Fg1-99-5HY" firstAttribute="leading" secondItem="Unj-ge-ZT6" secondAttribute="leading" constant="16" id="Maf-9L-1wU"/>
+                <constraint firstItem="Unj-ge-ZT6" firstAttribute="trailing" secondItem="z2u-bL-aqJ" secondAttribute="trailing" constant="16" id="P9c-0i-lRe"/>
+                <constraint firstItem="Fg1-99-5HY" firstAttribute="top" secondItem="kha-8W-Pzc" secondAttribute="bottom" constant="8" id="hES-9b-3hY"/>
+                <constraint firstItem="z2u-bL-aqJ" firstAttribute="leading" secondItem="Unj-ge-ZT6" secondAttribute="leading" constant="16" id="jck-py-Sg8"/>
+                <constraint firstItem="Bjx-Cd-pGr" firstAttribute="top" secondItem="z2u-bL-aqJ" secondAttribute="bottom" constant="8" id="ugl-LS-L0F"/>
+                <constraint firstItem="Unj-ge-ZT6" firstAttribute="trailing" secondItem="Vjk-yI-Y8a" secondAttribute="trailing" constant="16" id="uiP-SP-Ndx"/>
+                <constraint firstItem="Vjk-yI-Y8a" firstAttribute="top" secondItem="Bjx-Cd-pGr" secondAttribute="bottom" constant="8" id="vLn-St-KUr"/>
+                <constraint firstItem="Unj-ge-ZT6" firstAttribute="trailing" secondItem="Bjx-Cd-pGr" secondAttribute="trailing" constant="16" id="wha-n6-Qdu"/>
+                <constraint firstItem="kha-8W-Pzc" firstAttribute="top" secondItem="Unj-ge-ZT6" secondAttribute="top" constant="8" id="wqW-UD-qvH"/>
+                <constraint firstItem="Unj-ge-ZT6" firstAttribute="trailing" secondItem="Fg1-99-5HY" secondAttribute="trailing" constant="16" id="yQC-m0-LDK"/>
+                <constraint firstItem="Bjx-Cd-pGr" firstAttribute="leading" secondItem="Unj-ge-ZT6" secondAttribute="leading" constant="16" id="z0y-hQ-Bgp"/>
+                <constraint firstItem="Unj-ge-ZT6" firstAttribute="trailing" secondItem="kha-8W-Pzc" secondAttribute="trailing" constant="16" id="z93-vH-XGT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Unj-ge-ZT6"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
-        <view contentMode="scaleToFill" id="xUX-8G-WyW">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="vd4-1Z-2gN">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7d-Ac-O3u">
-                    <rect key="frame" x="16" y="50" width="343" height="389"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">В игре есть два режима игры:    Классическая игра, могут участвовать от 4 до бесконечности людей, приложение нужно только ведущему.      Игра для одного игрока: вы отвечаете на вопросы, получая очки за правильные и неправильные ответы. Цель - набрать максимум очков!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Как играть?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjh-YV-MXd">
-                    <rect key="frame" x="135" y="20" width="105" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Китайский календарь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-ND-VbN">
+                    <rect key="frame" x="16" y="8" width="303" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAa-7M-jBW">
-                    <rect key="frame" x="40" y="85" width="295" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo2" translatesAutoresizingMaskIntoConstraints="NO" id="OAa-kh-fLI">
+                    <rect key="frame" x="92.5" y="146" width="150" height="150"/>
+                    <color key="tintColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Cla-WZ-pKQ"/>
+                        <constraint firstAttribute="height" constant="150" id="MlR-pp-CRr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIN-tb-irs">
+                    <rect key="frame" x="16" y="42.5" width="303" height="95.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Мы предлагаем вам сыграть в тематическое &quot;Верю-не-верю&quot;, посвященное животным китайского календаря.">
+                            <attributes>
+                                <font key="NSFont" size="20" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-oq-fJO">
+                    <rect key="frame" x="16" y="304" width="303" height="143.5"/>
+                    <string key="text">В игре 12 пакетов по 20 вопросов в каждом. Каждый пакет посвящён одному из 12 животных китайского календаря: от Мышки до Поросёнка.</string>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="DvW-ND-VbN" firstAttribute="leading" secondItem="llt-4T-AKC" secondAttribute="leading" constant="16" id="4qB-46-UQu"/>
+                <constraint firstItem="MVt-oq-fJO" firstAttribute="top" secondItem="OAa-kh-fLI" secondAttribute="bottom" constant="8" id="CAV-bw-nUm"/>
+                <constraint firstAttribute="trailing" secondItem="sIN-tb-irs" secondAttribute="trailing" constant="16" id="CQX-zB-dwh"/>
+                <constraint firstItem="sIN-tb-irs" firstAttribute="leading" secondItem="llt-4T-AKC" secondAttribute="leading" constant="16" id="HH9-KK-u4V"/>
+                <constraint firstItem="MVt-oq-fJO" firstAttribute="leading" secondItem="llt-4T-AKC" secondAttribute="leading" constant="16" id="JB8-au-icJ"/>
+                <constraint firstItem="llt-4T-AKC" firstAttribute="trailing" secondItem="MVt-oq-fJO" secondAttribute="trailing" constant="16" id="NrA-JH-EbF"/>
+                <constraint firstItem="sIN-tb-irs" firstAttribute="top" secondItem="DvW-ND-VbN" secondAttribute="bottom" constant="8" id="XBe-aE-g3z"/>
+                <constraint firstItem="OAa-kh-fLI" firstAttribute="top" secondItem="sIN-tb-irs" secondAttribute="bottom" constant="8" id="YES-4e-kFr"/>
+                <constraint firstItem="llt-4T-AKC" firstAttribute="trailing" secondItem="DvW-ND-VbN" secondAttribute="trailing" constant="16" id="ba0-C0-GyR"/>
+                <constraint firstItem="DvW-ND-VbN" firstAttribute="top" secondItem="llt-4T-AKC" secondAttribute="top" constant="8" id="e6Q-2s-Fth"/>
+                <constraint firstItem="OAa-kh-fLI" firstAttribute="centerX" secondItem="vd4-1Z-2gN" secondAttribute="centerX" id="xIK-Rl-BPK"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="llt-4T-AKC"/>
+            <point key="canvasLocation" x="53.600000000000001" y="47.676161919040482"/>
+        </view>
+        <view contentMode="scaleToFill" id="xUX-8G-WyW">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как играть?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjh-YV-MXd">
+                    <rect key="frame" x="16" y="8" width="303" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В игре есть два режима игры:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzg-Iy-iSd">
+                    <rect key="frame" x="16" y="42.5" width="303" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Классическая игра, могут участвовать от 4 до бесконечности людей, приложение нужно только ведущему." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyl-FZ-nLS">
+                    <rect key="frame" x="16" y="130.5" width="303" height="119.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAa-7M-jBW">
+                    <rect key="frame" x="49.5" y="82.5" width="236" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="236" id="B9G-vf-Yal"/>
+                        <constraint firstAttribute="height" constant="40" id="WZw-Cu-N11"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="Играем компанией">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bk0-SV-SnH">
-                    <rect key="frame" x="40" y="263" width="295" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDV-zt-zMg">
+                    <rect key="frame" x="49.5" y="266" width="236" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Izj-l4-do5"/>
+                        <constraint firstAttribute="width" constant="236" id="rZ2-hc-x2F"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                    <state key="normal" title="Играем соло">
+                    <state key="normal" title="Играем компанией">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-RV-abz">
+                    <rect key="frame" x="16" y="314" width="303" height="119.5"/>
+                    <string key="text">Игра для одного игрока: вы отвечаете на вопросы, получая очки за правильные и неправильные ответы. Цель - набрать максимум очков!</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yYg-qd-JUl" firstAttribute="trailing" secondItem="Tjh-YV-MXd" secondAttribute="trailing" constant="16" id="6b3-cm-Ep3"/>
+                <constraint firstItem="fzg-Iy-iSd" firstAttribute="top" secondItem="Tjh-YV-MXd" secondAttribute="bottom" constant="8" id="6si-YS-hWq"/>
+                <constraint firstItem="q5e-RV-abz" firstAttribute="leading" secondItem="yYg-qd-JUl" secondAttribute="leading" constant="16" id="8Vh-ri-Lr1"/>
+                <constraint firstItem="Tjh-YV-MXd" firstAttribute="leading" secondItem="yYg-qd-JUl" secondAttribute="leading" constant="16" id="9Ae-b6-W7U"/>
+                <constraint firstItem="q5e-RV-abz" firstAttribute="top" secondItem="xDV-zt-zMg" secondAttribute="bottom" constant="8" id="DJU-3c-7MS"/>
+                <constraint firstItem="jyl-FZ-nLS" firstAttribute="top" secondItem="TAa-7M-jBW" secondAttribute="bottom" constant="8" id="L87-Qw-N9g"/>
+                <constraint firstItem="xDV-zt-zMg" firstAttribute="top" secondItem="jyl-FZ-nLS" secondAttribute="bottom" constant="16" id="OXG-c1-jGI"/>
+                <constraint firstItem="jyl-FZ-nLS" firstAttribute="leading" secondItem="yYg-qd-JUl" secondAttribute="leading" constant="16" id="QCF-X9-30k"/>
+                <constraint firstItem="xDV-zt-zMg" firstAttribute="centerX" secondItem="xUX-8G-WyW" secondAttribute="centerX" id="UlF-29-vUS"/>
+                <constraint firstItem="TAa-7M-jBW" firstAttribute="centerX" secondItem="xUX-8G-WyW" secondAttribute="centerX" id="aW8-t9-AKA"/>
+                <constraint firstItem="fzg-Iy-iSd" firstAttribute="leading" secondItem="yYg-qd-JUl" secondAttribute="leading" constant="16" id="aZE-z7-aKr"/>
+                <constraint firstItem="TAa-7M-jBW" firstAttribute="top" secondItem="fzg-Iy-iSd" secondAttribute="bottom" constant="16" id="eti-uB-3WI"/>
+                <constraint firstItem="yYg-qd-JUl" firstAttribute="trailing" secondItem="fzg-Iy-iSd" secondAttribute="trailing" constant="16" id="pie-LF-yv3"/>
+                <constraint firstItem="yYg-qd-JUl" firstAttribute="trailing" secondItem="q5e-RV-abz" secondAttribute="trailing" constant="16" id="rIK-ar-LWv"/>
+                <constraint firstItem="Tjh-YV-MXd" firstAttribute="top" secondItem="yYg-qd-JUl" secondAttribute="top" constant="8" id="s9K-ZO-Imf"/>
+                <constraint firstItem="yYg-qd-JUl" firstAttribute="trailing" secondItem="jyl-FZ-nLS" secondAttribute="trailing" constant="16" id="vKY-UX-dCD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="yYg-qd-JUl"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="53.600000000000001" y="47.676161919040482"/>
         </view>
         <view contentMode="scaleToFill" id="jTE-VK-hht">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G3O-N2-RQi">
-                    <rect key="frame" x="16" y="50" width="343" height="120"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Ведущий последовательно зачитывает всем игрокам утверждения, после чего на счёт "Раз-два-три" все игроки должны сообщить, согласны они с ним или нет.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Играем компанией!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxC-bT-Mkx">
-                    <rect key="frame" x="102" y="20" width="176" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxC-bT-Mkx">
+                    <rect key="frame" x="16" y="8" width="303" height="26.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="darkGreen150" translatesAutoresizingMaskIntoConstraints="NO" id="24r-bs-jO6">
-                    <rect key="frame" x="16" y="178" width="75" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="darkGreen150" translatesAutoresizingMaskIntoConstraints="NO" id="24r-bs-jO6">
+                    <rect key="frame" x="16" y="203.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="KFa-Nr-OL3"/>
+                        <constraint firstAttribute="width" constant="100" id="qPn-eX-qmF"/>
+                    </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Все игроки, считающие, что данное утверждение &quot;Верно&quot;, поднимают руку вверх!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a4c-rn-CKB">
-                    <rect key="frame" x="99" y="165" width="240" height="102"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="red150" translatesAutoresizingMaskIntoConstraints="NO" id="A6a-h0-P4m">
-                    <rect key="frame" x="16" y="281" width="75" height="75"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-Yd-3OC">
+                    <rect key="frame" x="16" y="42.5" width="303" height="143.5"/>
+                    <string key="text">Ведущий последовательно зачитывает всем игрокам утверждения, после чего на счёт "Раз-два-три" все игроки должны сообщить, согласны они с ним или нет.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Верно&quot;, поднимают руку вверх!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-WH-8cB">
+                    <rect key="frame" x="120" y="194" width="199" height="119.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Верно&quot;, поднимают руку вверх!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-ZW-9KN">
+                    <rect key="frame" x="120" y="329.5" width="199" height="119.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="red150" translatesAutoresizingMaskIntoConstraints="NO" id="A6a-h0-P4m">
+                    <rect key="frame" x="16" y="338.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="BdB-iq-YTm"/>
+                        <constraint firstAttribute="height" constant="100" id="geh-Z3-aId"/>
+                    </constraints>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Все игроки, считающие, что данное утверждение &quot;Не верно&quot; ничего не делают!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="L6Q-lv-CUw">
-                    <rect key="frame" x="102" y="267" width="240" height="102"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OPU-WH-8cB" firstAttribute="leading" secondItem="24r-bs-jO6" secondAttribute="trailing" constant="4" id="4z2-76-Vk2"/>
+                <constraint firstItem="OLZ-ff-0fw" firstAttribute="trailing" secondItem="hxC-bT-Mkx" secondAttribute="trailing" constant="16" id="BUg-gw-Kby"/>
+                <constraint firstItem="OLZ-ff-0fw" firstAttribute="trailing" secondItem="OPU-WH-8cB" secondAttribute="trailing" constant="16" id="Dap-dG-ElE"/>
+                <constraint firstItem="hxC-bT-Mkx" firstAttribute="top" secondItem="OLZ-ff-0fw" secondAttribute="top" constant="8" id="LxZ-3O-VQn"/>
+                <constraint firstItem="24r-bs-jO6" firstAttribute="top" secondItem="BC5-Yd-3OC" secondAttribute="bottom" constant="17.5" id="NMx-ub-Piq"/>
+                <constraint firstItem="WLe-ZW-9KN" firstAttribute="top" secondItem="OPU-WH-8cB" secondAttribute="bottom" constant="16" id="Qfw-Fx-b3o"/>
+                <constraint firstItem="A6a-h0-P4m" firstAttribute="top" secondItem="24r-bs-jO6" secondAttribute="bottom" constant="35" id="Rbd-rt-r5q"/>
+                <constraint firstItem="OPU-WH-8cB" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="120" id="TGA-rJ-2u2"/>
+                <constraint firstItem="OPU-WH-8cB" firstAttribute="leading" secondItem="24r-bs-jO6" secondAttribute="trailing" constant="4" id="Y2o-M1-sed"/>
+                <constraint firstItem="hxC-bT-Mkx" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="16" id="b1h-pB-asX"/>
+                <constraint firstItem="OLZ-ff-0fw" firstAttribute="trailing" secondItem="WLe-ZW-9KN" secondAttribute="trailing" constant="16" id="bdY-fl-xE4"/>
+                <constraint firstItem="24r-bs-jO6" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="16" id="eTV-eq-HKj"/>
+                <constraint firstItem="WLe-ZW-9KN" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="120" id="goZ-7q-Xay"/>
+                <constraint firstItem="OPU-WH-8cB" firstAttribute="top" secondItem="BC5-Yd-3OC" secondAttribute="bottom" constant="8" id="jN6-eg-Upe"/>
+                <constraint firstItem="BC5-Yd-3OC" firstAttribute="top" secondItem="hxC-bT-Mkx" secondAttribute="bottom" constant="8" id="kjg-Tm-5DK"/>
+                <constraint firstItem="A6a-h0-P4m" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="16" id="udT-5C-PMa"/>
+                <constraint firstItem="WLe-ZW-9KN" firstAttribute="leading" secondItem="A6a-h0-P4m" secondAttribute="trailing" constant="4" id="ufN-Ub-m1j"/>
+                <constraint firstAttribute="trailing" secondItem="BC5-Yd-3OC" secondAttribute="trailing" constant="16" id="xD8-Ha-4Qc"/>
+                <constraint firstItem="BC5-Yd-3OC" firstAttribute="leading" secondItem="OLZ-ff-0fw" secondAttribute="leading" constant="16" id="ysh-lH-dja"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="OLZ-ff-0fw"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="53.4375" y="47.5"/>
         </view>
         <view contentMode="scaleToFill" id="S1C-8h-VDE">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Если игроки дали разные ответы: кто-то &quot;Верно&quot;, кто-то &quot;Не верно&quot;, ведущий нажимает кнопку:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HZ4-YE-shU">
-                    <rect key="frame" x="14" y="100" width="343" height="76"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Играем компанией!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-Ss-SoX">
-                    <rect key="frame" x="102" y="20" width="176" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-Ss-SoX">
+                    <rect key="frame" x="16" y="8" width="303" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-SC-YG1">
-                    <rect key="frame" x="38" y="184" width="295" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pm-SC-YG1">
+                    <rect key="frame" x="49.5" y="208.5" width="236" height="40"/>
                     <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="KRY-Vs-ToQ"/>
+                        <constraint firstAttribute="width" constant="236" id="pxA-ls-o7p"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="Показать ответ">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9gS-By-4Vk">
-                    <rect key="frame" x="17" y="246" width="343" height="125"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">На экране появится правильный ответ. Все, кто ответили не правильно, выбывают: на следующий вопрос отвечают только те, кто ответили правильно!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😃😢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daN-eS-zae">
-                    <rect key="frame" x="135" y="360" width="100" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😃😢" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daN-eS-zae">
+                    <rect key="frame" x="16" y="352" width="303" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" ✅❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-wr-Cqm">
-                    <rect key="frame" x="133" y="49" width="110" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiM-wr-Cqm">
+                    <rect key="frame" x="16" y="43" width="303" height="54"/>
+                    <attributedString key="attributedText">
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" metaFont="system" size="45"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="✅">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="45" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="❌">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="42" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если игроки дали разные ответы: кто-то &quot;Верно&quot;, кто-то &quot;Не верно&quot;, ведущий нажимает кнопку:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Gc-0wS">
+                    <rect key="frame" x="16" y="105" width="303" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все, кто ответили не правильно, выбывают: на следующий вопрос отвечают только те, кто ответили верно!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-8t-aIZ">
+                    <rect key="frame" x="16" y="256.5" width="303" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0pm-SC-YG1" firstAttribute="top" secondItem="ynf-Gc-0wS" secondAttribute="bottom" constant="8" id="1qE-xn-fCG"/>
+                <constraint firstItem="MiM-wr-Cqm" firstAttribute="top" secondItem="9g5-Ss-SoX" secondAttribute="bottom" constant="8" id="3ca-7H-kF1"/>
+                <constraint firstItem="vgZ-wf-KvV" firstAttribute="trailing" secondItem="daN-eS-zae" secondAttribute="trailing" constant="16" id="C0V-3K-jm3"/>
+                <constraint firstItem="daN-eS-zae" firstAttribute="leading" secondItem="vgZ-wf-KvV" secondAttribute="leading" constant="16" id="DfR-Ib-LBr"/>
+                <constraint firstItem="daN-eS-zae" firstAttribute="top" secondItem="i0a-8t-aIZ" secondAttribute="bottom" id="OVa-4Y-0Na"/>
+                <constraint firstItem="9g5-Ss-SoX" firstAttribute="leading" secondItem="vgZ-wf-KvV" secondAttribute="leading" constant="16" id="Tdu-A9-eZM"/>
+                <constraint firstItem="9g5-Ss-SoX" firstAttribute="top" secondItem="vgZ-wf-KvV" secondAttribute="top" constant="8" id="UyP-5x-F3X"/>
+                <constraint firstItem="i0a-8t-aIZ" firstAttribute="leading" secondItem="vgZ-wf-KvV" secondAttribute="leading" constant="16" id="WVw-p8-Fko"/>
+                <constraint firstItem="vgZ-wf-KvV" firstAttribute="trailing" secondItem="i0a-8t-aIZ" secondAttribute="trailing" constant="16" id="WfY-Gg-R0Z"/>
+                <constraint firstAttribute="trailing" secondItem="ynf-Gc-0wS" secondAttribute="trailing" constant="16" id="Yzx-BJ-YlQ"/>
+                <constraint firstItem="ynf-Gc-0wS" firstAttribute="leading" secondItem="vgZ-wf-KvV" secondAttribute="leading" constant="16" id="f0J-aL-2Me"/>
+                <constraint firstItem="ynf-Gc-0wS" firstAttribute="top" secondItem="MiM-wr-Cqm" secondAttribute="bottom" constant="8" id="hGN-9z-AkA"/>
+                <constraint firstItem="MiM-wr-Cqm" firstAttribute="leading" secondItem="vgZ-wf-KvV" secondAttribute="leading" constant="16" id="jBi-MW-vmk"/>
+                <constraint firstItem="vgZ-wf-KvV" firstAttribute="trailing" secondItem="MiM-wr-Cqm" secondAttribute="trailing" constant="16" id="m4c-P0-ah2"/>
+                <constraint firstItem="vgZ-wf-KvV" firstAttribute="trailing" secondItem="9g5-Ss-SoX" secondAttribute="trailing" constant="16" id="nEx-0A-3Ml"/>
+                <constraint firstItem="i0a-8t-aIZ" firstAttribute="top" secondItem="0pm-SC-YG1" secondAttribute="bottom" constant="8" id="xDI-V3-nzj"/>
+                <constraint firstItem="0pm-SC-YG1" firstAttribute="centerX" secondItem="S1C-8h-VDE" secondAttribute="centerX" id="zDz-2V-cwo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vgZ-wf-KvV"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="53.4375" y="47.5"/>
         </view>
         <view contentMode="scaleToFill" id="ODZ-XN-Lwd">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Если все игроки дали одинаковые ответы: все ответили &quot;Верно&quot; или все - &quot;Не верно&quot;, тогда ведущий нажимает кнопку:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLX-tr-1yi">
-                    <rect key="frame" x="16" y="102" width="343" height="97"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Играем компанией!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsJ-p3-2Yg">
-                    <rect key="frame" x="102" y="20" width="176" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsJ-p3-2Yg">
+                    <rect key="frame" x="16" y="8" width="303" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="В этом случае вы сразу перейдёте к следующему вопросу, а данный - будет задан позже!" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlz-Vo-0NA">
-                    <rect key="frame" x="16" y="265" width="343" height="209"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-DL-M2N">
-                    <rect key="frame" x="40" y="207" width="295" height="50"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-DL-M2N">
+                    <rect key="frame" x="50" y="211" width="236" height="40"/>
                     <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="236" id="Xwj-pY-l4e"/>
+                        <constraint firstAttribute="height" constant="40" id="vuH-YR-RA7"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                     <state key="normal" title="Позже">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" ✅✅       ❌❌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-bY-m5l">
-                    <rect key="frame" x="49" y="50" width="277" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-bY-m5l">
+                    <rect key="frame" x="16" y="35" width="303" height="48"/>
+                    <attributedString key="attributedText">
+                        <fragment content=" ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="40"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="✅✅">
+                            <attributes>
+                                <font key="NSFont" size="40" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="       ">
+                            <attributes>
+                                <font key="NSFont" metaFont="system" size="40"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="❌❌">
+                            <attributes>
+                                <font key="NSFont" size="37" name=".AppleColorEmojiUI"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="♻️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-pP-4sb">
+                    <rect key="frame" x="16" y="338" width="303" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="♻️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-pP-4sb">
-                    <rect key="frame" x="162" y="340" width="50" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUj-db-PwM">
-                    <rect key="frame" x="19" y="391" width="343" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Почему так? Мы же соревнуемся друг с другом, а значит, по результатам ответа на каждый вопрос кто-то должен выиграть, а кто-то - проиграть!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😃😢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-p0-T5m">
                     <rect key="frame" x="140" y="498" width="100" height="54"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -305,53 +548,106 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если все игроки дали одинаковые ответы: все ответили &quot;Верно&quot; или все - &quot;Не верно&quot;, тогда ведущий нажимает кнопку:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-M7-p3R">
+                    <rect key="frame" x="16" y="83" width="303" height="119.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В этом случае вы сразу перейдёте к следующему вопросу, а данный - будет задан позже!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMC-Tg-Pe9">
+                    <rect key="frame" x="16" y="258.5" width="303" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почему так? Каждый вопрос должен привезти к результату: выигрышу или проигрышу!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wse-vw-nbF">
+                    <rect key="frame" x="16" y="388" width="303" height="72"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RZy-pP-4sb" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="01u-vg-3QY"/>
+                <constraint firstItem="gaA-DL-M2N" firstAttribute="centerX" secondItem="ODZ-XN-Lwd" secondAttribute="centerX" id="55Z-tI-kf8"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="OsJ-p3-2Yg" secondAttribute="trailing" constant="16" id="5EI-wy-1ID"/>
+                <constraint firstItem="HMC-Tg-Pe9" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="65D-0R-my1"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="RZy-pP-4sb" secondAttribute="trailing" constant="16" id="7PG-oa-27P"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="GCH-bY-m5l" secondAttribute="trailing" constant="16" id="8hK-gV-Gsn"/>
+                <constraint firstItem="gaA-DL-M2N" firstAttribute="top" secondItem="0kB-M7-p3R" secondAttribute="bottom" constant="8" id="F1W-kF-Xjh"/>
+                <constraint firstAttribute="trailing" secondItem="0kB-M7-p3R" secondAttribute="trailing" constant="16" id="Jj3-Gz-Osm"/>
+                <constraint firstItem="HMC-Tg-Pe9" firstAttribute="top" secondItem="gaA-DL-M2N" secondAttribute="bottom" constant="8" id="Lxa-t8-JXT"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="HMC-Tg-Pe9" secondAttribute="trailing" constant="16" id="Lyz-VP-WDR"/>
+                <constraint firstItem="GCH-bY-m5l" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="V3g-Te-WF7"/>
+                <constraint firstItem="0kB-M7-p3R" firstAttribute="top" secondItem="GCH-bY-m5l" secondAttribute="bottom" id="WMy-pS-vH3"/>
+                <constraint firstItem="wse-vw-nbF" firstAttribute="top" secondItem="RZy-pP-4sb" secondAttribute="bottom" constant="-4" id="XCy-ah-P5K"/>
+                <constraint firstItem="RZy-pP-4sb" firstAttribute="top" secondItem="HMC-Tg-Pe9" secondAttribute="bottom" constant="-16" id="aAo-ki-9b3"/>
+                <constraint firstItem="OsJ-p3-2Yg" firstAttribute="top" secondItem="dlg-WA-7H9" secondAttribute="top" constant="8" id="b4b-qK-Hgj"/>
+                <constraint firstItem="GCH-bY-m5l" firstAttribute="top" secondItem="OsJ-p3-2Yg" secondAttribute="bottom" id="ckq-00-PuD"/>
+                <constraint firstItem="0kB-M7-p3R" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="fnp-PQ-4B2"/>
+                <constraint firstItem="wse-vw-nbF" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="k4A-b7-dJ5"/>
+                <constraint firstItem="OsJ-p3-2Yg" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="nhM-z1-eI0"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="wse-vw-nbF" secondAttribute="trailing" constant="16" id="yxP-zF-2SC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="dlg-WA-7H9"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>
         <view contentMode="scaleToFill" id="uft-Au-UTZ">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO8-SW-dMG">
-                    <rect key="frame" x="16" y="50" width="343" height="237"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Игра ведётся до тех пор, пока не останется один единственный игрок. Он и объявляется победителем!    Если у вас ещё осталось вопросы, то вы можете сыграть заново всем составом на оставшихся вопросах!</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Играем компанией!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-As-oI0">
-                    <rect key="frame" x="102" y="20" width="176" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-As-oI0">
+                    <rect key="frame" x="16" y="8" width="303" height="27"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ip-gY-Igz">
-                    <rect key="frame" x="49" y="479" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🏆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-Qw-lpo">
-                    <rect key="frame" x="162" y="126" width="50" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏆🏆🏆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csV-jK-3k3">
+                    <rect key="frame" x="16" y="304" width="303" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🏆🏆🏆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csV-jK-3k3">
-                    <rect key="frame" x="115" y="254" width="150" height="54"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра ведётся до тех пор, пока не останется один единственный игрок. Он и объявляется победителем!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-wL-6YE">
+                    <rect key="frame" x="16" y="43" width="303" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏆" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnB-Qw-lpo">
+                    <rect key="frame" x="16" y="138.5" width="303" height="54"/>
                     <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если у вас ещё осталось вопросы, то вы можете сыграть заново всем составом на оставшихся вопросах!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS9-nZ-ese">
+                    <rect key="frame" x="16" y="200.5" width="303" height="95.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4WZ-7j-y77" firstAttribute="trailing" secondItem="HnB-Qw-lpo" secondAttribute="trailing" constant="16" id="0PH-sh-IMf"/>
+                <constraint firstItem="4WZ-7j-y77" firstAttribute="trailing" secondItem="VmP-As-oI0" secondAttribute="trailing" constant="16" id="0zy-rl-5X4"/>
+                <constraint firstItem="VmP-As-oI0" firstAttribute="top" secondItem="4WZ-7j-y77" secondAttribute="top" constant="8" id="70U-xE-6Ce"/>
+                <constraint firstItem="HnB-Qw-lpo" firstAttribute="leading" secondItem="4WZ-7j-y77" secondAttribute="leading" constant="16" id="DuR-ky-tYh"/>
+                <constraint firstItem="v3K-wL-6YE" firstAttribute="leading" secondItem="4WZ-7j-y77" secondAttribute="leading" constant="16" id="H6p-Rp-Axr"/>
+                <constraint firstItem="HnB-Qw-lpo" firstAttribute="top" secondItem="v3K-wL-6YE" secondAttribute="bottom" id="HKK-za-qvp"/>
+                <constraint firstItem="csV-jK-3k3" firstAttribute="top" secondItem="kS9-nZ-ese" secondAttribute="bottom" constant="8" id="N9V-h7-s4f"/>
+                <constraint firstItem="kS9-nZ-ese" firstAttribute="top" secondItem="HnB-Qw-lpo" secondAttribute="bottom" constant="8" id="Non-y7-o0O"/>
+                <constraint firstItem="4WZ-7j-y77" firstAttribute="trailing" secondItem="kS9-nZ-ese" secondAttribute="trailing" constant="16" id="Oit-L0-3xp"/>
+                <constraint firstItem="4WZ-7j-y77" firstAttribute="trailing" secondItem="csV-jK-3k3" secondAttribute="trailing" constant="16" id="a36-Hd-3iG"/>
+                <constraint firstAttribute="trailing" secondItem="v3K-wL-6YE" secondAttribute="trailing" constant="16" id="eOg-Tr-qMn"/>
+                <constraint firstItem="kS9-nZ-ese" firstAttribute="leading" secondItem="4WZ-7j-y77" secondAttribute="leading" constant="16" id="gQI-or-0fd"/>
+                <constraint firstItem="VmP-As-oI0" firstAttribute="leading" secondItem="4WZ-7j-y77" secondAttribute="leading" constant="16" id="pNe-9x-nNM"/>
+                <constraint firstItem="csV-jK-3k3" firstAttribute="leading" secondItem="4WZ-7j-y77" secondAttribute="leading" constant="16" id="wnH-Yd-0uE"/>
+                <constraint firstItem="v3K-wL-6YE" firstAttribute="top" secondItem="VmP-As-oI0" secondAttribute="bottom" constant="8" id="xhW-9w-puz"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="4WZ-7j-y77"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
         </view>

@@ -67,8 +67,8 @@ class ChooseYearVC: UIViewController {
     private func prepareNavigationBar() {
         navigationController?.navigationBar.barTintColor = K.foregroundColor
         navigationController?.navigationBar.tintColor = K.backgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedString.Key.foregroundColor :K.backgroundColor]
-        //navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Brushie Brushie", size: 30) ?? UIFont.systemFont(ofSize: 20, weight: .medium), NSAttributedStringKey.foregroundColor :K.backgroundColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSMutableAttributedString.Key.foregroundColor :K.backgroundColor]
+        //navigationController?.navigationBar.titleTextAttributes = [NSMutableAttributedStringKey.font: UIFont(name: "Brushie Brushie", size: 30) ?? UIFont.systemFont(ofSize: 20, weight: .medium), NSMutableAttributedStringKey.foregroundColor :K.backgroundColor]
         navigationController?.navigationBar.topItem?.title = "Какой год играем?"
     }
     override func viewDidLoad() {

@@ -18,7 +18,7 @@ class HelpVC: UIViewController {
 
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
         if (recognizer.state == UIGestureRecognizer.State.ended) {
-            //dismiss(animated: true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func pageChanged(_ sender: UIPageControl) {
@@ -36,6 +36,21 @@ class HelpVC: UIViewController {
         pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = 0
     }
+    private func pushText(byTag tag: Int, in viewNib: UIView, text: NSMutableAttributedString) {
+        if let textView = viewNib.viewWithTag(tag) as? UITextView {
+            textView.attributedText = text //as NSMutableAttributedString
+        }
+    }
+    
+    private func getAttributedText(text1: String, text2: String) -> NSMutableAttributedString {
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        
+        let myString1 = NSMutableAttributedString(string: text1, attributes: [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 18)])
+        let myString2 = NSMutableAttributedString(string: text2, attributes: [.font: UIFont.systemFont(ofSize: 45),
+                                                                              .paragraphStyle : paragraph])
+        return myString1 + myString2
+    }
     private func addViews(to viewName: UIView, from nibName: String) -> Int {
         let width = scrollView.bounds.size.width
         let height = scrollView.bounds.size.height
@@ -48,15 +63,14 @@ class HelpVC: UIViewController {
             let frame = CGRect (x: margin+CGFloat(i)*width, y: margin, width: width-2*margin, height: height-2*margin)
             if let viewNib = viewNib as? UIView {
                 viewNib.frame = frame
+                //let text = getAttributedText(text1: K.helpCrowdGameTexts1, text2: K.helpCrowdGameTexts2)
+                //pushText(byTag: 3000, in: viewNib, text: text)
                 viewName.addSubview(viewNib)
             }
         }
         return viewNibArray.count
     }
-    private func setPopupView() {
-        //popupView.layer.cornerRadius = K.cornerRadius
-        popupView.bounds.size = (popupView.superview?.bounds.size)!
-    }
+    
     private func setScrollViewSize(numberOfPages: Int) {
         //scrollView.bounds.size = (scrollView.superview?.bounds.size)!
         let width = scrollView.bounds.size.width
@@ -68,12 +82,12 @@ class HelpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addTaps(for: self, forSingle: #selector(singleTap))
+        popupView.layer.cornerRadius = K.cornerRadius
         let numberOfPages = addViews(to: scrollView, from: "help")
-        setPopupView()
         setScrollViewSize(numberOfPages: numberOfPages)
         setPageControl(numberOfPages: numberOfPages)
     }
-    /*
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
@@ -81,7 +95,7 @@ class HelpVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
-    }*/
+    }
 }
 extension HelpVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

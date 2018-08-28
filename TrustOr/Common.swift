@@ -143,3 +143,11 @@ func setConstraint(for view: UIView, identifier: String, size: CGFloat) {
         }
     }
 }
+
+func + (left: NSMutableAttributedString, right: NSMutableAttributedString) -> NSMutableAttributedString
+{
+    let result = NSMutableAttributedString()
+    result.append(left)
+    result.append(right)
+    return result
+}
