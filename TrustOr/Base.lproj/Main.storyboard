@@ -311,7 +311,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CR8-Ci-73G" userLabel="scrollView">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="490"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="delegate" destination="FLO-3C-U4q" id="CeW-77-RtV"/>
                                         </connections>
@@ -320,7 +320,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.96999999999999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.60410423801369861" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="OBJ-pA-OR7"/>
                     </view>
                     <connections>
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAe-r9-OMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3247.5" y="35.91549295774648"/>
+            <point key="canvasLocation" x="1084" y="-846"/>
         </scene>
         <!--IntroView-->
         <scene sceneID="8dM-a4-4CZ">
@@ -461,6 +461,9 @@
                                 <state key="normal" title="Как играть?">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="FLO-3C-U4q" kind="show" id="LTP-6t-ddg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmu-x2-Utg" userLabel="topButton">
                                 <rect key="frame" x="40" y="453.5" width="295" height="50"/>
@@ -512,7 +515,8 @@
         <image name="textBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="LTP-6t-ddg"/>
         <segue reference="C6f-uW-vOv"/>
-        <segue reference="g5A-2b-kqv"/>
+        <segue reference="KJR-C4-Qul"/>
     </inferredMetricsTieBreakers>
 </document>

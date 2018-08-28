@@ -18,7 +18,7 @@ class HelpVC: UIViewController {
 
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
         if (recognizer.state == UIGestureRecognizer.State.ended) {
-            dismiss(animated: true, completion: nil)
+            //dismiss(animated: true, completion: nil)
         }
     }
     @IBAction func pageChanged(_ sender: UIPageControl) {
@@ -30,54 +30,59 @@ class HelpVC: UIViewController {
         },
                          completion: nil)
     }
-    private func setPageControl() {
+    private func setPageControl(numberOfPages: Int) {
         pageControl.pageIndicatorTintColor = K.foregroundDarkerColor
         pageControl.currentPageIndicatorTintColor = K.foregroundLighterColor
-        pageControl.numberOfPages = 3
+        pageControl.numberOfPages = numberOfPages
         pageControl.currentPage = 0
     }
-    private func addTextViews() {
+    private func addViews(to viewName: UIView, from nibName: String) -> Int {
         let width = scrollView.bounds.size.width
         let height = scrollView.bounds.size.height
-        print(scrollView.bounds.size)
-        let margin : CGFloat = 30
-        for (i, text) in K.helpCrowdGameTexts.enumerated() {
+        let margin: CGFloat = 0
+        
+        let viewNib = UINib(nibName: nibName, bundle: nil)
+        let viewNibArray = viewNib.instantiate(withOwner: scrollView, options: nil)
+        
+        for (i,viewNib) in viewNibArray.enumerated() {
             let frame = CGRect (x: margin+CGFloat(i)*width, y: margin, width: width-2*margin, height: height-2*margin)
-            print("===text#\(i): frame=\(frame)")
-            if i==1 {
-                let viewNib = UINib(nibName: "help1", bundle: nil)
-                let viewHelp1 = viewNib.instantiate(withOwner: scrollView, options: nil)[0] as? UIView
-                if let viewHelp1 = viewHelp1 {
-                    viewHelp1.frame = frame
-                    scrollView.addSubview(viewHelp1)
-                }
-            } else {
-                let textView = UITextView(frame: frame)
-                textView.font = .systemFont(ofSize: fontSize)
-                textView.textColor = K.grayColor
-                textView.text = text
-                textView.isEditable = false
-                textView.isSelectable = false
+            if let viewNib = viewNib as? UIView {
+                viewNib.frame = frame
+                viewName.addSubview(viewNib)
             }
         }
+        return viewNibArray.count
     }
-    private func setScrollViewSize() {
+    private func setPopupView() {
+        //popupView.layer.cornerRadius = K.cornerRadius
+        popupView.bounds.size = (popupView.superview?.bounds.size)!
+    }
+    private func setScrollViewSize(numberOfPages: Int) {
+        //scrollView.bounds.size = (scrollView.superview?.bounds.size)!
         let width = scrollView.bounds.size.width
         let height = scrollView.bounds.size.height
-        scrollView.contentSize = CGSize(width: width * CGFloat(K.helpCrowdGameTexts.count), height: height)
+        scrollView.contentSize = CGSize(width: width * CGFloat(numberOfPages), height: height)
         print(scrollView.contentSize)
     }
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        popupView.layer.cornerRadius = K.cornerRadius
         addTaps(for: self, forSingle: #selector(singleTap))
-        setScrollViewSize()
-        addTextViews()
-        setPageControl()
+        let numberOfPages = addViews(to: scrollView, from: "help")
+        setPopupView()
+        setScrollViewSize(numberOfPages: numberOfPages)
+        setPageControl(numberOfPages: numberOfPages)
     }
+    /*
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }*/
 }
-
 extension HelpVC: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width = scrollView.bounds.size.width
