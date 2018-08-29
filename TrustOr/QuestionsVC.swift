@@ -114,8 +114,8 @@ extension QuestionsVC: GameDelegate {
         performSegue(withIdentifier: "backToStart", sender: self)
     }
     func setAttributedTitle(title: NSMutableAttributedString) {
-        let titleLabel = UILabel()
-        titleLabel.attributedText = title
-        self.navigationItem.titleView = titleLabel
+        let nib = UINib(nibName: "navView", bundle: nil)
+        let navView = nib.instantiate(withOwner: self, options: nil)[0]
+        self.navigationItem.titleView = navView as? UIView
     }
 }

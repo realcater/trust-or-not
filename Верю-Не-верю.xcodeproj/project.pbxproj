@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C123EA342136DFC30066AFDA /* navView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123EA332136DFC30066AFDA /* navView.xib */; };
 		C130986421239082001D894D /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986321239082001D894D /* K.swift */; };
 		C130986A2125D0B0001D894D /* QuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13098692125D0B0001D894D /* QuestionsVC.swift */; };
 		C130986C2125FAAC001D894D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986B2125FAAC001D894D /* Common.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C123EA332136DFC30066AFDA /* navView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = navView.xib; sourceTree = "<group>"; };
 		C130986321239082001D894D /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		C13098692125D0B0001D894D /* QuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsVC.swift; sourceTree = "<group>"; };
 		C130986B2125FAAC001D894D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			children = (
 				C130986B2125FAAC001D894D /* Common.swift */,
 				C1561CEF2133124A00C8B674 /* help.xib */,
+				C123EA332136DFC30066AFDA /* navView.xib */,
 			);
 			name = "UI utilities";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C123EA342136DFC30066AFDA /* navView.xib in Resources */,
 				C18E7F90212DA89A00FE1BFF /* ratchel.mp3 in Resources */,
 				C18E7F92212DA8E500FE1BFF /* ding.mp3 in Resources */,
 				C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */,

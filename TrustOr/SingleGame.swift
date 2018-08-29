@@ -148,11 +148,15 @@ class SingleGame {
         let font1 = UIFont.systemFont(ofSize: CGFloat(18))
         let title1 = NSMutableAttributedString(string: string1, attributes: [NSMutableAttributedString.Key.font: font1])
         
-        let string2 = "\(K.scoreLabel)\(score)"
-        let font2 = UIFont.systemFont(ofSize: CGFloat(40))
+        let string2 = "\(K.scoreLabel)"
+        let font2 = UIFont.systemFont(ofSize: CGFloat(36))
         let title2 = NSMutableAttributedString(string: string2, attributes: [NSMutableAttributedString.Key.font: font2])
         
-        delegate?.setAttributedTitle(title: title1+title2)
+        let string3 = "\(score)"
+        let font3 = UIFont.systemFont(ofSize: CGFloat(18))
+        let title3 = NSMutableAttributedString(string: string3, attributes: [NSMutableAttributedString.Key.font: font3])
+        
+        delegate?.setAttributedTitle(title: title1+title2+title3)
     }
     private func showAnswer() {
         commentText.isHidden = false
