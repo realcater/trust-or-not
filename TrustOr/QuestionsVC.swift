@@ -113,9 +113,13 @@ extension QuestionsVC: GameDelegate {
     func returnToStartView() {
         performSegue(withIdentifier: "backToStart", sender: self)
     }
-    func setAttributedTitle(title: NSMutableAttributedString) {
-        let nib = UINib(nibName: "navView", bundle: nil)
-        let navView = nib.instantiate(withOwner: self, options: nil)[0]
-        self.navigationItem.titleView = navView as? UIView
+    func setAttributedTitle() {
+        let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
+        //navView.layoutIfNeeded()
+        //navView.sizeToFit()
+        //navView.frame = CGRect(x: 0,y: 0, width: 200, height: 20)
+        navigationItem.titleView = navView
+        //navigationItem.titleView?.backgroundColor = .red
+        //navigationItem.titleView?.frame = CGRect(x: 0,y: 0,width: 200, height: 20)
     }
 }
