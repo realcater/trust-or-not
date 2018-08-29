@@ -64,7 +64,9 @@ class QuestionsVC: UIViewController {
         resultLabel.font = .systemFont(ofSize: fontSize+3, weight: .bold)
     }
     private func prepareBackgroundImage() {
-        backgroundImageView.image = (UIImage(named: questionsPack.picname))
+        if let image = UIImage(named: questionsPack.picname) {
+            backgroundImageView.image = image
+        }
         backgroundImageView.isHidden = false
         backgroundImageView.alpha = 0.03
     }
@@ -111,7 +113,9 @@ extension QuestionsVC: GameDelegate {
     func returnToStartView() {
         performSegue(withIdentifier: "backToStart", sender: self)
     }
-    func setTitle(title: String) {
-        self.title = title
+    func setAttributedTitle(title: NSMutableAttributedString) {
+        let titleLabel = UILabel()
+        titleLabel.attributedText = title
+        self.navigationItem.titleView = titleLabel
     }
 }

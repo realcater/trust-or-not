@@ -143,9 +143,16 @@ class SingleGame {
         var score = String(state.score)
         if state.score > 0 { score = "+"+score }
         if state.score == 0 { score = " "+score }
-        let title =
-            "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)\(K.scoreLabel)\(score)"
-        delegate?.setTitle(title: title)
+        
+        let string1 = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
+        let font1 = UIFont.systemFont(ofSize: CGFloat(18))
+        let title1 = NSMutableAttributedString(string: string1, attributes: [NSMutableAttributedString.Key.font: font1])
+        
+        let string2 = "\(K.scoreLabel)\(score)"
+        let font2 = UIFont.systemFont(ofSize: CGFloat(40))
+        let title2 = NSMutableAttributedString(string: string2, attributes: [NSMutableAttributedString.Key.font: font2])
+        
+        delegate?.setAttributedTitle(title: title1+title2)
     }
     private func showAnswer() {
         commentText.isHidden = false
