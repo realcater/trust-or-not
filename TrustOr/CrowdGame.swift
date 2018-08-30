@@ -28,7 +28,8 @@ class CrowdGameState {
 
 protocol GameDelegate: class {
     func returnToStartView()
-    func setAttributedTitle()
+    func setScoreTitle(title: String, score: Int)
+    func setTitle(title: String)
 }
 
 class CrowdGame {
@@ -114,8 +115,7 @@ class CrowdGame {
         if state.leftQuestions.count > 0 {
             title = title + " (+" + String(state.leftQuestions.count) + ")"
         }
-        let attributedTitle = NSMutableAttributedString(string: title)
-        delegate?.setAttributedTitle()
+        delegate?.setTitle(title: title)
     }
     private func showAnswer() {
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment

@@ -140,23 +140,11 @@ class SingleGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        var score = String(state.score)
-        if state.score > 0 { score = "+"+score }
-        if state.score == 0 { score = " "+score }
-        /*
-        let string1 = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
-        let font1 = UIFont.systemFont(ofSize: CGFloat(18))
-        let title1 = NSMutableAttributedString(string: string1, attributes: [NSMutableAttributedString.Key.font: font1])
         
-        let string2 = "\(K.scoreLabel)"
-        let font2 = UIFont.systemFont(ofSize: CGFloat(36))
-        let title2 = NSMutableAttributedString(string: string2, attributes: [NSMutableAttributedString.Key.font: font2])
         
-        let string3 = "\(score)"
-        let font3 = UIFont.systemFont(ofSize: CGFloat(18))
-        let title3 = NSMutableAttributedString(string: string3, attributes: [NSMutableAttributedString.Key.font: font3])
-        */
-        delegate?.setAttributedTitle()
+        let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
+        
+        delegate?.setScoreTitle(title: title, score: state.score)
     }
     private func showAnswer() {
         commentText.isHidden = false

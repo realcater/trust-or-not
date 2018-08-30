@@ -122,7 +122,7 @@
                         <viewLayoutGuide key="safeArea" id="9tl-vi-6uL"/>
                     </view>
                     <navigationItem key="navigationItem" title="Играем..." id="caE-Lk-EeC">
-                        <barButtonItem key="backBarButtonItem" title=" " id="bIY-oF-WAD"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="lpd-d5-O9Q"/>
                     </navigationItem>
                     <connections>
                         <outlet property="animalButton" destination="QKA-ik-6N8" id="iO5-AM-GEj"/>
@@ -296,21 +296,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-aY-eCh" userLabel="popupView">
-                                <rect key="frame" x="20" y="80" width="335" height="527"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7q-aY-eCh" userLabel="popupView">
+                                <rect key="frame" x="20" y="70" width="335" height="527"/>
                                 <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="l8o-z2-sLg">
-                                        <rect key="frame" x="149" y="490" width="39" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="l8o-z2-sLg">
+                                        <rect key="frame" x="148" y="490" width="39" height="37"/>
                                         <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="pageChanged:" destination="FLO-3C-U4q" eventType="valueChanged" id="S52-t9-mxK"/>
                                         </connections>
                                     </pageControl>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CR8-Ci-73G" userLabel="scrollView">
-                                        <rect key="frame" x="0.0" y="16" width="335" height="474"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CR8-Ci-73G" userLabel="scrollView">
+                                        <rect key="frame" x="0.0" y="16" width="225" height="276"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="delegate" destination="FLO-3C-U4q" id="CeW-77-RtV"/>
@@ -318,9 +315,29 @@
                                     </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="l8o-z2-sLg" firstAttribute="top" secondItem="CR8-Ci-73G" secondAttribute="bottom" id="0p0-LV-8Xh"/>
+                                    <constraint firstAttribute="width" constant="335" id="1oh-JE-Ggc"/>
+                                    <constraint firstItem="l8o-z2-sLg" firstAttribute="top" secondItem="CR8-Ci-73G" secondAttribute="bottom" id="7fO-uU-1gX"/>
+                                    <constraint firstAttribute="height" constant="527" id="QIN-dP-erL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="l8o-z2-sLg"/>
+                                        <exclude reference="CR8-Ci-73G"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OBJ-pA-OR7" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="K7q-aY-eCh" secondAttribute="bottom" constant="70" id="8SU-jJ-ciO"/>
+                            <constraint firstItem="K7q-aY-eCh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OBJ-pA-OR7" secondAttribute="leading" constant="20" id="i6u-fd-Z1L"/>
+                            <constraint firstItem="K7q-aY-eCh" firstAttribute="centerY" secondItem="m9M-sO-gkG" secondAttribute="centerY" id="m27-t7-LqE"/>
+                            <constraint firstItem="K7q-aY-eCh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="OBJ-pA-OR7" secondAttribute="top" constant="50" id="phl-wi-0MS"/>
+                            <constraint firstItem="K7q-aY-eCh" firstAttribute="centerX" secondItem="m9M-sO-gkG" secondAttribute="centerX" id="u0T-Sj-HB1"/>
+                            <constraint firstItem="OBJ-pA-OR7" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K7q-aY-eCh" secondAttribute="trailing" constant="20" id="ycP-Qs-u2b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OBJ-pA-OR7"/>
                     </view>
                     <connections>
@@ -361,7 +378,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не верю!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-rC-nsJ">
-                                <rect key="frame" x="95" y="521" width="185.5" height="54"/>
+                                <rect key="frame" x="94.5" y="521" width="186" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="57P-q6-ey7"/>
                                 </constraints>

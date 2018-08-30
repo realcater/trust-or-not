@@ -110,16 +110,30 @@ class QuestionsVC: UIViewController {
 }
 
 extension QuestionsVC: GameDelegate {
+    private func textScore(_ score: Int) -> String {
+        switch score {
+        case 1...Int.max: return "+"+String(score)
+        case 0: return ""+String(score)
+        default: return String(score)
+        }
+    }
     func returnToStartView() {
         performSegue(withIdentifier: "backToStart", sender: self)
     }
-    func setAttributedTitle() {
+    func setScoreTitle(title: String, score: Int) {
         let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
-        //navView.layoutIfNeeded()
-        //navView.sizeToFit()
-        //navView.frame = CGRect(x: 0,y: 0, width: 200, height: 20)
+        let width = navigationController!.navigationBar.frame.width
+        let height = navigationController!.navigationBar.frame.height
+        navView.frame = CGRect(x: 0,y: 0, width: width-2*K.titleMargin, height: height)
+        if let titleLabel = navView.viewWithTag(1000) as? UILabel {
+            titleLabel.text = title
+        }
+        if let scoreLabel = navView.viewWithTag(1001) as? UILabel {
+            scoreLabel.text = textScore(score)
+        }
         navigationItem.titleView = navView
-        //navigationItem.titleView?.backgroundColor = .red
-        //navigationItem.titleView?.frame = CGRect(x: 0,y: 0,width: 200, height: 20)
+    }
+    func setTitle(title: String) {
+        self.title = title
     }
 }
