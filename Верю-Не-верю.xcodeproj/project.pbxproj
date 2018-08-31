@@ -18,7 +18,7 @@
 		C1561CF02133124A00C8B674 /* help.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1561CEF2133124A00C8B674 /* help.xib */; };
 		C1561CF42134186E00C8B674 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1561CF32134186E00C8B674 /* StartVC.swift */; };
 		C15647202121FC6100F1602E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C156471F2121FC6100F1602E /* AppDelegate.swift */; };
-		C15647222121FC6100F1602E /* chooseYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647212121FC6100F1602E /* chooseYearView.swift */; };
+		C15647222121FC6100F1602E /* ChooseYearVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15647212121FC6100F1602E /* ChooseYearVC.swift */; };
 		C15647252121FC6100F1602E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647232121FC6100F1602E /* Main.storyboard */; };
 		C15647272121FC6100F1602E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15647262121FC6100F1602E /* Assets.xcassets */; };
 		C156472A2121FC6200F1602E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C15647282121FC6200F1602E /* LaunchScreen.storyboard */; };
@@ -46,7 +46,7 @@
 		C1561CF32134186E00C8B674 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		C156471C2121FC6100F1602E /* Верю-Не-верю.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Верю-Не-верю.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156471F2121FC6100F1602E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C15647212121FC6100F1602E /* chooseYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chooseYearView.swift; sourceTree = "<group>"; };
+		C15647212121FC6100F1602E /* ChooseYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYearVC.swift; sourceTree = "<group>"; };
 		C15647242121FC6100F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C15647262121FC6100F1602E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C15647292121FC6200F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 			children = (
 				C14A3FAD2129592400804955 /* IntroVC.swift */,
 				C1561CF32134186E00C8B674 /* StartVC.swift */,
-				C15647212121FC6100F1602E /* chooseYearView.swift */,
+				C15647212121FC6100F1602E /* ChooseYearVC.swift */,
 				C1480A902123649500137C37 /* ChooseGameVC.swift */,
 				C13098692125D0B0001D894D /* QuestionsVC.swift */,
 				C1425CC1213590260093469C /* HelpVC.swift */,
@@ -237,7 +237,7 @@
 				C130986421239082001D894D /* K.swift in Sources */,
 				C1425CC2213590260093469C /* HelpVC.swift in Sources */,
 				C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */,
-				C15647222121FC6100F1602E /* chooseYearView.swift in Sources */,
+				C15647222121FC6100F1602E /* ChooseYearVC.swift in Sources */,
 				C15647322122E5E700F1602E /* QuestionsPack.swift in Sources */,
 				C1561CF42134186E00C8B674 /* StartVC.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
