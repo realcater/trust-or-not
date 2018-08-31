@@ -12,11 +12,10 @@ import AVFoundation
 typealias noArgsFuncOpt = (() -> Void)?
 typealias noArgsFunc = () -> Void
 
-func makeRoundedButton(for button: UIButton, with color: UIColor) {
-    button.backgroundColor = color
-    button.setTitleColor(K.backgroundColor, for: .normal)
-    button.layer.cornerRadius = 0.5 * button.bounds.size.height
-}
+//MARK: - Buttons appearance
+
+//MARK: - Mass objects appearance change
+
 
 func imageRotation(rotate imageView: UIImageView, for circlesQty:Double, onCompletion action: @escaping noArgsFunc) {
     let sectorsQty = 12.0
@@ -133,9 +132,6 @@ func initSound2(mp3filename: String) -> AVAudioPlayer? {
 }
 
 func setConstraint(for view: UIView, identifier: String, size: CGFloat) {
-    print(view)
-    print(view.constraints)
-    print(view.constraints.count)
     for constraint in view.constraints {
         if constraint.identifier == identifier {
             constraint.constant = size

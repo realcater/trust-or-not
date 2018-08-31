@@ -71,9 +71,9 @@ class QuestionsVC: UIViewController {
         backgroundImageView.alpha = 0.03
     }
     private func prepareButtons() {
-        makeRoundedButton(for: bottomButton, with: K.trueAnswerButtonColor)
-        makeRoundedButton(for: middleButton, with: K.doubtAnswerButtonColor)
-        makeRoundedButton(for: topButton, with: K.falseAnswerButtonColor)
+        bottomButton.makeRounded(color: K.trueAnswerButtonColor, textColor: K.backgroundColor)
+        middleButton.makeRounded(color: K.doubtAnswerButtonColor, textColor: K.backgroundColor)
+        topButton.makeRounded(color: K.falseAnswerButtonColor, textColor: K.backgroundColor)
         bottomButton.isHidden = true
         middleButton.isHidden = true
         topButton.isHidden = true

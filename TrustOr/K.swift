@@ -46,7 +46,7 @@ struct K {
     static let looseResultString = "... 🏅-1"
     static let doubtResultString = ": 🏅0"
     static let hintFontSizeDecrease : CGFloat = 6
-    static let cornerRadius : CGFloat = 10
+    static let cornerRadius : CGFloat = 16
     static let titleMargin : CGFloat = 0
     
     

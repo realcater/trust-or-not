@@ -63,8 +63,8 @@ class HelpVC: UIViewController {
             let frame = CGRect (x: margin+CGFloat(i)*width, y: margin, width: width-2*margin, height: height-2*margin)
             if let viewNib = viewNib as? UIView {
                 viewNib.frame = frame
-                //let text = getAttributedText(text1: K.helpCrowdGameTexts1, text2: K.helpCrowdGameTexts2)
-                //pushText(byTag: 3000, in: viewNib, text: text)
+                viewNib.makeAllButtonsRound()
+                viewNib.setForAllImages(tintColor: K.foregroundColor)
                 viewName.addSubview(viewNib)
             }
         }

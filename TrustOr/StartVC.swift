@@ -15,9 +15,9 @@ class StartVC: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeRoundedButton(for: playButton, with: K.foregroundLighterColor)
-        makeRoundedButton(for: helpButton, with: K.foregroundColor)
-        makeRoundedButton(for: aboutButton, with: K.foregroundDarkerColor)
+        playButton.makeRounded(color: K.foregroundLighterColor, textColor: K.backgroundColor)
+        helpButton.makeRounded(color: K.foregroundColor, textColor: K.backgroundColor)
+        aboutButton.makeRounded(color: K.foregroundDarkerColor, textColor: K.backgroundColor)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

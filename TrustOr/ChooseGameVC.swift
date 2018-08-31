@@ -21,10 +21,10 @@ class ChooseGameVC: UIViewController {
     var gameState : GameState!
     
     private func prepareButtons() {
-        makeRoundedButton(for: topButton, with: K.foregroundColor)
+        topButton.makeRounded(color: K.foregroundColor, textColor: K.backgroundColor)
         topButton.setTitle(K.startSingleGameButtonText, for: .normal)
         
-        makeRoundedButton(for: bottomButton, with: K.foregroundColor)
+        bottomButton.makeRounded(color: K.foregroundColor, textColor: K.backgroundColor)
         bottomButton.setTitle(K.startCrowdGameButtonText, for: .normal)
         
         animalButton.tintColor = K.foregroundColor
