@@ -19,4 +19,11 @@ extension UIView {
             imageView.tintColor = tintColor
         }
     }
+    func setConstraint(identifier: String, size: CGFloat) {
+        for constraint in self.constraints {
+            if constraint.identifier == identifier {
+                constraint.constant = size
+            }
+        }
+    }
 }

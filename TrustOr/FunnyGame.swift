@@ -85,7 +85,7 @@ class FunnyGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
             self.ratchelSound?.stop()
         })*/
-        imageRotation(rotate: imageForRotate, for: circlesQty, onCompletion: showResults)
+        imageForRotate.rotation(for: circlesQty, onCompletion: showResults)
     }
 }
 

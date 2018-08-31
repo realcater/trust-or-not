@@ -119,7 +119,7 @@ class CrowdGame {
     }
     private func showAnswer() {
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
-        setConstraint(for: commentText.superview!, identifier: "commentTextBottom", size: 10)
+        commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 10)
         //commentText.font = UIFont.italicSystemFont(ofSize: commentText.font!.pointSize + K.hintFontSizeDecrease)
         commentText.textColor = .black
         commentText.isHidden = false
@@ -143,7 +143,7 @@ class CrowdGame {
         commentText.text = K.hintCrowdGameText
         commentText.font = UIFont.systemFont(ofSize: commentText.font!.pointSize-K.hintFontSizeDecrease)
         commentText.textColor = K.grayColor
-        setConstraint(for: commentText.superview!, identifier: "commentTextBottom", size: 70)
+        commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 70)
         commentText.isHidden = false
     }
     private func hideHint() {
