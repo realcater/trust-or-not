@@ -11,7 +11,7 @@ import UIKit
 
 class IntroVC: UIViewController {
     
-    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var logoImage: UIRotatedImageView!
     @IBOutlet weak var centerImage: UIImageView!
     @IBOutlet weak var bottomTitle: UILabel!
     @IBOutlet weak var topTitle: UILabel!
@@ -48,7 +48,7 @@ class IntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
-        addTaps(for: self, forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
+        self.addTaps(forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
         funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
     }
 }

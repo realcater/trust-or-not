@@ -13,14 +13,14 @@ import AVFoundation
 class FunnyGame {
     var questionsPacks = ChineseAnimals()
     var topAnimal = 0
-    var imageForRotate: UIImageView
+    var imageForRotate: UIRotatedImageView
     var centerImage : UIImageView
     var topTitle : UILabel
     var bottomTitle: UILabel
     var ratchelSound = initSound(mp3filename: "ratchel.mp3")
     var dingSound = initSound2(mp3filename: "ding.mp3")
     
-    init(imageForRotate: UIImageView, centerImage : UIImageView, topTitle : UILabel, bottomTitle: UILabel) {
+    init(imageForRotate: UIRotatedImageView, centerImage : UIImageView, topTitle : UILabel, bottomTitle: UILabel) {
         self.imageForRotate = imageForRotate
         self.centerImage = centerImage
         self.topTitle = topTitle

@@ -26,9 +26,8 @@ class CrowdGameState {
     }
 }
 
-protocol GameDelegate: class {
+protocol CrowdGameDelegate: class {
     func returnToStartView()
-    func setScoreTitle(title: String, score: Int)
     func setTitle(title: String)
 }
 
@@ -43,9 +42,9 @@ class CrowdGame {
     
     var questionsPack : QuestionsPack!
     var state: CrowdGameState!
-    weak var delegate: GameDelegate?
+    weak var delegate: CrowdGameDelegate?
     
-    init(delegate: GameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state

@@ -76,7 +76,7 @@ class ChooseYearVC: UIViewController {
         view.backgroundColor = K.backgroundColor
         prepareNavigationBar()
         tileButtons()
-        addTaps(for: self, forSingle: nil, forDouble: #selector(tripleTap), forTriple: nil, forQuadriple: nil)
+        self.addTaps(forSingle: nil, forDouble: #selector(tripleTap), forTriple: nil, forQuadriple: nil)
         //addTaps(for: self, forTriple: #selector(tripleTap))
     }
 

@@ -81,7 +81,7 @@ class HelpVC: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTaps(for: self, forSingle: #selector(singleTap))
+        self.addTaps(forSingle: #selector(singleTap))
         popupView.layer.cornerRadius = K.cornerRadius
         let numberOfPages = addViews(to: scrollView, from: "help")
         setScrollViewSize(numberOfPages: numberOfPages)

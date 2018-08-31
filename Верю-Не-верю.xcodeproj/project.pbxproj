@@ -30,7 +30,7 @@
 		C18E7F97212EEEE100FE1BFF /* CrowdGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */; };
 		C1A1956A21387531000A1A51 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956921387531000A1A51 /* UIView+extension.swift */; };
 		C1A1956C21387710000A1A51 /* UIButton+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956B21387710000A1A51 /* UIButton+extension.swift */; };
-		C1A1956E21391328000A1A51 /* UIimageView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956D21391328000A1A51 /* UIimageView+extension.swift */; };
+		C1A1956E21391328000A1A51 /* UIRotatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956D21391328000A1A51 /* UIRotatedImageView.swift */; };
 		C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956F21391522000A1A51 /* UIViewController+extension.swift */; };
 		C1A195722139165E000A1A51 /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A195712139165E000A1A51 /* Sounds.swift */; };
 		C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF3825212F6C9400055EBD /* SingleGame.swift */; };
@@ -62,7 +62,7 @@
 		C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrowdGame.swift; sourceTree = "<group>"; };
 		C1A1956921387531000A1A51 /* UIView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+extension.swift"; sourceTree = "<group>"; };
 		C1A1956B21387710000A1A51 /* UIButton+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+extension.swift"; sourceTree = "<group>"; };
-		C1A1956D21391328000A1A51 /* UIimageView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+extension.swift"; sourceTree = "<group>"; };
+		C1A1956D21391328000A1A51 /* UIRotatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRotatedImageView.swift; sourceTree = "<group>"; };
 		C1A1956F21391522000A1A51 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		C1A195712139165E000A1A51 /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		C1AF3825212F6C9400055EBD /* SingleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGame.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				C1A1956B21387710000A1A51 /* UIButton+extension.swift */,
-				C1A1956D21391328000A1A51 /* UIimageView+extension.swift */,
+				C1A1956D21391328000A1A51 /* UIRotatedImageView.swift */,
 				C1A1956921387531000A1A51 /* UIView+extension.swift */,
 				C1A1956F21391522000A1A51 /* UIViewController+extension.swift */,
 				C1561CEF2133124A00C8B674 /* help.xib */,
@@ -250,7 +250,7 @@
 				C15647322122E5E700F1602E /* QuestionsPack.swift in Sources */,
 				C1561CF42134186E00C8B674 /* StartVC.swift in Sources */,
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
-				C1A1956E21391328000A1A51 /* UIimageView+extension.swift in Sources */,
+				C1A1956E21391328000A1A51 /* UIRotatedImageView.swift in Sources */,
 				C1A1956A21387531000A1A51 /* UIView+extension.swift in Sources */,
 				C130986C2125FAAC001D894D /* Utilities.swift in Sources */,
 				C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */,

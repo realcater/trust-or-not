@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIImageView {
+class UIRotatedImageView: UIImageView {
     func rotation(for circlesQty:Double, onCompletion action: @escaping noArgsFunc) {
         let sectorsQty = 12.0
         let acceleration = 1.05

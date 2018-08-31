@@ -109,16 +109,22 @@ class QuestionsVC: UIViewController {
     }
 }
 
-extension QuestionsVC: GameDelegate {
+extension QuestionsVC: CrowdGameDelegate {
+    func returnToStartView() {
+        performSegue(withIdentifier: "backToStart", sender: self)
+    }
+    func setTitle(title: String) {
+        self.title = title
+    }
+}
+
+extension QuestionsVC: SingleGameDelegate {
     private func textScore(_ score: Int) -> String {
         switch score {
         case 1...Int.max: return "+"+String(score)
         case 0: return ""+String(score)
         default: return String(score)
         }
-    }
-    func returnToStartView() {
-        performSegue(withIdentifier: "backToStart", sender: self)
     }
     func setScoreTitle(title: String, score: Int) {
         let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
@@ -132,8 +138,5 @@ extension QuestionsVC: GameDelegate {
             scoreLabel.text = textScore(score)
         }
         navigationItem.titleView = navView
-    }
-    func setTitle(title: String) {
-        self.title = title
     }
 }

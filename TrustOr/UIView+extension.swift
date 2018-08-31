@@ -19,6 +19,11 @@ extension UIView {
             imageView.tintColor = tintColor
         }
     }
+    func setForAllLabels(font: UIFont) {
+        for case let label as UILabel in self.subviews {
+            label.font = font
+        }
+    }
     func setConstraint(identifier: String, size: CGFloat) {
         for constraint in self.constraints {
             if constraint.identifier == identifier {
