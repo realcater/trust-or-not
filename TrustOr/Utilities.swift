@@ -15,3 +15,7 @@ func + (left: NSMutableAttributedString, right: NSMutableAttributedString) -> NS
     result.append(right)
     return result
 }
+
+func useSmallerFonts() -> Bool {
+    return (UIScreen.main.currentMode!.size.width >= 750) ? false : true
+}

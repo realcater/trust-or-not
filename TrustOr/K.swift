@@ -48,8 +48,21 @@ struct K {
     static let hintFontSizeDecrease : CGFloat = 6
     static let cornerRadius : CGFloat = 16
     static let titleMargin : CGFloat = 0
+    static let systemFontRegularName = UIFont.systemFont(ofSize: 20, weight: .regular).fontName
+    static let systemFontSemiboldName = UIFont.systemFont(ofSize: 20, weight: .semibold).fontName
     
-    
+    struct Help {
+        struct FontSize {
+            struct Header {
+                static let zoomed: CGFloat = 17
+                static let normal: CGFloat = 22
+            }
+            struct Text {
+                static let zoomed: CGFloat = 15
+                static let normal: CGFloat = 20
+            }
+        }
+    }
     
     struct intro {
         static let showAnimationDuration = 1.0

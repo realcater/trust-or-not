@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionsVC: UIViewController {
     
-    let fontSize = (UIScreen.main.currentMode!.size.width >= 750) ? K.fontSizeTextViewNormal : K.fontSizeTextViewZoomed
+    let fontSize = useSmallerFonts() ? K.fontSizeTextViewZoomed : K.fontSizeTextViewNormal 
 
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
