@@ -15,8 +15,8 @@ class HelpVC: UIViewController {
     
     let fontSize = (UIScreen.main.currentMode!.size.width >= 750) ? K.fontSizeTextViewNormal-2 : K.fontSizeTextViewZoomed-2
     var textViews : [UITextView]!
-    var firstTime = true
-
+    var pagesForLoad : [Int] = [0]
+    
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
         if (recognizer.state == UIGestureRecognizer.State.ended) {
             dismiss(animated: true, completion: nil)
@@ -30,7 +30,6 @@ class HelpVC: UIViewController {
                                     CGFloat(sender.currentPage), y: 0)
         },
                          completion: nil)
-        print("pageChanged")
     }
     private func setPageControl(numberOfPages: Int) {
         pageControl.pageIndicatorTintColor = K.foregroundDarkerColor
@@ -39,7 +38,7 @@ class HelpVC: UIViewController {
         pageControl.currentPage = 0
     }
     
-    private func addViews(to viewName: UIView, from nibName: String) -> Int {
+    private func addViews(to viewName: UIView, from nibName: String) {
         let width = scrollView.bounds.size.width
         let height = scrollView.bounds.size.height
         let margin: CGFloat = 0
@@ -47,7 +46,8 @@ class HelpVC: UIViewController {
         let viewNib = UINib(nibName: nibName, bundle: nil)
         let viewNibArray = viewNib.instantiate(withOwner: scrollView, options: nil)
         
-        for (i,viewNib) in viewNibArray.enumerated() {
+        for (i,page) in pagesForLoad.enumerated() {
+            let viewNib = viewNibArray[page]
             let frame = CGRect (x: margin+CGFloat(i)*width, y: margin, width: width-2*margin, height: height-2*margin)
             if let viewNib = viewNib as? UIView {
                 viewNib.frame = frame
@@ -63,7 +63,6 @@ class HelpVC: UIViewController {
                 viewName.addSubview(viewNib)
             }
         }
-        return viewNibArray.count
     }
     private func setScrollViewSize(numberOfPages: Int) {
         let width = scrollView.bounds.size.width
@@ -81,9 +80,9 @@ class HelpVC: UIViewController {
         navigationController?.isNavigationBarHidden = true
         view.layoutIfNeeded()
 
-        let numberOfPages = addViews(to: scrollView, from: "help")
-        setScrollViewSize(numberOfPages: numberOfPages)
-        setPageControl(numberOfPages: numberOfPages)
+        addViews(to: scrollView, from: "help")
+        setScrollViewSize(numberOfPages: pagesForLoad.count)
+        setPageControl(numberOfPages: pagesForLoad.count)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -38,13 +38,14 @@ class CrowdGame {
     var nextQuestionButton: UIButton
     var laterButton: UIButton
     var finishGameButton: UIButton
+    var helpButton: UIButton
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: CrowdGameState!
     weak var delegate: CrowdGameDelegate?
     
-    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, helpButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -54,6 +55,7 @@ class CrowdGame {
         self.nextQuestionButton = nextQuestionButton
         self.laterButton = laterButton
         self.finishGameButton = finishGameButton
+        self.helpButton = helpButton
         self.resultLabel = resultLabel
         restoreState()
     }
@@ -138,19 +140,9 @@ class CrowdGame {
         commentText.isHidden = true
         resultLabel.isHidden = true
     }
-    /*private func showHint() {
-        commentText.text = K.hintCrowdGameText
-        commentText.font = UIFont.systemFont(ofSize: commentText.font!.pointSize-K.hintFontSizeDecrease)
-        commentText.textColor = K.grayColor
-        commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 70)
-        commentText.isHidden = false
-    }
-    private func hideHint() {
-        commentText.isHidden = true
-    }*/
     private func showUIAnswerMode() {
         hideAnswer()
-        //showHint()
+        helpButton.isHidden = false
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
         showAnswerButton.backgroundColor = K.foregroundColor
         showAnswerButton.isHidden = false
@@ -160,12 +152,13 @@ class CrowdGame {
         reloadTexts()
     }
     private func showUIWaitMode() {
-        //hideHint()
+        helpButton.isHidden = true
         showAnswer()
         laterButton.isHidden = true
         nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
     }
     private func showUIFinishGame() {
+        helpButton.isHidden = true
         showAnswer()
         laterButton.isHidden = true
         finishGameButton.setTitle(K.finishGameButtonText, for: .normal)

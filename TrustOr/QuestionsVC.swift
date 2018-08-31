@@ -12,6 +12,7 @@ class QuestionsVC: UIViewController {
     
     let fontSize = useSmallerFonts() ? K.fontSizeTextViewZoomed : K.fontSizeTextViewNormal 
 
+    @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var middleButton: UIButton!
@@ -92,9 +93,9 @@ class QuestionsVC: UIViewController {
         gameState.started = true
         switch gameState.gameType! {
         case .singleGame:
-            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
         case .crowdGame:
-            crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, resultLabel: resultLabel)
+            crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
         }
     }
     override func viewWillDisappear(_ animated : Bool) {
@@ -105,6 +106,19 @@ class QuestionsVC: UIViewController {
                 prevViewController.bottomButton.setTitle(K.continueGameButtonText, for: .normal)
                 prevViewController.topButton.isHidden = true
             }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHelp" {
+            let helpVC = segue.destination as! HelpVC
+            var pagesForLoad : [Int]
+            switch gameState.gameType! {
+            case GameType.singleGame:
+                pagesForLoad = [4]
+            case GameType.crowdGame:
+                pagesForLoad = [Int](5...8)
+            }
+            helpVC.pagesForLoad = pagesForLoad
         }
     }
 }

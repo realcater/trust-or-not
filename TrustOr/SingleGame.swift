@@ -40,13 +40,14 @@ class SingleGame {
     var falseAsnwerButton: UIButton
     var nextQuestionButton: UIButton
     var finishGameButton: UIButton
+    var helpButton: UIButton
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: SingleGameState!
     weak var delegate: SingleGameDelegate?
     
-    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, resultLabel: UILabel) {
+    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, helpButton: UIButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -57,6 +58,7 @@ class SingleGame {
         self.falseAsnwerButton = falseAsnwerButton
         self.nextQuestionButton = nextQuestionButton
         self.finishGameButton = finishGameButton
+        self.helpButton = helpButton
         self.resultLabel = resultLabel
         restoreState()
     }
@@ -109,20 +111,20 @@ class SingleGame {
     func getFullResultsText() -> String {
         var text: String
         switch abs(state.score) {
-        case 0...2:
+        case 0...3:
             text = "Да, с годом \(questionsPack.name_gen) у вас явно сложные отношения - будем откровенны, не самый высокий результат... Но всегда есть куда стремиться! Может, попробовать другой год?"
-        case 3...5:
-            text = "Поздравляем! Вы вошли в число 29% людей, которые справились лучше всего справились с данным заданием! В логике или удачи вам не откажешь!"
-        case 6...8:
-            text = "Поздравляем! Вы вошли в число 7% людей, которые справились лучше всего справились с данным заданием! Вы чертовски умны и сообразительны или просто на короткой ноге с Тюхе!"
-        case 9...11:
-            text = "Фантастический результат! Вы вошли в число 2% людей, которые справились лучше всего справились с данным заданием! Вашей эрудиции и логике можно только позавидовать!"
-        case 12...18:
-            text = "Нереальный результат! Вы вошли в число 0.3% людей, которые справились лучше всего справились с данным заданием! Срочно играть в ”Что? Где? Когда?”!"
+        case 4...6:
+            text = "Поздравляем! Вы вошли в число 29% людей, которые лучше всего справились с данным заданием! В логике или удачи вам не откажешь!"
+        case 7...9:
+            text = "Поздравляем! Вы вошли в число 7% людей, которые лучше всего справились с данным заданием! Вы чертовски умны и сообразительны или просто на короткой ноге с Тюхе!"
+        case 10...12:
+            text = "Фантастический результат! Вы вошли в число 2% людей, которые лучше всего справились с данным заданием! Вашей эрудиции и логике можно только позавидовать!"
+        case 13...18:
+            text = "Нереальный результат! Вы вошли в число 0.3% людей, которые лучше всего справились с данным заданием! Срочно играть в ”Что? Где? Когда?”!"
         default:
             text = "Все ответы верные? Серьёзно? Одно из двух: или вы играете не в первый раз, или ваша фамилия - Бер!"
         }
-        if state.score < -2 {
+        if state.score < -3 {
             text = text + " (Да, мы в курсе, что вы отвечали специально неправильно! Но нас не проведёшь!)"
         }
         return text
@@ -139,15 +141,14 @@ class SingleGame {
         reloadTexts()
     }
     private func reloadTexts() {
-        questionText.text = questionsPack.questionTasks[state.currentNumber].question
+        if state.answerState != .gotResults {
+            questionText.text = questionsPack.questionTasks[state.currentNumber].question
+        }
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        
-        
         let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
-        
         delegate?.setScoreTitle(title: title, score: state.score)
     }
     private func showAnswer() {
@@ -187,6 +188,7 @@ class SingleGame {
     private func showUIAnswerMode() {
         hideAnswer()
         nextQuestionButton.isHidden = true
+        helpButton.isHidden = false
             
         trueAnswerButton.setTitle(K.trustText, for: .normal)
         trueAnswerButton.backgroundColor = K.trueAnswerButtonColor
@@ -207,6 +209,7 @@ class SingleGame {
         trueAnswerButton.isHidden = true
         doubtAsnwerButton.isHidden = true
         falseAsnwerButton.isHidden = true
+        helpButton.isHidden = true
 
         nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
         nextQuestionButton.backgroundColor = K.foregroundColor
@@ -217,6 +220,7 @@ class SingleGame {
         trueAnswerButton.isHidden = true
         doubtAsnwerButton.isHidden = true
         falseAsnwerButton.isHidden = true
+        helpButton.isHidden = true
         
         finishGameButton.setTitle(K.showResultsText, for: .normal)
         finishGameButton.backgroundColor = K.foregroundColor
@@ -224,8 +228,12 @@ class SingleGame {
     }
     private func showUIResults() {
         hideAnswer()
+        helpButton.isHidden = true
         finishGameButton.setTitle(K.finishGameButtonText, for: .normal)
+        finishGameButton.isHidden = false
+        print(questionText.text)
         questionText.text = getFullResultsText()
+        print(questionText.text)
         questionText.isHidden = false
         resultLabel.text = getShortResultsText()
         resultLabel.backgroundColor = K.trueAnswerBarColor

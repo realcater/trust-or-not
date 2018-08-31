@@ -175,22 +175,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz">
-                                        <rect key="frame" x="129" y="265" width="85" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Wch-HO-T2H"/>
-                                        </constraints>
-                                        <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Как играть?"/>
-                                        <connections>
-                                            <segue destination="FLO-3C-U4q" kind="presentation" identifier="showHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k8N-DA-ZMu"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerX" secondItem="1ke-60-f02" secondAttribute="centerX" id="0WG-h9-8qg"/>
-                                    <constraint firstItem="Bgr-0n-Pzz" firstAttribute="centerX" secondItem="1ke-60-f02" secondAttribute="centerX" id="BzJ-MA-xPP"/>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="-16" id="CBd-0Y-xUA"/>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="5" id="DGZ-iS-McY"/>
                                     <constraint firstItem="UVv-sM-xM2" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="KAY-fO-03X"/>
@@ -204,6 +192,17 @@
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerY" secondItem="1ke-60-f02" secondAttribute="centerY" id="vSV-s5-fUe"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz" userLabel="helpButton">
+                                <rect key="frame" x="145" y="329" width="85" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Wch-HO-T2H"/>
+                                </constraints>
+                                <color key="tintColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Как играть?"/>
+                                <connections>
+                                    <segue destination="FLO-3C-U4q" kind="presentation" identifier="showHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k8N-DA-ZMu"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="bottomButton">
                                 <rect key="frame" x="40" y="539" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.44705882349999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -255,10 +254,12 @@
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
+                            <constraint firstItem="wvS-wA-ytt" firstAttribute="top" secondItem="Bgr-0n-Pzz" secondAttribute="bottom" constant="20" id="VCT-aV-P44"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="lMj-mL-u3Q" secondAttribute="bottom" constant="20" id="XM5-wb-1PF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="1ke-60-f02" secondAttribute="trailing" constant="16" id="Z7J-5D-Omx"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="16" id="a6l-kD-eHA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="b3N-ca-9WL"/>
+                            <constraint firstItem="Bgr-0n-Pzz" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="c2W-19-ASF"/>
                             <constraint firstItem="wvS-wA-ytt" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="f0y-OY-XIG"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="gg5-Zf-TUb"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="h6H-du-Hrf"/>
@@ -266,17 +267,19 @@
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="enM-P6-HzI" secondAttribute="trailing" constant="40" id="jL9-mV-zvu"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="enM-P6-HzI" secondAttribute="bottom" constant="34" id="kji-e3-bPA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="mup-Ot-XWD"/>
-                            <constraint firstItem="wvS-wA-ytt" firstAttribute="top" secondItem="Bgr-0n-Pzz" secondAttribute="bottom" constant="20" id="out-jW-Wwm"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="yk0-2M-f8v"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="wvS-wA-ytt" secondAttribute="trailing" constant="40" id="zDc-Wc-Uc0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос 1/20             🏅+1" id="rep-oL-Chz" userLabel="questionsView"/>
+                    <navigationItem key="navigationItem" title="Вопрос 1/20             🏅+1" id="rep-oL-Chz" userLabel="questionsView">
+                        <barButtonItem key="backBarButtonItem" title=" " id="BQx-5v-Kb4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="commentText" destination="UVv-sM-xM2" id="B0E-3v-vmD"/>
+                        <outlet property="helpButton" destination="Bgr-0n-Pzz" id="bzv-NV-IGy"/>
                         <outlet property="middleButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
@@ -479,7 +482,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FLO-3C-U4q" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="LTP-6t-ddg"/>
+                                    <segue destination="FLO-3C-U4q" kind="presentation" identifier="showFullHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="LTP-6t-ddg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmu-x2-Utg" userLabel="topButton">
@@ -532,8 +535,8 @@
         <image name="textBackground" width="750" height="1334"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LTP-6t-ddg"/>
+        <segue reference="k8N-DA-ZMu"/>
         <segue reference="C6f-uW-vOv"/>
-        <segue reference="KJR-C4-Qul"/>
+        <segue reference="g5A-2b-kqv"/>
     </inferredMetricsTieBreakers>
 </document>
