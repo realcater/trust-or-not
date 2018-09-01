@@ -33,4 +33,13 @@ extension UIView {
             }
         }
     }
+    func setBackgroundImage(named: String, alpha: CGFloat) {
+        if let image = UIImage(named: named) {
+            let backgroundImageView = UIImageView(frame: self.bounds)
+            backgroundImageView.image = image
+            backgroundImageView.contentMode = .scaleAspectFill
+            backgroundImageView.alpha = alpha
+            insertSubview(backgroundImageView, at: 0)
+        }
+    }
 }

@@ -19,10 +19,12 @@ class CrowdGameState {
     var currentNumber: Int
     var leftQuestions: [Int]
     var answerState: AnswerState
+    var showHelp: Bool
     init() {
         currentNumber = 0
         leftQuestions = []
         answerState = .notAnswered
+        showHelp = true
     }
 }
 
@@ -80,6 +82,9 @@ class CrowdGame {
     }
     func nextQuestionButtonPressed() {
         state.currentNumber+=1
+        if state.currentNumber == K.maxHelpShowedQty {
+            state.showHelp = false
+        }
         if (state.currentNumber == questionsPack.questionTasks.count) && (state.leftQuestions.count > 0) {
             oneMoreQueer()
         }
@@ -142,7 +147,7 @@ class CrowdGame {
     }
     private func showUIAnswerMode() {
         hideAnswer()
-        helpButton.isHidden = false
+        if state.showHelp { helpButton.isHidden = false }
         showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
         showAnswerButton.backgroundColor = K.foregroundColor
         showAnswerButton.isHidden = false

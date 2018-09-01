@@ -58,11 +58,6 @@ class ChooseYearVC: UIViewController {
             view.addSubview(button)
         }
     }
-    @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
-            performSegue(withIdentifier: "backToIntro", sender: self)
-        }
-    }
     
     private func prepareNavigationBar() {
         navigationController?.navigationBar.barTintColor = K.foregroundColor
@@ -74,10 +69,9 @@ class ChooseYearVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
+        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
         prepareNavigationBar()
         tileButtons()
-        self.addTaps(forSingle: nil, forDouble: #selector(tripleTap), forTriple: nil, forQuadriple: nil)
-        //addTaps(for: self, forTriple: #selector(tripleTap))
     }
 
     override func viewDidAppear(_ animated: Bool) {

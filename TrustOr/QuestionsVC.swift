@@ -64,13 +64,6 @@ class QuestionsVC: UIViewController {
         commentText.font = .italicSystemFont(ofSize: fontSize)
         resultLabel.font = .systemFont(ofSize: fontSize+3, weight: .bold)
     }
-    private func prepareBackgroundImage() {
-        if let image = UIImage(named: questionsPack.picname) {
-            backgroundImageView.image = image
-        }
-        backgroundImageView.isHidden = false
-        backgroundImageView.alpha = 0.03
-    }
     private func prepareButtons() {
         bottomButton.makeRounded(color: K.trueAnswerButtonColor, textColor: K.backgroundColor)
         middleButton.makeRounded(color: K.doubtAnswerButtonColor, textColor: K.backgroundColor)
@@ -83,7 +76,7 @@ class QuestionsVC: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareBackgroundImage()
+        view.setBackgroundImage(named: questionsPack.picname, alpha: K.questionsViewBackgroundAlpha)
         prepareButtons()
         setFonts()
     }
@@ -133,7 +126,7 @@ extension QuestionsVC: CrowdGameDelegate {
 }
 
 extension QuestionsVC: SingleGameDelegate {
-    private func textScore(_ score: Int) -> String {
+    func textScore(_ score: Int) -> String {
         switch score {
         case 1...Int.max: return "+"+String(score)
         case 0: return ""+String(score)

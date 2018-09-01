@@ -28,17 +28,19 @@ class ChooseGameVC: UIViewController {
         bottomButton.setTitle(K.startCrowdGameButtonText, for: .normal)
         
         animalButton.tintColor = K.foregroundColor
-        animalButton.backgroundColor = K.backgroundColor
         animalButton.setImage(UIImage(named: questionsPack.picname), for: .normal)
         animalButton.contentHorizontalAlignment = .fill
         animalButton.contentVerticalAlignment = .fill
+        animalButton.isUserInteractionEnabled = false
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.backgroundColor
+        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
         prepareButtons()
         gameState = GameState()
         title = K.confirmAnimalChoiceText1 + questionsPack.name_gen + K.confirmAnimalChoiceText2
+        
     }
 
     // MARK: - Navigation

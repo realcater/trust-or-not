@@ -24,6 +24,7 @@ struct K {
     static let nextQuestionButtonText = "Следующий вопрос"
     static let showResultsText = "Результаты!"
     static let finishGameButtonText = "Спасибо за игру!"
+    static let youGainText = "Вы набрали: "
     
     static let trueAnswerBarColor = UIColor(red: 0, green: 143/256, blue: 0, alpha: 1)
     static let falseAnswerBarColor = UIColor(red: 200/256, green: 0, blue: 0, alpha: 1)
@@ -50,6 +51,10 @@ struct K {
     static let titleMargin : CGFloat = 0
     static let systemFontRegularName = UIFont.systemFont(ofSize: 20, weight: .regular).fontName
     static let systemFontSemiboldName = UIFont.systemFont(ofSize: 20, weight: .semibold).fontName
+    static let maxHelpShowedQty = 3
+    
+    static let viewBackgroundAlpha : CGFloat = 0.1
+    static let questionsViewBackgroundAlpha : CGFloat = 0.03
     
     struct Help {
         struct FontSize {

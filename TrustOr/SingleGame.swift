@@ -19,16 +19,19 @@ class SingleGameState {
     var score: Int
     var lastAnswer: AnswerChoice
     var answerResultString: String
+    var showHelp: Bool
     init() {
         currentNumber = 0
         answerState = .notAnswered
         score = 0
         lastAnswer = .trueAnswer
         answerResultString = ""
+        showHelp = true
     }
 }
 
 protocol SingleGameDelegate: CrowdGameDelegate {
+    func textScore(_ score: Int) -> String
     func setScoreTitle(title: String, score: Int)
 }
 
@@ -94,6 +97,9 @@ class SingleGame {
     }
     func nextQuestionButtonPressed() {
         state.currentNumber+=1
+        if state.currentNumber == K.maxHelpShowedQty {
+            state.showHelp = false
+        }
         showUIAnswerMode()
         state.answerState = .notAnswered
     }
@@ -106,7 +112,7 @@ class SingleGame {
         delegate?.returnToStartView()
     }
     func getShortResultsText() -> String {
-        return "Вы набрали: 🏅\(state.score)"
+        return K.youGainText + (delegate?.textScore(state.score) ?? String(state.score))
     }
     func getFullResultsText() -> String {
         var text: String
@@ -188,8 +194,8 @@ class SingleGame {
     private func showUIAnswerMode() {
         hideAnswer()
         nextQuestionButton.isHidden = true
-        helpButton.isHidden = false
-            
+        if state.showHelp { helpButton.isHidden = false }
+        
         trueAnswerButton.setTitle(K.trustText, for: .normal)
         trueAnswerButton.backgroundColor = K.trueAnswerButtonColor
         trueAnswerButton.isHidden = false

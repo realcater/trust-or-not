@@ -16,6 +16,7 @@ class IntroVC: UIViewController {
     @IBOutlet weak var bottomTitle: UILabel!
     @IBOutlet weak var topTitle: UILabel!
     var funnyGame : FunnyGame!
+    var startFunnyGame = false
     
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
@@ -23,17 +24,17 @@ class IntroVC: UIViewController {
         }
     }
     @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
             funnyGame.run(winner: nil)
         }
     }
     @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
             funnyGame.run(winner: 11)
         }
     }
     @objc private func quadripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
+        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
             funnyGame.run(winner: -1)
         }
     }
@@ -48,7 +49,14 @@ class IntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
+        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
         self.addTaps(forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
-        funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if startFunnyGame {
+            funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
+            funnyGame.run(winner: nil)
+        }
     }
 }
