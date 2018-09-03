@@ -53,7 +53,9 @@ class ChooseYearVC: UIViewController {
                                       for: .normal)
             button.tintColor = K.foregroundColor
             if animal.questionTasks.count == 0 {
-                button.isEnabled = false
+                //button.isEnabled = false
+                button.isUserInteractionEnabled = false
+                button.tintColor = K.disabledButtonColor
             }
             view.addSubview(button)
         }

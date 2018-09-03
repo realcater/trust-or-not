@@ -9,6 +9,8 @@ struct K {
     static let activeButtonColor = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
     static let grayColor = UIColor.gray
     
+    static let disabledButtonColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1)
+    
     static let confirmAnimalChoiceText1 = "Год "
     static let confirmAnimalChoiceText2 = "!"
     static let questionLabel = "Вопрос "
