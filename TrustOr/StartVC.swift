@@ -13,20 +13,26 @@ class StartVC: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var touchView: UIView!
     
-    @objc func multipleTap(_ sender: UIButton, event: UIEvent) {
-        let touch: UITouch = event.allTouches!.first!
-        if (touch.tapCount == 2) {
+    @objc private func singleTap(recognizer: UITapGestureRecognizer) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
+            performSegue(withIdentifier: "showAbout", sender: self)
+        }
+    }
+    @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
+        if(recognizer.state == UIGestureRecognizer.State.ended) {
             performSegue(withIdentifier: "backToIntro", sender: self)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
         playButton.makeRounded(color: K.foregroundLighterColor, textColor: K.backgroundColor)
         helpButton.makeRounded(color: K.foregroundColor, textColor: K.backgroundColor)
         aboutButton.makeRounded(color: K.foregroundDarkerColor, textColor: K.backgroundColor)
-        aboutButton.addTarget(self, action: #selector(multipleTap(_:event:)), for: UIControl.Event.touchDownRepeat)
+        addTaps(for: touchView, singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
 
     }
     override func viewWillAppear(_ animated: Bool) {

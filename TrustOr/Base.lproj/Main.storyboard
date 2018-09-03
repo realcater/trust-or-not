@@ -486,16 +486,24 @@
                                     <segue destination="wso-wZ-0YX" kind="presentation" identifier="showAbout" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="fVQ-hV-GIw"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcu-Ur-T26">
+                                <rect key="frame" x="80" y="519.5" width="215" height="131.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3Qi-MR-tuY" firstAttribute="centerY" secondItem="YG3-EU-qXa" secondAttribute="centerY" id="8y7-oe-X6o"/>
+                            <constraint firstItem="wqu-0V-SZc" firstAttribute="bottom" secondItem="Zcu-Ur-T26" secondAttribute="bottom" constant="16" id="DOn-LV-pj6"/>
                             <constraint firstItem="SY3-nz-aN2" firstAttribute="top" secondItem="3Qi-MR-tuY" secondAttribute="bottom" constant="20" id="Jge-bN-twY"/>
                             <constraint firstItem="kmu-x2-Utg" firstAttribute="top" secondItem="SY3-nz-aN2" secondAttribute="bottom" constant="20" id="KkA-xe-q2W"/>
                             <constraint firstItem="wqu-0V-SZc" firstAttribute="trailing" secondItem="SY3-nz-aN2" secondAttribute="trailing" constant="40" id="OPy-VJ-Ada"/>
+                            <constraint firstItem="Zcu-Ur-T26" firstAttribute="top" secondItem="kmu-x2-Utg" secondAttribute="bottom" constant="16" id="Ogv-wM-DQ5"/>
                             <constraint firstItem="kmu-x2-Utg" firstAttribute="leading" secondItem="wqu-0V-SZc" secondAttribute="leading" constant="40" id="Thc-Vp-h2f"/>
                             <constraint firstItem="wqu-0V-SZc" firstAttribute="trailing" secondItem="kmu-x2-Utg" secondAttribute="trailing" constant="40" id="imM-0x-MgV"/>
                             <constraint firstItem="wqu-0V-SZc" firstAttribute="trailing" secondItem="3Qi-MR-tuY" secondAttribute="trailing" constant="20" id="izQ-fN-txf"/>
+                            <constraint firstItem="wqu-0V-SZc" firstAttribute="trailing" secondItem="Zcu-Ur-T26" secondAttribute="trailing" constant="80" id="kw0-Eh-Zho"/>
+                            <constraint firstItem="Zcu-Ur-T26" firstAttribute="leading" secondItem="wqu-0V-SZc" secondAttribute="leading" constant="80" id="pBW-lg-6uS"/>
                             <constraint firstItem="SY3-nz-aN2" firstAttribute="leading" secondItem="wqu-0V-SZc" secondAttribute="leading" constant="40" id="pBu-aL-csD"/>
                             <constraint firstItem="3Qi-MR-tuY" firstAttribute="leading" secondItem="wqu-0V-SZc" secondAttribute="leading" constant="20" id="sZS-gQ-k2B"/>
                         </constraints>
@@ -508,6 +516,7 @@
                         <outlet property="aboutButton" destination="kmu-x2-Utg" id="8bp-3M-aq6"/>
                         <outlet property="helpButton" destination="SY3-nz-aN2" id="3yZ-o1-dym"/>
                         <outlet property="playButton" destination="3Qi-MR-tuY" id="ZcC-G2-P33"/>
+                        <outlet property="touchView" destination="Zcu-Ur-T26" id="mVf-fa-tVy"/>
                         <segue destination="3Ss-Xm-0yA" kind="presentation" identifier="backToIntro" modalTransitionStyle="flipHorizontal" id="Fzd-Gt-Ply"/>
                     </connections>
                 </viewController>
@@ -518,7 +527,7 @@
         <!--AboutVC-->
         <scene sceneID="3n5-sO-AVf">
             <objects>
-                <viewController id="wso-wZ-0YX" userLabel="AboutVC" customClass="HelpVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wso-wZ-0YX" userLabel="AboutVC" customClass="AboutVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h4K-Xd-rEU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,17 +567,17 @@
                         <viewLayoutGuide key="safeArea" id="Bvw-9W-c7C"/>
                     </view>
                     <connections>
-                        <outlet property="popupView" destination="fSZ-11-khC" id="P00-fY-7ZM"/>
+                        <outlet property="popupView" destination="fSZ-11-khC" id="Ymk-oz-giA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NS5-my-eYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="354" y="812"/>
         </scene>
-        <!--Table View Controller-->
+        <!--About TableVC-->
         <scene sceneID="4H9-S2-q7f">
             <objects>
-                <tableViewController id="0kI-tI-Cex" sceneMemberID="viewController">
+                <tableViewController id="0kI-tI-Cex" customClass="AboutTableVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AA8-Kg-frC">
                         <rect key="frame" x="0.0" y="0.0" width="335" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -616,6 +625,9 @@
                                                         <constraint firstAttribute="height" constant="36" id="lrx-P2-iOh"/>
                                                     </constraints>
                                                     <state key="normal" image="fb"/>
+                                                    <connections>
+                                                        <action selector="fb1Tapped:" destination="0kI-tI-Cex" eventType="touchUpInside" id="L9A-oi-Hxi"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Илья Бер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omi-IM-JrS">
                                                     <rect key="frame" x="68" y="11.5" width="235" height="21"/>
@@ -651,6 +663,9 @@
                                                         <constraint firstAttribute="width" constant="36" id="dZH-dM-JGq"/>
                                                     </constraints>
                                                     <state key="normal" image="fb"/>
+                                                    <connections>
+                                                        <action selector="fb2Tapped:" destination="0kI-tI-Cex" eventType="touchUpInside" id="qZR-HA-Zd7"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дмитрий Дементьев" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaQ-yI-umZ">
                                                     <rect key="frame" x="68" y="11.5" width="235" height="21"/>

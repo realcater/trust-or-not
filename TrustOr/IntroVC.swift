@@ -28,16 +28,6 @@ class IntroVC: UIViewController {
             funnyGame.run(winner: nil)
         }
     }
-    @objc private func tripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
-            funnyGame.run(winner: 11)
-        }
-    }
-    @objc private func quadripleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
-            funnyGame.run(winner: -1)
-        }
-    }
     
     private func setColors() {
         logoImage.tintColor = K.foregroundColor
@@ -50,7 +40,7 @@ class IntroVC: UIViewController {
         super.viewDidLoad()
         setColors()
         view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
-        self.addTaps(forSingle: #selector(singleTap), forDouble: #selector(doubleTap), forTriple: #selector(tripleTap), forQuadriple: #selector(quadripleTap))
+        addTaps(for: view, singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

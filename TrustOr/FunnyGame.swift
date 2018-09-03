@@ -32,13 +32,8 @@ class FunnyGame {
         bottomTitle.textColor = .red
         bottomTitle.textColor = .red
         
-        if topAnimal == -1 {
-            centerImage.image = UIImage(named: "mole")
-            bottomTitle.text = "Mole always wins!!!"
-        } else {
-            centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
-            bottomTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
-        }
+        centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
+        bottomTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
         
         //dingSound?.play()
         UIView.transition(with: centerImage,
@@ -77,8 +72,7 @@ class FunnyGame {
         } else {
             topAnimal = Int.random(in: 0...11)
         }
-        var circlesQty = Double(topAnimal)/12+1.0
-        if topAnimal == -1 { circlesQty = Double.random(in: 5.0...10.0) }
+        let circlesQty = Double(topAnimal)/12+1.0
         topAnimal = topAnimal % 12
         hideResults()
         /*ratchelSound?.play()
