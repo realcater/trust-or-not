@@ -11,7 +11,7 @@ import UIKit
 class AboutVC: UIViewController {
     
     @IBOutlet weak var popupView: UIView!
-    
+
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
         if (recognizer.state == UIGestureRecognizer.State.ended) {
             dismiss(animated: true, completion: nil)
@@ -23,14 +23,5 @@ class AboutVC: UIViewController {
         super.viewDidLoad()
         self.addTaps(singleTapAction: #selector(singleTap))
         popupView.layer.cornerRadius = K.cornerRadius
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
     }
 }

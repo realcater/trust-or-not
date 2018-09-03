@@ -11,12 +11,12 @@ import UIKit
 class AboutTableVC: UITableViewController {
 
     @IBAction func fb1Tapped(_ sender: Any) {
-        if let url = URL(string: "https://www.facebook.com/ilya.ber.5") {
+        if let url = URL(string: K.Urls.fb1) {
             UIApplication.shared.open(url)
         }
     }
     @IBAction func fb2Tapped(_ sender: Any) {
-        if let url = URL(string: "https://www.facebook.com/dmitry.realcater") {
+        if let url = URL(string: K.Urls.fb2) {
             UIApplication.shared.open(url)
         }
     }

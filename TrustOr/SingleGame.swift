@@ -68,15 +68,15 @@ class SingleGame {
     
     //MARK:- Game logic = Data change functions
     func answerIsTrue() {
-        state.answerResultString = K.winResultString
+        state.answerResultString = K.Labels.ResultBar.Result.win
         state.score += 1
     }
     func answerIsFalse() {
-        state.answerResultString = K.looseResultString
+        state.answerResultString = K.Labels.ResultBar.Result.loose
         state.score -= 1
     }
     func answerIsDoubt() {
-        state.answerResultString = K.doubtResultString
+        state.answerResultString = K.Labels.ResultBar.Result.doubt
     }
 
     func answerButtonPressed(button: AnswerChoice) {
@@ -112,7 +112,7 @@ class SingleGame {
         delegate?.returnToStartView()
     }
     func getShortResultsText() -> String {
-        return K.youGainText + (delegate?.textScore(state.score) ?? String(state.score))
+        return K.Labels.ResultBar.Result.youGain + (delegate?.textScore(state.score) ?? String(state.score))
     }
     func getFullResultsText() -> String {
         var text: String
@@ -154,7 +154,7 @@ class SingleGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        let title = "\(K.questionLabel)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
+        let title = "\(K.Labels.Titles.question)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
         delegate?.setScoreTitle(title: title, score: state.score)
     }
     private func showAnswer() {
@@ -163,24 +163,24 @@ class SingleGame {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            resultLabel.backgroundColor = K.trueAnswerBarColor
+            resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
             switch state.answerResultString {
-            case K.winResultString:
-                resultLabel.text = K.trueTextWin
-            case K.looseResultString:
-                resultLabel.text = K.trueTextLoose
+            case K.Labels.ResultBar.Result.win:
+                resultLabel.text = K.Labels.ResultBar.True.win
+            case K.Labels.ResultBar.Result.loose:
+                resultLabel.text = K.Labels.ResultBar.True.loose
             default:
-                resultLabel.text = K.trueTextLoose
+                resultLabel.text = K.Labels.ResultBar.True.neutral
             }
         } else {
-            resultLabel.backgroundColor = K.falseAnswerBarColor
+            resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
             switch state.answerResultString {
-            case K.winResultString:
-                resultLabel.text = K.falseTextWin
-            case K.looseResultString:
-                resultLabel.text = K.falseTextLoose
+            case K.Labels.ResultBar.Result.win:
+                resultLabel.text = K.Labels.ResultBar.False.win
+            case K.Labels.ResultBar.Result.loose:
+                resultLabel.text = K.Labels.ResultBar.False.loose
             default:
-                resultLabel.text = K.falseTextLoose
+                resultLabel.text = K.Labels.ResultBar.False.neutral
             }
         }
         resultLabel.text = resultLabel.text! + state.answerResultString
@@ -196,16 +196,16 @@ class SingleGame {
         nextQuestionButton.isHidden = true
         if state.showHelp { helpButton.isHidden = false }
         
-        trueAnswerButton.setTitle(K.trustText, for: .normal)
-        trueAnswerButton.backgroundColor = K.trueAnswerButtonColor
+        trueAnswerButton.setTitle(K.Labels.Buttons.trust, for: .normal)
+        trueAnswerButton.backgroundColor = K.Colors.Buttons.trueAnswer
         trueAnswerButton.isHidden = false
         
-        doubtAsnwerButton.setTitle(K.doubtText, for: .normal)
-        doubtAsnwerButton.backgroundColor = K.doubtAnswerButtonColor
+        doubtAsnwerButton.setTitle(K.Labels.Buttons.doubt, for: .normal)
+        doubtAsnwerButton.backgroundColor = K.Colors.Buttons.doubtAnswer
         doubtAsnwerButton.isHidden = false
         
-        falseAsnwerButton.setTitle(K.notTrustText, for: .normal)
-        falseAsnwerButton.backgroundColor = K.falseAnswerButtonColor
+        falseAsnwerButton.setTitle(K.Labels.Buttons.notTrust, for: .normal)
+        falseAsnwerButton.backgroundColor = K.Colors.Buttons.falseAnswer
         falseAsnwerButton.isHidden = false
         
         reloadTexts()
@@ -217,8 +217,8 @@ class SingleGame {
         falseAsnwerButton.isHidden = true
         helpButton.isHidden = true
 
-        nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
-        nextQuestionButton.backgroundColor = K.foregroundColor
+        nextQuestionButton.setTitle(K.Labels.Buttons.nextQuestion, for: .normal)
+        nextQuestionButton.backgroundColor = K.Colors.foreground
         nextQuestionButton.isHidden = false
     }
     private func showUIFinishGame() {
@@ -228,21 +228,21 @@ class SingleGame {
         falseAsnwerButton.isHidden = true
         helpButton.isHidden = true
         
-        finishGameButton.setTitle(K.showResultsText, for: .normal)
-        finishGameButton.backgroundColor = K.foregroundColor
+        finishGameButton.setTitle(K.Labels.Buttons.showResults, for: .normal)
+        finishGameButton.backgroundColor = K.Colors.foreground
         finishGameButton.isHidden = false
     }
     private func showUIResults() {
         hideAnswer()
         helpButton.isHidden = true
-        finishGameButton.setTitle(K.finishGameButtonText, for: .normal)
+        finishGameButton.setTitle(K.Labels.Buttons.finishGame, for: .normal)
         finishGameButton.isHidden = false
         print(questionText.text)
         questionText.text = getFullResultsText()
         print(questionText.text)
         questionText.isHidden = false
         resultLabel.text = getShortResultsText()
-        resultLabel.backgroundColor = K.trueAnswerBarColor
+        resultLabel.backgroundColor = K.Colors.Buttons.trueAnswer
         resultLabel.isHidden = false
     }
 }

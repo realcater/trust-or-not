@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionsVC: UIViewController {
     
-    let fontSize = useSmallerFonts() ? K.fontSizeTextViewZoomed : K.fontSizeTextViewNormal 
+    let fontSize = useSmallerFonts() ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal 
 
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var topButton: UIButton!
@@ -65,9 +65,10 @@ class QuestionsVC: UIViewController {
         resultLabel.font = .systemFont(ofSize: fontSize+3, weight: .bold)
     }
     private func prepareButtons() {
-        bottomButton.makeRounded(color: K.trueAnswerButtonColor, textColor: K.backgroundColor)
-        middleButton.makeRounded(color: K.doubtAnswerButtonColor, textColor: K.backgroundColor)
-        topButton.makeRounded(color: K.falseAnswerButtonColor, textColor: K.backgroundColor)
+        bottomButton.makeRounded(color: K.Colors.Buttons.trueAnswer, textColor: K.Colors.background)
+        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background)
+        topButton.makeRounded(color: K.Colors.Buttons.falseAnswer
+, textColor: K.Colors.background)
         bottomButton.isHidden = true
         middleButton.isHidden = true
         topButton.isHidden = true
@@ -76,7 +77,7 @@ class QuestionsVC: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundImage(named: questionsPack.picname, alpha: K.questionsViewBackgroundAlpha)
+        view.setBackgroundImage(named: questionsPack.picname, alpha: K.Alpha.Background.questions)
         prepareButtons()
         setFonts()
     }
@@ -96,7 +97,7 @@ class QuestionsVC: UIViewController {
         if isMovingFromParent {
             if let ViewControllersCount = navigationController?.viewControllers.count {
                 let prevViewController = navigationController!.viewControllers[ViewControllersCount-1] as! ChooseGameVC
-                prevViewController.bottomButton.setTitle(K.continueGameButtonText, for: .normal)
+                prevViewController.bottomButton.setTitle(K.Labels.Buttons.continueGame, for: .normal)
                 prevViewController.topButton.isHidden = true
             }
         }

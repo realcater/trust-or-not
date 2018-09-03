@@ -30,16 +30,16 @@ class IntroVC: UIViewController {
     }
     
     private func setColors() {
-        logoImage.tintColor = K.foregroundColor
-        centerImage.tintColor = K.foregroundColor
-        topTitle.textColor = K.foregroundColor
-        bottomTitle.textColor = K.foregroundColor
+        logoImage.tintColor = K.Colors.foreground
+        centerImage.tintColor = K.Colors.foreground
+        topTitle.textColor = K.Colors.foreground
+        bottomTitle.textColor = K.Colors.foreground
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
-        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
+        view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
         addTaps(singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
     }
     override func viewDidAppear(_ animated: Bool) {

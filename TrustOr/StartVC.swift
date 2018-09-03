@@ -15,11 +15,6 @@ class StartVC: UIViewController {
     @IBOutlet weak var aboutButton: UIButton!
     @IBOutlet weak var touchView: UIView!
     
-    @objc private func singleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
-            performSegue(withIdentifier: "showAbout", sender: self)
-        }
-    }
     @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
             performSegue(withIdentifier: "backToIntro", sender: self)
@@ -28,11 +23,11 @@ class StartVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
-        playButton.makeRounded(color: K.foregroundLighterColor, textColor: K.backgroundColor)
-        helpButton.makeRounded(color: K.foregroundColor, textColor: K.backgroundColor)
-        aboutButton.makeRounded(color: K.foregroundDarkerColor, textColor: K.backgroundColor)
-        addTaps(for: touchView, singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
+        view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
+        playButton.makeRounded(color: K.Colors.foregroundLighter, textColor: K.Colors.background)
+        helpButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background)
+        aboutButton.makeRounded(color: K.Colors.foregroundDarker, textColor: K.Colors.background)
+        addTaps(for: touchView, doubleTapAction: #selector(doubleTap))
 
     }
     override func viewWillAppear(_ animated: Bool) {

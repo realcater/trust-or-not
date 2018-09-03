@@ -37,7 +37,7 @@ class FunnyGame {
         
         //dingSound?.play()
         UIView.transition(with: centerImage,
-                          duration: K.intro.hideAnimationDuration,
+                          duration: K.Duration.hideAnimation,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
                             self?.centerImage.isHidden = false
@@ -46,19 +46,19 @@ class FunnyGame {
     }
     
     func hideResults() {
-        topTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
-        bottomTitle.font = UIFont(name: "Brushie Brushie", size: K.intro.titleFontSize)
-        if self.topTitle.text != K.intro.rouletteText {
+        topTitle.font = UIFont(name: "Brushie Brushie", size: K.Fonts.Size.Intro.title)
+        bottomTitle.font = UIFont(name: "Brushie Brushie", size: K.Fonts.Size.Intro.title)
+        if self.topTitle.text != K.Labels.Titles.roulette {
             UIView.transition(with: self.topTitle,
-                              duration: K.intro.showAnimationDuration,
+                              duration: K.Duration.showAnimation,
                               options: .transitionFlipFromBottom,
                               animations: { [weak self] in
-                                self?.topTitle.text = K.intro.rouletteText
+                                self?.topTitle.text = K.Labels.Titles.roulette
                 },
                               completion: nil)
         }
         UIView.transition(with: self.centerImage,
-                          duration: K.intro.hideAnimationDuration,
+                          duration: K.Duration.hideAnimation,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
                             self?.bottomTitle.isHidden = true

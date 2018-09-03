@@ -51,27 +51,25 @@ class ChooseYearVC: UIViewController {
                                   width: itemWidth, height: itemHeight)
             button.setImage(UIImage(named: animal.picname),
                                       for: .normal)
-            button.tintColor = K.foregroundColor
+            button.tintColor = K.Colors.foreground
             if animal.questionTasks.count == 0 {
-                //button.isEnabled = false
                 button.isUserInteractionEnabled = false
-                button.tintColor = K.disabledButtonColor
+                button.tintColor = K.Colors.Buttons.disabled
             }
             view.addSubview(button)
         }
     }
     
     private func prepareNavigationBar() {
-        navigationController?.navigationBar.barTintColor = K.foregroundColor
-        navigationController?.navigationBar.tintColor = K.backgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSMutableAttributedString.Key.foregroundColor :K.backgroundColor]
-        //navigationController?.navigationBar.titleTextAttributes = [NSMutableAttributedStringKey.font: UIFont(name: "Brushie Brushie", size: 30) ?? UIFont.systemFont(ofSize: 20, weight: .medium), NSMutableAttributedStringKey.foregroundColor :K.backgroundColor]
-        navigationController?.navigationBar.topItem?.title = "Какой год играем?"
+        navigationController?.navigationBar.barTintColor = K.Colors.foreground
+        navigationController?.navigationBar.tintColor = K.Colors.background
+        navigationController?.navigationBar.titleTextAttributes = [NSMutableAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .medium), NSMutableAttributedString.Key.foregroundColor :K.Colors.background]
+        navigationController?.navigationBar.topItem?.title = K.Labels.Titles.chooseYear
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = K.backgroundColor
-        view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
+        view.backgroundColor = K.Colors.background
+        view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
         prepareNavigationBar()
         tileButtons()
     }

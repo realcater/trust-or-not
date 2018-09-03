@@ -117,7 +117,7 @@ class CrowdGame {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        var title = K.questionLabel + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
+        var title = K.Labels.Titles.question + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
         if state.leftQuestions.count > 0 {
             title = title + " (+" + String(state.leftQuestions.count) + ")"
         }
@@ -126,18 +126,17 @@ class CrowdGame {
     private func showAnswer() {
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 10)
-        //commentText.font = UIFont.italicSystemFont(ofSize: commentText.font!.pointSize + K.hintFontSizeDecrease)
         commentText.textColor = .black
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
-            resultLabel.backgroundColor = K.trueAnswerBarColor
-            resultLabel.text = K.trueText
+            resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
+            resultLabel.text = K.Labels.ResultBar.True.neutral
         } else {
-            resultLabel.backgroundColor = K.falseAnswerBarColor
-            resultLabel.text = K.falseText
+            resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
+            resultLabel.text = K.Labels.ResultBar.False.neutral
         }
         resultLabel.isHidden = false
     }
@@ -148,11 +147,11 @@ class CrowdGame {
     private func showUIAnswerMode() {
         hideAnswer()
         if state.showHelp { helpButton.isHidden = false }
-        showAnswerButton.setTitle(K.showAnswerButtonText, for: .normal)
-        showAnswerButton.backgroundColor = K.foregroundColor
+        showAnswerButton.setTitle(K.Labels.Buttons.showAnswer, for: .normal)
+        showAnswerButton.backgroundColor = K.Colors.foreground
         showAnswerButton.isHidden = false
-        laterButton.setTitle(K.laterButtonText, for: .normal)
-        laterButton.backgroundColor = K.grayColor
+        laterButton.setTitle(K.Labels.Buttons.later, for: .normal)
+        laterButton.backgroundColor = K.Colors.gray
         laterButton.isHidden = false
         reloadTexts()
     }
@@ -160,13 +159,13 @@ class CrowdGame {
         helpButton.isHidden = true
         showAnswer()
         laterButton.isHidden = true
-        nextQuestionButton.setTitle(K.nextQuestionButtonText, for: .normal)
+        nextQuestionButton.setTitle(K.Labels.Buttons.nextQuestion, for: .normal)
     }
     private func showUIFinishGame() {
         helpButton.isHidden = true
         showAnswer()
         laterButton.isHidden = true
-        finishGameButton.setTitle(K.finishGameButtonText, for: .normal)
+        finishGameButton.setTitle(K.Labels.Buttons.finishGame, for: .normal)
     }
     
 }
