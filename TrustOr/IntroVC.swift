@@ -40,7 +40,7 @@ class IntroVC: UIViewController {
         super.viewDidLoad()
         setColors()
         view.setBackgroundImage(named: "textBackground", alpha: K.viewBackgroundAlpha)
-        addTaps(for: view, singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
+        addTaps(singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
