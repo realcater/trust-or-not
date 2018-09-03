@@ -576,12 +576,26 @@
                         <sections>
                             <tableViewSection headerTitle="О приложении" id="ela-0H-bet">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F6B-N6-XF9">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="F6B-N6-XF9">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F6B-N6-XF9" id="m3z-gC-ww7">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Верю-не-Верю, Китайский календарь, 11 пакетов по 20 вопросов, v0.9" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMb-Y0-1cJ">
+                                                    <rect key="frame" x="16" y="0.0" width="303" height="65.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RMb-Y0-1cJ" firstAttribute="top" secondItem="m3z-gC-ww7" secondAttribute="top" id="gYC-Zu-RaK"/>
+                                                <constraint firstAttribute="trailing" secondItem="RMb-Y0-1cJ" secondAttribute="trailing" constant="16" id="rEc-Bo-cLn"/>
+                                                <constraint firstItem="RMb-Y0-1cJ" firstAttribute="leading" secondItem="m3z-gC-ww7" secondAttribute="leading" constant="16" id="ubR-rI-MNG"/>
+                                                <constraint firstAttribute="bottom" secondItem="RMb-Y0-1cJ" secondAttribute="bottom" id="wcD-Jw-x0V"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -589,7 +603,7 @@
                             <tableViewSection headerTitle="Автор вопросов" id="oe4-1t-4BA">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RfP-pd-nLP">
-                                        <rect key="frame" x="0.0" y="100" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="122" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RfP-pd-nLP" id="FkR-bY-utY">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
@@ -601,7 +615,7 @@
                             <tableViewSection headerTitle="Разработка и дизайн" id="nid-rM-eSd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LCV-tK-c8Z">
-                                        <rect key="frame" x="0.0" y="172" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="194" width="335" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCV-tK-c8Z" id="oLC-b8-I4j">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
@@ -619,7 +633,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UCf-3W-Jpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="812"/>
+            <point key="canvasLocation" x="1084" y="811.39430284857576"/>
         </scene>
     </scenes>
     <resources>
