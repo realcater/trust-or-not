@@ -436,10 +436,10 @@
             </objects>
             <point key="canvasLocation" x="-370" y="36"/>
         </scene>
-        <!-- -->
+        <!--startVC-->
         <scene sceneID="fB3-wG-AjV">
             <objects>
-                <viewController id="ogA-h6-WKL" customClass="StartVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ogA-h6-WKL" userLabel="startVC" customClass="StartVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YG3-EU-qXa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -482,6 +482,9 @@
                                 <state key="normal" title="О приложении">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="wso-wZ-0YX" kind="presentation" identifier="showAbout" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="fVQ-hV-GIw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -512,14 +515,120 @@
             </objects>
             <point key="canvasLocation" x="355" y="38"/>
         </scene>
+        <!--AboutVC-->
+        <scene sceneID="3n5-sO-AVf">
+            <objects>
+                <viewController id="wso-wZ-0YX" userLabel="AboutVC" customClass="HelpVC" customModule="Верю_Не_верю" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h4K-Xd-rEU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fSZ-11-khC" userLabel="popupView">
+                                <rect key="frame" x="20" y="70" width="335" height="527"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2K-v1-EM1">
+                                        <rect key="frame" x="0.0" y="16" width="335" height="260"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="260" id="LKh-Ox-Bgf"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="0kI-tI-Cex" kind="embed" id="cTI-SE-RuV"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="w2K-v1-EM1" firstAttribute="top" secondItem="fSZ-11-khC" secondAttribute="top" constant="16" id="AXO-qJ-zkf"/>
+                                    <constraint firstAttribute="trailing" secondItem="w2K-v1-EM1" secondAttribute="trailing" id="Efg-HK-SUc"/>
+                                    <constraint firstAttribute="width" priority="750" constant="335" id="M5v-If-F6h"/>
+                                    <constraint firstItem="w2K-v1-EM1" firstAttribute="leading" secondItem="fSZ-11-khC" secondAttribute="leading" id="REP-DH-ub2"/>
+                                    <constraint firstAttribute="height" priority="750" constant="527" id="bNI-ri-ICD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bvw-9W-c7C" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fSZ-11-khC" secondAttribute="bottom" constant="70" id="DbH-vU-LsT"/>
+                            <constraint firstItem="fSZ-11-khC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bvw-9W-c7C" secondAttribute="leading" constant="20" id="GW3-Q9-0DV"/>
+                            <constraint firstItem="fSZ-11-khC" firstAttribute="centerX" secondItem="h4K-Xd-rEU" secondAttribute="centerX" id="H1o-nA-VMI"/>
+                            <constraint firstItem="fSZ-11-khC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Bvw-9W-c7C" secondAttribute="top" constant="50" id="hTn-JT-ngO"/>
+                            <constraint firstItem="Bvw-9W-c7C" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fSZ-11-khC" secondAttribute="trailing" constant="20" id="sXi-Nc-eIf"/>
+                            <constraint firstItem="fSZ-11-khC" firstAttribute="centerY" secondItem="h4K-Xd-rEU" secondAttribute="centerY" id="vKz-Vc-CLh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bvw-9W-c7C"/>
+                    </view>
+                    <connections>
+                        <outlet property="popupView" destination="fSZ-11-khC" id="P00-fY-7ZM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NS5-my-eYz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="812"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="4H9-S2-q7f">
+            <objects>
+                <tableViewController id="0kI-tI-Cex" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AA8-Kg-frC">
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="260"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection headerTitle="О приложении" id="ela-0H-bet">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F6B-N6-XF9">
+                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F6B-N6-XF9" id="m3z-gC-ww7">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Автор вопросов" id="oe4-1t-4BA">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RfP-pd-nLP">
+                                        <rect key="frame" x="0.0" y="100" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RfP-pd-nLP" id="FkR-bY-utY">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Разработка и дизайн" id="nid-rM-eSd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LCV-tK-c8Z">
+                                        <rect key="frame" x="0.0" y="172" width="335" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCV-tK-c8Z" id="oLC-b8-I4j">
+                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="0kI-tI-Cex" id="IBD-xt-STz"/>
+                            <outlet property="delegate" destination="0kI-tI-Cex" id="vmm-4B-LBK"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCf-3W-Jpu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="812"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2" width="157" height="157"/>
         <image name="Logo2" width="375" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="k8N-DA-ZMu"/>
+        <segue reference="LTP-6t-ddg"/>
         <segue reference="C6f-uW-vOv"/>
-        <segue reference="g5A-2b-kqv"/>
+        <segue reference="KJR-C4-Qul"/>
     </inferredMetricsTieBreakers>
 </document>
