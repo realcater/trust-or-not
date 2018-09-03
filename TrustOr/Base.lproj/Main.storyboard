@@ -527,9 +527,9 @@
                                 <rect key="frame" x="20" y="70" width="335" height="527"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w2K-v1-EM1">
-                                        <rect key="frame" x="0.0" y="16" width="335" height="260"/>
+                                        <rect key="frame" x="0.0" y="16" width="335" height="238"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="260" id="LKh-Ox-Bgf"/>
+                                            <constraint firstAttribute="height" constant="238" id="LKh-Ox-Bgf"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="0kI-tI-Cex" kind="embed" id="cTI-SE-RuV"/>
@@ -570,7 +570,7 @@
             <objects>
                 <tableViewController id="0kI-tI-Cex" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AA8-Kg-frC">
-                        <rect key="frame" x="0.0" y="0.0" width="335" height="260"/>
+                        <rect key="frame" x="0.0" y="0.0" width="335" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -617,9 +617,18 @@
                                                     </constraints>
                                                     <state key="normal" image="fb"/>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Илья Бер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omi-IM-JrS">
+                                                    <rect key="frame" x="68" y="11.5" width="235" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="omi-IM-JrS" secondAttribute="trailing" constant="16" id="Nd9-UO-xSC"/>
                                                 <constraint firstItem="G4e-cU-S1p" firstAttribute="leading" secondItem="FkR-bY-utY" secondAttribute="leading" constant="16" id="dSx-5a-naw"/>
+                                                <constraint firstItem="omi-IM-JrS" firstAttribute="centerY" secondItem="FkR-bY-utY" secondAttribute="centerY" id="jf7-e0-cw2"/>
+                                                <constraint firstItem="omi-IM-JrS" firstAttribute="leading" secondItem="G4e-cU-S1p" secondAttribute="trailing" constant="16" id="mVc-1C-6HD"/>
                                                 <constraint firstItem="G4e-cU-S1p" firstAttribute="centerY" secondItem="FkR-bY-utY" secondAttribute="centerY" id="wrg-gW-5sN"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -634,6 +643,29 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCV-tK-c8Z" id="oLC-b8-I4j">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-u0-kvx">
+                                                    <rect key="frame" x="16" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="NN7-J9-YWv"/>
+                                                        <constraint firstAttribute="width" constant="36" id="dZH-dM-JGq"/>
+                                                    </constraints>
+                                                    <state key="normal" image="fb"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Дмитрий Дементьев" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaQ-yI-umZ">
+                                                    <rect key="frame" x="68" y="11.5" width="235" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gaQ-yI-umZ" secondAttribute="trailing" constant="16" id="7e0-8f-D62"/>
+                                                <constraint firstItem="gaQ-yI-umZ" firstAttribute="centerY" secondItem="oLC-b8-I4j" secondAttribute="centerY" id="Am2-9c-ucY"/>
+                                                <constraint firstItem="pYc-u0-kvx" firstAttribute="leading" secondItem="oLC-b8-I4j" secondAttribute="leading" constant="16" id="bf0-aL-w2l"/>
+                                                <constraint firstItem="gaQ-yI-umZ" firstAttribute="leading" secondItem="pYc-u0-kvx" secondAttribute="trailing" constant="16" id="etQ-q7-Xcr"/>
+                                                <constraint firstItem="pYc-u0-kvx" firstAttribute="centerY" secondItem="oLC-b8-I4j" secondAttribute="centerY" id="hwi-5G-Yy1"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
