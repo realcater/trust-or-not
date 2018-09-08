@@ -1,5 +1,5 @@
 //
-//  UIButton+extension.swift
+//  MyButton+extension.swift
 //  Верю-Не-верю
 //
 //  Created by Dmitry Dementyev on 30.08.2018.
@@ -12,7 +12,7 @@ import AVFoundation
 class MyButton: UIButton {
     var sound: AVAudioPlayer? = nil
 
-    @objc func playClickSound(_ sender: UIButton) {
+    @objc func playClickSound(_ sender: MyButton) {
         sound?.play()
     }
     func makeRounded(color: UIColor? = nil, textColor: UIColor? = nil, sound: AVAudioPlayer? = nil) {
