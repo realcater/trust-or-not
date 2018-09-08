@@ -10,7 +10,7 @@ import UIKit
 
 class ChooseYearVC: UIViewController {
 
-    @objc func buttonPressed(_ sender: UIButton) {
+    @objc func buttonPressed(_ sender: MyButton) {
         let chosenAnimal = questionsPacks.items[Int(sender.tag)-2000]
         if chosenAnimal.questionTasks.count > 0 {
             performSegue(withIdentifier: "yearChosen", sender: sender)
@@ -37,7 +37,7 @@ class ChooseYearVC: UIViewController {
         for (i,animal) in questionsPacks.items.enumerated() {
             let col = i % K.AnimalButtons.columnsQty
             let row = i / K.AnimalButtons.columnsQty
-            let button = UIButton(type: .system)
+            let button = MyButton(type: .system)
             button.tag = 2000 + i
             button.addTarget(self, action: #selector(buttonPressed),
                              for: .touchUpInside)
@@ -78,7 +78,7 @@ class ChooseYearVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "yearChosen" {
             let startGameView = segue.destination as! ChooseGameVC
-            let animalNumber = (sender as! UIButton).tag - 2000
+            let animalNumber = (sender as! MyButton).tag - 2000
             startGameView.questionsPack = questionsPacks.items[animalNumber]
         }
     }

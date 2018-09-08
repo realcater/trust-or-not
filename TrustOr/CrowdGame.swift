@@ -36,18 +36,18 @@ protocol CrowdGameDelegate: class {
 class CrowdGame {
     var questionText: UITextView
     var commentText: UITextView
-    var showAnswerButton: UIButton
-    var nextQuestionButton: UIButton
-    var laterButton: UIButton
-    var finishGameButton: UIButton
-    var helpButton: UIButton
+    var showAnswerButton: MyButton
+    var nextQuestionButton: MyButton
+    var laterButton: MyButton
+    var finishGameButton: MyButton
+    var helpButton: MyButton
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: CrowdGameState!
     weak var delegate: CrowdGameDelegate?
     
-    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: UIButton, nextQuestionButton: UIButton, laterButton: UIButton, finishGameButton: UIButton, helpButton: UIButton, resultLabel: UILabel) {
+    init(delegate: CrowdGameDelegate, questionsPack: QuestionsPack, state: CrowdGameState, questionText: UITextView, commentText: UITextView, showAnswerButton: MyButton, nextQuestionButton: MyButton, laterButton: MyButton, finishGameButton: MyButton, helpButton: MyButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -60,6 +60,9 @@ class CrowdGame {
         self.helpButton = helpButton
         self.resultLabel = resultLabel
         restoreState()
+        self.laterButton.turnClickSoundOn(sound: K.Sounds.click)
+        
+        
     }
     
     //MARK:- Game logic = Data change functions
@@ -152,6 +155,7 @@ class CrowdGame {
         showAnswerButton.setTitle(K.Labels.Buttons.showAnswer, for: .normal)
         showAnswerButton.backgroundColor = K.Colors.foreground
         showAnswerButton.isHidden = false
+        showAnswerButton.sound = nil
         laterButton.setTitle(K.Labels.Buttons.later, for: .normal)
         laterButton.backgroundColor = K.Colors.gray
         laterButton.isHidden = false
@@ -162,12 +166,15 @@ class CrowdGame {
         showAnswer()
         laterButton.isHidden = true
         nextQuestionButton.setTitle(K.Labels.Buttons.nextQuestion, for: .normal)
+        nextQuestionButton.turnClickSoundOn(sound: K.Sounds.page)
     }
     private func showUIFinishGame() {
         helpButton.isHidden = true
         showAnswer()
         laterButton.isHidden = true
         finishGameButton.setTitle(K.Labels.Buttons.finishGame, for: .normal)
+        finishGameButton.turnClickSoundOn(sound: K.Sounds.click)
+        K.Sounds.applause?.play()
     }
     
 }

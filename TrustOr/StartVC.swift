@@ -10,9 +10,9 @@ import UIKit
 
 class StartVC: UIViewController {
 
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var helpButton: UIButton!
-    @IBOutlet weak var aboutButton: UIButton!
+    @IBOutlet weak var playButton: MyButton!
+    @IBOutlet weak var helpButton: MyButton!
+    @IBOutlet weak var aboutButton: MyButton!
     @IBOutlet weak var touchView: UIView!
     
     @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
@@ -20,7 +20,6 @@ class StartVC: UIViewController {
             performSegue(withIdentifier: "backToIntro", sender: self)
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
@@ -28,7 +27,6 @@ class StartVC: UIViewController {
         helpButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background, sound: K.Sounds.click)
         aboutButton.makeRounded(color: K.Colors.foregroundDarker, textColor: K.Colors.background, sound: K.Sounds.click)
         addTaps(for: touchView, doubleTapAction: #selector(doubleTap))
-
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,6 +44,7 @@ class StartVC: UIViewController {
         } else if segue.identifier == "backToIntro" {
             let introVC = segue.destination as! IntroVC
             introVC.startFunnyGame = true
+            K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: 2.0)
         }
     }
 }

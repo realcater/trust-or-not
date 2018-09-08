@@ -40,19 +40,19 @@ protocol SingleGameDelegate: CrowdGameDelegate {
 class SingleGame {
     var questionText: UITextView
     var commentText: UITextView
-    var trueAnswerButton: UIButton
-    var doubtAsnwerButton: UIButton
-    var falseAsnwerButton: UIButton
-    var nextQuestionButton: UIButton
-    var finishGameButton: UIButton
-    var helpButton: UIButton
+    var trueAnswerButton: MyButton
+    var doubtAsnwerButton: MyButton
+    var falseAsnwerButton: MyButton
+    var nextQuestionButton: MyButton
+    var finishGameButton: MyButton
+    var helpButton: MyButton
     var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: SingleGameState!
     weak var delegate: SingleGameDelegate?
     
-    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: UIButton, doubtAsnwerButton: UIButton, falseAsnwerButton: UIButton, nextQuestionButton: UIButton, finishGameButton: UIButton, helpButton: UIButton, resultLabel: UILabel) {
+    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: MyButton, doubtAsnwerButton: MyButton, falseAsnwerButton: MyButton, nextQuestionButton: MyButton, finishGameButton: MyButton, helpButton: MyButton, resultLabel: UILabel) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
@@ -66,6 +66,7 @@ class SingleGame {
         self.helpButton = helpButton
         self.resultLabel = resultLabel
         restoreState()
+        self.doubtAsnwerButton.turnClickSoundOn(sound: K.Sounds.doubt)
     }
     
     //MARK:- Game logic = Data change functions
@@ -147,7 +148,6 @@ class SingleGame {
         delegate?.setScoreTitle(title: title, score: state.score)
     }
     private func showAnswer() {
-        print("showAnswer()")
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
@@ -158,16 +158,11 @@ class SingleGame {
             case K.Labels.ResultBar.Result.win:
                 resultLabel.text = K.Labels.ResultBar.True.win
                 K.Sounds.correct?.play()
-                print("==")
-                print(state.answerResultString)
             case K.Labels.ResultBar.Result.loose:
                 resultLabel.text = K.Labels.ResultBar.True.loose
                 K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.True.neutral
-                //clickSound?.play()
-                print("===")
-                print(state.answerResultString)
             }
         } else {
             resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
@@ -180,9 +175,6 @@ class SingleGame {
                 K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.False.neutral
-                //clickSound?.play()
-                print("=====")
-                print(state.answerResultString)
             }
         }
         resultLabel.text = resultLabel.text! + state.answerResultString
@@ -207,6 +199,7 @@ class SingleGame {
         doubtAsnwerButton.isHidden = false
         
         falseAsnwerButton.setTitle(K.Labels.Buttons.notTrust, for: .normal)
+        falseAsnwerButton.sound = nil
         falseAsnwerButton.backgroundColor = K.Colors.Buttons.falseAnswer
         falseAsnwerButton.isHidden = false
         
@@ -220,6 +213,7 @@ class SingleGame {
         helpButton.isHidden = true
 
         nextQuestionButton.setTitle(K.Labels.Buttons.nextQuestion, for: .normal)
+        nextQuestionButton.turnClickSoundOn(sound: K.Sounds.page)
         nextQuestionButton.backgroundColor = K.Colors.foreground
         nextQuestionButton.isHidden = false
     }
@@ -244,5 +238,7 @@ class SingleGame {
         resultLabel.text = getShortResultsText()
         resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
         resultLabel.isHidden = false
+        K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: nil)
+        finishGameButton.turnClickSoundOn(sound: K.Sounds.click)
     }
 }

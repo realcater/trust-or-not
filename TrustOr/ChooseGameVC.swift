@@ -10,9 +10,9 @@ import UIKit
 
 class ChooseGameVC: UIViewController {
     
-    @IBOutlet weak var animalButton: UIButton!
-    @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var animalButton: MyButton!
+    @IBOutlet weak var topButton: MyButton!
+    @IBOutlet weak var bottomButton: MyButton!
     @IBAction func pressAnimalButton(_ sender: Any) {
     }
     @IBAction func pressBottomButton(_ sender: Any) {
@@ -21,10 +21,10 @@ class ChooseGameVC: UIViewController {
     var gameState : GameState!
     
     private func prepareButtons() {
-        topButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background)
+        topButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background, sound: K.Sounds.click)
         topButton.setTitle(K.Labels.Buttons.startSingleGame, for: .normal)
         
-        bottomButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background)
+        bottomButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background, sound: K.Sounds.click)
         bottomButton.setTitle(K.Labels.Buttons.startCrowdGame, for: .normal)
         
         animalButton.tintColor = K.Colors.foreground

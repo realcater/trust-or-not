@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19t-Ww-CaQ" userLabel="topButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="469" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254901960786" blue="0.71372549019607845" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -84,7 +84,7 @@
                                     <constraint firstItem="QKA-ik-6N8" firstAttribute="centerY" secondItem="nRh-i2-LmR" secondAttribute="centerY" id="ZfW-Gy-hjh"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-Ta-mCv" userLabel="bottomButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Km0-Ta-mCv" userLabel="bottomButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="539" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -189,7 +189,7 @@
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerY" secondItem="1ke-60-f02" secondAttribute="centerY" id="vSV-s5-fUe"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz" userLabel="helpButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz" userLabel="helpButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="145" y="329" width="85" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wch-HO-T2H"/>
@@ -200,7 +200,7 @@
                                     <segue destination="FLO-3C-U4q" kind="presentation" identifier="showHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="k8N-DA-ZMu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="bottomButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enM-P6-HzI" userLabel="bottomButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="539" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.44705882349999998" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -214,7 +214,7 @@
                                     <action selector="bottomButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="XNt-Ee-ZLN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-wA-ytt" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-wA-ytt" userLabel="topButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="399" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.01195136005" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -229,7 +229,7 @@
                                     <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="657-Fm-22h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="middleButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="middleButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="469" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -444,7 +444,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qi-MR-tuY" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qi-MR-tuY" userLabel="topButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="20" y="303.5" width="335" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -458,7 +458,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="KJR-C4-Qul"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY3-nz-aN2" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY3-nz-aN2" userLabel="topButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="383.5" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -472,7 +472,7 @@
                                     <segue destination="FLO-3C-U4q" kind="presentation" identifier="showFullHelp" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="LTP-6t-ddg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmu-x2-Utg" userLabel="topButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmu-x2-Utg" userLabel="topButton" customClass="MyButton" customModule="Верю_Не_верю" customModuleProvider="target">
                                 <rect key="frame" x="40" y="453.5" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>

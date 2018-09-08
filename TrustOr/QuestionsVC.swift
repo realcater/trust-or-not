@@ -10,10 +10,10 @@ import UIKit
 
 class QuestionsVC: UIViewController {
     
-    @IBOutlet weak var helpButton: UIButton!
-    @IBOutlet weak var topButton: UIButton!
-    @IBOutlet weak var bottomButton: UIButton!
-    @IBOutlet weak var middleButton: UIButton!
+    @IBOutlet weak var helpButton: MyButton!
+    @IBOutlet weak var topButton: MyButton!
+    @IBOutlet weak var bottomButton: MyButton!
+    @IBOutlet weak var middleButton: MyButton!
     
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var resultLabel: UILabel!
@@ -67,9 +67,9 @@ class QuestionsVC: UIViewController {
     }
     private func prepareButtons() {
         bottomButton.makeRounded(color: K.Colors.Buttons.trueAnswer, textColor: K.Colors.background)
-        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background, sound: K.Sounds.click)
-        topButton.makeRounded(color: K.Colors.Buttons.falseAnswer
-, textColor: K.Colors.background)
+        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background)
+        topButton.makeRounded(color: K.Colors.Buttons.falseAnswer, textColor: K.Colors.background)
+        
         bottomButton.isHidden = true
         middleButton.isHidden = true
         topButton.isHidden = true

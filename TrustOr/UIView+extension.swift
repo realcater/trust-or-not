@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     func makeAllButtonsRound() {
-        for case let button as UIButton in self.subviews {
+        for case let button as MyButton in self.subviews {
             button.makeRounded()
         }
     }

@@ -8,10 +8,13 @@ struct K {
     static let funnyGameAnimalsQty = 12
     
     struct Sounds {
-        static let click = initSound(filename: "click01.wav")
-        static let correct = initSound(filename: "true02.wav")
-        static let error = initSound(filename: "false02.wav")
-        static let page = initSound(filename: "page.mp3")
+        static let click = initSound(filename: "click.wav", volume: 0.2)
+        static let correct = initSound(filename: "true.wav", volume: 0.2)
+        static let error = initSound(filename: "false.wav", volume: 0.5)
+        static let page = initSound(filename: "page.mp3", volume: 0.2)
+        static let applause = initSound(filename: "applause.wav")
+        static let doubt = initSound(filename: "doubt.wav", volume: 0.5)
+        static let rotate = initSound(filename: "rotate.wav")
     }
     
     struct Margins {
@@ -130,6 +133,8 @@ struct K {
         struct FunnyGame {
             static let showAnimation = 1.0
             static let hideAnimation = 0.3
+            static let playRotation: TimeInterval = 4.7
+            static let playApplause: TimeInterval = 4.0
         }
     }
     struct Delay {

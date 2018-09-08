@@ -24,7 +24,6 @@ class FunnyGame {
         self.topTitle = topTitle
         self.bottomTitle = bottomTitle
     }
-    
     func showResults() {
         centerImage.tintColor = K.Colors.funnyGameResults
         bottomTitle.textColor = K.Colors.funnyGameResults
@@ -33,7 +32,8 @@ class FunnyGame {
         centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
         bottomTitle.text = questionsPacks.items[topAnimal].englishName + K.Labels.FunnyGame.win
         
-        //dingSound?.play()
+        K.Sounds.rotate?.stop()
+        K.Sounds.applause?.resetAndPlay(startVolume: 0.2, fadeDuration: K.Duration.FunnyGame.playApplause)
         UIView.transition(with: centerImage,
                           duration: K.Duration.FunnyGame.hideAnimation,
                           options: .transitionCrossDissolve,
@@ -73,10 +73,7 @@ class FunnyGame {
         let circlesQty = Double(topAnimal)/Double(K.funnyGameAnimalsQty)+1.0
         topAnimal = topAnimal % K.funnyGameAnimalsQty
         hideResults()
-        /*ratchelSound?.play()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
-            self.ratchelSound?.stop()
-        })*/
+        K.Sounds.rotate?.resetAndPlay(startVolume: 1.0, fadeDuration: K.Duration.FunnyGame.playRotation)
         imageForRotate.rotation(for: circlesQty, onCompletion: showResults)
     }
 }
