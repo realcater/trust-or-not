@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import AVFoundation
 
-extension UIButton {
-    func makeRounded() {
-        self.layer.cornerRadius = 0.5 * self.bounds.size.height
+class MyButton: UIButton {
+    var sound: AVAudioPlayer? = nil
+
+    @objc func playClickSound(_ sender: UIButton) {
+        sound?.play()
     }
-    func makeRounded(color: UIColor, textColor: UIColor) {
-        self.backgroundColor = color
-        self.setTitleColor(textColor, for: .normal)
+    func makeRounded(color: UIColor? = nil, textColor: UIColor? = nil, sound: AVAudioPlayer? = nil) {
         self.layer.cornerRadius = 0.5 * self.bounds.size.height
+        if let color = color { self.backgroundColor = color }
+        if let textColor = textColor { self.setTitleColor(textColor, for: .normal) }
+        if let sound = sound { self.turnClickSoundOn(sound: sound) }
+        
+    }
+    func turnClickSoundOn(sound: AVAudioPlayer?) {
+        self.addTarget(self, action: #selector(playClickSound), for: .touchDown)
+        self.sound = sound
     }
 }

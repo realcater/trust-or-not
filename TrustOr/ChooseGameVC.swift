@@ -58,5 +58,6 @@ class ChooseGameVC: UIViewController {
         let questionsView = segue.destination as! QuestionsVC
         questionsView.questionsPack = questionsPack
         questionsView.gameState = gameState
+        questionsView.view.setConstraint(identifier: "fromHelpToMiddleButton", size: K.Margins.fromHelpToMiddleButton[gameState.gameType]!)
     }
 }

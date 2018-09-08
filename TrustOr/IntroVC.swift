@@ -35,10 +35,14 @@ class IntroVC: UIViewController {
         topTitle.textColor = K.Colors.foreground
         bottomTitle.textColor = K.Colors.foreground
     }
-    
+    private func setFonts() {
+        topTitle.font = UIFont(name: K.Fonts.Name.intro, size: K.Fonts.Size.Intro.atStart)
+        bottomTitle.font = UIFont(name: K.Fonts.Name.intro, size: K.Fonts.Size.Intro.atStart)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setColors()
+        setFonts()
         view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
         addTaps(singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
     }

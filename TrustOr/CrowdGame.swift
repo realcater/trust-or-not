@@ -114,7 +114,7 @@ class CrowdGame {
     }
     private func reloadTexts() {
         questionText.text = questionsPack.questionTasks[state.currentNumber].question
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + K.Delay.flashScrollIndicators, execute: {
             self.questionText.flashScrollIndicators()
         })
         var title = K.Labels.Titles.question + String(state.currentNumber+1)+"/"+String(questionsPack.questionTasks.count)
@@ -125,18 +125,20 @@ class CrowdGame {
     }
     private func showAnswer() {
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
-        commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 10)
-        commentText.textColor = .black
+        //commentText.superview!.setConstraint(identifier: "commentTextBottom", size: 10)
+        //commentText.textColor = .black
         commentText.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + K.Delay.flashScrollIndicators, execute: {
             self.commentText.flashScrollIndicators()
         })
         if questionsPack.questionTasks[state.currentNumber].answer == true {
             resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
             resultLabel.text = K.Labels.ResultBar.True.neutral
+            K.Sounds.correct?.play()
         } else {
             resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
             resultLabel.text = K.Labels.ResultBar.False.neutral
+            K.Sounds.error?.play()
         }
         resultLabel.isHidden = false
     }

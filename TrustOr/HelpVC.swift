@@ -13,8 +13,6 @@ class HelpVC: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    let fontSize = (UIScreen.main.currentMode!.size.width >= 750) ? K.Fonts.Size.TextView.normal-2 : K.Fonts.Size.TextView.zoomed-2
-    var textViews : [UITextView]!
     var pagesForLoad : [Int] = [0]
     
     @objc private func singleTap(recognizer: UITapGestureRecognizer) {
@@ -23,7 +21,7 @@ class HelpVC: UIViewController {
         }
     }
     @IBAction func pageChanged(_ sender: UIPageControl) {
-        UIView.animate(withDuration: 0.3, delay: 0,
+        UIView.animate(withDuration: K.Duration.pageChangeViaPageControl, delay: 0,
                          options: [.curveEaseInOut], animations: {
                             self.scrollView.contentOffset = CGPoint(
                                 x: self.scrollView.bounds.size.width *
@@ -41,7 +39,7 @@ class HelpVC: UIViewController {
     private func addViews(to viewName: UIView, from nibName: String) {
         let width = scrollView.bounds.size.width
         let height = scrollView.bounds.size.height
-        let margin: CGFloat = 0
+        let margin = K.Margins.helpScreen
         
         let viewNib = UINib(nibName: nibName, bundle: nil)
         let viewNibArray = viewNib.instantiate(withOwner: scrollView, options: nil)
@@ -54,11 +52,11 @@ class HelpVC: UIViewController {
                 viewNib.makeAllButtonsRound()
                 viewNib.setForAllImages(tintColor: K.Colors.foreground)
                 if useSmallerFonts() {
-                    viewNib.setForAllLabels(withFontName: K.Fonts.systemSemibold, fontSize: K.Fonts.Size.Help.Header.zoomed)
-                    viewNib.setForAllLabels(withFontName: K.Fonts.systemRegular, fontSize: K.Fonts.Size.Help.Text.zoomed)
+                    viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemSemibold, fontSize: K.Fonts.Size.Help.Header.zoomed)
+                    viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemRegular, fontSize: K.Fonts.Size.Help.Text.zoomed)
                 } else {
-                    viewNib.setForAllLabels(withFontName: K.Fonts.systemSemibold, fontSize: K.Fonts.Size.Help.Header.normal)
-                    viewNib.setForAllLabels(withFontName: K.Fonts.systemRegular, fontSize: K.Fonts.Size.Help.Text.normal)
+                    viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemSemibold, fontSize: K.Fonts.Size.Help.Header.normal)
+                    viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemRegular, fontSize: K.Fonts.Size.Help.Text.normal)
                 }
                 viewName.addSubview(viewNib)
             }

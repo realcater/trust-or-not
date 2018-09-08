@@ -17,8 +17,6 @@ class FunnyGame {
     var centerImage : UIImageView
     var topTitle : UILabel
     var bottomTitle: UILabel
-    var ratchelSound = initSound(mp3filename: "ratchel.mp3")
-    var dingSound = initSound2(mp3filename: "ding.mp3")
     
     init(imageForRotate: UIRotatedImageView, centerImage : UIImageView, topTitle : UILabel, bottomTitle: UILabel) {
         self.imageForRotate = imageForRotate
@@ -28,16 +26,16 @@ class FunnyGame {
     }
     
     func showResults() {
-        centerImage.tintColor = .red
-        bottomTitle.textColor = .red
-        bottomTitle.textColor = .red
+        centerImage.tintColor = K.Colors.funnyGameResults
+        bottomTitle.textColor = K.Colors.funnyGameResults
+        bottomTitle.textColor = K.Colors.funnyGameResults
         
         centerImage.image = UIImage(named: questionsPacks.items[topAnimal].picname)
-        bottomTitle.text = questionsPacks.items[topAnimal].englishName+" wins!"
+        bottomTitle.text = questionsPacks.items[topAnimal].englishName + K.Labels.FunnyGame.win
         
         //dingSound?.play()
         UIView.transition(with: centerImage,
-                          duration: K.Duration.hideAnimation,
+                          duration: K.Duration.FunnyGame.hideAnimation,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
                             self?.centerImage.isHidden = false
@@ -46,11 +44,11 @@ class FunnyGame {
     }
     
     func hideResults() {
-        topTitle.font = UIFont(name: "Brushie Brushie", size: K.Fonts.Size.Intro.title)
-        bottomTitle.font = UIFont(name: "Brushie Brushie", size: K.Fonts.Size.Intro.title)
+        topTitle.font = UIFont(name: K.Fonts.Name.intro, size: K.Fonts.Size.Intro.inFunnyGame)
+        bottomTitle.font = UIFont(name: K.Fonts.Name.intro, size: K.Fonts.Size.Intro.inFunnyGame)
         if self.topTitle.text != K.Labels.Titles.roulette {
             UIView.transition(with: self.topTitle,
-                              duration: K.Duration.showAnimation,
+                              duration: K.Duration.FunnyGame.showAnimation,
                               options: .transitionFlipFromBottom,
                               animations: { [weak self] in
                                 self?.topTitle.text = K.Labels.Titles.roulette
@@ -58,7 +56,7 @@ class FunnyGame {
                               completion: nil)
         }
         UIView.transition(with: self.centerImage,
-                          duration: K.Duration.hideAnimation,
+                          duration: K.Duration.FunnyGame.hideAnimation,
                           options: .transitionCrossDissolve,
                           animations: { [weak self] in
                             self?.bottomTitle.isHidden = true
@@ -70,10 +68,10 @@ class FunnyGame {
         if let winner=winner {
             topAnimal = winner
         } else {
-            topAnimal = Int.random(in: 0...11)
+            topAnimal = Int.random(in: 0...K.funnyGameAnimalsQty-1)
         }
-        let circlesQty = Double(topAnimal)/12+1.0
-        topAnimal = topAnimal % 12
+        let circlesQty = Double(topAnimal)/Double(K.funnyGameAnimalsQty)+1.0
+        topAnimal = topAnimal % K.funnyGameAnimalsQty
         hideResults()
         /*ratchelSound?.play()
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {

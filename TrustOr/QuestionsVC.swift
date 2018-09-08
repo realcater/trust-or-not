@@ -10,8 +10,6 @@ import UIKit
 
 class QuestionsVC: UIViewController {
     
-    let fontSize = useSmallerFonts() ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal 
-
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var topButton: UIButton!
     @IBOutlet weak var bottomButton: UIButton!
@@ -30,6 +28,7 @@ class QuestionsVC: UIViewController {
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
+        
         singleGame.answerButtonPressed(button: .trueAnswer)
     }
     
@@ -60,13 +59,15 @@ class QuestionsVC: UIViewController {
     }
     //MARK:- Prepare screen functions
     private func setFonts() {
-        questionText.font = .systemFont(ofSize: fontSize)
-        commentText.font = .italicSystemFont(ofSize: fontSize)
-        resultLabel.font = .systemFont(ofSize: fontSize+3, weight: .bold)
+        let textViewFontSize = useSmallerFonts() ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
+        let resultLabelFontSize = useSmallerFonts() ? K.Fonts.Size.ResultLabel.zoomed : K.Fonts.Size.ResultLabel.normal
+        questionText.font = .systemFont(ofSize: textViewFontSize)
+        commentText.font = .italicSystemFont(ofSize: textViewFontSize)
+        resultLabel.font = .systemFont(ofSize: resultLabelFontSize, weight: .bold)
     }
     private func prepareButtons() {
         bottomButton.makeRounded(color: K.Colors.Buttons.trueAnswer, textColor: K.Colors.background)
-        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background)
+        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background, sound: K.Sounds.click)
         topButton.makeRounded(color: K.Colors.Buttons.falseAnswer
 , textColor: K.Colors.background)
         bottomButton.isHidden = true
@@ -105,14 +106,7 @@ class QuestionsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHelp" {
             let helpVC = segue.destination as! HelpVC
-            var pagesForLoad : [Int]
-            switch gameState.gameType! {
-            case GameType.singleGame:
-                pagesForLoad = [4]
-            case GameType.crowdGame:
-                pagesForLoad = [Int](5...8)
-            }
-            helpVC.pagesForLoad = pagesForLoad
+            helpVC.pagesForLoad = K.helpPages[gameState.gameType]!
         }
     }
 }
@@ -138,7 +132,7 @@ extension QuestionsVC: SingleGameDelegate {
         let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
         let width = navigationController!.navigationBar.frame.width
         let height = navigationController!.navigationBar.frame.height
-        navView.frame = CGRect(x: 0,y: 0, width: width-2*K.titleMargin, height: height)
+        navView.frame = CGRect(x: 0,y: 0, width: width-2*K.Margins.title, height: height)
         if let titleLabel = navView.viewWithTag(1000) as? UILabel {
             titleLabel.text = title
         }

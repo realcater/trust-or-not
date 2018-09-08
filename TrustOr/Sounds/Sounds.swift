@@ -8,25 +8,19 @@
 
 import AVFoundation
 
-func initSound(mp3filename: String) -> AVAudioPlayer? {
-    let path = Bundle.main.path(forResource: "ratchel.mp3", ofType:nil)!
-    let url = URL(fileURLWithPath: path)
-    do {
-        let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-        return player
-    } catch {
-        print("couldn't load file \(mp3filename)")
-        return nil
-    }
-}
-func initSound2(mp3filename: String) -> AVAudioPlayer? {
-    let path = Bundle.main.path(forResource: "ding.mp3", ofType:nil)!
-    let url = URL(fileURLWithPath: path)
-    do {
-        let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-        return player
-    } catch {
-        print("couldn't load file \(mp3filename)")
+func initSound(filename: String, volume: Float? = nil) -> AVAudioPlayer? {
+    if let path = Bundle.main.path(forResource: filename, ofType:nil) {
+        let url = URL(fileURLWithPath: path)
+        do {
+            let player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            if let volume = volume { player.volume = volume }
+            return player
+        } catch {
+            print("couldn't load file \(filename)")
+            return nil
+        }
+    } else {
+        print("there's no such file: \(filename)")
         return nil
     }
 }

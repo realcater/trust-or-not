@@ -20,6 +20,8 @@ class SingleGameState {
     var lastAnswer: AnswerChoice
     var answerResultString: String
     var showHelp: Bool
+    
+    
     init() {
         currentNumber = 0
         answerState = .notAnswered
@@ -115,25 +117,12 @@ class SingleGame {
         return K.Labels.ResultBar.Result.youGain + (delegate?.textScore(state.score) ?? String(state.score))
     }
     func getFullResultsText() -> String {
-        var text: String
-        switch abs(state.score) {
-        case 0...3:
-            text = "Да, с годом \(questionsPack.name_gen) у вас явно сложные отношения - будем откровенны, не самый высокий результат... Но всегда есть куда стремиться! Может, попробовать другой год?"
-        case 4...6:
-            text = "Поздравляем! Вы вошли в число 29% людей, которые лучше всего справились с данным заданием! В логике или удачи вам не откажешь!"
-        case 7...9:
-            text = "Поздравляем! Вы вошли в число 7% людей, которые лучше всего справились с данным заданием! Вы чертовски умны и сообразительны или просто на короткой ноге с Тюхе!"
-        case 10...12:
-            text = "Фантастический результат! Вы вошли в число 2% людей, которые лучше всего справились с данным заданием! Вашей эрудиции и логике можно только позавидовать!"
-        case 13...18:
-            text = "Нереальный результат! Вы вошли в число 0.3% людей, которые лучше всего справились с данным заданием! Срочно играть в ”Что? Где? Когда?”!"
-        default:
-            text = "Все ответы верные? Серьёзно? Одно из двух: или вы играете не в первый раз, или ваша фамилия - Бер!"
+        for (score, textResult) in K.resultTexts {
+            if state.score <= score {
+                return textResult
+            }
         }
-        if state.score < -3 {
-            text = text + " (Да, мы в курсе, что вы отвечали специально неправильно! Но нас не проведёшь!)"
-        }
-        return text
+        return ""
     }
     
     //MARK:- UI Change functions
@@ -148,7 +137,7 @@ class SingleGame {
     }
     private func reloadTexts() {
         if state.answerState != .gotResults {
-            questionText.text = questionsPack.questionTasks[state.currentNumber].question
+            self.questionText.text = self.questionsPack.questionTasks[self.state.currentNumber].question
         }
         commentText.text = questionsPack.questionTasks[state.currentNumber].comment
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -158,6 +147,7 @@ class SingleGame {
         delegate?.setScoreTitle(title: title, score: state.score)
     }
     private func showAnswer() {
+        print("showAnswer()")
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
@@ -167,20 +157,32 @@ class SingleGame {
             switch state.answerResultString {
             case K.Labels.ResultBar.Result.win:
                 resultLabel.text = K.Labels.ResultBar.True.win
+                K.Sounds.correct?.play()
+                print("==")
+                print(state.answerResultString)
             case K.Labels.ResultBar.Result.loose:
                 resultLabel.text = K.Labels.ResultBar.True.loose
+                K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.True.neutral
+                //clickSound?.play()
+                print("===")
+                print(state.answerResultString)
             }
         } else {
             resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
             switch state.answerResultString {
             case K.Labels.ResultBar.Result.win:
                 resultLabel.text = K.Labels.ResultBar.False.win
+                K.Sounds.correct?.play()
             case K.Labels.ResultBar.Result.loose:
                 resultLabel.text = K.Labels.ResultBar.False.loose
+                K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.False.neutral
+                //clickSound?.play()
+                print("=====")
+                print(state.answerResultString)
             }
         }
         resultLabel.text = resultLabel.text! + state.answerResultString
@@ -237,12 +239,10 @@ class SingleGame {
         helpButton.isHidden = true
         finishGameButton.setTitle(K.Labels.Buttons.finishGame, for: .normal)
         finishGameButton.isHidden = false
-        print(questionText.text)
         questionText.text = getFullResultsText()
-        print(questionText.text)
         questionText.isHidden = false
         resultLabel.text = getShortResultsText()
-        resultLabel.backgroundColor = K.Colors.Buttons.trueAnswer
+        resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
         resultLabel.isHidden = false
     }
 }

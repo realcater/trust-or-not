@@ -24,9 +24,9 @@ class StartVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
-        playButton.makeRounded(color: K.Colors.foregroundLighter, textColor: K.Colors.background)
-        helpButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background)
-        aboutButton.makeRounded(color: K.Colors.foregroundDarker, textColor: K.Colors.background)
+        playButton.makeRounded(color: K.Colors.foregroundLighter, textColor: K.Colors.background, sound: K.Sounds.click)
+        helpButton.makeRounded(color: K.Colors.foreground, textColor: K.Colors.background, sound: K.Sounds.click)
+        aboutButton.makeRounded(color: K.Colors.foregroundDarker, textColor: K.Colors.background, sound: K.Sounds.click)
         addTaps(for: touchView, doubleTapAction: #selector(doubleTap))
 
     }
@@ -42,8 +42,7 @@ class StartVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showFullHelp" {
             let helpVC = segue.destination as! HelpVC
-            let pagesForLoad = [Int](0...8)
-            helpVC.pagesForLoad = pagesForLoad
+            helpVC.pagesForLoad = K.helpPagesAll
         } else if segue.identifier == "backToIntro" {
             let introVC = segue.destination as! IntroVC
             introVC.startFunnyGame = true
