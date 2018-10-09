@@ -88,7 +88,7 @@ class QuestionsVC: UIViewController {
         gameState.started = true
         switch gameState.gameType! {
         case .singleGame:
-            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState, questionText: questionText, commentText: commentText, trueAnswerButton: topButton, doubtAsnwerButton: middleButton, falseAsnwerButton: bottomButton, nextQuestionButton: bottomButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
+            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState)
         case .crowdGame:
             crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
         }
@@ -120,25 +120,3 @@ extension QuestionsVC: CrowdGameDelegate {
     }
 }
 
-extension QuestionsVC: SingleGameDelegate {
-    func textScore(_ score: Int) -> String {
-        switch score {
-        case 1...Int.max: return "+"+String(score)
-        case 0: return ""+String(score)
-        default: return String(score)
-        }
-    }
-    func setScoreTitle(title: String, score: Int) {
-        let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
-        let width = navigationController!.navigationBar.frame.width
-        let height = navigationController!.navigationBar.frame.height
-        navView.frame = CGRect(x: 0,y: 0, width: width-2*K.Margins.title, height: height)
-        if let titleLabel = navView.viewWithTag(1000) as? UILabel {
-            titleLabel.text = title
-        }
-        if let scoreLabel = navView.viewWithTag(1001) as? UILabel {
-            scoreLabel.text = textScore(score)
-        }
-        navigationItem.titleView = navView
-    }
-}

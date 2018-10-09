@@ -35,38 +35,26 @@ class SingleGameState {
 protocol SingleGameDelegate: CrowdGameDelegate {
     func textScore(_ score: Int) -> String
     func setScoreTitle(title: String, score: Int)
+    func showAnswer(state: SingleGameState, question: String, comment: String) 
+    func hideAnswer()
+    func showUIAnswerMode(state: SingleGameState, question: String, comment: String)
+    func showUIWaitMode(state: SingleGameState, question: String, comment: String)
+    func showUIFinishGame(state: SingleGameState, question: String, comment: String)
+    func showUIResults(fullResultsText: String, shortResultsText: String)
+    func reloadTexts(state: SingleGameState, question: String, comment: String)
 }
 
 class SingleGame {
-    var questionText: UITextView
-    var commentText: UITextView
-    var trueAnswerButton: MyButton
-    var doubtAsnwerButton: MyButton
-    var falseAsnwerButton: MyButton
-    var nextQuestionButton: MyButton
-    var finishGameButton: MyButton
-    var helpButton: MyButton
-    var resultLabel: UILabel
     
     var questionsPack : QuestionsPack!
     var state: SingleGameState!
     weak var delegate: SingleGameDelegate?
     
-    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState, questionText: UITextView, commentText: UITextView, trueAnswerButton: MyButton, doubtAsnwerButton: MyButton, falseAsnwerButton: MyButton, nextQuestionButton: MyButton, finishGameButton: MyButton, helpButton: MyButton, resultLabel: UILabel) {
+    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState) {
         self.delegate = delegate
         self.questionsPack = questionsPack
         self.state = state
-        self.questionText = questionText
-        self.commentText = commentText
-        self.trueAnswerButton = trueAnswerButton
-        self.doubtAsnwerButton = doubtAsnwerButton
-        self.falseAsnwerButton = falseAsnwerButton
-        self.nextQuestionButton = nextQuestionButton
-        self.finishGameButton = finishGameButton
-        self.helpButton = helpButton
-        self.resultLabel = resultLabel
         restoreState()
-        self.doubtAsnwerButton.turnClickSoundOn(sound: K.Sounds.doubt)
     }
     
     //MARK:- Game logic = Data change functions
@@ -91,11 +79,13 @@ class SingleGame {
         } else {
             answerIsFalse()
         }
+        let question = questionsPack.questionTasks[self.state.currentNumber].question
+        let comment = questionsPack.questionTasks[state.currentNumber].comment
         if state.currentNumber+1 < questionsPack.questionTasks.count {
-            showUIWaitMode()
+            delegate?.showUIWaitMode(state: state, question: question, comment: comment)
         } else {
             state.answerState = .finishGame
-            showUIFinishGame()
+            delegate?.showUIFinishGame(state: state, question: question, comment: comment)
         }
     }
     func nextQuestionButtonPressed() {
@@ -103,11 +93,13 @@ class SingleGame {
         if state.currentNumber == K.maxHelpShowedQty {
             state.showHelp = false
         }
-        showUIAnswerMode()
+        let question = questionsPack.questionTasks[self.state.currentNumber].question
+        let comment = questionsPack.questionTasks[state.currentNumber].comment
+        delegate?.showUIAnswerMode(state: state, question: question, comment: comment)
         state.answerState = .notAnswered
     }
     func getResultsButtonPressed() {
-        showUIResults()
+        delegate?.showUIResults(fullResultsText: getFullResultsText(), shortResultsText: getShortResultsText())
         state.answerState = .gotResults
     }
     
@@ -125,120 +117,17 @@ class SingleGame {
         }
         return ""
     }
-    
-    //MARK:- UI Change functions
     func restoreState() {
+        let question = questionsPack.questionTasks[self.state.currentNumber].question
+        let comment = questionsPack.questionTasks[state.currentNumber].comment
         switch state.answerState {
-        case .answered: showUIWaitMode()
-        case .finishGame: showUIFinishGame()
-        case .notAnswered: showUIAnswerMode()
-        case .gotResults: showUIResults()
+        case .answered: delegate?.showUIWaitMode(state: state, question: question, comment: comment)
+        case .finishGame: delegate?.showUIFinishGame(state: state, question: question, comment: comment)
+        case .notAnswered: delegate?.showUIAnswerMode(state: state, question: question, comment: comment)
+        case .gotResults: delegate?.showUIResults(fullResultsText: getFullResultsText(), shortResultsText: getShortResultsText())
         }
-        reloadTexts()
+        delegate?.reloadTexts(state: state, question: question, comment: comment)
     }
-    private func reloadTexts() {
-        if state.answerState != .gotResults {
-            self.questionText.text = self.questionsPack.questionTasks[self.state.currentNumber].question
-        }
-        commentText.text = questionsPack.questionTasks[state.currentNumber].comment
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.questionText.flashScrollIndicators()
-        })
-        let title = "\(K.Labels.Titles.question)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
-        delegate?.setScoreTitle(title: title, score: state.score)
-    }
-    private func showAnswer() {
-        commentText.isHidden = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.commentText.flashScrollIndicators()
-        })
-        if questionsPack.questionTasks[state.currentNumber].answer == true {
-            resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
-            switch state.answerResultString {
-            case K.Labels.ResultBar.Result.win:
-                resultLabel.text = K.Labels.ResultBar.True.win
-                K.Sounds.correct?.play()
-            case K.Labels.ResultBar.Result.loose:
-                resultLabel.text = K.Labels.ResultBar.True.loose
-                K.Sounds.error?.play()
-            default:
-                resultLabel.text = K.Labels.ResultBar.True.neutral
-            }
-        } else {
-            resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
-            switch state.answerResultString {
-            case K.Labels.ResultBar.Result.win:
-                resultLabel.text = K.Labels.ResultBar.False.win
-                K.Sounds.correct?.play()
-            case K.Labels.ResultBar.Result.loose:
-                resultLabel.text = K.Labels.ResultBar.False.loose
-                K.Sounds.error?.play()
-            default:
-                resultLabel.text = K.Labels.ResultBar.False.neutral
-            }
-        }
-        resultLabel.text = resultLabel.text! + state.answerResultString
-        resultLabel.isHidden = false
-        reloadTexts()
-    }
-    private func hideAnswer() {
-        commentText.isHidden = true
-        resultLabel.isHidden = true
-    }
-    private func showUIAnswerMode() {
-        hideAnswer()
-        nextQuestionButton.isHidden = true
-        if state.showHelp { helpButton.isHidden = false }
-        
-        trueAnswerButton.setTitle(K.Labels.Buttons.trust, for: .normal)
-        trueAnswerButton.backgroundColor = K.Colors.Buttons.trueAnswer
-        trueAnswerButton.isHidden = false
-        
-        doubtAsnwerButton.setTitle(K.Labels.Buttons.doubt, for: .normal)
-        doubtAsnwerButton.backgroundColor = K.Colors.Buttons.doubtAnswer
-        doubtAsnwerButton.isHidden = false
-        
-        falseAsnwerButton.setTitle(K.Labels.Buttons.notTrust, for: .normal)
-        falseAsnwerButton.sound = nil
-        falseAsnwerButton.backgroundColor = K.Colors.Buttons.falseAnswer
-        falseAsnwerButton.isHidden = false
-        
-        reloadTexts()
-    }
-    private func showUIWaitMode() {
-        showAnswer()
-        trueAnswerButton.isHidden = true
-        doubtAsnwerButton.isHidden = true
-        falseAsnwerButton.isHidden = true
-        helpButton.isHidden = true
-
-        nextQuestionButton.setTitle(K.Labels.Buttons.nextQuestion, for: .normal)
-        nextQuestionButton.turnClickSoundOn(sound: K.Sounds.page)
-        nextQuestionButton.backgroundColor = K.Colors.foreground
-        nextQuestionButton.isHidden = false
-    }
-    private func showUIFinishGame() {
-        showAnswer()
-        trueAnswerButton.isHidden = true
-        doubtAsnwerButton.isHidden = true
-        falseAsnwerButton.isHidden = true
-        helpButton.isHidden = true
-        
-        finishGameButton.setTitle(K.Labels.Buttons.showResults, for: .normal)
-        finishGameButton.backgroundColor = K.Colors.foreground
-        finishGameButton.isHidden = false
-    }
-    private func showUIResults() {
-        hideAnswer()
-        helpButton.isHidden = true
-        finishGameButton.setTitle(K.Labels.Buttons.finishGame, for: .normal)
-        finishGameButton.isHidden = false
-        questionText.text = getFullResultsText()
-        questionText.isHidden = false
-        resultLabel.text = getShortResultsText()
-        resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
-        resultLabel.isHidden = false
-        K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: nil)
-        finishGameButton.turnClickSoundOn(sound: K.Sounds.click)
-    }
+    
 }
+    

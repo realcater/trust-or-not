@@ -32,6 +32,8 @@
 		C1A1956E21391328000A1A51 /* UIRotatedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956D21391328000A1A51 /* UIRotatedImageView.swift */; };
 		C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956F21391522000A1A51 /* UIViewController+extension.swift */; };
 		C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF3825212F6C9400055EBD /* SingleGame.swift */; };
+		CA2B6DB8216D21C300188A8C /* doubt.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA2B6DB7216D21C300188A8C /* doubt.wav */; };
+		CA8B4EFA216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B4EF9216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift */; };
 		CAE3CC3B2163BE59006E0B2A /* AVAudioPlayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3CC3A2163BE59006E0B2A /* AVAudioPlayer+extension.swift */; };
 		CAE3CC422163BE96006E0B2A /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAE3CC3C2163BE96006E0B2A /* click.wav */; };
 		CAE3CC432163BE96006E0B2A /* true.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAE3CC3D2163BE96006E0B2A /* true.wav */; };
@@ -69,6 +71,8 @@
 		C1A1956D21391328000A1A51 /* UIRotatedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRotatedImageView.swift; sourceTree = "<group>"; };
 		C1A1956F21391522000A1A51 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		C1AF3825212F6C9400055EBD /* SingleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGame.swift; sourceTree = "<group>"; };
+		CA2B6DB7216D21C300188A8C /* doubt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = doubt.wav; sourceTree = "<group>"; };
+		CA8B4EF9216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionsVS+SingleGameDelegate.swift"; sourceTree = "<group>"; };
 		CAE3CC3A2163BE59006E0B2A /* AVAudioPlayer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AVAudioPlayer+extension.swift"; path = "Sounds/AVAudioPlayer+extension.swift"; sourceTree = "<group>"; };
 		CAE3CC3C2163BE96006E0B2A /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		CAE3CC3D2163BE96006E0B2A /* true.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = true.wav; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				C15647212121FC6100F1602E /* ChooseYearVC.swift */,
 				C1480A902123649500137C37 /* ChooseGameVC.swift */,
 				C13098692125D0B0001D894D /* QuestionsVC.swift */,
+				CA8B4EF9216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift */,
 				C1425CC1213590260093469C /* HelpVC.swift */,
 				C143AA55213DA9390097AE41 /* AboutVC.swift */,
 				C143AA57213DAA560097AE41 /* AboutTableVC.swift */,
@@ -153,8 +158,8 @@
 				C130986B2125FAAC001D894D /* Utilities.swift */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
 				C1480A952123828800137C37 /* ViewControllers */,
-				C14B88B92132C9FE002AB422 /* UIExtensions+xibs */,
 				C1480A942123826300137C37 /* Data */,
+				C14B88B92132C9FE002AB422 /* UIExtensions+xibs */,
 				C18E7F95212DA92700FE1BFF /* Sounds */,
 				C156472B2121FC6200F1602E /* Info.plist */,
 				C15647262121FC6100F1602E /* Assets.xcassets */,
@@ -167,6 +172,7 @@
 		C18E7F95212DA92700FE1BFF /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				CA2B6DB7216D21C300188A8C /* doubt.wav */,
 				CAE3CC3E2163BE96006E0B2A /* applause.wav */,
 				CAE3CC3C2163BE96006E0B2A /* click.wav */,
 				CAE3CC412163BE96006E0B2A /* false.wav */,
@@ -245,6 +251,7 @@
 				CAE3CC452163BE96006E0B2A /* rotate.wav in Resources */,
 				C1561CF02133124A00C8B674 /* help.xib in Resources */,
 				C15647272121FC6100F1602E /* Assets.xcassets in Resources */,
+				CA2B6DB8216D21C300188A8C /* doubt.wav in Resources */,
 				CAE3CC462163BE96006E0B2A /* page.mp3 in Resources */,
 				C15647252121FC6100F1602E /* Main.storyboard in Resources */,
 				CAE3CC442163BE96006E0B2A /* applause.wav in Resources */,
@@ -276,6 +283,7 @@
 				C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */,
 				CAE3CC3B2163BE59006E0B2A /* AVAudioPlayer+extension.swift in Sources */,
 				C143AA58213DAA560097AE41 /* AboutTableVC.swift in Sources */,
+				CA8B4EFA216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift in Sources */,
 				C18E7F97212EEEE100FE1BFF /* CrowdGame.swift in Sources */,
 				C1A1956C21387710000A1A51 /* MyButton.swift in Sources */,
 			);
@@ -424,6 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGMMX96757;
 				INFOPLIST_FILE = TrustOr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,6 +451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VGMMX96757;
 				INFOPLIST_FILE = TrustOr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
