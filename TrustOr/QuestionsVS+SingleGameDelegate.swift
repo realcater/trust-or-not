@@ -22,14 +22,14 @@ extension QuestionsVC: SingleGameDelegate {
         navigationItem.titleView = navView
     }
     
-    func showAnswer(state: SingleGameState, question: String, comment: String) {
+    func showAnswer(question: String, comment: String) {
         commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.commentText.flashScrollIndicators()
         })
-        if questionsPack.questionTasks[state.currentNumber].answer == true {
+        if questionsPack.questionTasks[gameState.singleGameState.currentNumber].answer == true {
             resultLabel.backgroundColor = K.Colors.ResultBar.trueAnswer
-            switch state.answerResultString {
+            switch gameState.singleGameState.answerResultString {
             case K.Labels.ResultBar.Result.win:
                 resultLabel.text = K.Labels.ResultBar.True.win
                 K.Sounds.correct?.play()
@@ -38,11 +38,10 @@ extension QuestionsVC: SingleGameDelegate {
                 K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.True.neutral
-                K.Sounds.doubt?.play()
             }
         } else {
             resultLabel.backgroundColor = K.Colors.ResultBar.falseAnswer
-            switch state.answerResultString {
+            switch gameState.singleGameState.answerResultString {
             case K.Labels.ResultBar.Result.win:
                 resultLabel.text = K.Labels.ResultBar.False.win
                 K.Sounds.correct?.play()
@@ -51,21 +50,20 @@ extension QuestionsVC: SingleGameDelegate {
                 K.Sounds.error?.play()
             default:
                 resultLabel.text = K.Labels.ResultBar.False.neutral
-                K.Sounds.doubt?.play()
             }
         }
-        resultLabel.text = resultLabel.text! + state.answerResultString
+        resultLabel.text = resultLabel.text! + gameState.singleGameState.answerResultString
         resultLabel.isHidden = false
-        reloadTexts(state: state, question: question, comment: comment)
+        reloadTexts(question: question, comment: comment)
     }
     func hideAnswer() {
         commentText.isHidden = true
         resultLabel.isHidden = true
     }
-    func showUIAnswerMode(state: SingleGameState, question: String, comment: String) {
+    func showUIAnswerMode(question: String, comment: String) {
         hideAnswer()
         bottomButton.isHidden = true
-        if state.showHelp { helpButton.isHidden = false }
+        if gameState.singleGameState.showHelp { helpButton.isHidden = false }
         
         topButton.setTitle(K.Labels.Buttons.trust, for: .normal)
         topButton.backgroundColor = K.Colors.Buttons.trueAnswer
@@ -80,10 +78,10 @@ extension QuestionsVC: SingleGameDelegate {
         bottomButton.backgroundColor = K.Colors.Buttons.falseAnswer
         bottomButton.isHidden = false
         
-        reloadTexts(state: state, question: question, comment: comment)
+        reloadTexts(question: question, comment: comment)
     }
-    func showUIWaitMode(state: SingleGameState, question: String, comment: String) {
-        showAnswer(state: state, question: question, comment: comment)
+    func showUIWaitMode(question: String, comment: String) {
+        showAnswer(question: question, comment: comment)
         topButton.isHidden = true
         middleButton.isHidden = true
         bottomButton.isHidden = true
@@ -94,8 +92,8 @@ extension QuestionsVC: SingleGameDelegate {
         bottomButton.backgroundColor = K.Colors.foreground
         bottomButton.isHidden = false
     }
-    func showUIFinishGame(state: SingleGameState, question: String, comment: String) {
-        showAnswer(state: state, question: question, comment: comment)
+    func showUIFinishGame(question: String, comment: String) {
+        showAnswer(question: question, comment: comment)
         topButton.isHidden = true
         middleButton.isHidden = true
         bottomButton.isHidden = true
@@ -118,15 +116,15 @@ extension QuestionsVC: SingleGameDelegate {
         K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: nil)
         bottomButton.turnClickSoundOn(sound: K.Sounds.click)
     }
-    func reloadTexts(state: SingleGameState, question: String, comment: String) {
-        if state.answerState != .gotResults {
-            questionText.text = question //self.questionsPack.questionTasks[self.state.currentNumber].question
+    func reloadTexts(question: String, comment: String) {
+        if gameState.singleGameState.answerState != .gotResults {
+            questionText.text = question //self.questionsPack.questionTasks[self.gameState.singleGameState.currentNumber].question
         }
-        commentText.text = comment //questionsPack.questionTasks[state.currentNumber].comment
+        commentText.text = comment //questionsPack.questionTasks[gameState.singleGameState.currentNumber].comment
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
         })
-        let title = "\(K.Labels.Titles.question)\(state.currentNumber+1)/\(questionsPack.questionTasks.count)"
-        setScoreTitle(title: title, score: state.score)
+        let title = "\(K.Labels.Titles.question)\(gameState.singleGameState.currentNumber+1)/\(questionsPack.questionTasks.count)"
+        setScoreTitle(title: title, score: gameState.singleGameState.score)
     }
 }

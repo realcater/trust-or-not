@@ -13,7 +13,7 @@ struct K {
         static let error = initSound(filename: "false.wav", volume: 0.5)
         static let page = initSound(filename: "page.mp3", volume: 0.2)
         static let applause = initSound(filename: "applause.wav")
-        static let doubt = initSound(filename: "doubt.wav", volume: 0.5)
+        //static let doubt = initSound(filename: "doubt.wav", volume: 0.5)
         static let rotate = initSound(filename: "rotate.wav")
     }
     

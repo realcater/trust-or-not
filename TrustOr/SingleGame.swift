@@ -35,13 +35,13 @@ class SingleGameState {
 protocol SingleGameDelegate: CrowdGameDelegate {
     func textScore(_ score: Int) -> String
     func setScoreTitle(title: String, score: Int)
-    func showAnswer(state: SingleGameState, question: String, comment: String) 
+    func showAnswer(question: String, comment: String)
     func hideAnswer()
-    func showUIAnswerMode(state: SingleGameState, question: String, comment: String)
-    func showUIWaitMode(state: SingleGameState, question: String, comment: String)
-    func showUIFinishGame(state: SingleGameState, question: String, comment: String)
+    func showUIAnswerMode(question: String, comment: String)
+    func showUIWaitMode(question: String, comment: String)
+    func showUIFinishGame(question: String, comment: String)
     func showUIResults(fullResultsText: String, shortResultsText: String)
-    func reloadTexts(state: SingleGameState, question: String, comment: String)
+    func reloadTexts(question: String, comment: String)
 }
 
 class SingleGame {
@@ -82,10 +82,10 @@ class SingleGame {
         let question = questionsPack.questionTasks[self.state.currentNumber].question
         let comment = questionsPack.questionTasks[state.currentNumber].comment
         if state.currentNumber+1 < questionsPack.questionTasks.count {
-            delegate?.showUIWaitMode(state: state, question: question, comment: comment)
+            delegate?.showUIWaitMode(question: question, comment: comment)
         } else {
             state.answerState = .finishGame
-            delegate?.showUIFinishGame(state: state, question: question, comment: comment)
+            delegate?.showUIFinishGame(question: question, comment: comment)
         }
     }
     func nextQuestionButtonPressed() {
@@ -95,7 +95,7 @@ class SingleGame {
         }
         let question = questionsPack.questionTasks[self.state.currentNumber].question
         let comment = questionsPack.questionTasks[state.currentNumber].comment
-        delegate?.showUIAnswerMode(state: state, question: question, comment: comment)
+        delegate?.showUIAnswerMode(question: question, comment: comment)
         state.answerState = .notAnswered
     }
     func getResultsButtonPressed() {
@@ -121,12 +121,12 @@ class SingleGame {
         let question = questionsPack.questionTasks[self.state.currentNumber].question
         let comment = questionsPack.questionTasks[state.currentNumber].comment
         switch state.answerState {
-        case .answered: delegate?.showUIWaitMode(state: state, question: question, comment: comment)
-        case .finishGame: delegate?.showUIFinishGame(state: state, question: question, comment: comment)
-        case .notAnswered: delegate?.showUIAnswerMode(state: state, question: question, comment: comment)
+        case .answered: delegate?.showUIWaitMode(question: question, comment: comment)
+        case .finishGame: delegate?.showUIFinishGame(question: question, comment: comment)
+        case .notAnswered: delegate?.showUIAnswerMode(question: question, comment: comment)
         case .gotResults: delegate?.showUIResults(fullResultsText: getFullResultsText(), shortResultsText: getShortResultsText())
         }
-        delegate?.reloadTexts(state: state, question: question, comment: comment)
+        delegate?.reloadTexts(question: question, comment: comment)
     }
     
 }
