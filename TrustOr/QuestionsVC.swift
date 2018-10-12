@@ -46,7 +46,6 @@ class QuestionsVC: UIViewController {
             switch singleGame.state.answerState {
             case .answered: singleGame.nextQuestionButtonPressed()
             case .notAnswered: singleGame.answerButtonPressed(button: .falseAnswer)
-            case .finishGame: singleGame.getResultsButtonPressed()
             case .gotResults: singleGame.finishGameButtonPressed()
             }
         case GameType.crowdGame:
