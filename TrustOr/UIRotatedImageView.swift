@@ -8,6 +8,8 @@
 
 import UIKit
 
+typealias noArgsFunc = () -> Void
+
 class UIRotatedImageView: UIImageView {
     func rotation(for circlesQty:Double, onCompletion action: @escaping noArgsFunc) {
         let sectorsQty = 12.0

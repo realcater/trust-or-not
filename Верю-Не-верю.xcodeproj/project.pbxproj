@@ -33,6 +33,7 @@
 		C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A1956F21391522000A1A51 /* UIViewController+extension.swift */; };
 		C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AF3825212F6C9400055EBD /* SingleGame.swift */; };
 		CA2B6DB8216D21C300188A8C /* doubt.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA2B6DB7216D21C300188A8C /* doubt.wav */; };
+		CA2B6DBA2173D0B300188A8C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2B6DB92173D0B300188A8C /* Game.swift */; };
 		CA8B4EFA216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8B4EF9216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift */; };
 		CAE3CC3B2163BE59006E0B2A /* AVAudioPlayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE3CC3A2163BE59006E0B2A /* AVAudioPlayer+extension.swift */; };
 		CAE3CC422163BE96006E0B2A /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = CAE3CC3C2163BE96006E0B2A /* click.wav */; };
@@ -72,6 +73,7 @@
 		C1A1956F21391522000A1A51 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		C1AF3825212F6C9400055EBD /* SingleGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleGame.swift; sourceTree = "<group>"; };
 		CA2B6DB7216D21C300188A8C /* doubt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = doubt.wav; sourceTree = "<group>"; };
+		CA2B6DB92173D0B300188A8C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		CA8B4EF9216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionsVS+SingleGameDelegate.swift"; sourceTree = "<group>"; };
 		CAE3CC3A2163BE59006E0B2A /* AVAudioPlayer+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AVAudioPlayer+extension.swift"; path = "Sounds/AVAudioPlayer+extension.swift"; sourceTree = "<group>"; };
 		CAE3CC3C2163BE96006E0B2A /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		C1480A942123826300137C37 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CA2B6DB92173D0B300188A8C /* Game.swift */,
 				C1AF3825212F6C9400055EBD /* SingleGame.swift */,
 				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
@@ -282,6 +285,7 @@
 				C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */,
 				C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */,
 				CAE3CC3B2163BE59006E0B2A /* AVAudioPlayer+extension.swift in Sources */,
+				CA2B6DBA2173D0B300188A8C /* Game.swift in Sources */,
 				C143AA58213DAA560097AE41 /* AboutTableVC.swift in Sources */,
 				CA8B4EFA216D0B6F00F3EA7B /* QuestionsVS+SingleGameDelegate.swift in Sources */,
 				C18E7F97212EEEE100FE1BFF /* CrowdGame.swift in Sources */,

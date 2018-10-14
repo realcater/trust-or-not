@@ -8,9 +8,6 @@
 
 import UIKit
 
-typealias noArgsFuncOpt = (() -> Void)?
-typealias noArgsFunc = () -> Void
-
 extension UIViewController {
     func addTaps(for tappedView: UIView? = nil, singleTapAction: Selector? = nil,doubleTapAction: Selector? = nil) {
         let tappedView: UIView = tappedView ?? self.view //if ==nil than we use default view of VC

@@ -52,7 +52,7 @@ class QuestionsVC: UIViewController {
             }
         }
     }
-    //MARK:- Prepare screen functions
+    //MARK:-
     private func setFonts() {
         let textViewFontSize = useSmallerFonts() ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
         let resultLabelFontSize = useSmallerFonts() ? K.Fonts.Size.ResultLabel.zoomed : K.Fonts.Size.ResultLabel.normal
@@ -60,21 +60,12 @@ class QuestionsVC: UIViewController {
         commentText.font = .italicSystemFont(ofSize: textViewFontSize)
         resultLabel.font = .systemFont(ofSize: resultLabelFontSize, weight: .bold)
     }
-    private func prepareButtons() {
-        bottomButton.makeRounded(color: K.Colors.Buttons.trueAnswer, textColor: K.Colors.background)
-        middleButton.makeRounded(color: K.Colors.Buttons.doubtAnswer, textColor: K.Colors.background)
-        topButton.makeRounded(color: K.Colors.Buttons.falseAnswer, textColor: K.Colors.background)
-        
-        bottomButton.isHidden = true
-        middleButton.isHidden = true
-        topButton.isHidden = true
-    }
     
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
-        prepareButtons()
+        view.makeAllButtonsRound()
         setFonts()
     }
     override func viewWillAppear(_ animated: Bool) {
