@@ -21,38 +21,34 @@ class QuestionsVC: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     
-    var questionsPack: QuestionsPack!
-    var crowdGame: CrowdGame!
-    var singleGame: SingleGame!
-    var gameState: GameState!
+    var game: Game!
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
-        
-        singleGame.answerButtonPressed(button: .trueAnswer)
+        game.single.answerButtonPressed(button: .trueAnswer)
     }
     
     @IBAction func middleButtonPressed(_ sender: Any) {
-        switch gameState.gameType! {
-        case GameType.singleGame:
-            singleGame.answerButtonPressed(button: .doubtAnswer)
-        case GameType.crowdGame:
-            crowdGame.laterButtonPressed()
+        switch game.type! {
+        case .singleGame:
+            game.single.answerButtonPressed(button: .doubtAnswer)
+        case .crowdGame:
+            game.crowd.laterButtonPressed()
         }
     }
     @IBAction func bottomButtonPressed(_ sender: Any) {
-        switch gameState.gameType! {
-        case GameType.singleGame:
-            switch singleGame.state.answerState {
-            case .answered: singleGame.nextQuestionButtonPressed()
-            case .notAnswered: singleGame.answerButtonPressed(button: .falseAnswer)
-            case .gotResults: singleGame.finishGameButtonPressed()
+        switch game.type! {
+        case .singleGame:
+            switch game.single.answerState {
+            case .answered: game.single.nextQuestionButtonPressed()
+            case .notAnswered: game.single.answerButtonPressed(button: .falseAnswer)
+            case .gotResults: game.single.finishGameButtonPressed()
             }
-        case GameType.crowdGame:
-            switch crowdGame.state.answerState {
-            case .answered: crowdGame.nextQuestionButtonPressed()
-            case .notAnswered: crowdGame.showAnswerButtonPressed()
-            case .finishGame: crowdGame.finishGameButtonPressed()
+        case .crowdGame:
+            switch game.crowd.state.answerState {
+            case .answered: game.crowd.nextQuestionButtonPressed()
+            case .notAnswered: game.crowd.showAnswerButtonPressed()
+            case .finishGame: game.crowd.finishGameButtonPressed()
             }
         }
     }
@@ -77,21 +73,22 @@ class QuestionsVC: UIViewController {
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundImage(named: questionsPack.picname, alpha: K.Alpha.Background.questions)
+        view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
         prepareButtons()
         setFonts()
     }
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        gameState.started = true
-        switch gameState.gameType! {
+        game.started = true
+        switch game.type! {
         case .singleGame:
-            singleGame = SingleGame(delegate: self, questionsPack: questionsPack, state: gameState.singleGameState)
+            game.single.delegate = self
+            game.single.show()
         case .crowdGame:
-            crowdGame = CrowdGame(delegate: self, questionsPack: questionsPack, state: gameState.crowdGameState, questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
+            game.crowd = CrowdGame(delegate: self, questionsPack: game.questionsPack, state: CrowdGameState(), questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
         }
     }
+        
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParent {
@@ -105,7 +102,7 @@ class QuestionsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHelp" {
             let helpVC = segue.destination as! HelpVC
-            helpVC.pagesForLoad = K.helpPages[gameState.gameType]!
+            helpVC.pagesForLoad = K.helpPages[game.type]!
         }
     }
 }

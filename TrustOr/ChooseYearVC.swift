@@ -79,7 +79,7 @@ class ChooseYearVC: UIViewController {
         if segue.identifier == "yearChosen" {
             let startGameView = segue.destination as! ChooseGameVC
             let animalNumber = (sender as! MyButton).tag - 2000
-            startGameView.questionsPack = questionsPacks.items[animalNumber]
+            startGameView.game.questionsPack = questionsPacks.items[animalNumber]
         }
     }
     

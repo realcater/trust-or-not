@@ -26,4 +26,10 @@ class MyButton: UIButton {
         self.addTarget(self, action: #selector(playClickSound), for: .touchDown)
         self.sound = sound
     }
+    func show(color: UIColor, title: String, sound: AVAudioPlayer? = nil) {
+        setTitle(title, for: .normal)
+        backgroundColor = color
+        isHidden = false
+        if let sound = sound { turnClickSoundOn(sound: sound)}
+    }
 }

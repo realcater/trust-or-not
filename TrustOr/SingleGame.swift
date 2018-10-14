@@ -5,37 +5,60 @@ enum AnswerChoice {
     case doubtAnswer
     case falseAnswer
 }
+enum AnswerState {
+    case notAnswered
+    case answered
+    case gotResults
+}
+protocol SingleGameDelegate: CrowdGameDelegate {
+    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String)
+    func showResultsMode(fullResultsText: String, shortResultsText: String)
+    func showAnswerMode(statementIsTrue: Bool, resultText: String, answer: AnswerChoice, isLastQuestion: Bool, question: String, comment: String, title: String, score: String, withSound: Bool)
+}
 
-class SingleGameState {
-    enum AnswerState {
-        case notAnswered
-        case answered
-        case gotResults
-    }
-    var currentNumber: Int
-    var answerState: AnswerState
-    var score: Int
+class SingleGame {
+    //MARK:- normal vars
+    var questionsPack : QuestionsPack!
+    weak var delegate: SingleGameDelegate?
+    var currentQuestionNumber = 0
+    var answerState: AnswerState = .notAnswered
+    var score: Int = 0
     var answer: AnswerChoice?
-    var statementIsTrue: Bool?
-    var showHelp: Bool
-    var isLastQuestion: Bool
-    var question: String
-    var comment: String
-    var resultText: String {
-        if statementIsTrue==nil || answer==nil {return ""}
-        switch (statementIsTrue!, answer!) {
+
+    //MARK:- Computed vars
+    var showHelp : Bool {
+        return currentQuestionNumber >= K.maxHelpShowedQty
+    }
+    var statementIsTrue: Bool {
+        return questionsPack!.questionTasks[currentQuestionNumber].answer
+    }
+    var totalQuestionsQty: Int {
+        return questionsPack!.questionTasks.count
+    }
+    var isLastQuestion: Bool {
+        return currentQuestionNumber+1 >= totalQuestionsQty
+    }
+    var question: String {
+        return questionsPack!.questionTasks[currentQuestionNumber].question
+    }
+    var comment: String {
+        return questionsPack!.questionTasks[currentQuestionNumber].comment
+    }
+    var answerResultText: String {
+        if answer==nil {return ""}
+        switch (statementIsTrue, answer!) {
         case (true, .trueAnswer):
-            return K.Labels.ResultBar.True.win
+            return K.Labels.ResultBar.True.win + K.Labels.ResultBar.Result.win
         case (true, .falseAnswer):
-            return K.Labels.ResultBar.True.loose
+            return K.Labels.ResultBar.True.loose + K.Labels.ResultBar.Result.loose
         case (true, .doubtAnswer):
-            return K.Labels.ResultBar.True.neutral
+            return K.Labels.ResultBar.True.neutral + K.Labels.ResultBar.Result.doubt
         case (false, .trueAnswer):
-            return K.Labels.ResultBar.False.win
+            return K.Labels.ResultBar.False.win + K.Labels.ResultBar.Result.win
         case (false, .falseAnswer):
-            return  K.Labels.ResultBar.False.loose
+            return  K.Labels.ResultBar.False.loose + K.Labels.ResultBar.Result.loose
         case (false, .doubtAnswer):
-            return K.Labels.ResultBar.False.neutral
+            return K.Labels.ResultBar.False.neutral + K.Labels.ResultBar.Result.doubt
         }
     }
     var textScore: String {
@@ -45,87 +68,65 @@ class SingleGameState {
         default: return String(score)
         }
     }
-    init() {
-        currentNumber = 0
-        answerState = .notAnswered
-        score = 0
-        showHelp = true
-        isLastQuestion = false
-        question = ""
-        comment = ""
+    var title: String {
+        return "\(K.Labels.Titles.question)\(currentQuestionNumber+1)/\(totalQuestionsQty)"
     }
-}
-
-protocol SingleGameDelegate: CrowdGameDelegate {
-    func showQuestionMode(state: SingleGameState)
-    func showAnswerMode(state: SingleGameState)
-    func showResultsMode(fullResultsText: String, shortResultsText: String)
-}
-
-class SingleGame {
-    
-    var questionsPack : QuestionsPack!
-    var state: SingleGameState!
-    weak var delegate: SingleGameDelegate?
-    
-    init(delegate: SingleGameDelegate, questionsPack: QuestionsPack, state: SingleGameState) {
-        self.delegate = delegate
-        self.questionsPack = questionsPack
-        self.state = state
-        switch state.answerState {
-            case .answered: delegate.showAnswerMode(state: state)
-            case .notAnswered: delegate.showQuestionMode(state: state)
-            case .gotResults: delegate.showResultsMode(fullResultsText: getFullResultsText(), shortResultsText: getShortResultsText())
+    var shortResultsText: String {
+        return K.Labels.ResultBar.Result.youGain + textScore
+    }
+    var fullResultsText: String {
+        for (score, textResult) in K.resultTexts {
+            if score <= score {
+                return textResult
+            }
         }
+        return ""
+    }
+    //MARK:-
+    init(questionsPack: QuestionsPack) {
+        self.questionsPack = questionsPack
     }
     
     //MARK:- Events process
     func answerButtonPressed(button: AnswerChoice) {
-        state.answerState = .answered
-        state.statementIsTrue = questionsPack.questionTasks[state.currentNumber].answer
-        switch (button, state.statementIsTrue!) {
-            case (.doubtAnswer, _): state.answer = .doubtAnswer
-            case (.trueAnswer, true): state.answer = .trueAnswer
-            case (.falseAnswer, false): state.answer = .trueAnswer
-            case (.trueAnswer, false): state.answer = .falseAnswer
-            case (.falseAnswer, true): state.answer = .falseAnswer
+        answerState = .answered
+        switch (button, statementIsTrue) {
+            case (.doubtAnswer, _): answer = .doubtAnswer
+            case (.trueAnswer, true): answer = .trueAnswer
+            case (.falseAnswer, false): answer = .trueAnswer
+            case (.trueAnswer, false): answer = .falseAnswer
+            case (.falseAnswer, true): answer = .falseAnswer
         }
-        switch state.answer! {
-            case .trueAnswer: state.score += 1
-            case .falseAnswer: state.score -= 1
+        switch answer! {
+            case .trueAnswer: score += 1
+            case .falseAnswer: score -= 1
             case .doubtAnswer: break
         }
-        state.comment = questionsPack.questionTasks[state.currentNumber].comment
-        if state.currentNumber+1 >= questionsPack.questionTasks.count {
-            state.isLastQuestion = true
-        }
-        delegate?.showAnswerMode(state: state)
+        delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, isLastQuestion: isLastQuestion, question: question, comment: comment, title: title, score: textScore, withSound: true)
     }
     func nextQuestionButtonPressed() {
-        if state.isLastQuestion {
-            delegate?.showResultsMode(fullResultsText: getFullResultsText(), shortResultsText: getShortResultsText())
-            state.answerState = .gotResults
+        if isLastQuestion {
+            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText)
+            answerState = .gotResults
         } else {
-            state.currentNumber+=1
-            if state.currentNumber == K.maxHelpShowedQty {state.showHelp = false}
-            delegate?.showQuestionMode(state: state)
-            state.answerState = .notAnswered
+            currentQuestionNumber+=1
+            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore)
+            answerState = .notAnswered
         }
     }
     func finishGameButtonPressed() {
         delegate?.returnToStartView()
     }
-    //MARK:- ResultTexts
-    func getShortResultsText() -> String {
-        return K.Labels.ResultBar.Result.youGain + state.textScore
-    }
-    func getFullResultsText() -> String {
-        for (score, textResult) in K.resultTexts {
-            if state.score <= score {
-                return textResult
-            }
+    //MARK:-
+    func show() {
+        switch answerState {
+        case .answered:
+            delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, isLastQuestion: isLastQuestion, question: question, comment: comment, title: title, score: textScore, withSound: false)
+        case .notAnswered:
+            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore)
+        case .gotResults:
+            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText)
         }
-        return ""
     }
 }
     

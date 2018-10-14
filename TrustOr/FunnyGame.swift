@@ -70,7 +70,7 @@ class FunnyGame {
         } else {
             topAnimal = Int.random(in: 0...K.funnyGameAnimalsQty-1)
         }
-        let circlesQty = Double(topAnimal)/Double(K.funnyGameAnimalsQty)+1.0
+        let circlesQty = Double(topAnimal)/Double(K.funnyGameAnimalsQty)+1.5
         topAnimal = topAnimal % K.funnyGameAnimalsQty
         hideResults()
         K.Sounds.rotate?.resetAndPlay(startVolume: 1.0, fadeDuration: K.Duration.FunnyGame.playRotation)
