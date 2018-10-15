@@ -2,39 +2,41 @@ import UIKit
 import AVFoundation
 
 extension QuestionsVC: SingleGameDelegate {
-
     //MARK:- Protocol functions
-    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String) {
-        hideAnswer()
-        if showHelp { helpButton.isHidden = false }
+    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String, withSound: Bool) {
+
         showChoiceButtons()
+        if showHelp { helpButton.isHidden = false }
         setTexts(topText: question, bottomText: "")
+        resultLabel.isHidden = true
         setScoreTitle(title: title, score: score)
+        if withSound { K.Sounds.page?.resetAndPlay() }
     }
-    func showResultsMode(fullResultsText: String, shortResultsText: String) {
-        hideAnswer()
-        bottomButton.show(color: K.Colors.foreground, title: K.Labels.Buttons.finishGame, sound: K.Sounds.click)
-        questionText.text = fullResultsText
+    func showResultsMode(fullResultsText: String, shortResultsText: String, title: String, score: String, withSound: Bool) {
+        onlyBottomButton(color: K.Colors.foreground, title: K.Labels.Buttons.finishGame)
+        setTexts(topText: fullResultsText, bottomText: "")
         showResultLabel(backgroundColor: K.Colors.ResultBar.trueAnswer, resultText: shortResultsText)
-        K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: nil)
+        setScoreTitle(title: title, score: score)
+        if withSound { K.Sounds.applause?.resetAndPlay(startVolume: 1) }
     }
     func showAnswerMode(statementIsTrue: Bool, resultText: String, answer: AnswerChoice,    isLastQuestion: Bool, question: String, comment: String, title: String, score: String, withSound: Bool) {
         
-        commentText.isHidden = false
-        showResultLabel(statementIsTrue: statementIsTrue, resultText: resultText)
-        if withSound { playResultSounds(answer: answer) }
-        switchButtonsToAnswerMode(isLastQuestion: isLastQuestion)
+        let bottomButtonTitle = isLastQuestion ? K.Labels.Buttons.showResults : K.Labels.Buttons.nextQuestion
+        onlyBottomButton(color: K.Colors.foreground, title: bottomButtonTitle)
         setTexts(topText: question, bottomText: comment)
+        
+        showResultLabel(statementIsTrue: statementIsTrue, resultText: resultText)
         setScoreTitle(title: title, score: score)
+        if withSound { playResultSounds(answer: answer) }
     }
     
 //MARK:- Support functions
-    func showChoiceButtons() {
+    private func showChoiceButtons() {
         topButton.show(color: K.Colors.Buttons.trueAnswer, title: K.Labels.Buttons.trust)
         middleButton.show(color: K.Colors.Buttons.doubtAnswer, title: K.Labels.Buttons.doubt)
         bottomButton.show(color: K.Colors.Buttons.falseAnswer, title: K.Labels.Buttons.notTrust)
     }
-    func showResultLabel(statementIsTrue: Bool, resultText: String) {
+    private func showResultLabel(statementIsTrue: Bool, resultText: String) {
         switch statementIsTrue {
         case true:
             showResultLabel(backgroundColor: K.Colors.ResultBar.trueAnswer, resultText: resultText)
@@ -42,27 +44,28 @@ extension QuestionsVC: SingleGameDelegate {
             showResultLabel(backgroundColor: K.Colors.ResultBar.falseAnswer, resultText: resultText)
         }
     }
-    func showResultLabel(backgroundColor: UIColor, resultText: String) {
+    private func showResultLabel(backgroundColor: UIColor, resultText: String) {
         resultLabel.backgroundColor = backgroundColor
         resultLabel.text = resultText
         resultLabel.isHidden = false
     }
-    func playResultSounds(answer: AnswerChoice) {
+    private func playResultSounds(answer: AnswerChoice) {
         switch answer {
-            case .trueAnswer: K.Sounds.correct?.play()
-            case .falseAnswer: K.Sounds.error?.play()
-            case .doubtAnswer: break
+            case .trueAnswer:
+                K.Sounds.correct?.play()
+            case .falseAnswer:
+                K.Sounds.error?.play()
+            case .doubtAnswer:
+                K.Sounds.click?.play()
         }
     }
-    func switchButtonsToAnswerMode(isLastQuestion: Bool) {
+    private func onlyBottomButton(color: UIColor, title: String) {
         topButton.isHidden = true
         middleButton.isHidden = true
         helpButton.isHidden = true
-        
-        let buttonTitle = isLastQuestion ? K.Labels.Buttons.showResults : K.Labels.Buttons.nextQuestion
-        bottomButton.show(color: K.Colors.foreground, title: buttonTitle, sound: K.Sounds.page)
+        bottomButton.show(color: color, title: title)
     }
-    func setTexts(topText: String, bottomText: String) {
+    private func setTexts(topText: String, bottomText: String) {
         questionText.text = topText
         commentText.text = bottomText
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
@@ -70,7 +73,7 @@ extension QuestionsVC: SingleGameDelegate {
             self.commentText.flashScrollIndicators()
         })
     }
-    func setScoreTitle(title: String, score: String) {
+    private func setScoreTitle(title: String, score: String) {
         let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
         let width = navigationController!.navigationBar.frame.width
         let height = navigationController!.navigationBar.frame.height
@@ -82,10 +85,5 @@ extension QuestionsVC: SingleGameDelegate {
             scoreLabel.text = score
         }
         navigationItem.titleView = navView
-    }
-    
-    func hideAnswer() {
-        commentText.isHidden = true
-        resultLabel.isHidden = true
     }
 }

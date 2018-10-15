@@ -5,14 +5,10 @@ enum AnswerChoice {
     case doubtAnswer
     case falseAnswer
 }
-enum AnswerState {
-    case notAnswered
-    case answered
-    case gotResults
-}
+
 protocol SingleGameDelegate: CrowdGameDelegate {
-    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String)
-    func showResultsMode(fullResultsText: String, shortResultsText: String)
+    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String, withSound: Bool)
+    func showResultsMode(fullResultsText: String, shortResultsText: String, title: String, score: String, withSound: Bool)
     func showAnswerMode(statementIsTrue: Bool, resultText: String, answer: AnswerChoice, isLastQuestion: Bool, question: String, comment: String, title: String, score: String, withSound: Bool)
 }
 
@@ -106,11 +102,11 @@ class SingleGame {
     }
     func nextQuestionButtonPressed() {
         if isLastQuestion {
-            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText)
+            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText, title: title, score: textScore, withSound: true)
             answerState = .gotResults
         } else {
             currentQuestionNumber+=1
-            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore)
+            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore, withSound: true)
             answerState = .notAnswered
         }
     }
@@ -123,9 +119,9 @@ class SingleGame {
         case .answered:
             delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, isLastQuestion: isLastQuestion, question: question, comment: comment, title: title, score: textScore, withSound: false)
         case .notAnswered:
-            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore)
+            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore, withSound: false)
         case .gotResults:
-            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText)
+            delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText, title: title, score: textScore, withSound: false)
         }
     }
 }

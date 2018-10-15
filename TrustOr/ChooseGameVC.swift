@@ -49,10 +49,10 @@ class ChooseGameVC: UIViewController {
                 game.single = SingleGame(questionsPack: game.questionsPack)
             case "bottomButtonSegue":
                 game.type = .crowdGame
+                game.crowd = CrowdGame(questionsPack: game.questionsPack)
             default: break
             }
         }
-        print("ChooseGameVC.prepare"+String(game.single.currentQuestionNumber))
         let questionsView = segue.destination as! QuestionsVC
         questionsView.game = game
         questionsView.view.setConstraint(identifier: "fromHelpToMiddleButton", size: K.Margins.fromHelpToMiddleButton[game.type]!)

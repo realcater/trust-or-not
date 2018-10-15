@@ -45,10 +45,10 @@ class QuestionsVC: UIViewController {
             case .gotResults: game.single.finishGameButtonPressed()
             }
         case .crowdGame:
-            switch game.crowd.state.answerState {
+            switch game.crowd.answerState {
             case .answered: game.crowd.nextQuestionButtonPressed()
             case .notAnswered: game.crowd.showAnswerButtonPressed()
-            case .finishGame: game.crowd.finishGameButtonPressed()
+            default: break
             }
         }
     }
@@ -76,7 +76,8 @@ class QuestionsVC: UIViewController {
             game.single.delegate = self
             game.single.show()
         case .crowdGame:
-            game.crowd = CrowdGame(delegate: self, questionsPack: game.questionsPack, state: CrowdGameState(), questionText: questionText, commentText: commentText, showAnswerButton: bottomButton, nextQuestionButton: bottomButton, laterButton: middleButton, finishGameButton: bottomButton, helpButton: helpButton, resultLabel: resultLabel)
+            game.crowd.delegate = self
+            game.crowd.show()
         }
     }
         
@@ -97,13 +98,3 @@ class QuestionsVC: UIViewController {
         }
     }
 }
-
-extension QuestionsVC: CrowdGameDelegate {
-    func returnToStartView() {
-        performSegue(withIdentifier: "backToStart", sender: self)
-    }
-    func setTitle(title: String) {
-        self.title = title
-    }
-}
-

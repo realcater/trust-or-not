@@ -224,7 +224,6 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="middleButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="8wf-gV-cRK"/>
                                     <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="657-Fm-22h"/>
                                 </connections>
                             </button>
@@ -280,7 +279,7 @@
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
                         <outlet property="topButton" destination="wvS-wA-ytt" id="cb0-We-Dna"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" id="g5A-2b-kqv"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" animates="NO" id="g5A-2b-kqv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgq-2p-zdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -702,8 +701,8 @@
         <image name="fb" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LTP-6t-ddg"/>
+        <segue reference="k8N-DA-ZMu"/>
         <segue reference="C6f-uW-vOv"/>
-        <segue reference="KJR-C4-Qul"/>
+        <segue reference="g5A-2b-kqv"/>
     </inferredMetricsTieBreakers>
 </document>
