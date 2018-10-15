@@ -27,7 +27,7 @@ class SingleGame {
 
     //MARK:- Computed vars
     var showHelp : Bool {
-        return currentQuestionNumber >= K.maxHelpShowedQty
+        return currentQuestionNumber < K.maxHelpShowedQty
     }
     var statementIsTrue: Bool {
         return questionsPack!.questionTasks[currentQuestionNumber].answer
