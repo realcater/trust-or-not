@@ -58,7 +58,7 @@
 		C14B02A3212983E200B2E96C /* 12009.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 12009.ttf; sourceTree = "<group>"; };
 		C1561CEF2133124A00C8B674 /* help.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = help.xib; sourceTree = "<group>"; };
 		C1561CF32134186E00C8B674 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
-		C156471C2121FC6100F1602E /* Верю-Не-верю.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Верю-Не-верю.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C156471C2121FC6100F1602E /* Trust-or-not.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trust-or-not.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C156471F2121FC6100F1602E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C15647212121FC6100F1602E /* ChooseYearVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYearVC.swift; sourceTree = "<group>"; };
 		C15647242121FC6100F1602E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 		C156471D2121FC6100F1602E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C156471C2121FC6100F1602E /* Верю-Не-верю.app */,
+				C156471C2121FC6100F1602E /* Trust-or-not.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,10 +123,10 @@
 				CA14E7532175644A008C23A6 /* Data */,
 				CA14E751217563DA008C23A6 /* UIExtensions+xibs */,
 				C18E7F95212DA92700FE1BFF /* Sounds */,
+				CA432A1F2175696C0080C831 /* Fonts */,
 				C156472B2121FC6200F1602E /* Info.plist */,
 				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
-				C14B02A3212983E200B2E96C /* 12009.ttf */,
 			);
 			path = TrustOr;
 			sourceTree = "<group>";
@@ -189,12 +189,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		CA432A1F2175696C0080C831 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C14B02A3212983E200B2E96C /* 12009.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C156471B2121FC6100F1602E /* Верю-Не-верю */ = {
+		C156471B2121FC6100F1602E /* Trust-or-not */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Верю-Не-верю" */;
+			buildConfigurationList = C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Trust-or-not" */;
 			buildPhases = (
 				C15647182121FC6100F1602E /* Sources */,
 				C15647192121FC6100F1602E /* Frameworks */,
@@ -204,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = "Верю-Не-верю";
+			name = "Trust-or-not";
 			productName = TrustOr;
-			productReference = C156471C2121FC6100F1602E /* Верю-Не-верю.app */;
+			productReference = C156471C2121FC6100F1602E /* Trust-or-not.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,7 +233,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C15647172121FC6100F1602E /* Build configuration list for PBXProject "Верю-Не-верю" */;
+			buildConfigurationList = C15647172121FC6100F1602E /* Build configuration list for PBXProject "Trust-or-not" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -238,7 +246,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C156471B2121FC6100F1602E /* Верю-Не-верю */,
+				C156471B2121FC6100F1602E /* Trust-or-not */,
 			);
 		};
 /* End PBXProject section */
@@ -472,7 +480,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C15647172121FC6100F1602E /* Build configuration list for PBXProject "Верю-Не-верю" */ = {
+		C15647172121FC6100F1602E /* Build configuration list for PBXProject "Trust-or-not" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C156472C2121FC6200F1602E /* Debug */,
@@ -481,7 +489,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Верю-Не-верю" */ = {
+		C156472E2121FC6200F1602E /* Build configuration list for PBXNativeTarget "Trust-or-not" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C156472F2121FC6200F1602E /* Debug */,
