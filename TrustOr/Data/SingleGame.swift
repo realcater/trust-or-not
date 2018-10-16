@@ -71,8 +71,8 @@ class SingleGame {
         return K.Labels.ResultBar.Result.youGain + textScore
     }
     var fullResultsText: String {
-        for (score, textResult) in K.resultTexts {
-            if score <= score {
+        for (limitScore, textResult) in K.resultTexts {
+            if score <= limitScore {
                 return textResult
             }
         }

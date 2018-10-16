@@ -13,7 +13,6 @@ struct K {
         static let error = initSound(filename: "false.wav", volume: 0.5)
         static let page = initSound(filename: "page.mp3", volume: 0.2)
         static let applause = initSound(filename: "applause.wav")
-        //static let doubt = initSound(filename: "doubt.wav", volume: 0.5)
         static let rotate = initSound(filename: "rotate.wav")
     }
     
@@ -70,12 +69,12 @@ struct K {
         }
         struct ResultBar {
             struct True {
-                static let neutral = "Верно"
+                static let neutral = "Это верно"
                 static let win = "И это верно"
                 static let loose = "А это верно"
             }
             struct False {
-                static let neutral = "Не верно"
+                static let neutral = "Это не верно"
                 static let win = "И это не верно"
                 static let loose = "А это не верно"
             }

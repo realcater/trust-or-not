@@ -22,6 +22,7 @@ class QuestionsVC: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     
     var game: Game!
+    var startVC: StartVC!
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
@@ -67,6 +68,7 @@ class QuestionsVC: UIViewController {
         view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
         view.makeAllButtonsRound()
         setFonts()
+        startVC = self.navigationController?.viewControllers[0] as? StartVC
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,7 +82,6 @@ class QuestionsVC: UIViewController {
             game.crowd.show()
         }
     }
-        
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         if isMovingFromParent {
@@ -95,6 +96,11 @@ class QuestionsVC: UIViewController {
         if segue.identifier == "showHelp" {
             let helpVC = segue.destination as! HelpVC
             helpVC.pagesForLoad = K.helpPages[game.type]!
+        } else if segue.identifier == "backToStart" {
+            let chooseYearVC = segue.destination as! ChooseYearVC
+            if let startVC = startVC {
+                chooseYearVC.startVC = startVC
+            }
         }
     }
 }

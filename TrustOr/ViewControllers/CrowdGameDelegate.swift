@@ -7,7 +7,7 @@ extension QuestionsVC: CrowdGameDelegate {
     func returnToStartView() {
         K.Sounds.click?.play()
         performSegue(withIdentifier: "backToStart", sender: self)
-        keepLastItemsInNavStack(itemsQty: 2)
+        updateNavStack()
     }
     func showQuestionMode(showHelp: Bool, question: String, title: String, withSound: Bool) {
         hideAnswer()
@@ -72,9 +72,10 @@ extension QuestionsVC: CrowdGameDelegate {
     private func setTitle(title: String) {
         self.title = title
     }
-    private func keepLastItemsInNavStack(itemsQty: Int) {
+    //MARK:-
+    private func updateNavStack() {
         let navigationArray = self.navigationController?.viewControllers
-        let newNavigationArray = Array(navigationArray!.suffix(itemsQty))
+        let newNavigationArray = Array(navigationArray!.suffix(2))
         self.navigationController?.viewControllers = newNavigationArray
     }
 }

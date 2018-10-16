@@ -957,7 +957,11 @@ class ChineseAnimals {
             ])
         items.append(questionsPack)
         num = 11
-        questionsPack = QuestionsPack(name_gen : "Свиньи", picname: getPicName(for: num), num: num,  englishName: "Piggie", questionTasks : []
+        questionsPack = QuestionsPack(name_gen : "Свиньи", picname: getPicName(for: num), num: num,  englishName: "Piggie", questionTasks : [
+            QuestionTask(
+                question: "Верите ли вы, что когда в 1992 году у группы «ДДТ» не оказалось денег на запись и выпуск альбома «Чёрный пёс Петербург», чемоданчик с деньгами Шевчуку принёс лично помощник мэра В.В. Путин?",
+                answer: false,
+                comment: "Это больная фантазия автора вопроса.")]
         )
         items.append(questionsPack)
     }
