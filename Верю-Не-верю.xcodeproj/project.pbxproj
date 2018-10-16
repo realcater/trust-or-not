@@ -124,6 +124,7 @@
 				CA14E751217563DA008C23A6 /* UIExtensions+xibs */,
 				C18E7F95212DA92700FE1BFF /* Sounds */,
 				C156472B2121FC6200F1602E /* Info.plist */,
+				C15647262121FC6100F1602E /* Assets.xcassets */,
 				C15647282121FC6200F1602E /* LaunchScreen.storyboard */,
 				C14B02A3212983E200B2E96C /* 12009.ttf */,
 			);
@@ -140,7 +141,6 @@
 				CA023D122175620E008AE815 /* page.mp3 */,
 				CA023D132175620E008AE815 /* rotate.wav */,
 				CA023D142175620E008AE815 /* true.wav */,
-				C15647262121FC6100F1602E /* Assets.xcassets */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
