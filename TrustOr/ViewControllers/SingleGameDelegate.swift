@@ -65,14 +65,7 @@ extension QuestionsVC: SingleGameDelegate {
         helpButton.isHidden = true
         bottomButton.show(color: color, title: title)
     }
-    private func setTexts(topText: String, bottomText: String) {
-        questionText.text = topText
-        commentText.text = bottomText
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-            self.questionText.flashScrollIndicators()
-            self.commentText.flashScrollIndicators()
-        })
-    }
+    
     private func setScoreTitle(title: String, score: String) {
         let navView = UINib(nibName: "navView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! UIView
         let width = navigationController!.navigationBar.frame.width

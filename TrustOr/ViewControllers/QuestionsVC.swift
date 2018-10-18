@@ -68,7 +68,7 @@ class QuestionsVC: UIViewController {
         view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
         view.makeAllButtonsRound()
         setFonts()
-        startVC = self.navigationController?.viewControllers[0] as? StartVC
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -80,6 +80,12 @@ class QuestionsVC: UIViewController {
         case .crowdGame:
             game.crowd.delegate = self
             game.crowd.show()
+        }
+        /* Save startVC obj to return it back to nav stack later after removal
+        if 0th obj is not startVC than it's already been removed and
+        we already have saved it */
+        if let startVC = navigationController?.viewControllers[0] as? StartVC {
+            self.startVC = startVC
         }
     }
     override func viewWillDisappear(_ animated : Bool) {

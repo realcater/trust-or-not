@@ -65,9 +65,6 @@ class ChooseYearVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("===ViewDidLoad ChooseYearVC===")
-        print(self)
-        print(self.startVC)
         view.backgroundColor = K.Colors.background
         view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
         prepareNavigationBar()
@@ -84,9 +81,9 @@ class ChooseYearVC: UIViewController {
             let startGameView = segue.destination as! ChooseGameVC
             let animalNumber = (sender as! MyButton).tag - 2000
             startGameView.game.questionsPack = questionsPacks.items[animalNumber]
+            // return back startVC to nav stack after finishing game
             if let startVC = startVC {
                 self.navigationController?.viewControllers[0] = startVC
-                print(startVC)
             }
         }
     }

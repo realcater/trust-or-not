@@ -10,7 +10,7 @@ extension QuestionsVC: CrowdGameDelegate {
         updateNavStack()
     }
     func showQuestionMode(showHelp: Bool, question: String, title: String, withSound: Bool) {
-        hideAnswer()
+        resultLabel.isHidden = true
         helpButton.isHidden = !showHelp
         showChoiceButtons()
         setTexts(topText: question, bottomText: "")
@@ -27,10 +27,7 @@ extension QuestionsVC: CrowdGameDelegate {
     }
     
     //MARK:- Support functions
-    private func hideAnswer() {
-        commentText.isHidden = true
-        resultLabel.isHidden = true
-    }
+    
     private func showChoiceButtons() {
         topButton.isHidden = true
         middleButton.show(color: K.Colors.gray, title: K.Labels.Buttons.later)
@@ -61,18 +58,19 @@ extension QuestionsVC: CrowdGameDelegate {
         let buttonTitle = isLastQuestion ? K.Labels.Buttons.finishGame : K.Labels.Buttons.nextQuestion
         bottomButton.show(color: K.Colors.foreground, title: buttonTitle)
     }
-    private func setTexts(topText: String, bottomText: String) {
+    func setTexts(topText: String, bottomText: String) {
         questionText.text = topText
         commentText.text = bottomText
+        //commentText.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
             self.commentText.flashScrollIndicators()
         })
     }
-    private func setTitle(title: String) {
+    func setTitle(title: String) {
         self.title = title
     }
-    //MARK:-
+    //We leave only last 2 items in nav stack: the results of this very game and ChooseYearVC screen for choosing next game
     private func updateNavStack() {
         let navigationArray = self.navigationController?.viewControllers
         let newNavigationArray = Array(navigationArray!.suffix(2))
