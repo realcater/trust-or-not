@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SingleGame.statementIsTrue.getter:SingleGame.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "questionsPack!.questionTasks[currentQuestionNumber].answer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChooseYearVC.prepare(for:sender:):ChooseYearVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "QuestionsVC.prepare(for:sender:):QuestionsVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "QuestionsVC.viewWillAppear(_:):QuestionsVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SingleGame.answerResultText.getter:SingleGame.swift">
+      </ContextState>
+      <ContextState
+         contextName = "SingleGame.answerButtonPressed(button:):SingleGame.swift">
+      </ContextState>
+      <ContextState
+         contextName = "QuestionsVC.updateNavStack():QuestionsVC.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ChooseYearVC.viewDidLoad():ChooseYearVC.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
