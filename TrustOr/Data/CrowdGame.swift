@@ -2,59 +2,37 @@ import UIKit
 
 
 
-class CrowdGame {
+class CrowdGame: ParentGame {
+    let gameType = GameType.crowdGame
+    
     //MARK:- Normal vars
-    var questionsPack : QuestionsPack!
-    weak var delegate: GameDelegate?
-    var currentQuestionNumber = 0
     var leftQuestions: [Int] = []
-    var answerState: AnswerState = .notAnswered
-    var showHelp = true
     
     //MARK:- Computed vars
-    var totalQuestionsQty: Int {
-        return questionsPack!.questionTasks.count
-    }
     var isLastQuestionInQueer: Bool {
         return currentQuestionNumber+1 >= totalQuestionsQty
     }
     var isLastQuestionInGame: Bool {
         return isLastQuestionInQueer && leftQuestions.count == 0
     }
-    var question: String {
-        return questionsPack!.questionTasks[currentQuestionNumber].question
-    }
-    var comment: String {
-        return questionsPack!.questionTasks[currentQuestionNumber].comment
-    }
-    var title : String {
+    override var title : String {
         var title = K.Labels.Titles.question + String(currentQuestionNumber+1)+"/"+String(totalQuestionsQty)
         if leftQuestions.count > 0 {
             title = title + " (+" + String(leftQuestions.count) + ")"
         }
         return title
     }
-    var statementIsTrue: Bool {
-        return questionsPack!.questionTasks[currentQuestionNumber].answer
-    }
-    var resultText: String {
+    var answerResultText: String {
         return statementIsTrue ? K.Labels.ResultBar.True.neutral : K.Labels.ResultBar.False.neutral
         }
     var nextQuestionButtonTitle: String {
         return isLastQuestionInGame ? K.Labels.Buttons.finishGame : K.Labels.Buttons.nextQuestion
     }
-    var gameType: GameType {
-        return .crowdGame
-    }
-    //MARK:-
-    init(questionsPack: QuestionsPack) {
-        self.questionsPack = questionsPack
-    }
     
     //MARK:- Game logic = Data change functions
     func showAnswerButtonPressed() {
         answerState = .answered
-        delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: resultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: true)
+        delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: answerResultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: true)
     }
     func laterButtonPressed() {
         leftQuestions.append(currentQuestionNumber)
@@ -91,7 +69,7 @@ class CrowdGame {
     //MARK:- UI Change functions
     func show() {
         switch answerState {
-        case .answered: delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: resultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: false)
+        case .answered: delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: answerResultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: false)
         case .notAnswered: delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: "", withSound: false)
         default: break
         }

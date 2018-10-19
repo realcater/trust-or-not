@@ -1,32 +1,15 @@
 import UIKit
 
-class SingleGame {
+class SingleGame: ParentGame {
+    let gameType = GameType.singleGame
+    
     //MARK:- normal vars
-    var questionsPack : QuestionsPack!
-    weak var delegate: GameDelegate?
-    var currentQuestionNumber = 0
-    var answerState: AnswerState = .notAnswered
     var score: Int = 0
     var answer: Bool?
 
     //MARK:- Computed vars
-    var showHelp : Bool {
-        return currentQuestionNumber < K.maxHelpShowedQty
-    }
-    var statementIsTrue: Bool {
-        return questionsPack!.questionTasks[currentQuestionNumber].answer
-    }
-    var totalQuestionsQty: Int {
-        return questionsPack!.questionTasks.count
-    }
     var isLastQuestion: Bool {
         return currentQuestionNumber+1 >= totalQuestionsQty
-    }
-    var question: String {
-        return questionsPack!.questionTasks[currentQuestionNumber].question
-    }
-    var comment: String {
-        return questionsPack!.questionTasks[currentQuestionNumber].comment
     }
     var answerResultText: String {
         if answer==nil {return ""}
@@ -48,9 +31,7 @@ class SingleGame {
         default: return String(score)
         }
     }
-    var title: String {
-        return "\(K.Labels.Titles.question)\(currentQuestionNumber+1)/\(totalQuestionsQty)"
-    }
+    
     var shortResultsText: String {
         return K.Labels.ResultBar.Result.youGain + textScore
     }
@@ -64,13 +45,6 @@ class SingleGame {
     }
     var nextQuestionButtonTitle: String {
         return isLastQuestion ? K.Labels.Buttons.showResults : K.Labels.Buttons.nextQuestion
-    }
-    var gameType: GameType {
-        return .singleGame
-    }
-    //MARK:-
-    init(questionsPack: QuestionsPack) {
-        self.questionsPack = questionsPack
     }
     
     //MARK:- Events process
@@ -105,4 +79,3 @@ class SingleGame {
         }
     }
 }
-    

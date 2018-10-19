@@ -42,6 +42,7 @@
 		CA023D202175620E008AE815 /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA023D182175620E008AE815 /* applause.wav */; };
 		CA023D212175620E008AE815 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA023D192175620E008AE815 /* click.wav */; };
 		CA023D2321756243008AE815 /* AVAudioPlayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA023D2221756243008AE815 /* AVAudioPlayer+extension.swift */; };
+		CA0D5E00217A8A75004800A6 /* parentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D5DFF217A8A75004800A6 /* parentGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		CA023D182175620E008AE815 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		CA023D192175620E008AE815 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		CA023D2221756243008AE815 /* AVAudioPlayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+extension.swift"; sourceTree = "<group>"; };
+		CA0D5DFF217A8A75004800A6 /* parentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				CA023D0C217561CD008AE815 /* Game.swift */,
+				CA0D5DFF217A8A75004800A6 /* parentGame.swift */,
 				C1AF3825212F6C9400055EBD /* SingleGame.swift */,
 				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
@@ -282,6 +285,7 @@
 				C130986421239082001D894D /* K.swift in Sources */,
 				C1425CC2213590260093469C /* HelpVC.swift in Sources */,
 				C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */,
+				CA0D5E00217A8A75004800A6 /* parentGame.swift in Sources */,
 				C143AA56213DA9390097AE41 /* AboutVC.swift in Sources */,
 				C15647222121FC6100F1602E /* ChooseYearVC.swift in Sources */,
 				CA023D2321756243008AE815 /* AVAudioPlayer+extension.swift in Sources */,
