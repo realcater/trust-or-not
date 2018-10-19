@@ -1,6 +1,11 @@
 import UIKit
-
+/*
+var useSmallerFonts: Bool {
+    return (UIScreen.main.currentMode!.size.width >= 750) ? false : true
+}
+*/
 struct K {
+    static let useSmallerFonts = (UIScreen.main.currentMode!.size.width >= 750) ? false : true
     static let cornerRadius : CGFloat = 16
     static let maxHelpShowedQty = 3
     static let helpPagesAll = [Int](0...8)

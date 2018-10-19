@@ -10,7 +10,6 @@
 		C123EA342136DFC30066AFDA /* navView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C123EA332136DFC30066AFDA /* navView.xib */; };
 		C130986421239082001D894D /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986321239082001D894D /* K.swift */; };
 		C130986A2125D0B0001D894D /* QuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13098692125D0B0001D894D /* QuestionsVC.swift */; };
-		C130986C2125FAAC001D894D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C130986B2125FAAC001D894D /* Utilities.swift */; };
 		C1425CC2213590260093469C /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1425CC1213590260093469C /* HelpVC.swift */; };
 		C143AA56213DA9390097AE41 /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C143AA55213DA9390097AE41 /* AboutVC.swift */; };
 		C143AA58213DAA560097AE41 /* AboutTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C143AA57213DAA560097AE41 /* AboutTableVC.swift */; };
@@ -49,7 +48,6 @@
 		C123EA332136DFC30066AFDA /* navView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = navView.xib; sourceTree = "<group>"; };
 		C130986321239082001D894D /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		C13098692125D0B0001D894D /* QuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsVC.swift; sourceTree = "<group>"; };
-		C130986B2125FAAC001D894D /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C1425CC1213590260093469C /* HelpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		C143AA55213DA9390097AE41 /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		C143AA57213DAA560097AE41 /* AboutTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableVC.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				C156471F2121FC6100F1602E /* AppDelegate.swift */,
-				C130986B2125FAAC001D894D /* Utilities.swift */,
 				C15647232121FC6100F1602E /* Main.storyboard */,
 				CA14E75221756412008C23A6 /* ViewControllers */,
 				CA14E7532175644A008C23A6 /* Data */,
@@ -295,7 +292,6 @@
 				C15647202121FC6100F1602E /* AppDelegate.swift in Sources */,
 				C1A1956E21391328000A1A51 /* UIRotatedImageView.swift in Sources */,
 				C1A1956A21387531000A1A51 /* UIView+extension.swift in Sources */,
-				C130986C2125FAAC001D894D /* Utilities.swift in Sources */,
 				C1AF3826212F6C9400055EBD /* SingleGame.swift in Sources */,
 				C1A1957021391522000A1A51 /* UIViewController+extension.swift in Sources */,
 				CA023D0F217561CE008AE815 /* Game.swift in Sources */,

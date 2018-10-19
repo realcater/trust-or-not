@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 class CrowdGame: ParentGame {
     let gameType = GameType.crowdGame
     

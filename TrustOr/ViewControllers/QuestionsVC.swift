@@ -50,8 +50,8 @@ class QuestionsVC: UIViewController {
     }
     //MARK:-
     private func setFonts() {
-        let textViewFontSize = useSmallerFonts() ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
-        let resultLabelFontSize = useSmallerFonts() ? K.Fonts.Size.ResultLabel.zoomed : K.Fonts.Size.ResultLabel.normal
+        let textViewFontSize = K.useSmallerFonts ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
+        let resultLabelFontSize = K.useSmallerFonts ? K.Fonts.Size.ResultLabel.zoomed : K.Fonts.Size.ResultLabel.normal
         questionText.font = .systemFont(ofSize: textViewFontSize)
         commentText.font = .italicSystemFont(ofSize: textViewFontSize)
         resultLabel.font = .systemFont(ofSize: resultLabelFontSize, weight: .bold)

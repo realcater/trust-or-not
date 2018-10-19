@@ -51,7 +51,7 @@ class HelpVC: UIViewController {
                 viewNib.frame = frame
                 viewNib.makeAllButtonsRound()
                 viewNib.setForAllImages(tintColor: K.Colors.foreground)
-                if useSmallerFonts() {
+                if K.useSmallerFonts {
                     viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemSemibold, fontSize: K.Fonts.Size.Help.Header.zoomed)
                     viewNib.setForAllLabels(withFontName: K.Fonts.Name.systemRegular, fontSize: K.Fonts.Size.Help.Text.zoomed)
                 } else {

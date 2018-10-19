@@ -1,4 +1,6 @@
-import UIKit
+//Game object created before we know the type of the game
+//includes the game itself (single or crowd), its type, status
+//and link to the questions
 
 enum GameType {
     case singleGame
