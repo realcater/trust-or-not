@@ -1,6 +1,6 @@
 import UIKit
 
-class CrowdGame: ParentGame {
+class CrowdGame: parentGame {
     let gameType = GameType.crowdGame
     
     //MARK:- Normal vars

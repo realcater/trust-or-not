@@ -1,6 +1,6 @@
 import UIKit
 
-class SingleGame: ParentGame {
+class SingleGame: parentGame {
     let gameType = GameType.singleGame
     
     //MARK:- normal vars

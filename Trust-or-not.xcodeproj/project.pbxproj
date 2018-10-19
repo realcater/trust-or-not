@@ -41,7 +41,7 @@
 		CA023D202175620E008AE815 /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA023D182175620E008AE815 /* applause.wav */; };
 		CA023D212175620E008AE815 /* click.wav in Resources */ = {isa = PBXBuildFile; fileRef = CA023D192175620E008AE815 /* click.wav */; };
 		CA023D2321756243008AE815 /* AVAudioPlayer+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA023D2221756243008AE815 /* AVAudioPlayer+extension.swift */; };
-		CA0D5E02217A93D7004800A6 /* ParentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D5E01217A93D7004800A6 /* ParentGame.swift */; };
+		CA0D5E02217A93D7004800A6 /* parentGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0D5E01217A93D7004800A6 /* parentGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +81,7 @@
 		CA023D182175620E008AE815 /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = applause.wav; sourceTree = "<group>"; };
 		CA023D192175620E008AE815 /* click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = click.wav; sourceTree = "<group>"; };
 		CA023D2221756243008AE815 /* AVAudioPlayer+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+extension.swift"; sourceTree = "<group>"; };
-		CA0D5E01217A93D7004800A6 /* ParentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentGame.swift; sourceTree = "<group>"; };
+		CA0D5E01217A93D7004800A6 /* parentGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parentGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				CA023D0C217561CD008AE815 /* Game.swift */,
-				CA0D5E01217A93D7004800A6 /* ParentGame.swift */,
+				CA0D5E01217A93D7004800A6 /* parentGame.swift */,
 				C1AF3825212F6C9400055EBD /* SingleGame.swift */,
 				C18E7F96212EEEE100FE1BFF /* CrowdGame.swift */,
 				C16448E4212C853D00BA34D2 /* FunnyGame.swift */,
@@ -279,7 +279,7 @@
 				C1480A912123649500137C37 /* ChooseGameVC.swift in Sources */,
 				C14A3FAE2129592400804955 /* IntroVC.swift in Sources */,
 				C130986A2125D0B0001D894D /* QuestionsVC.swift in Sources */,
-				CA0D5E02217A93D7004800A6 /* ParentGame.swift in Sources */,
+				CA0D5E02217A93D7004800A6 /* parentGame.swift in Sources */,
 				C130986421239082001D894D /* K.swift in Sources */,
 				C1425CC2213590260093469C /* HelpVC.swift in Sources */,
 				C16448E5212C853D00BA34D2 /* FunnyGame.swift in Sources */,
