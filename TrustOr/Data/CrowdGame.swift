@@ -1,16 +1,12 @@
 import UIKit
 
-protocol CrowdGameDelegate: class {
-    func returnToStartView()
-    func showQuestionMode(showHelp: Bool, question: String, title: String, withSound: Bool)
-    func showAnswerMode(statementIsTrue: Bool, resultText: String, isLastQuestion: Bool, question: String, comment: String, title: String, withSound: Bool)
-}
+
 
 class CrowdGame {
     //MARK:- Normal vars
     var questionsPack : QuestionsPack!
-    weak var delegate: CrowdGameDelegate?
-    var currentQuestionNumber: Int = 0
+    weak var delegate: GameDelegate?
+    var currentQuestionNumber = 0
     var leftQuestions: [Int] = []
     var answerState: AnswerState = .notAnswered
     var showHelp = true
@@ -41,10 +37,15 @@ class CrowdGame {
     var statementIsTrue: Bool {
         return questionsPack!.questionTasks[currentQuestionNumber].answer
     }
-    var answerResultText: String {
+    var resultText: String {
         return statementIsTrue ? K.Labels.ResultBar.True.neutral : K.Labels.ResultBar.False.neutral
         }
-    
+    var nextQuestionButtonTitle: String {
+        return isLastQuestionInGame ? K.Labels.Buttons.finishGame : K.Labels.Buttons.nextQuestion
+    }
+    var gameType: GameType {
+        return .crowdGame
+    }
     //MARK:-
     init(questionsPack: QuestionsPack) {
         self.questionsPack = questionsPack
@@ -53,7 +54,7 @@ class CrowdGame {
     //MARK:- Game logic = Data change functions
     func showAnswerButtonPressed() {
         answerState = .answered
-        delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, isLastQuestion: isLastQuestionInGame, question: question, comment: comment, title: title, withSound: true)
+        delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: resultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: true)
     }
     func laterButtonPressed() {
         leftQuestions.append(currentQuestionNumber)
@@ -62,7 +63,7 @@ class CrowdGame {
         if currentQuestionNumber == questionsPack.questionTasks.count {
             oneMoreQueer()
         }
-        delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, withSound: true)
+        delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: "", withSound: true)
     }
     func nextQuestionButtonPressed() {
         if isLastQuestionInGame {
@@ -76,7 +77,7 @@ class CrowdGame {
             currentQuestionNumber += 1
             if currentQuestionNumber == K.maxHelpShowedQty {showHelp = false}
         }
-        delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, withSound: true)
+        delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: "", withSound: true)
     }
     private func oneMoreQueer() {
         var newQuestionTasks: [QuestionTask] = []
@@ -90,8 +91,8 @@ class CrowdGame {
     //MARK:- UI Change functions
     func show() {
         switch answerState {
-        case .answered: delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, isLastQuestion: isLastQuestionInGame, question: question, comment: comment, title: title, withSound: false)
-        case .notAnswered: delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, withSound: false)
+        case .answered: delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: resultText, answer: nil, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: "", withSound: false)
+        case .notAnswered: delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: "", withSound: false)
         default: break
         }
     }

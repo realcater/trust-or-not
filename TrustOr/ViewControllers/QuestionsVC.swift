@@ -11,9 +11,8 @@ import UIKit
 class QuestionsVC: UIViewController {
     
     @IBOutlet weak var helpButton: MyButton!
-    @IBOutlet weak var topButton: MyButton!
     @IBOutlet weak var bottomButton: MyButton!
-    @IBOutlet weak var middleButton: MyButton!
+    @IBOutlet weak var topButton: MyButton!
     
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var resultLabel: UILabel!
@@ -26,13 +25,9 @@ class QuestionsVC: UIViewController {
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
-        game.single.answerButtonPressed(button: .trueAnswer)
-    }
-    
-    @IBAction func middleButtonPressed(_ sender: Any) {
         switch game.type! {
         case .singleGame:
-            game.single.answerButtonPressed(button: .doubtAnswer)
+            game.single.answerButtonPressed(button: true)
         case .crowdGame:
             game.crowd.laterButtonPressed()
         }
@@ -42,7 +37,7 @@ class QuestionsVC: UIViewController {
         case .singleGame:
             switch game.single.answerState {
             case .answered: game.single.nextQuestionButtonPressed()
-            case .notAnswered: game.single.answerButtonPressed(button: .falseAnswer)
+            case .notAnswered: game.single.answerButtonPressed(button: false)
             case .gotResults: game.single.finishGameButtonPressed()
             }
         case .crowdGame:

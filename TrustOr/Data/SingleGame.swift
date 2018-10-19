@@ -1,25 +1,13 @@
 import UIKit
 
-enum AnswerChoice {
-    case trueAnswer
-    case doubtAnswer
-    case falseAnswer
-}
-
-protocol SingleGameDelegate: CrowdGameDelegate {
-    func showQuestionMode(showHelp: Bool, question: String, title: String, score: String, withSound: Bool)
-    func showResultsMode(fullResultsText: String, shortResultsText: String, title: String, score: String, withSound: Bool)
-    func showAnswerMode(statementIsTrue: Bool, resultText: String, answer: AnswerChoice, isLastQuestion: Bool, question: String, comment: String, title: String, score: String, withSound: Bool)
-}
-
 class SingleGame {
     //MARK:- normal vars
     var questionsPack : QuestionsPack!
-    weak var delegate: SingleGameDelegate?
+    weak var delegate: GameDelegate?
     var currentQuestionNumber = 0
     var answerState: AnswerState = .notAnswered
     var score: Int = 0
-    var answer: AnswerChoice?
+    var answer: Bool?
 
     //MARK:- Computed vars
     var showHelp : Bool {
@@ -43,18 +31,14 @@ class SingleGame {
     var answerResultText: String {
         if answer==nil {return ""}
         switch (statementIsTrue, answer!) {
-        case (true, .trueAnswer):
+        case (true, true):
             return K.Labels.ResultBar.True.win + K.Labels.ResultBar.Result.win
-        case (true, .falseAnswer):
+        case (true, false):
             return K.Labels.ResultBar.True.loose + K.Labels.ResultBar.Result.loose
-        case (true, .doubtAnswer):
-            return K.Labels.ResultBar.True.neutral + K.Labels.ResultBar.Result.doubt
-        case (false, .trueAnswer):
+        case (false, true):
             return K.Labels.ResultBar.False.win + K.Labels.ResultBar.Result.win
-        case (false, .falseAnswer):
+        case (false, false):
             return  K.Labels.ResultBar.False.loose + K.Labels.ResultBar.Result.loose
-        case (false, .doubtAnswer):
-            return K.Labels.ResultBar.False.neutral + K.Labels.ResultBar.Result.doubt
         }
     }
     var textScore: String {
@@ -78,27 +62,23 @@ class SingleGame {
         }
         return ""
     }
+    var nextQuestionButtonTitle: String {
+        return isLastQuestion ? K.Labels.Buttons.showResults : K.Labels.Buttons.nextQuestion
+    }
+    var gameType: GameType {
+        return .singleGame
+    }
     //MARK:-
     init(questionsPack: QuestionsPack) {
         self.questionsPack = questionsPack
     }
     
     //MARK:- Events process
-    func answerButtonPressed(button: AnswerChoice) {
+    func answerButtonPressed(button: Bool) {
         answerState = .answered
-        switch (button, statementIsTrue) {
-            case (.doubtAnswer, _): answer = .doubtAnswer
-            case (.trueAnswer, true): answer = .trueAnswer
-            case (.falseAnswer, false): answer = .trueAnswer
-            case (.trueAnswer, false): answer = .falseAnswer
-            case (.falseAnswer, true): answer = .falseAnswer
-        }
-        switch answer! {
-            case .trueAnswer: score += 1
-            case .falseAnswer: score -= 1
-            case .doubtAnswer: break
-        }
-        delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, isLastQuestion: isLastQuestion, question: question, comment: comment, title: title, score: textScore, withSound: true)
+        answer = (statementIsTrue==button)
+        if answer! { score += 1 }
+        delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: textScore, withSound: true)
     }
     func nextQuestionButtonPressed() {
         if isLastQuestion {
@@ -106,7 +86,7 @@ class SingleGame {
             answerState = .gotResults
         } else {
             currentQuestionNumber+=1
-            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore, withSound: true)
+            delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: textScore, withSound: true)
             answerState = .notAnswered
         }
     }
@@ -117,9 +97,9 @@ class SingleGame {
     func show() {
         switch answerState {
         case .answered:
-            delegate?.showAnswerMode(statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, isLastQuestion: isLastQuestion, question: question, comment: comment, title: title, score: textScore, withSound: false)
+            delegate?.showAnswerMode(gameType: gameType, statementIsTrue: statementIsTrue, resultText: answerResultText, answer: answer!, nextQuestionButtonTitle: nextQuestionButtonTitle, question: question, comment: comment, title: title, score: textScore, withSound: false)
         case .notAnswered:
-            delegate?.showQuestionMode(showHelp: showHelp, question: question, title: title, score: textScore, withSound: false)
+            delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: textScore, withSound: false)
         case .gotResults:
             delegate?.showResultsMode(fullResultsText: fullResultsText, shortResultsText: shortResultsText, title: title, score: textScore, withSound: false)
         }

@@ -213,20 +213,6 @@
                                     <action selector="bottomButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="XNt-Ee-ZLN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvS-wA-ytt" userLabel="topButton" customClass="MyButton" customModule="Trust_or_not" customModuleProvider="target">
-                                <rect key="frame" x="40" y="399" width="295" height="50"/>
-                                <color key="backgroundColor" red="0.01195136005" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1vk-iC-jIM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Верно">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="657-Fm-22h"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMj-mL-u3Q" userLabel="middleButton" customClass="MyButton" customModule="Trust_or_not" customModuleProvider="target">
                                 <rect key="frame" x="40" y="469" width="295" height="50"/>
                                 <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,14 +224,13 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="middleButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
+                                    <action selector="topButtonPressed:" destination="Euw-n7-dx4" eventType="touchUpInside" id="Fsb-ia-GjK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="bottom" id="311-sj-gwP"/>
-                            <constraint firstItem="lMj-mL-u3Q" firstAttribute="top" secondItem="wvS-wA-ytt" secondAttribute="bottom" constant="20" id="6zn-XN-1EM"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
@@ -255,19 +240,16 @@
                             <constraint firstItem="1ke-60-f02" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="16" id="a6l-kD-eHA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="b3N-ca-9WL"/>
                             <constraint firstItem="Bgr-0n-Pzz" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="c2W-19-ASF"/>
-                            <constraint firstItem="wvS-wA-ytt" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="f0y-OY-XIG"/>
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="gg5-Zf-TUb"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="h6H-du-Hrf"/>
-                            <constraint firstItem="wvS-wA-ytt" firstAttribute="centerX" secondItem="4Kf-du-BZb" secondAttribute="centerX" id="iel-vZ-UDT"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="enM-P6-HzI" secondAttribute="trailing" constant="40" id="jL9-mV-zvu"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="enM-P6-HzI" secondAttribute="bottom" constant="34" id="kji-e3-bPA"/>
                             <constraint firstItem="lMj-mL-u3Q" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="mup-Ot-XWD"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="40" id="yk0-2M-f8v"/>
-                            <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="wvS-wA-ytt" secondAttribute="trailing" constant="40" id="zDc-Wc-Uc0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос 1/20             🏅+1" id="rep-oL-Chz" userLabel="questionsView">
+                    <navigationItem key="navigationItem" title="Вопрос 1/20             финала+1" id="rep-oL-Chz" userLabel="questionsView">
                         <barButtonItem key="backBarButtonItem" title=" " id="BQx-5v-Kb4"/>
                     </navigationItem>
                     <connections>
@@ -275,10 +257,9 @@
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="commentText" destination="UVv-sM-xM2" id="B0E-3v-vmD"/>
                         <outlet property="helpButton" destination="Bgr-0n-Pzz" id="bzv-NV-IGy"/>
-                        <outlet property="middleButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
-                        <outlet property="topButton" destination="wvS-wA-ytt" id="cb0-We-Dna"/>
+                        <outlet property="topButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" animates="NO" id="g5A-2b-kqv"/>
                     </connections>
                 </viewController>
