@@ -1,4 +1,4 @@
-import UIKit
+//Common properites and Init for Single&Crowd games classs
 
 class ParentGame {
     //MARK:- Normal vars
