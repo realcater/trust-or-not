@@ -19,9 +19,12 @@ class QuestionsVC: UIViewController {
     @IBOutlet weak var commentText: UITextView!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var constraintFromQuestion: NSLayoutConstraint!
+    @IBOutlet weak var shadowView: UIView!
     
     var game: Game!
     var startVC: StartVC!
+    
     
     //MARK:- Buttons Actions
     @IBAction func topButtonPressed(_ sender: Any) {
@@ -50,19 +53,23 @@ class QuestionsVC: UIViewController {
     }
     //MARK:-
     private func setFonts() {
-        let textViewFontSize = K.useSmallerFonts ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
         let resultLabelFontSize = K.useSmallerFonts ? K.Fonts.Size.ResultLabel.zoomed : K.Fonts.Size.ResultLabel.normal
-        questionText.font = .systemFont(ofSize: textViewFontSize)
-        commentText.font = .italicSystemFont(ofSize: textViewFontSize)
         resultLabel.font = .systemFont(ofSize: resultLabelFontSize, weight: .bold)
     }
     
     // MARK:- Override class func
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
+        //view.setBackgroundImage(named: game.questionsPack.picname, alpha: K.Alpha.Background.questions)
+        view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
         view.makeAllButtonsRound()
         setFonts()
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowRadius = 5.0
+        shadowView.layer.masksToBounds = false
+        shadowView.layer.cornerRadius = K.cornerRadius
         
     }
     override func viewWillAppear(_ animated: Bool) {

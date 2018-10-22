@@ -62,6 +62,7 @@ class SingleGame: ParentGame {
             currentQuestionNumber+=1
             delegate?.showQuestionMode(gameType: gameType, showHelp: showHelp, question: question, title: title, score: textScore, withSound: true)
             answerState = .notAnswered
+            if currentQuestionNumber == K.maxHelpShowedQty {showHelp = false}
         }
     }
     func finishGameButtonPressed() {

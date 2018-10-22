@@ -7,9 +7,8 @@ protocol GameDelegate: class {
     func showAnswerMode(gameType: GameType, statementIsTrue: Bool, resultText: String, answer: Bool!, nextQuestionButtonTitle: String, question: String, comment: String, title: String, score: String, withSound: Bool)
     func showResultsMode(fullResultsText: String, shortResultsText: String, title: String, score: String, withSound: Bool)
 }
-
+//MARK:-
 extension QuestionsVC: GameDelegate {
-//MARK:- Protocol functions
     func returnToStartView() {
         K.Sounds.click?.play()
         performSegue(withIdentifier: "backToStart", sender: self)
@@ -18,7 +17,7 @@ extension QuestionsVC: GameDelegate {
     func showQuestionMode(gameType: GameType, showHelp: Bool, question: String, title: String, score: String, withSound: Bool) {
         setTitle(title: title, score: score)
         setTexts(topText: question, bottomText: "")
-        resultLabel.isHidden = true
+        hideResultLabel()
         if showHelp { helpButton.isHidden = false }
         showChoiceButtons(gameType: gameType)
         if withSound { K.Sounds.page?.resetAndPlay() }
@@ -28,6 +27,7 @@ extension QuestionsVC: GameDelegate {
         setTitle(title: title, score: score)
         setTexts(topText: question, bottomText: comment)
         showResultLabel(answer: answer, statementIsTrue: statementIsTrue, resultText: resultText)
+        
         showContinueButton(color: K.Colors.foreground, title: nextQuestionButtonTitle)
         let needFinishGameSound = (nextQuestionButtonTitle == K.Labels.Buttons.finishGame)
         if withSound {
@@ -51,13 +51,17 @@ extension QuestionsVC: GameDelegate {
             showResultLabel(backgroundColor: K.Colors.resultBar[answer]!, resultText: resultText)
         } else {
             showResultLabel(backgroundColor: K.Colors.resultBar[statementIsTrue]!, resultText: resultText)
-            //showResultLabel(backgroundColor: K.Colors.foregroundLighter, resultText: resultText)
         }
     }
     func showResultLabel(backgroundColor: UIColor, resultText: String) {
         resultLabel.backgroundColor = backgroundColor
         resultLabel.text = resultText
         resultLabel.isHidden = false
+        constraintFromQuestion.constant = K.Margins.FromQuestion.toResultLabel
+    }
+    func hideResultLabel() {
+        constraintFromQuestion.constant = K.Margins.FromQuestion.toTopButton
+        resultLabel.isHidden = true
     }
     func playResultSounds(answer: Bool!, needFinishGameSound: Bool) {
         switch answer {
@@ -85,9 +89,18 @@ extension QuestionsVC: GameDelegate {
         bottomButton.show(color: color, title: title)
     }
     func setTexts(topText: String, bottomText: String) {
-        questionText.text = topText
-        commentText.text = bottomText
-        //commentText.isHidden = false
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        paragraph.hyphenationFactor = K.hyphenationFactor
+        let fontSize = K.useSmallerFonts ? K.Fonts.Size.TextView.zoomed : K.Fonts.Size.TextView.normal
+        let questionAttributes = [NSAttributedString.Key.paragraphStyle: paragraph,
+                          NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)]
+        let commentAttributes = [NSAttributedString.Key.paragraphStyle: paragraph,
+                                 NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: fontSize)]
+        questionText.attributedText = NSAttributedString(string: topText,
+                                                         attributes: questionAttributes)
+        commentText.attributedText = NSAttributedString(string: bottomText,
+                                                         attributes: commentAttributes)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             self.questionText.flashScrollIndicators()
             self.commentText.flashScrollIndicators()

@@ -53,8 +53,7 @@ class ChooseGameVC: UIViewController {
             default: break
             }
         }
-        let questionsView = segue.destination as! QuestionsVC
-        questionsView.game = game
-        questionsView.view.setConstraint(identifier: "fromHelpToMiddleButton", size: K.Margins.fromHelpToMiddleButton[game.type]!)
+        let questionsVC = segue.destination as! QuestionsVC
+        questionsVC.game = game
     }
 }

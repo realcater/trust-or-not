@@ -1,9 +1,5 @@
 import UIKit
-/*
-var useSmallerFonts: Bool {
-    return (UIScreen.main.currentMode!.size.width >= 750) ? false : true
-}
-*/
+
 struct K {
     static let useSmallerFonts = (UIScreen.main.currentMode!.size.width >= 750) ? false : true
     static let cornerRadius : CGFloat = 16
@@ -11,6 +7,7 @@ struct K {
     static let helpPagesAll = [Int](0...8)
     static let helpPages = [GameType.singleGame: [4], GameType.crowdGame: [Int](5...8)]
     static let funnyGameAnimalsQty = 12
+    static let hyphenationFactor: Float = 0.5
     
     struct Sounds {
         static let click = initSound(filename: "click.wav", volume: 0.2)
@@ -24,9 +21,12 @@ struct K {
     struct Margins {
         static let title : CGFloat = 0
         static let helpScreen: CGFloat = 0
-        static let fromHelpToMiddleButton = [GameType.singleGame: CGFloat(20),
-                                             GameType.crowdGame: CGFloat(20)]
+        struct FromQuestion {
+            static let toResultLabel: CGFloat = 15
+            static let toTopButton: CGFloat = -50
+        }
     }
+    
     struct Colors {
         static let foreground = UIColor(red: 0, green: 110/256, blue: 182/256, alpha: 1)
         static let foregroundLighter = UIColor(red: 0, green: 165/256, blue: 1, alpha: 1)
@@ -128,7 +128,7 @@ struct K {
     struct Alpha {
         struct Background {
             static let main : CGFloat = 0.1
-            static let questions : CGFloat = 0.03
+            static let questions : CGFloat = 0.04
         }
     }
     struct Duration {

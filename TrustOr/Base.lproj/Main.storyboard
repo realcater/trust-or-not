@@ -157,14 +157,18 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Zi-r8H" userLabel="questionText">
-                                        <rect key="frame" x="10" y="10" width="323" height="202.5"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsr-7b-nII" userLabel="shadowView">
+                                        <rect key="frame" x="10" y="10" width="323" height="192.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57r-Zi-r8H" userLabel="questionText">
+                                        <rect key="frame" x="10" y="10" width="323" height="192.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Поздравляем! Вы вошли в число 7% людей, которые справились лучше всего справились с данным заданием! Вы чертовски умны и сообразительны или просто на короткой ноге с Тюхе!</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-sM-xM2" userLabel="commentText">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVv-sM-xM2" userLabel="commentText">
                                         <rect key="frame" x="10" y="257.5" width="323" height="207.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -176,20 +180,24 @@
                                 <constraints>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerX" secondItem="1ke-60-f02" secondAttribute="centerX" id="0WG-h9-8qg"/>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="-16" id="CBd-0Y-xUA"/>
-                                    <constraint firstItem="IdB-cb-l7E" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="5" id="DGZ-iS-McY"/>
+                                    <constraint firstItem="IdB-cb-l7E" firstAttribute="top" secondItem="57r-Zi-r8H" secondAttribute="bottom" constant="15" id="DGZ-iS-McY"/>
                                     <constraint firstItem="UVv-sM-xM2" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="KAY-fO-03X"/>
                                     <constraint firstItem="57r-Zi-r8H" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="NL5-na-2SW"/>
                                     <constraint firstAttribute="bottom" secondItem="UVv-sM-xM2" secondAttribute="bottom" constant="10" id="PkF-c5-neF"/>
                                     <constraint firstAttribute="trailing" secondItem="IdB-cb-l7E" secondAttribute="trailing" constant="-16" id="Rd9-nc-23X"/>
+                                    <constraint firstAttribute="trailing" secondItem="tsr-7b-nII" secondAttribute="trailing" constant="10" id="VrP-gI-Auf"/>
                                     <constraint firstItem="UVv-sM-xM2" firstAttribute="top" secondItem="IdB-cb-l7E" secondAttribute="bottom" id="X8y-NX-acN"/>
+                                    <constraint firstItem="tsr-7b-nII" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="top" constant="10" id="XOv-7S-eSj"/>
                                     <constraint firstAttribute="trailing" secondItem="UVv-sM-xM2" secondAttribute="trailing" constant="10" id="YCG-Bm-1l0"/>
                                     <constraint firstAttribute="trailing" secondItem="57r-Zi-r8H" secondAttribute="trailing" constant="10" id="cqX-Dh-1Kt"/>
+                                    <constraint firstItem="tsr-7b-nII" firstAttribute="leading" secondItem="1ke-60-f02" secondAttribute="leading" constant="10" id="otj-na-2jd"/>
                                     <constraint firstItem="57r-Zi-r8H" firstAttribute="top" secondItem="1ke-60-f02" secondAttribute="top" constant="10" id="psY-ag-Nm0"/>
                                     <constraint firstItem="IdB-cb-l7E" firstAttribute="centerY" secondItem="1ke-60-f02" secondAttribute="centerY" id="vSV-s5-fUe"/>
+                                    <constraint firstItem="IdB-cb-l7E" firstAttribute="top" secondItem="tsr-7b-nII" secondAttribute="bottom" constant="15" id="wF0-Ry-xoj"/>
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bgr-0n-Pzz" userLabel="helpButton" customClass="MyButton" customModule="Trust_or_not" customModuleProvider="target">
-                                <rect key="frame" x="145" y="329" width="85" height="50"/>
+                                <rect key="frame" x="145" y="399" width="85" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wch-HO-T2H"/>
                                 </constraints>
@@ -234,7 +242,7 @@
                             <constraint firstItem="oKu-VZ-Dy2" firstAttribute="top" secondItem="P8C-D4-J4c" secondAttribute="top" id="OxC-qg-bYF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="bottom" secondItem="oKu-VZ-Dy2" secondAttribute="bottom" id="S9J-gQ-FvR"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="lMj-mL-u3Q" secondAttribute="trailing" constant="40" id="Uct-dH-rRM"/>
-                            <constraint firstItem="lMj-mL-u3Q" firstAttribute="top" secondItem="Bgr-0n-Pzz" secondAttribute="bottom" constant="90" identifier="fromHelpToMiddleButton" id="VCT-aV-P44"/>
+                            <constraint firstItem="lMj-mL-u3Q" firstAttribute="top" secondItem="Bgr-0n-Pzz" secondAttribute="bottom" constant="20" identifier="fromHelpToMiddleButton" id="VCT-aV-P44"/>
                             <constraint firstItem="enM-P6-HzI" firstAttribute="top" secondItem="lMj-mL-u3Q" secondAttribute="bottom" constant="20" id="XM5-wb-1PF"/>
                             <constraint firstItem="P8C-D4-J4c" firstAttribute="trailing" secondItem="1ke-60-f02" secondAttribute="trailing" constant="16" id="Z7J-5D-Omx"/>
                             <constraint firstItem="1ke-60-f02" firstAttribute="leading" secondItem="P8C-D4-J4c" secondAttribute="leading" constant="16" id="a6l-kD-eHA"/>
@@ -249,16 +257,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P8C-D4-J4c"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос 1/20             финала+1" id="rep-oL-Chz" userLabel="questionsView">
+                    <navigationItem key="navigationItem" title="Вопрос 1/20" id="rep-oL-Chz" userLabel="questionsView">
                         <barButtonItem key="backBarButtonItem" title=" " id="BQx-5v-Kb4"/>
                     </navigationItem>
                     <connections>
                         <outlet property="backgroundImageView" destination="oKu-VZ-Dy2" id="arW-Gr-6Qc"/>
                         <outlet property="bottomButton" destination="enM-P6-HzI" id="ciA-n0-PeS"/>
                         <outlet property="commentText" destination="UVv-sM-xM2" id="B0E-3v-vmD"/>
+                        <outlet property="constraintFromQuestion" destination="DGZ-iS-McY" id="LTT-vD-xNU"/>
                         <outlet property="helpButton" destination="Bgr-0n-Pzz" id="bzv-NV-IGy"/>
                         <outlet property="questionText" destination="57r-Zi-r8H" id="ffp-7Y-CJd"/>
                         <outlet property="resultLabel" destination="IdB-cb-l7E" id="yQ5-KV-F6U"/>
+                        <outlet property="shadowView" destination="tsr-7b-nII" id="N8U-Gg-xSh"/>
                         <outlet property="topButton" destination="lMj-mL-u3Q" id="pAi-0G-bvr"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" animates="NO" id="g5A-2b-kqv"/>
                     </connections>

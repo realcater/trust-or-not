@@ -1,4 +1,4 @@
-//Common properites and Init for Single&Crowd games classs
+//Common properites and Init for Single&Crowd games classes
 
 class ParentGame {
     //MARK:- Normal vars
