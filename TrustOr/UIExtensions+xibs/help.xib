@@ -20,7 +20,7 @@
                     <color key="textColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOQ-HD-okB">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOQ-HD-okB">
                     <rect key="frame" x="16" y="43" width="303" height="119.5"/>
                     <string key="text">В классической игре "Верю-не-верю" ведущий зачитывает утверждения на заданную тему, часть из которых является верными, а часть - выдумкой!</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -67,7 +67,7 @@
                     <nil key="highlightedColor"/>
                     <size key="shadowOffset" width="0.0" height="0.0"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каждый игрок оценивает утверждение, вынося свой вердикт: &quot;Верно&quot; или &quot;Не верно&quot;." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-lv-cXp">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каждый игрок оценивает утверждение, вынося свой вердикт: &quot;Верно&quot; или &quot;Не верно&quot;." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFA-lv-cXp">
                     <rect key="frame" x="16" y="224.5" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,13 +119,13 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, ответившие верно, переходят в следующий тур и могут оценивать следующее утверждение, остальные - выбывают." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-99-5HY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, ответившие верно, переходят в следующий тур и могут оценивать следующее утверждение, остальные - выбывают." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fg1-99-5HY">
                     <rect key="frame" x="16" y="42.5" width="303" height="119.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра заканчивается, когда остаётся один игрок - он и объявляется победителем!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjx-Cd-pGr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра заканчивается, когда остаётся один игрок - он и объявляется победителем!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjx-Cd-pGr">
                     <rect key="frame" x="16" y="224" width="303" height="72"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -184,15 +184,14 @@
                         <constraint firstAttribute="height" constant="150" id="MlR-pp-CRr"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы предлагаем вам сыграть в тематическое &quot;Верю-не-верю&quot;, посвященное животным китайского календаря." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIN-tb-irs">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы предлагаем вам сыграть в тематическое &quot;Верю-не-верю&quot;, посвященное животным китайского календаря." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIN-tb-irs">
                     <rect key="frame" x="16" y="42.5" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-oq-fJO">
-                    <rect key="frame" x="16" y="304" width="303" height="143.5"/>
-                    <string key="text">В игре 12 пакетов по 20 вопросов в каждом. Каждый пакет посвящён одному из 12 животных китайского календаря: от Мышки до Поросёнка.</string>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В игре 12 пакетов по 20 вопросов в каждом. Каждый пакет посвящён одному из 12 животных китайского календаря: от Мыши до Свиньи." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVt-oq-fJO">
+                    <rect key="frame" x="16" y="304" width="303" height="119.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -226,13 +225,13 @@
                     <color key="textColor" red="0.0" green="0.43137254899999999" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В игре есть два режима игры:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzg-Iy-iSd">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В игре есть два режима игры:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzg-Iy-iSd">
                     <rect key="frame" x="16" y="42.5" width="303" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Классическая игра, могут участвовать от 4 до бесконечности людей, приложение нужно только ведущему." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyl-FZ-nLS">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Классическая игра, могут участвовать от 4 до бесконечности людей, приложение нужно только ведущему." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyl-FZ-nLS">
                     <rect key="frame" x="16" y="130.5" width="303" height="119.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -262,7 +261,7 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-RV-abz">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5e-RV-abz">
                     <rect key="frame" x="16" y="314" width="303" height="119.5"/>
                     <string key="text">Игра для одного игрока: вы отвечаете на вопросы, получая очки за правильные и неправильные ответы. Цель - набрать максимум очков!</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -335,19 +334,19 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вам будет предложено несколько утверждений, про каждое из которых необходимо сказать, верное оно или нет." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiL-98-VMR">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вам будет предложено несколько утверждений, про каждое из которых необходимо сказать, верное оно или нет." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiL-98-VMR">
                     <rect key="frame" x="16" y="43" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За каждый правильный ответ вы получаете +1 очко!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-US-Cm6">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За каждый правильный ответ вы получаете +1 очко!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5j1-US-Cm6">
                     <rect key="frame" x="16" y="191.5" width="303" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цель - набрать максимальное количество очков!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-mL-gbS">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цель - набрать максимальное количество очков!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tdi-mL-gbS">
                     <rect key="frame" x="16" y="301.5" width="303" height="48"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -396,20 +395,20 @@
                         <constraint firstAttribute="width" constant="75" id="qPn-eX-qmF"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-Yd-3OC">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-Yd-3OC">
                     <rect key="frame" x="16" y="42.5" width="303" height="143.5"/>
                     <string key="text">Ведущий последовательно зачитывает всем игрокам утверждения, после чего на счёт "Раз-два-три" все игроки должны сообщить, согласны они с ним или нет.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Верно&quot;, поднимают руку вверх!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-WH-8cB">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Верно&quot;, поднимают руку вверх!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPU-WH-8cB">
                     <rect key="frame" x="83" y="194" width="236" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Не верно&quot;, ничего не делают!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-ZW-9KN">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все игроки, считающие, что данное утверждение &quot;Не верно&quot;, ничего не делают!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-ZW-9KN">
                     <rect key="frame" x="83" y="297.5" width="236" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -514,13 +513,13 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если игроки дали разные ответы: кто-то &quot;Верно&quot;, кто-то &quot;Не верно&quot;, ведущий нажимает кнопку:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Gc-0wS">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если игроки дали разные ответы: кто-то &quot;Верно&quot;, кто-то &quot;Не верно&quot;, ведущий нажимает кнопку:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynf-Gc-0wS">
                     <rect key="frame" x="16" y="95.5" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все, кто ответили не правильно, выбывают: на следующий вопрос отвечают только те, кто ответили верно!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-8t-aIZ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Все, кто ответили не правильно, выбывают: на следующий вопрос отвечают только те, кто ответили верно!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-8t-aIZ">
                     <rect key="frame" x="16" y="247" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -562,7 +561,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-DL-M2N" customClass="MyButton" customModule="Trust_or_not" customModuleProvider="target">
-                    <rect key="frame" x="49.5" y="205.5" width="236" height="40"/>
+                    <rect key="frame" x="49.5" y="193.5" width="236" height="40"/>
                     <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="236" id="Xwj-pY-l4e"/>
@@ -574,13 +573,13 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✅✅✅✅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-bY-m5l">
-                    <rect key="frame" x="16" y="43" width="303" height="27"/>
+                    <rect key="frame" x="40" y="39" width="255" height="27"/>
                     <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZy-pP-4sb">
-                    <rect key="frame" x="16" y="333" width="303" height="54"/>
+                    <rect key="frame" x="16" y="325" width="303" height="54"/>
                     <attributedString key="attributedText">
                         <fragment content="♻️">
                             <attributes>
@@ -591,26 +590,28 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если все игроки дали одинаковые ответы: все ответили &quot;Верно&quot; или все - &quot;Не верно&quot;, тогда ведущий нажимает кнопку:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-M7-p3R">
-                    <rect key="frame" x="16" y="78" width="303" height="119.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-M7-p3R">
+                    <rect key="frame" x="16" y="66" width="303" height="119.5"/>
+                    <string key="text">Если все игроки дали одинаковые ответы: все ответили "Верно" или все - 
+"Не верно", тогда ведущий нажимает кнопку:</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В этом случае вы сразу перейдёте к следующему вопросу, а данный - будет задан позже!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMC-Tg-Pe9">
-                    <rect key="frame" x="16" y="253.5" width="303" height="95.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В этом случае вы сразу перейдёте к следующему вопросу, а этот - будет задан позже!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMC-Tg-Pe9">
+                    <rect key="frame" x="16" y="233.5" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Я" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wse-vw-nbF">
-                    <rect key="frame" x="16" y="387" width="303" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почему так? Каждый вопрос должен привезти к результату: выигрышу или проигрышу!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wse-vw-nbF">
+                    <rect key="frame" x="16" y="379" width="303" height="72"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Y-kN-8bS">
-                    <rect key="frame" x="16" y="44.5" width="303" height="24"/>
+                    <rect key="frame" x="40" y="40.5" width="255" height="24"/>
                     <attributedString key="attributedText">
                         <fragment content="❌❌❌❌">
                             <attributes>
@@ -630,22 +631,22 @@
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="OsJ-p3-2Yg" secondAttribute="trailing" constant="16" id="5EI-wy-1ID"/>
                 <constraint firstItem="HMC-Tg-Pe9" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="65D-0R-my1"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="RZy-pP-4sb" secondAttribute="trailing" constant="16" id="7PG-oa-27P"/>
-                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="GCH-bY-m5l" secondAttribute="trailing" constant="16" id="8hK-gV-Gsn"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="GCH-bY-m5l" secondAttribute="trailing" constant="40" id="8hK-gV-Gsn"/>
                 <constraint firstItem="gaA-DL-M2N" firstAttribute="top" secondItem="0kB-M7-p3R" secondAttribute="bottom" constant="8" id="F1W-kF-Xjh"/>
                 <constraint firstAttribute="trailing" secondItem="0kB-M7-p3R" secondAttribute="trailing" constant="16" id="Jj3-Gz-Osm"/>
-                <constraint firstItem="HMC-Tg-Pe9" firstAttribute="top" secondItem="gaA-DL-M2N" secondAttribute="bottom" constant="8" id="Lxa-t8-JXT"/>
+                <constraint firstItem="HMC-Tg-Pe9" firstAttribute="top" secondItem="gaA-DL-M2N" secondAttribute="bottom" id="Lxa-t8-JXT"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="HMC-Tg-Pe9" secondAttribute="trailing" constant="16" id="Lyz-VP-WDR"/>
-                <constraint firstItem="y0Y-kN-8bS" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="OMK-pZ-ihF"/>
-                <constraint firstItem="GCH-bY-m5l" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="V3g-Te-WF7"/>
-                <constraint firstItem="0kB-M7-p3R" firstAttribute="top" secondItem="GCH-bY-m5l" secondAttribute="bottom" constant="8" id="WMy-pS-vH3"/>
+                <constraint firstItem="y0Y-kN-8bS" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="40" id="OMK-pZ-ihF"/>
+                <constraint firstItem="GCH-bY-m5l" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="40" id="V3g-Te-WF7"/>
+                <constraint firstItem="0kB-M7-p3R" firstAttribute="top" secondItem="GCH-bY-m5l" secondAttribute="bottom" id="WMy-pS-vH3"/>
                 <constraint firstItem="wse-vw-nbF" firstAttribute="top" secondItem="RZy-pP-4sb" secondAttribute="bottom" id="XCy-ah-P5K"/>
-                <constraint firstItem="RZy-pP-4sb" firstAttribute="top" secondItem="HMC-Tg-Pe9" secondAttribute="bottom" constant="-16" id="aAo-ki-9b3"/>
+                <constraint firstItem="RZy-pP-4sb" firstAttribute="top" secondItem="HMC-Tg-Pe9" secondAttribute="bottom" constant="-4" id="aAo-ki-9b3"/>
                 <constraint firstItem="OsJ-p3-2Yg" firstAttribute="top" secondItem="dlg-WA-7H9" secondAttribute="top" constant="8" id="b4b-qK-Hgj"/>
-                <constraint firstItem="GCH-bY-m5l" firstAttribute="top" secondItem="OsJ-p3-2Yg" secondAttribute="bottom" constant="8" id="ckq-00-PuD"/>
+                <constraint firstItem="GCH-bY-m5l" firstAttribute="top" secondItem="OsJ-p3-2Yg" secondAttribute="bottom" constant="4" id="ckq-00-PuD"/>
                 <constraint firstItem="0kB-M7-p3R" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="fnp-PQ-4B2"/>
                 <constraint firstItem="wse-vw-nbF" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="k4A-b7-dJ5"/>
                 <constraint firstItem="OsJ-p3-2Yg" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="nhM-z1-eI0"/>
-                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="y0Y-kN-8bS" secondAttribute="trailing" constant="16" id="pgj-dk-XOe"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="y0Y-kN-8bS" secondAttribute="trailing" constant="40" id="pgj-dk-XOe"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="wse-vw-nbF" secondAttribute="trailing" constant="16" id="yxP-zF-2SC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -662,8 +663,10 @@
                     <color key="textColor" red="0.0" green="0.43137254899999999" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Игра ведётся до тех пор, пока не останется один единственный игрок. Он и объявляется победителем!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-wL-6YE">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3K-wL-6YE">
                     <rect key="frame" x="16" y="43" width="303" height="95.5"/>
+                    <string key="text">Игра ведётся до тех пор, 
+пока не останется один единственный игрок. Он и объявляется победителем!</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -680,7 +683,7 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если у вас ещё осталось вопросы, то вы можете сыграть заново всем составом на оставшихся вопросах!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS9-nZ-ese">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если у вас ещё остались вопросы, то вы можете сыграть заново всем составом на оставшихся вопросах!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS9-nZ-ese">
                     <rect key="frame" x="16" y="200.5" width="303" height="95.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

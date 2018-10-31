@@ -18,17 +18,6 @@ class IntroVC: UIViewController {
     var funnyGame : FunnyGame!
     var startFunnyGame = false
     
-    @objc private func singleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended) {
-            performSegue(withIdentifier: "introSkip", sender: self)
-        }
-    }
-    @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
-        if(recognizer.state == UIGestureRecognizer.State.ended), startFunnyGame {
-            funnyGame.run(winner: nil)
-        }
-    }
-    
     private func setColors() {
         logoImage.tintColor = K.Colors.foreground
         centerImage.tintColor = K.Colors.foreground
@@ -44,13 +33,18 @@ class IntroVC: UIViewController {
         setColors()
         setFonts()
         view.setBackgroundImage(named: K.FileNames.background, alpha: K.Alpha.Background.main)
-        addTaps(singleTapAction: #selector(singleTap), doubleTapAction: #selector(doubleTap))
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if startFunnyGame {
             funnyGame = FunnyGame(imageForRotate: logoImage, centerImage: centerImage, topTitle: topTitle, bottomTitle: bottomTitle)
             funnyGame.run(winner: nil)
+        }
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if let touch = touches.first, touch.view == self.view {
+            performSegue(withIdentifier: "introSkip", sender: self)
         }
     }
 }

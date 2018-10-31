@@ -9,10 +9,11 @@
 import UIKit
 
 extension UIViewController {
-    func addTaps(for tappedView: UIView? = nil, singleTapAction: Selector? = nil,doubleTapAction: Selector? = nil) {
+    func addTaps(for tappedView: UIView? = nil, singleTapAction: Selector? = nil, doubleTapAction: Selector? = nil, anySwipeAction: Selector? = nil) {
         let tappedView: UIView = tappedView ?? self.view //if ==nil than we use default view of VC
         var singleTap: UITapGestureRecognizer!
         var doubleTap: UITapGestureRecognizer!
+        var anySwipe: UISwipeGestureRecognizer!
         
         if let singleTapAction = singleTapAction {
             singleTap = UITapGestureRecognizer(target: self, action: singleTapAction)
@@ -22,13 +23,18 @@ extension UIViewController {
             doubleTap = UITapGestureRecognizer(target: self, action: doubleTapAction)
             doubleTap.numberOfTapsRequired = 2
         }
-        
+        if let anySwipeAction = anySwipeAction {
+            anySwipe = UISwipeGestureRecognizer(target: self, action: anySwipeAction)
+            print("===", anySwipe.direction)
+        }
+
         if let singleTap = singleTap, let doubleTap = doubleTap  {
             singleTap.require(toFail: doubleTap)
         }
         
         if let singleTap = singleTap { tappedView.addGestureRecognizer(singleTap) }
         if let doubleTap = doubleTap { tappedView.addGestureRecognizer(doubleTap) }
+        if let anySwipe = anySwipe { tappedView.addGestureRecognizer(anySwipe) }
         
         tappedView.isUserInteractionEnabled = true
     }

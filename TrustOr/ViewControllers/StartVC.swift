@@ -47,4 +47,7 @@ class StartVC: UIViewController {
             K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: 2.0)
         }
     }
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("===StartVC touchesBegan")
+    }*/
 }
