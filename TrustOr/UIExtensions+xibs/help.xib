@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Whats 1/2">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что такое &quot;Верю-не-верю&quot;?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuY-HV-uDG">
                     <rect key="frame" x="16" y="8" width="303" height="26.5"/>
@@ -99,7 +99,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="TPJ-1k-6Kj" userLabel="Whats 2/2">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Что такое &quot;Верю-не-верю&quot;?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kha-8W-Pzc">
                     <rect key="frame" x="16" y="8" width="303" height="26.5"/>
@@ -168,7 +168,7 @@
         </view>
         <view contentMode="scaleToFill" id="vd4-1Z-2gN" userLabel="Chinese 1/1">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Китайский календарь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvW-ND-VbN">
                     <rect key="frame" x="16" y="8" width="303" height="26.5"/>
@@ -217,7 +217,7 @@
         </view>
         <view contentMode="scaleToFill" id="xUX-8G-WyW" userLabel="How to 1/1">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Как играть?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjh-YV-MXd">
                     <rect key="frame" x="16" y="8" width="303" height="26.5"/>
@@ -294,7 +294,7 @@
         </view>
         <view contentMode="scaleToFill" id="om7-5M-ZCt" userLabel="Single 1/1">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем соло!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ5-XE-AV2">
                     <rect key="frame" x="16" y="8" width="303" height="27"/>
@@ -380,7 +380,7 @@
         </view>
         <view contentMode="scaleToFill" id="jTE-VK-hht" userLabel="Crowd 1/4">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxC-bT-Mkx">
                     <rect key="frame" x="16" y="8" width="303" height="26.5"/>
@@ -447,7 +447,7 @@
         </view>
         <view contentMode="scaleToFill" id="S1C-8h-VDE" userLabel="Crowd 2/4">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9g5-Ss-SoX">
                     <rect key="frame" x="16" y="8" width="303" height="27"/>
@@ -552,7 +552,7 @@
         </view>
         <view contentMode="scaleToFill" id="ODZ-XN-Lwd" userLabel="Crowd 3/4">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsJ-p3-2Yg">
                     <rect key="frame" x="16" y="8" width="303" height="27"/>
@@ -655,7 +655,7 @@
         </view>
         <view contentMode="scaleToFill" id="uft-Au-UTZ" userLabel="Crowd 4/4">
             <rect key="frame" x="0.0" y="0.0" width="335" height="474"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Играем компанией!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmP-As-oI0">
                     <rect key="frame" x="16" y="8" width="303" height="27"/>
