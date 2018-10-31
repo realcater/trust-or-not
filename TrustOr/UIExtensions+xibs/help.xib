@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -573,7 +574,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="✅✅✅✅" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCH-bY-m5l">
-                    <rect key="frame" x="40" y="39" width="255" height="27"/>
+                    <rect key="frame" x="30" y="39" width="275" height="27"/>
                     <fontDescription key="fontDescription" name=".AppleColorEmojiUI" family=".Apple Color Emoji UI" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -590,10 +591,8 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-M7-p3R">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Если все игроки дали одинаковые ответы: все ответили &quot;Верно&quot; или все - &quot;Не верно&quot;, тогда ведущий нажимает кнопку:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kB-M7-p3R">
                     <rect key="frame" x="16" y="66" width="303" height="119.5"/>
-                    <string key="text">Если все игроки дали одинаковые ответы: все ответили "Верно" или все - 
-"Не верно", тогда ведущий нажимает кнопку:</string>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -611,7 +610,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0Y-kN-8bS">
-                    <rect key="frame" x="40" y="40.5" width="255" height="24"/>
+                    <rect key="frame" x="30" y="40.5" width="275" height="24"/>
                     <attributedString key="attributedText">
                         <fragment content="❌❌❌❌">
                             <attributes>
@@ -631,13 +630,13 @@
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="OsJ-p3-2Yg" secondAttribute="trailing" constant="16" id="5EI-wy-1ID"/>
                 <constraint firstItem="HMC-Tg-Pe9" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="65D-0R-my1"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="RZy-pP-4sb" secondAttribute="trailing" constant="16" id="7PG-oa-27P"/>
-                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="GCH-bY-m5l" secondAttribute="trailing" constant="40" id="8hK-gV-Gsn"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="GCH-bY-m5l" secondAttribute="trailing" constant="30" id="8hK-gV-Gsn"/>
                 <constraint firstItem="gaA-DL-M2N" firstAttribute="top" secondItem="0kB-M7-p3R" secondAttribute="bottom" constant="8" id="F1W-kF-Xjh"/>
                 <constraint firstAttribute="trailing" secondItem="0kB-M7-p3R" secondAttribute="trailing" constant="16" id="Jj3-Gz-Osm"/>
                 <constraint firstItem="HMC-Tg-Pe9" firstAttribute="top" secondItem="gaA-DL-M2N" secondAttribute="bottom" id="Lxa-t8-JXT"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="HMC-Tg-Pe9" secondAttribute="trailing" constant="16" id="Lyz-VP-WDR"/>
-                <constraint firstItem="y0Y-kN-8bS" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="40" id="OMK-pZ-ihF"/>
-                <constraint firstItem="GCH-bY-m5l" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="40" id="V3g-Te-WF7"/>
+                <constraint firstItem="y0Y-kN-8bS" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="30" id="OMK-pZ-ihF"/>
+                <constraint firstItem="GCH-bY-m5l" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="30" id="V3g-Te-WF7"/>
                 <constraint firstItem="0kB-M7-p3R" firstAttribute="top" secondItem="GCH-bY-m5l" secondAttribute="bottom" id="WMy-pS-vH3"/>
                 <constraint firstItem="wse-vw-nbF" firstAttribute="top" secondItem="RZy-pP-4sb" secondAttribute="bottom" id="XCy-ah-P5K"/>
                 <constraint firstItem="RZy-pP-4sb" firstAttribute="top" secondItem="HMC-Tg-Pe9" secondAttribute="bottom" constant="-4" id="aAo-ki-9b3"/>
@@ -646,7 +645,7 @@
                 <constraint firstItem="0kB-M7-p3R" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="fnp-PQ-4B2"/>
                 <constraint firstItem="wse-vw-nbF" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="k4A-b7-dJ5"/>
                 <constraint firstItem="OsJ-p3-2Yg" firstAttribute="leading" secondItem="dlg-WA-7H9" secondAttribute="leading" constant="16" id="nhM-z1-eI0"/>
-                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="y0Y-kN-8bS" secondAttribute="trailing" constant="40" id="pgj-dk-XOe"/>
+                <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="y0Y-kN-8bS" secondAttribute="trailing" constant="30" id="pgj-dk-XOe"/>
                 <constraint firstItem="dlg-WA-7H9" firstAttribute="trailing" secondItem="wse-vw-nbF" secondAttribute="trailing" constant="16" id="yxP-zF-2SC"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
