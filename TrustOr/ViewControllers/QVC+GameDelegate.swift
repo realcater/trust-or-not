@@ -36,7 +36,7 @@ extension QuestionsVC: GameDelegate {
     }
     func showResultsMode(fullResultsText: String, shortResultsText: String, title: String, score: String, withSound: Bool) {
         showContinueButton(color: K.Colors.foreground, title: K.Labels.Buttons.finishGame)
-        setTexts(topText: fullResultsText, bottomText: "")
+        setTexts(topText: "", bottomText: fullResultsText)
         showResultLabel(backgroundColor: K.Colors.resultBar[true]!, resultText: shortResultsText)
         setTitle(title: title, score: score)
         if withSound { K.Sounds.applause?.resetAndPlay(startVolume: 1) }
