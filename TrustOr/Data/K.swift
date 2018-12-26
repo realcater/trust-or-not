@@ -154,8 +154,8 @@ struct K {
         static let columnsQty = 3
         static let rowsQty = 4
         static let marginX: CGFloat = 0
-        static let marginTop: CGFloat = 75
-        static let marginBottom: CGFloat = 40
+        static let marginTop: CGFloat = 90
+        static let marginBottom: CGFloat = 55
     }
     static let resultTexts = Array([
         12:
