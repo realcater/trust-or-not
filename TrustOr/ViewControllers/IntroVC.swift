@@ -18,6 +18,15 @@ class IntroVC: UIViewController {
     var funnyGame : FunnyGame!
     var startFunnyGame = false
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setColors() {
         logoImage.tintColor = K.Colors.foreground
         centerImage.tintColor = K.Colors.foreground

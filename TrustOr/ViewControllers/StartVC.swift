@@ -17,7 +17,9 @@ class StartVC: UIViewController {
     
     @objc private func doubleTap(recognizer: UITapGestureRecognizer) {
         if(recognizer.state == UIGestureRecognizer.State.ended) {
-            performSegue(withIdentifier: "backToIntro", sender: self)
+            let introVC = self.navigationController!.viewControllers.first as! IntroVC
+            introVC.startFunnyGame = true
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     override func viewDidLoad() {
@@ -41,13 +43,6 @@ class StartVC: UIViewController {
         if segue.identifier == "showFullHelp" {
             let helpVC = segue.destination as! HelpVC
             helpVC.pagesForLoad = K.helpPagesAll
-        } else if segue.identifier == "backToIntro" {
-            let introVC = segue.destination as! IntroVC
-            introVC.startFunnyGame = true
-            K.Sounds.applause?.resetAndPlay(startVolume: 1, fadeDuration: 2.0)
         }
     }
-    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("===StartVC touchesBegan")
-    }*/
 }
